@@ -6,10 +6,10 @@
 <meta content="initial-scale=1.0" name="viewport">
 <title>Update to the IANA CoAP Content-Formats Registration Procedures</title>
 <meta content="Thomas Fossati" name="author">
-<meta content="
-       This document updates the registration procedures for the CoAP Content-Format registry defined in Section 12.3 of RFC7252.
-Specifically, those regarding the First Come First Served (FCFS) portion of the registry. 
-    " name="description">
+<meta content='
+       This document updates the registration procedures for the "CoAP Content-Formats" sub-registry, within the "CoRE Parameters" registry, defined in Section 12.3 of RFC7252.
+Specifically, those regarding the First Come First Served (FCFS) portion of the sub-registry. 
+    ' name="description">
 <meta content="xml2rfc 3.24.0" name="generator">
 <meta content="IANA" name="keyword">
 <meta content="registration" name="keyword">
@@ -1086,7 +1086,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Fossati</td>
-<td class="center">Expires 13 May 2025</td>
+<td class="center">Expires 14 May 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1097,14 +1097,17 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="workgroup">Constrained RESTful Environments</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
 <dd class="internet-draft">draft-fossati-core-cf-reg-update-latest</dd>
+<dt class="label-updates">Updates:</dt>
+<dd class="updates">
+<a href="https://www.rfc-editor.org/rfc/rfc7252" class="eref">7252</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-11-09" class="published">9 November 2024</time>
+<time datetime="2024-11-10" class="published">10 November 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-05-13">13 May 2025</time></dd>
+<dd class="expires"><time datetime="2025-05-14">14 May 2025</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1117,8 +1120,8 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">Update to the IANA CoAP Content-Formats Registration Procedures</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document updates the registration procedures for the CoAP Content-Format registry defined in Section 12.3 of RFC7252.
-Specifically, those regarding the First Come First Served (FCFS) portion of the registry.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document updates the registration procedures for the "CoAP Content-Formats" sub-registry, within the "CoRE Parameters" registry, defined in Section 12.3 of RFC7252.
+Specifically, those regarding the First Come First Served (FCFS) portion of the sub-registry.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1155,7 +1158,7 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 13 May 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 14 May 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1194,16 +1197,16 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
             <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-bad-examples" class="internal xref">(Bad) Examples</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
-                <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-unknown-media-type" class="internal xref">Unknown Media Type</a></p>
+                <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-the-media-type-is-unknown" class="internal xref">The Media Type is Unknown</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2">
-                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-unknown-media-type-paramete" class="internal xref">Unknown Media Type Parameter</a></p>
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-the-media-type-parameter-is" class="internal xref">The Media Type Parameter is Unknown</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.3">
-                <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="auto internal xref">3.3</a>.  <a href="#name-invalid-media-type-paramete" class="internal xref">Invalid Media Type Parameter Value</a></p>
+                <p id="section-toc.1-1.3.2.3.1"><a href="#section-3.3" class="auto internal xref">3.3</a>.  <a href="#name-the-media-type-parameter-va" class="internal xref">The Media Type Parameter Value is Invalid</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.4">
-                <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="auto internal xref">3.4</a>.  <a href="#name-unknown-content-coding" class="internal xref">Unknown Content Coding</a></p>
+                <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="auto internal xref">3.4</a>.  <a href="#name-the-content-coding-is-unkno" class="internal xref">The Content Coding is Unknown</a></p>
 </li>
             </ul>
 </li>
@@ -1236,13 +1239,13 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1"><span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> describes the registration procedures for the CoRE CoAP Content-Format registry.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">In particular, it defines the rules for obtaining CoAP Content-Formats from the First Come First Served (FCFS) portion of registry (10000-64999).<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">Said rules do not require the Designated Expert (DE) to be in the loop, and rely entirely on IANA personnel to complete the registration.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">Unfortunately, the instructions do not explicitly require checking that the combination of media type, optional parameters and content coding associated with the requested CoAP Content-Format is semantically valid.<a href="#section-1-4" class="pilcrow">¶</a></p>
-<p id="section-1-5">This is, in general, a non-trivial task, involving knowledge across multiple documents and technologies, which is unfair to demand from the registrar.<a href="#section-1-5" class="pilcrow">¶</a></p>
-<p id="section-1-6">This lack of guidance may engender confusion in both the registering party and the registrar, and could eventually lead to erroneous registrations.<a href="#section-1-6" class="pilcrow">¶</a></p>
-<p id="section-1-7">To improve the situation, <a href="#iana" class="auto internal xref">Section 5</a> updates the registration procedures for the CoRE CoAP Content-Format registry defined in <span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> regarding the FCFS of the registry.<a href="#section-1-7" class="pilcrow">¶</a></p>
+<p id="section-1-1"><span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> describes the registration procedures for the "CoAP Content-Formats" sub-registry within the "CoRE Parameters" registry <span>[<a href="#IANA.core-parameters" class="cite xref">IANA.core-parameters</a>]</span>.
+In particular, it defines the rules for obtaining CoAP Content-Formats from the First Come First Served (FCFS) portion of sub-registry (10000-64999).
+Said rules do not require the Designated Expert (DE) to be in the loop, and rely entirely on IANA personnel to complete the registration.
+Unfortunately, the instructions do not explicitly require checking that the combination of media type, optional parameters and content coding associated with the requested CoAP Content-Format is semantically valid.
+This is, in general, a non-trivial task, involving knowledge across multiple documents and technologies, which is unfair to demand from the registrar alone.
+This lack of guidance may engender confusion in both the registering party and the registrar, and could eventually lead to erroneous registrations.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2"><a href="#iana" class="auto internal xref">Section 5</a> of this memo updates the registration procedures for the "CoAP Content-Formats" sub-registry regarding its FCFS portion to reduce the risk of accidental or malicious errors.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1264,8 +1267,8 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <p id="section-3-1">This section contains a few examples of registration requests for a CoAP Content-Format in the FCFS space (64999) that should not be allowed to succeed.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <div id="ex-unknown-mt">
 <section id="section-3.1">
-        <h3 id="name-unknown-media-type">
-<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-unknown-media-type" class="section-name selfRef">Unknown Media Type</a>
+        <h3 id="name-the-media-type-is-unknown">
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-the-media-type-is-unknown" class="section-name selfRef">The Media Type is Unknown</a>
         </h3>
 <p id="section-3.1-1">The registrant requests an FCFS C-F for an unknown media type:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-c-f-"></span><table class="left" id="table-1">
@@ -1290,10 +1293,10 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         </table>
 </section>
 </div>
-<div id="unknown-media-type-parameter">
+<div id="the-media-type-parameter-is-unknown">
 <section id="section-3.2">
-        <h3 id="name-unknown-media-type-paramete">
-<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-unknown-media-type-paramete" class="section-name selfRef">Unknown Media Type Parameter</a>
+        <h3 id="name-the-media-type-parameter-is">
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-the-media-type-parameter-is" class="section-name selfRef">The Media Type Parameter is Unknown</a>
         </h3>
 <p id="section-3.2-1">The registrant requests an FCFS C-F for an existing media type with an unknown parameter:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-c-f-f"></span><table class="left" id="table-2">
@@ -1318,10 +1321,10 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         </table>
 </section>
 </div>
-<div id="invalid-media-type-parameter-value">
+<div id="the-media-type-parameter-value-is-invalid">
 <section id="section-3.3">
-        <h3 id="name-invalid-media-type-paramete">
-<a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-invalid-media-type-paramete" class="section-name selfRef">Invalid Media Type Parameter Value</a>
+        <h3 id="name-the-media-type-parameter-va">
+<a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-the-media-type-parameter-va" class="section-name selfRef">The Media Type Parameter Value is Invalid</a>
         </h3>
 <p id="section-3.3-1">The registrant requests an FCFS C-F for an existing media type with an invalid parameter value:<a href="#section-3.3-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-c-f-fo"></span><table class="left" id="table-3">
@@ -1346,12 +1349,12 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         </table>
 </section>
 </div>
-<div id="unknown-content-coding">
+<div id="the-content-coding-is-unknown">
 <section id="section-3.4">
-        <h3 id="name-unknown-content-coding">
-<a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-unknown-content-coding" class="section-name selfRef">Unknown Content Coding</a>
+        <h3 id="name-the-content-coding-is-unkno">
+<a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-the-content-coding-is-unkno" class="section-name selfRef">The Content Coding is Unknown</a>
         </h3>
-<p id="section-3.4-1">The registrant requests an FCFS C-F for an existing media type with an unknown content coding:<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+<p id="section-3.4-1">The registrant requests an FCFS C-F for an existing media type with an unknown content coding, "inflate":<a href="#section-3.4-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-c-f-w"></span><table class="left" id="table-4">
           <caption>
 <a href="#table-4" class="selfRef">Table 4</a>:
@@ -1396,20 +1399,17 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
           <p id="section-5-2.1.1">The media type associated to the requested Content-Format is not associated to an already registered CoAP Content-Format;<a href="#section-5-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-5-2.2">
-          <p id="section-5-2.2.1">The media type associated to the requested Content-Format exists in the IANA Media Type registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>, or its registration has been approved;<a href="#section-5-2.2.1" class="pilcrow">¶</a></p>
+          <p id="section-5-2.2.1">The media type associated to the requested Content-Format exists in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>, or its registration has been approved;<a href="#section-5-2.2.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-5-2.3">
-          <p id="section-5-2.3.1">The optional parameter names exist in association with the media type;<a href="#section-5-2.3.1" class="pilcrow">¶</a></p>
+          <p id="section-5-2.3.1">The optional parameter names exist in association with the media type, and any parameter values associated with such parameter names are as expected;<a href="#section-5-2.3.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-5-2.4">
-          <p id="section-5-2.4.1">Any parameter values associated with such parameter names are as expected;<a href="#section-5-2.4.1" class="pilcrow">¶</a></p>
-</li>
-        <li id="section-5-2.5">
-          <p id="section-5-2.5.1">If Content Coding is required, it exist in the HTTP Content Coding Registry of the Hypertext Transfer Protocol (HTTP) Parameters TODO-ref.<a href="#section-5-2.5.1" class="pilcrow">¶</a></p>
+          <p id="section-5-2.4.1">If a Content Coding is specified, it exist in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" <span>[<a href="#IANA.http-parameters" class="cite xref">IANA.http-parameters</a>]</span>.<a href="#section-5-2.4.1" class="pilcrow">¶</a></p>
 </li>
       </ol>
 <p id="section-5-3">The registrar <span class="bcp14">MAY</span> forward the registration of a CoAP Content-Format in the FCFS portion of the registry (i.e., one for a CoAP Content-Format in range 10000-64999) to one or more DEs of the registry for consultation.<a href="#section-5-3" class="pilcrow">¶</a></p>
-<p id="section-5-4">IANA <span class="bcp14">MUST</span> forward the registration to one or more DEs of the registry when such registration involves any media type parameters.<a href="#section-5-4" class="pilcrow">¶</a></p>
+<p id="section-5-4">The registrar <span class="bcp14">MUST</span> forward the registration to one or more DEs of the registry when such registration involves any media type parameters.<a href="#section-5-4" class="pilcrow">¶</a></p>
 <p id="section-5-5">If the request is forwarded to the DE, their judgement is binding.<a href="#section-5-5" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1445,6 +1445,14 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
+<dt id="IANA.core-parameters">[IANA.core-parameters]</dt>
+        <dd>
+<span class="refAuthor">IANA</span>, <span class="refTitle">"Constrained RESTful Environments (CoRE) Parameters"</span>, <span>&lt;<a href="https://www.iana.org/assignments/core-parameters">https://www.iana.org/assignments/core-parameters</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="IANA.http-parameters">[IANA.http-parameters]</dt>
+        <dd>
+<span class="refAuthor">IANA</span>, <span class="refTitle">"Hypertext Transfer Protocol (HTTP) Parameters"</span>, <span>&lt;<a href="https://www.iana.org/assignments/http-parameters">https://www.iana.org/assignments/http-parameters</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="IANA.media-types">[IANA.media-types]</dt>
       <dd>
 <span class="refAuthor">IANA</span>, <span class="refTitle">"Media Types"</span>, <span>&lt;<a href="https://www.iana.org/assignments/media-types">https://www.iana.org/assignments/media-types</a>&gt;</span>. </dd>
