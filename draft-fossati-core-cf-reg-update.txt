@@ -200,7 +200,7 @@ Table of Contents
        type, and any parameter values associated with such parameter
        names are as expected;
 
-   4.  If a Content Coding is specified, it exist in the "HTTP Content
+   4.  If a Content Coding is specified, it exists in the "HTTP Content
        Coding Registry" of the "Hypertext Transfer Protocol (HTTP)
        Parameters" [IANA.http-parameters].
 
