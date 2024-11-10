@@ -111,7 +111,7 @@ Before assigning a new Content-Format in the FCFS space, the registrar MUST chec
 1. The media type associated to the requested Content-Format is not associated to an already registered CoAP Content-Format;
 1. The media type associated to the requested Content-Format exists in the "Media Types" registry {{?IANA.media-types}}, or its registration has been approved;
 1. The optional parameter names exist in association with the media type, and any parameter values associated with such parameter names are as expected;
-1. If a Content Coding is specified, it exist in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" {{?IANA.http-parameters}}.
+1. If a Content Coding is specified, it exists in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" {{?IANA.http-parameters}}.
 
 The registrar MAY forward the registration of a CoAP Content-Format in the FCFS portion of the registry (i.e., one for a CoAP Content-Format in range 10000-64999) to one or more DEs of the registry for consultation.
 
