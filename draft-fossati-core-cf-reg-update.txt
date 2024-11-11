@@ -94,7 +94,7 @@ Table of Contents
    sub-registry (10000-64999).  These rules do not involve the
    Designated Expert (DE) and are managed solely by IANA personnel to
    finalize the registration.  Unfortunately, the instructions do not
-   explicitly require checking that the combination of content type
+   explicitly require checking that the combination of content-type
    (i.e., media type with optional parameters) and content coding
    associated with the requested CoAP Content-Format is semantically
    valid.  This task is generally non-trivial, requiring knowledge from
@@ -114,6 +114,10 @@ Table of Contents
    "OPTIONAL" in this document are to be interpreted as described in
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
+
+   This document uses the terms "media type", "content coding",
+   "content-type" and "content format" as defined in Section 2 of
+   [RFC9193].
 
 3.  (Bad) Examples
 
@@ -190,7 +194,7 @@ Table of Contents
    Before assigning a new Content-Format in the FCFS space, the
    registrar MUST check that:
 
-   1.  The content type associated with the requested Content-Format is
+   1.  The content-type associated with the requested Content-Format is
        not associated with an already registered CoAP Content-Format;
 
    2.  The media type associated with the requested Content-Format
@@ -250,6 +254,11 @@ Table of Contents
    [IANA.media-types]
               IANA, "Media Types",
               <https://www.iana.org/assignments/media-types>.
+
+   [RFC9193]  Keränen, A. and C. Bormann, "Sensor Measurement Lists
+              (SenML) Fields for Indicating Data Value Content-Format",
+              RFC 9193, DOI 10.17487/RFC9193, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9193>.
 
 Author's Address
 

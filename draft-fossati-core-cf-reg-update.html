@@ -1243,7 +1243,7 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
 (Note that the columns of this registry have been revised according to <span>[<a href="#Err4954" class="cite xref">Err4954</a>]</span>.)
 In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the First Come First Served (FCFS) portion of the sub-registry (10000-64999).
 These rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
-Unfortunately, the instructions do not explicitly require checking that the combination of content type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
+Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
 This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is unfair to demand solely from the registrar.
 This lack of guidance may engender confusion in both the registering party and the registrar, and could eventually lead to erroneous registrations.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2"><a href="#iana" class="auto internal xref">Section 5</a> of this memo updates the registration procedures for the "CoAP Content-Formats" sub-registry regarding its FCFS portion to reduce the risk of accidental or malicious errors.<a href="#section-1-2" class="pilcrow">¶</a></p>
@@ -1258,6 +1258,7 @@ This lack of guidance may engender confusion in both the registering party and t
 "<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
 described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they
 appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-2">This document uses the terms "media type", "content coding", "content-type" and "content format" as defined in <span><a href="https://rfc-editor.org/rfc/rfc9193#section-2" class="relref">Section 2</a> of [<a href="#RFC9193" class="cite xref">RFC9193</a>]</span>.<a href="#section-2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="bad-examples">
@@ -1397,7 +1398,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <p id="section-5-1">Before assigning a new Content-Format in the FCFS space, the registrar <span class="bcp14">MUST</span> check that:<a href="#section-5-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-5-2">
 <li id="section-5-2.1">
-          <p id="section-5-2.1.1">The content type associated with the requested Content-Format is not associated with an already registered CoAP Content-Format;<a href="#section-5-2.1.1" class="pilcrow">¶</a></p>
+          <p id="section-5-2.1.1">The content-type associated with the requested Content-Format is not associated with an already registered CoAP Content-Format;<a href="#section-5-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-5-2.2">
           <p id="section-5-2.2.1">The media type associated with the requested Content-Format exists in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>, or its registration has been approved;<a href="#section-5-2.2.1" class="pilcrow">¶</a></p>
@@ -1459,8 +1460,12 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <span class="refAuthor">IANA</span>, <span class="refTitle">"Hypertext Transfer Protocol (HTTP) Parameters"</span>, <span>&lt;<a href="https://www.iana.org/assignments/http-parameters">https://www.iana.org/assignments/http-parameters</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="IANA.media-types">[IANA.media-types]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">IANA</span>, <span class="refTitle">"Media Types"</span>, <span>&lt;<a href="https://www.iana.org/assignments/media-types">https://www.iana.org/assignments/media-types</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9193">[RFC9193]</dt>
+      <dd>
+<span class="refAuthor">Keränen, A.</span> and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"Sensor Measurement Lists (SenML) Fields for Indicating Data Value Content-Format"</span>, <span class="seriesInfo">RFC 9193</span>, <span class="seriesInfo">DOI 10.17487/RFC9193</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9193">https://www.rfc-editor.org/rfc/rfc9193</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
