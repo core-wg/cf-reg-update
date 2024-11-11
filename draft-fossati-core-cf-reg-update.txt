@@ -4,9 +4,9 @@
 
 Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
-Updates: 7252 (if approved)                             10 November 2024
+Updates: 7252 (if approved)                             11 November 2024
 Intended status: Standards Track                                        
-Expires: 14 May 2025
+Expires: 15 May 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 14 May 2025.
+   This Internet-Draft will expire on 15 May 2025.
 
 Copyright Notice
 
@@ -87,19 +87,21 @@ Table of Contents
 
    Section 12.3 of [RFC7252] describes the registration procedures for
    the "CoAP Content-Formats" sub-registry within the "CoRE Parameters"
-   registry [IANA.core-parameters].  In particular, it defines the rules
-   for obtaining CoAP Content-Formats from the First Come First Served
-   (FCFS) portion of sub-registry (10000-64999).  Said rules do not
-   require the Designated Expert (DE) to be in the loop, and rely
-   entirely on IANA personnel to complete the registration.
-   Unfortunately, the instructions do not explicitly require checking
-   that the combination of media type, optional parameters and content
-   coding associated with the requested CoAP Content-Format is
-   semantically valid.  This is, in general, a non-trivial task,
-   involving knowledge across multiple documents and technologies, which
-   is unfair to demand from the registrar alone.  This lack of guidance
-   may engender confusion in both the registering party and the
-   registrar, and could eventually lead to erroneous registrations.
+   registry [IANA.core-parameters].  (Note that the columns of this
+   registry have been revised according to [Err4954].)  In particular,
+   the text defines the rules for obtaining CoAP Content-Format
+   identifiers from the First Come First Served (FCFS) portion of the
+   sub-registry (10000-64999).  These rules do not involve the
+   Designated Expert (DE) and are managed solely by IANA personnel to
+   finalize the registration.  Unfortunately, the instructions do not
+   explicitly require checking that the combination of content type
+   (i.e., media type with optional parameters) and content coding
+   associated with the requested CoAP Content-Format is semantically
+   valid.  This task is generally non-trivial, requiring knowledge from
+   multiple documents and technologies, which is unfair to demand solely
+   from the registrar.  This lack of guidance may engender confusion in
+   both the registering party and the registrar, and could eventually
+   lead to erroneous registrations.
 
    Section 5 of this memo updates the registration procedures for the
    "CoAP Content-Formats" sub-registry regarding its FCFS portion to
@@ -116,64 +118,63 @@ Table of Contents
 3.  (Bad) Examples
 
    This section contains a few examples of registration requests for a
-   CoAP Content-Format in the FCFS space (64999) that should not be
-   allowed to succeed.
+   CoAP Content-Format with identifier in the FCFS space (64999) that
+   should not be allowed to succeed.
 
 3.1.  The Media Type is Unknown
 
-   The registrant requests an FCFS C-F for an unknown media type:
+   The registrant requests an FCFS C-F ID for an unknown media type:
 
-   +================+==========================+================+
-   | Content Format | Media Type               | Content Coding |
-   +================+==========================+================+
-   | 64999          | application/unknown+cbor | -              |
-   +----------------+--------------------------+----------------+
+   +==========================+================+=======+
+   | Content Type             | Content Coding | ID    |
+   +==========================+================+=======+
+   | application/unknown+cbor | -              | 64999 |
+   +--------------------------+----------------+-------+
 
-   Table 1: Attempt at Registering C-F for an Unknown Media Type
+         Table 1: Attempt at Registering C-F for an
+                     Unknown Media Type
 
 3.2.  The Media Type Parameter is Unknown
 
-   The registrant requests an FCFS C-F for an existing media type with
-   an unknown parameter:
+   The registrant requests an FCFS C-F ID for an existing media type
+   with an unknown parameter:
 
-   +================+=====================+================+
-   | Content Format | Media Type          | Content Coding |
-   +================+=====================+================+
-   | 64999          | application/cose;   | -              |
-   |                | unknown-parameter=1 |                |
-   +----------------+---------------------+----------------+
+   +=======================================+================+=======+
+   | Content Type                          | Content Coding | ID    |
+   +=======================================+================+=======+
+   | application/cose; unknown-parameter=1 | -              | 64999 |
+   +---------------------------------------+----------------+-------+
 
-       Table 2: Attempt at Registering C-F for Media Type
-                     with Unknown Parameter
+        Table 2: Attempt at Registering C-F for Media Type with
+                           Unknown Parameter
 
 3.3.  The Media Type Parameter Value is Invalid
 
-   The registrant requests an FCFS C-F for an existing media type with
-   an invalid parameter value:
+   The registrant requests an FCFS C-F ID for an existing media type
+   with an invalid parameter value:
 
-   +================+===================+================+
-   | Content Format | Media Type        | Content Coding |
-   +================+===================+================+
-   | 64999          | application/cose; | -              |
-   |                | cose-type=invalid |                |
-   +----------------+-------------------+----------------+
+   +=====================================+================+=======+
+   | Content Type                        | Content Coding | ID    |
+   +=====================================+================+=======+
+   | application/cose; cose-type=invalid | -              | 64999 |
+   +-------------------------------------+----------------+-------+
 
-      Table 3: Attempt at Registering C-F for Media Type
-                 with Invalid Parameter Value
+       Table 3: Attempt at Registering C-F for Media Type with
+                       Invalid Parameter Value
 
 3.4.  The Content Coding is Unknown
 
-   The registrant requests an FCFS C-F for an existing media type with
-   an unknown content coding, "inflate":
+   The registrant requests an FCFS C-F ID for an existing media type
+   with an unknown content coding, "inflate":
 
-   +================+========================+================+
-   | Content Format | Media Type             | Content Coding |
-   +================+========================+================+
-   | 64999          | application/senml+cbor | inflate        |
-   +----------------+------------------------+----------------+
+   +========================+================+=======+
+   | Content Type           | Content Coding | ID    |
+   +========================+================+=======+
+   | application/senml+cbor | inflate        | 64999 |
+   +------------------------+----------------+-------+
 
-     Table 4: Attempt at Registering C-F with Unknown Content
-                              Coding
+         Table 4: Attempt at Registering C-F with
+                  Unknown Content Coding
 
 4.  Security Considerations
 
@@ -189,11 +190,11 @@ Table of Contents
    Before assigning a new Content-Format in the FCFS space, the
    registrar MUST check that:
 
-   1.  The media type associated to the requested Content-Format is not
-       associated to an already registered CoAP Content-Format;
+   1.  The content type associated with the requested Content-Format is
+       not associated with an already registered CoAP Content-Format;
 
-   2.  The media type associated to the requested Content-Format exists
-       in the "Media Types" registry [IANA.media-types], or its
+   2.  The media type associated with the requested Content-Format
+       exists in the "Media Types" registry [IANA.media-types], or its
        registration has been approved;
 
    3.  The optional parameter names exist in association with the media
@@ -206,8 +207,8 @@ Table of Contents
 
    The registrar MAY forward the registration of a CoAP Content-Format
    in the FCFS portion of the registry (i.e., one for a CoAP Content-
-   Format in range 10000-64999) to one or more DEs of the registry for
-   consultation.
+   Format identifier in range 10000-64999) to one or more DEs of the
+   registry for consultation.
 
    The registrar MUST forward the registration to one or more DEs of the
    registry when such registration involves any media type parameters.
@@ -233,6 +234,9 @@ Table of Contents
               May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
 6.2.  Informative References
+
+   [Err4954]  RFC Errata Report 4954, RFC 7252,
+              <https://www.rfc-editor.org/errata/eid4954>.
 
    [IANA.core-parameters]
               IANA, "Constrained RESTful Environments (CoRE)

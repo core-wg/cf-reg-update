@@ -1086,7 +1086,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Fossati</td>
-<td class="center">Expires 14 May 2025</td>
+<td class="center">Expires 15 May 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1102,12 +1102,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc7252" class="eref">7252</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-11-10" class="published">10 November 2024</time>
+<time datetime="2024-11-11" class="published">11 November 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-05-14">14 May 2025</time></dd>
+<dd class="expires"><time datetime="2025-05-15">15 May 2025</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1158,7 +1158,7 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 14 May 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 15 May 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1240,10 +1240,11 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
 <p id="section-1-1"><span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> describes the registration procedures for the "CoAP Content-Formats" sub-registry within the "CoRE Parameters" registry <span>[<a href="#IANA.core-parameters" class="cite xref">IANA.core-parameters</a>]</span>.
-In particular, it defines the rules for obtaining CoAP Content-Formats from the First Come First Served (FCFS) portion of sub-registry (10000-64999).
-Said rules do not require the Designated Expert (DE) to be in the loop, and rely entirely on IANA personnel to complete the registration.
-Unfortunately, the instructions do not explicitly require checking that the combination of media type, optional parameters and content coding associated with the requested CoAP Content-Format is semantically valid.
-This is, in general, a non-trivial task, involving knowledge across multiple documents and technologies, which is unfair to demand from the registrar alone.
+(Note that the columns of this registry have been revised according to <span>[<a href="#Err4954" class="cite xref">Err4954</a>]</span>.)
+In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the First Come First Served (FCFS) portion of the sub-registry (10000-64999).
+These rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
+Unfortunately, the instructions do not explicitly require checking that the combination of content type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
+This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is unfair to demand solely from the registrar.
 This lack of guidance may engender confusion in both the registering party and the registrar, and could eventually lead to erroneous registrations.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2"><a href="#iana" class="auto internal xref">Section 5</a> of this memo updates the registration procedures for the "CoAP Content-Formats" sub-registry regarding its FCFS portion to reduce the risk of accidental or malicious errors.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
@@ -1264,13 +1265,13 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-bad-examples">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-bad-examples" class="section-name selfRef">(Bad) Examples</a>
       </h2>
-<p id="section-3-1">This section contains a few examples of registration requests for a CoAP Content-Format in the FCFS space (64999) that should not be allowed to succeed.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">This section contains a few examples of registration requests for a CoAP Content-Format with identifier in the FCFS space (64999) that should not be allowed to succeed.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <div id="ex-unknown-mt">
 <section id="section-3.1">
         <h3 id="name-the-media-type-is-unknown">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-the-media-type-is-unknown" class="section-name selfRef">The Media Type is Unknown</a>
         </h3>
-<p id="section-3.1-1">The registrant requests an FCFS C-F for an unknown media type:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-1">The registrant requests an FCFS C-F ID for an unknown media type:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-c-f-"></span><table class="left" id="table-1">
           <caption>
 <a href="#table-1" class="selfRef">Table 1</a>:
@@ -1278,16 +1279,16 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
           </caption>
 <thead>
             <tr>
-              <th class="text-left" rowspan="1" colspan="1">Content Format</th>
-              <th class="text-left" rowspan="1" colspan="1">Media Type</th>
+              <th class="text-left" rowspan="1" colspan="1">Content Type</th>
               <th class="text-left" rowspan="1" colspan="1">Content Coding</th>
+              <th class="text-left" rowspan="1" colspan="1">ID</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">64999</td>
               <td class="text-left" rowspan="1" colspan="1">application/unknown+cbor</td>
               <td class="text-left" rowspan="1" colspan="1">-</td>
+              <td class="text-left" rowspan="1" colspan="1">64999</td>
             </tr>
           </tbody>
         </table>
@@ -1298,7 +1299,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <h3 id="name-the-media-type-parameter-is">
 <a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-the-media-type-parameter-is" class="section-name selfRef">The Media Type Parameter is Unknown</a>
         </h3>
-<p id="section-3.2-1">The registrant requests an FCFS C-F for an existing media type with an unknown parameter:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2-1">The registrant requests an FCFS C-F ID for an existing media type with an unknown parameter:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-c-f-f"></span><table class="left" id="table-2">
           <caption>
 <a href="#table-2" class="selfRef">Table 2</a>:
@@ -1306,16 +1307,16 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
           </caption>
 <thead>
             <tr>
-              <th class="text-left" rowspan="1" colspan="1">Content Format</th>
-              <th class="text-left" rowspan="1" colspan="1">Media Type</th>
+              <th class="text-left" rowspan="1" colspan="1">Content Type</th>
               <th class="text-left" rowspan="1" colspan="1">Content Coding</th>
+              <th class="text-left" rowspan="1" colspan="1">ID</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">64999</td>
               <td class="text-left" rowspan="1" colspan="1">application/cose; unknown-parameter=1</td>
               <td class="text-left" rowspan="1" colspan="1">-</td>
+              <td class="text-left" rowspan="1" colspan="1">64999</td>
             </tr>
           </tbody>
         </table>
@@ -1326,7 +1327,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <h3 id="name-the-media-type-parameter-va">
 <a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-the-media-type-parameter-va" class="section-name selfRef">The Media Type Parameter Value is Invalid</a>
         </h3>
-<p id="section-3.3-1">The registrant requests an FCFS C-F for an existing media type with an invalid parameter value:<a href="#section-3.3-1" class="pilcrow">¶</a></p>
+<p id="section-3.3-1">The registrant requests an FCFS C-F ID for an existing media type with an invalid parameter value:<a href="#section-3.3-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-c-f-fo"></span><table class="left" id="table-3">
           <caption>
 <a href="#table-3" class="selfRef">Table 3</a>:
@@ -1334,16 +1335,16 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
           </caption>
 <thead>
             <tr>
-              <th class="text-left" rowspan="1" colspan="1">Content Format</th>
-              <th class="text-left" rowspan="1" colspan="1">Media Type</th>
+              <th class="text-left" rowspan="1" colspan="1">Content Type</th>
               <th class="text-left" rowspan="1" colspan="1">Content Coding</th>
+              <th class="text-left" rowspan="1" colspan="1">ID</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">64999</td>
               <td class="text-left" rowspan="1" colspan="1">application/cose; cose-type=invalid</td>
               <td class="text-left" rowspan="1" colspan="1">-</td>
+              <td class="text-left" rowspan="1" colspan="1">64999</td>
             </tr>
           </tbody>
         </table>
@@ -1354,7 +1355,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <h3 id="name-the-content-coding-is-unkno">
 <a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-the-content-coding-is-unkno" class="section-name selfRef">The Content Coding is Unknown</a>
         </h3>
-<p id="section-3.4-1">The registrant requests an FCFS C-F for an existing media type with an unknown content coding, "inflate":<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+<p id="section-3.4-1">The registrant requests an FCFS C-F ID for an existing media type with an unknown content coding, "inflate":<a href="#section-3.4-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-c-f-w"></span><table class="left" id="table-4">
           <caption>
 <a href="#table-4" class="selfRef">Table 4</a>:
@@ -1362,16 +1363,16 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
           </caption>
 <thead>
             <tr>
-              <th class="text-left" rowspan="1" colspan="1">Content Format</th>
-              <th class="text-left" rowspan="1" colspan="1">Media Type</th>
+              <th class="text-left" rowspan="1" colspan="1">Content Type</th>
               <th class="text-left" rowspan="1" colspan="1">Content Coding</th>
+              <th class="text-left" rowspan="1" colspan="1">ID</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">64999</td>
               <td class="text-left" rowspan="1" colspan="1">application/senml+cbor</td>
               <td class="text-left" rowspan="1" colspan="1">inflate</td>
+              <td class="text-left" rowspan="1" colspan="1">64999</td>
             </tr>
           </tbody>
         </table>
@@ -1396,10 +1397,10 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <p id="section-5-1">Before assigning a new Content-Format in the FCFS space, the registrar <span class="bcp14">MUST</span> check that:<a href="#section-5-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-5-2">
 <li id="section-5-2.1">
-          <p id="section-5-2.1.1">The media type associated to the requested Content-Format is not associated to an already registered CoAP Content-Format;<a href="#section-5-2.1.1" class="pilcrow">¶</a></p>
+          <p id="section-5-2.1.1">The content type associated with the requested Content-Format is not associated with an already registered CoAP Content-Format;<a href="#section-5-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-5-2.2">
-          <p id="section-5-2.2.1">The media type associated to the requested Content-Format exists in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>, or its registration has been approved;<a href="#section-5-2.2.1" class="pilcrow">¶</a></p>
+          <p id="section-5-2.2.1">The media type associated with the requested Content-Format exists in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>, or its registration has been approved;<a href="#section-5-2.2.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-5-2.3">
           <p id="section-5-2.3.1">The optional parameter names exist in association with the media type, and any parameter values associated with such parameter names are as expected;<a href="#section-5-2.3.1" class="pilcrow">¶</a></p>
@@ -1408,7 +1409,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
           <p id="section-5-2.4.1">If a Content Coding is specified, it exists in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" <span>[<a href="#IANA.http-parameters" class="cite xref">IANA.http-parameters</a>]</span>.<a href="#section-5-2.4.1" class="pilcrow">¶</a></p>
 </li>
       </ol>
-<p id="section-5-3">The registrar <span class="bcp14">MAY</span> forward the registration of a CoAP Content-Format in the FCFS portion of the registry (i.e., one for a CoAP Content-Format in range 10000-64999) to one or more DEs of the registry for consultation.<a href="#section-5-3" class="pilcrow">¶</a></p>
+<p id="section-5-3">The registrar <span class="bcp14">MAY</span> forward the registration of a CoAP Content-Format in the FCFS portion of the registry (i.e., one for a CoAP Content-Format identifier in range 10000-64999) to one or more DEs of the registry for consultation.<a href="#section-5-3" class="pilcrow">¶</a></p>
 <p id="section-5-4">The registrar <span class="bcp14">MUST</span> forward the registration to one or more DEs of the registry when such registration involves any media type parameters.<a href="#section-5-4" class="pilcrow">¶</a></p>
 <p id="section-5-5">If the request is forwarded to the DE, their judgement is binding.<a href="#section-5-5" class="pilcrow">¶</a></p>
 </section>
@@ -1445,6 +1446,10 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
+<dt id="Err4954">[Err4954]</dt>
+        <dd>
+<span class="refTitle">RFC Errata Report 4954</span>, <span class="seriesInfo">RFC 7252</span>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid4954">https://www.rfc-editor.org/errata/eid4954</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="IANA.core-parameters">[IANA.core-parameters]</dt>
         <dd>
 <span class="refAuthor">IANA</span>, <span class="refTitle">"Constrained RESTful Environments (CoRE) Parameters"</span>, <span>&lt;<a href="https://www.iana.org/assignments/core-parameters">https://www.iana.org/assignments/core-parameters</a>&gt;</span>. </dd>
