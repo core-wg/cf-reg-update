@@ -4,9 +4,9 @@
 
 Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
-Updates: 7252 (if approved)                             11 November 2024
-Intended status: Standards Track                                        
-Expires: 15 May 2025
+Updates: 7252 (if approved)                                      E. Dijk
+Intended status: Standards Track                       IoTconsultancy.nl
+Expires: 15 May 2025                                    11 November 2024
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -81,7 +81,7 @@ Table of Contents
    6.  References
      6.1.  Normative References
      6.2.  Informative References
-   Author's Address
+   Authors' Addresses
 
 1.  Introduction
 
@@ -260,8 +260,13 @@ Table of Contents
               RFC 9193, DOI 10.17487/RFC9193, June 2022,
               <https://www.rfc-editor.org/rfc/rfc9193>.
 
-Author's Address
+Authors' Addresses
 
    Thomas Fossati
    Linaro
    Email: thomas.fossati@linaro.org
+
+
+   Esko Dijk
+   IoTconsultancy.nl
+   Email: esko.dijk@iotconsultancy.nl
