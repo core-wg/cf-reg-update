@@ -30,6 +30,9 @@ author:
  - fullname: Thomas Fossati
    organization: Linaro
    email: thomas.fossati@linaro.org
+ - fullname: Esko Dijk
+   organization: IoTconsultancy.nl
+   email: esko.dijk@iotconsultancy.nl
 
 normative:
   RFC7252: coap
