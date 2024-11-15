@@ -1,0 +1,272 @@
+
+
+
+
+Constrained RESTful Environments                              T. Fossati
+Internet-Draft                                                    Linaro
+Updates: 7252 (if approved)                                      E. Dijk
+Intended status: Standards Track                       IoTconsultancy.nl
+Expires: 19 May 2025                                    15 November 2024
+
+
+    Update to the IANA CoAP Content-Formats Registration Procedures
+                draft-fossati-core-cf-reg-update-latest
+
+Abstract
+
+   This document updates the registration procedures for the "CoAP
+   Content-Formats" registry, within the "CoRE Parameters" registry
+   group, defined in Section 12.3 of RFC7252.  Specifically, those
+   regarding the First Come First Served (FCFS) portion of the registry.
+
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at https://thomas-
+   fossati.github.io/draft-cf-reg-update/draft-fossati-core-cf-reg-
+   update.html.  Status information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-fossati-core-cf-reg-update/.
+
+   Discussion of this document takes place on the Constrained RESTful
+   Environments Working Group mailing list (mailto:core@ietf.org), which
+   is archived at https://mailarchive.ietf.org/arch/browse/core/.
+   Subscribe at https://www.ietf.org/mailman/listinfo/core/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/thomas-fossati/draft-cf-reg-update.
+
+Status of This Memo
+
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
+
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
+
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 19 May 2025.
+
+Copyright Notice
+
+   Copyright (c) 2024 IETF Trust and the persons identified as the
+   document authors.  All rights reserved.
+
+   This document is subject to BCP 78 and the IETF Trust's Legal
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.  Code Components
+   extracted from this document must include Revised BSD License text as
+   described in Section 4.e of the Trust Legal Provisions and are
+   provided without warranty as described in the Revised BSD License.
+
+Table of Contents
+
+   1.  Introduction
+   2.  Conventions and Definitions
+   3.  (Bad) Examples
+     3.1.  The Media Type is Unknown
+     3.2.  The Media Type Parameter is Unknown
+     3.3.  The Media Type Parameter Value is Invalid
+     3.4.  The Content Coding is Unknown
+   4.  Security Considerations
+   5.  IANA Considerations
+   6.  References
+     6.1.  Normative References
+     6.2.  Informative References
+   Authors' Addresses
+
+1.  Introduction
+
+   Section 12.3 of [RFC7252] describes the registration procedures for
+   the "CoAP Content-Formats" registry within the "CoRE Parameters"
+   registry group [IANA.core-parameters].  (Note that the columns of
+   this registry have been revised according to [Err4954].)  In
+   particular, the text defines the rules for obtaining CoAP Content-
+   Format identifiers from the First Come First Served (FCFS) portion of
+   the registry (10000-64999).  These rules do not involve the
+   Designated Expert (DE) and are managed solely by IANA personnel to
+   finalize the registration.  Unfortunately, the instructions do not
+   explicitly require checking that the combination of content-type
+   (i.e., media type with optional parameters) and content coding
+   associated with the requested CoAP Content-Format is semantically
+   valid.  This task is generally non-trivial, requiring knowledge from
+   multiple documents and technologies, which is unfair to demand solely
+   from the registrar.  This lack of guidance may engender confusion in
+   both the registering party and the registrar, and could eventually
+   lead to erroneous registrations.
+
+   Section 5 of this memo updates the registration procedures for the
+   "CoAP Content-Formats" registry regarding its FCFS portion to reduce
+   the risk of accidental or malicious errors.
+
+2.  Conventions and Definitions
+
+   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+   "OPTIONAL" in this document are to be interpreted as described in
+   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   capitals, as shown here.
+
+   This document uses the terms "media type", "content coding",
+   "content-type" and "content format" as defined in Section 2 of
+   [RFC9193].
+
+3.  (Bad) Examples
+
+   This section contains a few examples of registration requests for a
+   CoAP Content-Format with identifier in the FCFS space (64999) that
+   should not be allowed to succeed.
+
+3.1.  The Media Type is Unknown
+
+   The registrant requests an FCFS C-F ID for an unknown media type:
+
+   +==========================+================+=======+
+   | Content Type             | Content Coding | ID    |
+   +==========================+================+=======+
+   | application/unknown+cbor | -              | 64999 |
+   +--------------------------+----------------+-------+
+
+         Table 1: Attempt at Registering C-F for an
+                     Unknown Media Type
+
+3.2.  The Media Type Parameter is Unknown
+
+   The registrant requests an FCFS C-F ID for an existing media type
+   with an unknown parameter:
+
+   +=======================================+================+=======+
+   | Content Type                          | Content Coding | ID    |
+   +=======================================+================+=======+
+   | application/cose; unknown-parameter=1 | -              | 64999 |
+   +---------------------------------------+----------------+-------+
+
+        Table 2: Attempt at Registering C-F for Media Type with
+                           Unknown Parameter
+
+3.3.  The Media Type Parameter Value is Invalid
+
+   The registrant requests an FCFS C-F ID for an existing media type
+   with an invalid parameter value:
+
+   +=====================================+================+=======+
+   | Content Type                        | Content Coding | ID    |
+   +=====================================+================+=======+
+   | application/cose; cose-type=invalid | -              | 64999 |
+   +-------------------------------------+----------------+-------+
+
+       Table 3: Attempt at Registering C-F for Media Type with
+                       Invalid Parameter Value
+
+3.4.  The Content Coding is Unknown
+
+   The registrant requests an FCFS C-F ID for an existing media type
+   with an unknown content coding, "inflate":
+
+   +========================+================+=======+
+   | Content Type           | Content Coding | ID    |
+   +========================+================+=======+
+   | application/senml+cbor | inflate        | 64999 |
+   +------------------------+----------------+-------+
+
+         Table 4: Attempt at Registering C-F with
+                  Unknown Content Coding
+
+4.  Security Considerations
+
+   This memo hardens the registration procedures of CoAP Content-Formats
+   in ways that reduce the chances of malicious manipulation of the
+   associated registry.
+
+   Other than that, it does not change the Security Considerations of
+   [RFC7252].
+
+5.  IANA Considerations
+
+   Before assigning a new Content-Format in the FCFS space, the
+   registrar MUST check that:
+
+   1.  The content-type associated with the requested Content-Format is
+       not associated with an already registered CoAP Content-Format;
+
+   2.  The media type associated with the requested Content-Format
+       exists in the "Media Types" registry [IANA.media-types], or its
+       registration has been approved;
+
+   3.  The optional parameter names exist in association with the media
+       type, and any parameter values associated with such parameter
+       names are as expected;
+
+   4.  If a Content Coding is specified, it exists in the "HTTP Content
+       Coding Registry" of the "Hypertext Transfer Protocol (HTTP)
+       Parameters" [IANA.http-parameters].
+
+   The registrar MAY forward the registration of a CoAP Content-Format
+   in the FCFS portion of the registry (i.e., one for a CoAP Content-
+   Format identifier in range 10000-64999) to one or more DEs of the
+   registry for consultation.
+
+   The registrar MUST forward the registration to one or more DEs of the
+   registry when such registration involves any media type parameters.
+
+   If the request is forwarded to the DE, their judgement is binding.
+
+6.  References
+
+6.1.  Normative References
+
+   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <https://www.rfc-editor.org/rfc/rfc2119>.
+
+   [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
+              Application Protocol (CoAP)", RFC 7252,
+              DOI 10.17487/RFC7252, June 2014,
+              <https://www.rfc-editor.org/rfc/rfc7252>.
+
+   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
+
+6.2.  Informative References
+
+   [Err4954]  RFC Errata Report 4954, RFC 7252,
+              <https://www.rfc-editor.org/errata/eid4954>.
+
+   [IANA.core-parameters]
+              IANA, "Constrained RESTful Environments (CoRE)
+              Parameters",
+              <https://www.iana.org/assignments/core-parameters>.
+
+   [IANA.http-parameters]
+              IANA, "Hypertext Transfer Protocol (HTTP) Parameters",
+              <https://www.iana.org/assignments/http-parameters>.
+
+   [IANA.media-types]
+              IANA, "Media Types",
+              <https://www.iana.org/assignments/media-types>.
+
+   [RFC9193]  Keränen, A. and C. Bormann, "Sensor Measurement Lists
+              (SenML) Fields for Indicating Data Value Content-Format",
+              RFC 9193, DOI 10.17487/RFC9193, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9193>.
+
+Authors' Addresses
+
+   Thomas Fossati
+   Linaro
+   Email: thomas.fossati@linaro.org
+
+
+   Esko Dijk
+   IoTconsultancy.nl
+   Email: esko.dijk@iotconsultancy.nl
