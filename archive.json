@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-14T00:34:17.497492+00:00",
+  "timestamp": "2024-11-17T00:39:00.376896+00:00",
   "repo": "thomas-fossati/draft-cf-reg-update",
   "labels": [
     {
@@ -49,6 +49,52 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
-  "pulls": []
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDONM5XRM6eoxLa",
+      "title": "IANA terminology",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/1",
+      "state": "OPEN",
+      "author": "cabo",
+      "authorAssociation": "NONE",
+      "assignees": [
+        "thomas-fossati"
+      ],
+      "labels": [],
+      "body": "Please see\r\nhttps://www.iana.org/help/protocol-registration\r\n\r\ne.g.:\r\n\r\n> Registry vs. subregistry\r\n> You should almost always use the term \"registry\" to refer to a table or collection of assignments made for a common identifier type. The term \"subregistry\" should be reserved for registries that are nested within specific registrations. For example, at https://www.iana.org/assignments/isis-tlv-codepoints, \"IS-IS Sub-TLVs for Reverse Metric TLV\" is a subregistry for value 16 (\"Reverse Metric\") in the \"IS-IS Top-Level TLV Codepoints\" registry.\r\n> \r\n> Registry group\r\n> A set of registries presented as a single document through a common URL (i.e. https://iana.org/assignments/*) is called a \"registry group.\" A group consists of one or more registries. Registries are typically grouped when they are thematically related, such as when implementers are likely to use the different identifier types for a common protocol.\r\n> \r\n> In the past, these groups have been called \"top-level registries\" or \"registries\" (which we have now settled on as the descriptor for a discrete set of registrations, as above). [RFC 8126](https://www.iana.org/go/rfc8126) uses the term \"registry grouping,\" but the RFC Editor recommended the more flexible \"group.\"",
+      "createdAt": "2024-11-15T10:02:03Z",
+      "updatedAt": "2024-11-15T12:14:27Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 2,
+      "id": "PR_kwDONM5XRM6CCicg",
+      "title": "fix: s/registry/registry group/g ; s/sub-registry/registry/g",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/pull/2",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #1 \r\n\r\ncc @cabo",
+      "createdAt": "2024-11-15T12:13:43Z",
+      "updatedAt": "2024-11-15T12:13:43Z",
+      "baseRepository": "thomas-fossati/draft-cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "31fba2111a345c00979592a9e96b597131ce3497",
+      "headRepository": "thomas-fossati/draft-cf-reg-update",
+      "headRefName": "iana-terminology",
+      "headRefOid": "71f4a9c1dd16176117b16263cdc38707f1dd03a2",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
