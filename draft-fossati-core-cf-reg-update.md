@@ -43,22 +43,22 @@ informative:
 
 --- abstract
 
-This document updates the registration procedures for the "CoAP Content-Formats" sub-registry, within the "CoRE Parameters" registry, defined in Section 12.3 of RFC7252.
-Specifically, those regarding the First Come First Served (FCFS) portion of the sub-registry.
+This document updates the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group, defined in Section 12.3 of RFC7252.
+Specifically, those regarding the First Come First Served (FCFS) portion of the registry.
 
 --- middle
 
 # Introduction
 
-{{Section 12.3 of -coap}} describes the registration procedures for the "CoAP Content-Formats" sub-registry within the "CoRE Parameters" registry {{?IANA.core-parameters}}.
+{{Section 12.3 of -coap}} describes the registration procedures for the "CoAP Content-Formats" registry within the "CoRE Parameters" registry group {{?IANA.core-parameters}}.
 (Note that the columns of this registry have been revised according to {{Err4954}}.)
-In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the First Come First Served (FCFS) portion of the sub-registry (10000-64999).
+In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the First Come First Served (FCFS) portion of the registry (10000-64999).
 These rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
 Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
 This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is unfair to demand solely from the registrar.
 This lack of guidance may engender confusion in both the registering party and the registrar, and could eventually lead to erroneous registrations.
 
-{{iana}} of this memo updates the registration procedures for the "CoAP Content-Formats" sub-registry regarding its FCFS portion to reduce the risk of accidental or malicious errors.
+{{iana}} of this memo updates the registration procedures for the "CoAP Content-Formats" registry regarding its FCFS portion to reduce the risk of accidental or malicious errors.
 
 # Conventions and Definitions
 
