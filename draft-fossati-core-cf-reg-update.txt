@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 23 May 2025                                    19 November 2024
+Expires: 24 May 2025                                    20 November 2024
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 May 2025.
+   This Internet-Draft will expire on 24 May 2025.
 
 Copyright Notice
 
@@ -81,6 +81,7 @@ Table of Contents
    6.  References
      6.1.  Normative References
      6.2.  Informative References
+   Acknowledgments
    Authors' Addresses
 
 1.  Introduction
@@ -191,33 +192,50 @@ Table of Contents
 
 5.  IANA Considerations
 
-   Before assigning a new Content-Format in the FCFS space, the
-   registrar MUST check that:
+   The CoAP Content-Formats registration procedures defined in
+   Section 12.3 of [RFC7252] are updated as follows:
 
-   1.  The content-type associated with the requested Content-Format is
-       not associated with an already registered CoAP Content-Format;
+          +=============+=======================================+
+          | Range       | Registration Procedures               |
+          +=============+=======================================+
+          | 0-255       | Expert Review (Full)                  |
+          +-------------+---------------------------------------+
+          | 256-9999    | IETF Review or IESG Approval          |
+          +-------------+---------------------------------------+
+          | 10000-64999 | Expert Review (Expert Check: FCFS+)   |
+          +-------------+---------------------------------------+
+          | 65000-65535 | Experimental use (no operational use) |
+          +-------------+---------------------------------------+
 
-   2.  The media type associated with the requested Content-Format
-       exists in the "Media Types" registry [IANA.media-types], or its
-       registration has been approved;
+             Table 5: Updated CoAP Content-Formats Registration
+                                 Procedures
 
-   3.  The optional parameter names exist in association with the media
-       type, and any parameter values associated with such parameter
-       names are as expected;
+   The DE checks consist of the following steps:
 
-   4.  If a Content Coding is specified, it exists in the "HTTP Content
-       Coding Registry" of the "Hypertext Transfer Protocol (HTTP)
-       Parameters" [IANA.http-parameters].
+   1.  The content-type associated with the requested Content-Format
+       must be associated with an already registered CoAP Content-
+       Format;
 
-   The registrar MAY forward the registration of a CoAP Content-Format
-   in the FCFS portion of the registry (i.e., one for a CoAP Content-
-   Format identifier in range 10000-64999) to one or more DEs of the
-   registry for consultation.
+   2.  The media type associated with the requested Content-Format must
+       exist in the "Media Types" registry [IANA.media-types], or IANA
+       has approved its registration;
 
-   The registrar MUST forward the registration to one or more DEs of the
-   registry when such registration involves any media type parameters.
+   3.  The optional parameter names must exist in association with the
+       media type, and any parameter values associated with such
+       parameter names are as expected;
 
-   If the request is forwarded to the DE, their judgement is binding.
+   4.  If a Content Coding is specified, it must exist in the "HTTP
+       Content Coding Registry" of the "Hypertext Transfer Protocol
+       (HTTP) Parameters" [IANA.http-parameters], or IANA has approved
+       its registration.
+
+   The registration procedure for the 0-255 range has been slightly
+   modified -- from "Expert Review" to "Expert Review (Full)" -- to
+   clearly distinguish it from the new "Expert Review (Expert Check:
+   FCFS+)" policy that applies to the 10000-64999 range.  For the 0-255
+   range, the DE must also evaluate the requested codepoint in relation
+   to the limited availability of the 1-byte codepoint space.  For the
+   10000-64999 range, this critierion does not apply.
 
 6.  References
 
@@ -259,6 +277,11 @@ Table of Contents
               (SenML) Fields for Indicating Data Value Content-Format",
               RFC 9193, DOI 10.17487/RFC9193, June 2022,
               <https://www.rfc-editor.org/rfc/rfc9193>.
+
+Acknowledgments
+
+   Thank you Carsten Bormann, Francesca Palombini and Marco Tiloca for
+   your reviews and comments.
 
 Authors' Addresses
 
