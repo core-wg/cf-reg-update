@@ -126,14 +126,14 @@ The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -c
 
 The DE checks consist of the following steps:
 
-1. The content-type associated with the requested Content-Format must be associated with an already registered CoAP Content-Format;
+1. The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;
 1. The media type associated with the requested Content-Format must exist in the "Media Types" registry {{?IANA.media-types}}, or IANA has approved its registration;
 1. The optional parameter names must exist in association with the media type, and any parameter values associated with such parameter names are as expected;
 1. If a Content Coding is specified, it must exist in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" {{?IANA.http-parameters}}, or IANA has approved its registration.
 
 The registration procedure for the 0-255 range has been slightly modified -- from "Expert Review" to "Expert Review (Full)" -- to clearly distinguish it from the new "Expert Review (Expert Check: FCFS+)" policy that applies to the 10000-64999 range.
-For the 0-255 range, the DE must also evaluate the requested codepoint in relation to the limited availability of the 1-byte codepoint space.
-For the 10000-64999 range, this critierion does not apply.
+For the 0-255 range, the DE must also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
+For the 10000-64999 range, this criterion does not apply.
 
 --- back
 
