@@ -1,6 +1,6 @@
 ---
 title: "Update to the IANA CoAP Content-Formats Registration Procedures"
-abbrev: "CoAP C-F Registrations Update"
+abbrev: "CoAP Content-Format Registrations Update"
 category: std
 
 docname: draft-fossati-core-cf-reg-update-latest
@@ -72,39 +72,39 @@ This section contains a few examples of registration requests for a CoAP Content
 
 ## The Media Type is Unknown {#ex-unknown-mt}
 
-The registrant requests an FCFS C-F ID for an unknown media type:
+The registrant requests an FCFS Content-Format ID for an unknown media type:
 
 | Content Type | Content Coding | ID |
 |--|--|--|
 | application/unknown+cbor | - | 64999 |
-{: align="left" title="Attempt at Registering C-F for an Unknown Media Type"}
+{: align="left" title="Attempt at Registering Content-Format for an Unknown Media Type"}
 
 ## The Media Type Parameter is Unknown
 
-The registrant requests an FCFS C-F ID for an existing media type with an unknown parameter:
+The registrant requests an FCFS Content-Format ID for an existing media type with an unknown parameter:
 
 | Content Type | Content Coding | ID |
 |--|--|--|
 | application/cose; unknown-parameter=1 | - | 64999 |
-{: align="left" title="Attempt at Registering C-F for Media Type with Unknown Parameter"}
+{: align="left" title="Attempt at Registering Content-Format for Media Type with Unknown Parameter"}
 
 ## The Media Type Parameter Value is Invalid
 
-The registrant requests an FCFS C-F ID for an existing media type with an invalid parameter value:
+The registrant requests an FCFS Content-Format ID for an existing media type with an invalid parameter value:
 
 | Content Type | Content Coding | ID |
 |--|--|--|
 | application/cose; cose-type=invalid | - | 64999 |
-{: align="left" title="Attempt at Registering C-F for Media Type with Invalid Parameter Value"}
+{: align="left" title="Attempt at Registering Content-Format for Media Type with Invalid Parameter Value"}
 
 ## The Content Coding is Unknown
 
-The registrant requests an FCFS C-F ID for an existing media type with an unknown content coding, "inflate":
+The registrant requests an FCFS Content-Format ID for an existing media type with an unknown content coding, "inflate":
 
 | Content Type | Content Coding | ID |
 |--|--|--|
 | application/senml+cbor | inflate | 64999 |
-{: align="left" title="Attempt at Registering C-F with Unknown Content Coding"}
+{: align="left" title="Attempt at Registering Content-Format with Unknown Content Coding"}
 
 # Security Considerations
 
