@@ -124,7 +124,7 @@ The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -c
 | 65000-65535 | Experimental use (no operational use) |
 {: #tbl-new-cf-proc title="Updated CoAP Content-Formats Registration Procedures"}
 
-Where the "FCFS+" expert check comprises the following steps:
+The DE checks consist of the following steps:
 
 1. The content-type associated with the requested Content-Format must be associated with an already registered CoAP Content-Format;
 1. The media type associated with the requested Content-Format must exist in the "Media Types" registry {{?IANA.media-types}}, or IANA has approved its registration;
