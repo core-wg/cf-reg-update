@@ -210,7 +210,7 @@ Table of Contents
              Table 5: Updated CoAP Content-Formats Registration
                                  Procedures
 
-   Where the "FCFS+" expert check comprises the following steps:
+   The DE checks consist of the following steps:
 
    1.  The content-type associated with the requested Content-Format
        must be associated with an already registered CoAP Content-
