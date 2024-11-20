@@ -114,17 +114,35 @@ Other than that, it does not change the Security Considerations of {{-coap}}.
 
 # IANA Considerations {#iana}
 
-Before assigning a new Content-Format in the FCFS space, the registrar MUST check that:
+The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -coap}} are updated as follows:
 
-1. The content-type associated with the requested Content-Format is not associated with an already registered CoAP Content-Format;
-1. The media type associated with the requested Content-Format exists in the "Media Types" registry {{?IANA.media-types}}, or its registration has been approved;
-1. The optional parameter names exist in association with the media type, and any parameter values associated with such parameter names are as expected;
-1. If a Content Coding is specified, it exists in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" {{?IANA.http-parameters}}.
+| Range | Registration Procedures |
+|--------|--------|
+| 0-255 | Expert Review (Full) |
+| 256-9999 | IETF Review or IESG Approval |
+| 10000-64999 | Expert Review (Expert Check: FCFS+) |
+| 65000-65535 | Experimental use (no operational use) |
+{: #tbl-new-cf-proc title="Updated CoAP Content-Formats Registration Procedures"}
 
-The registrar MAY forward the registration of a CoAP Content-Format in the FCFS portion of the registry (i.e., one for a CoAP Content-Format identifier in range 10000-64999) to one or more DEs of the registry for consultation.
+The DE checks consist of the following steps:
 
-The registrar MUST forward the registration to one or more DEs of the registry when such registration involves any media type parameters.
+1. The content-type associated with the requested Content-Format must be associated with an already registered CoAP Content-Format;
+1. The media type associated with the requested Content-Format must exist in the "Media Types" registry {{?IANA.media-types}}, or IANA has approved its registration;
+1. The optional parameter names must exist in association with the media type, and any parameter values associated with such parameter names are as expected;
+1. If a Content Coding is specified, it must exist in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" {{?IANA.http-parameters}}, or IANA has approved its registration.
 
-If the request is forwarded to the DE, their judgement is binding.
+The registration procedure for the 0-255 range has been slightly modified -- from "Expert Review" to "Expert Review (Full)" -- to clearly distinguish it from the new "Expert Review (Expert Check: FCFS+)" policy that applies to the 10000-64999 range.
+For the 0-255 range, the DE must also evaluate the requested codepoint in relation to the limited availability of the 1-byte codepoint space.
+For the 10000-64999 range, this critierion does not apply.
 
 --- back
+
+# Acknowledgments
+{:numbered="false"}
+
+Thank you
+Carsten Bormann,
+Francesca Palombini
+and
+Marco Tiloca
+for your reviews and comments.
