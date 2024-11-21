@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-19T00:36:37.987161+00:00",
+  "timestamp": "2024-11-21T00:36:03.716582+00:00",
   "repo": "thomas-fossati/draft-cf-reg-update",
   "labels": [
     {
@@ -55,7 +55,7 @@
       "id": "I_kwDONM5XRM6eoxLa",
       "title": "IANA terminology",
       "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/1",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "cabo",
       "authorAssociation": "NONE",
       "assignees": [
@@ -64,7 +64,119 @@
       "labels": [],
       "body": "Please see\r\nhttps://www.iana.org/help/protocol-registration\r\n\r\ne.g.:\r\n\r\n> Registry vs. subregistry\r\n> You should almost always use the term \"registry\" to refer to a table or collection of assignments made for a common identifier type. The term \"subregistry\" should be reserved for registries that are nested within specific registrations. For example, at https://www.iana.org/assignments/isis-tlv-codepoints, \"IS-IS Sub-TLVs for Reverse Metric TLV\" is a subregistry for value 16 (\"Reverse Metric\") in the \"IS-IS Top-Level TLV Codepoints\" registry.\r\n> \r\n> Registry group\r\n> A set of registries presented as a single document through a common URL (i.e. https://iana.org/assignments/*) is called a \"registry group.\" A group consists of one or more registries. Registries are typically grouped when they are thematically related, such as when implementers are likely to use the different identifier types for a common protocol.\r\n> \r\n> In the past, these groups have been called \"top-level registries\" or \"registries\" (which we have now settled on as the descriptor for a discrete set of registrations, as above). [RFC 8126](https://www.iana.org/go/rfc8126) uses the term \"registry grouping,\" but the RFC Editor recommended the more flexible \"group.\"",
       "createdAt": "2024-11-15T10:02:03Z",
-      "updatedAt": "2024-11-15T12:14:27Z",
+      "updatedAt": "2024-11-19T12:30:27Z",
+      "closedAt": "2024-11-19T12:30:27Z",
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "I_kwDONM5XRM6fR_nh",
+      "title": "Expert review is incompatible with FCFS",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/3",
+      "state": "CLOSED",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "@fpalombini's review:\r\n\r\nI have reviewed it and I have one major comment, and I am pretty sure IANA will also complain if they get this as is: it is not ok to add criteria for IANA to check on a FCFS space. As https://datatracker.ietf.org/doc/html/rfc8126#section-4.4 says:\r\n \r\n    It is also important to understand that First Come First Served\r\n    really has no filtering.  Essentially, any well-formed request is\r\n    accepted.\r\n \r\nWhat you are implicitly doing is re-defining a policy that is in practice Expert Review. So my suggestion is to change that range from FCFS to expert review, and specify that these criteria apply for an approval by the DE in that range (the criteria are different from the 0-255 range).",
+      "createdAt": "2024-11-19T14:03:15Z",
+      "updatedAt": "2024-11-20T11:02:30Z",
+      "closedAt": "2024-11-20T11:02:30Z",
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "body": "@cabo comment:\r\n\r\nJust making that change makes large ranges look the same, even if parts of them have much stronger review requirements (and, unfortunately, processing times) than others.\r\n\r\nWe should have a pair of terms like \u201cexpert quick review\u201d and \u201cdeep expert review\u201d to distinguish these with high visibility to the registrants.\r\n",
+          "createdAt": "2024-11-19T14:16:59Z",
+          "updatedAt": "2024-11-19T14:16:59Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "body": "> We should have a pair of terms like \u201cexpert quick review\u201d and \u201cdeep expert review\u201d to distinguish these with high visibility to the registrants.\r\n\r\n@cabo, is this what you mean?\r\n\r\nOLD:\r\n\r\n| Range | Registration Procedures |\r\n|--------|--------|\r\n| 0-255\t| Expert Review |\r\n| 256-9999 | IETF Review or IESG Approval |\r\n| 10000-64999 | First Come First Served |\r\n| 65000-65535 | Experimental use (no operational use) |\r\n\r\nNEW:\r\n\r\n| Range | Registration Procedures |\r\n|--------|--------|\r\n| 0-255\t| Expert Review |\r\n| 256-9999 | IETF Review or IESG Approval |\r\n| 10000-64999 | _**Lightweight**_ Expert Review |\r\n| 65000-65535 | Experimental use (no operational use) |\r\n\r\n",
+          "createdAt": "2024-11-19T20:10:31Z",
+          "updatedAt": "2024-11-19T20:13:43Z"
+        },
+        {
+          "author": "cabo",
+          "authorAssociation": "NONE",
+          "body": "On 2024-11-19, at 21:10, Thomas Fossati ***@***.***> wrote:\r\n> \r\n> Lightweight Expert Review\r\n\r\nYes.  How about \r\n\r\nExpert Review (Expert Check: FCFS+)\r\n\r\n\"Expert Review\" points to Section 4.5 of 8126, so it is the official statement that IANA follows, and the parenthesis explains some more what procedure the expert follows.\r\n\r\nThe complement could be:\r\n\r\nExpert Review (Full)\r\n\r\nGr\u00fc\u00dfe, Carsten\r\n\r\n",
+          "createdAt": "2024-11-19T20:56:25Z",
+          "updatedAt": "2024-11-19T20:56:25Z"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "id": "I_kwDONM5XRM6fSAy6",
+      "title": "notify IANAbis and ask review from IANA",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/4",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Note from @fpalombini:\r\n\r\n* [ ] I think it is worth sending the doc to that wg [IANAbis] when it gets towards the latest stages.\r\n* [ ] It is also worth asking for an early review from IANA.\r\n",
+      "createdAt": "2024-11-19T14:05:14Z",
+      "updatedAt": "2024-11-19T14:05:14Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 6,
+      "id": "I_kwDONM5XRM6feTmd",
+      "title": "C-F acronym is not defined?",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/6",
+      "state": "CLOSED",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Should define it in the terminology section, I think.",
+      "createdAt": "2024-11-20T11:23:41Z",
+      "updatedAt": "2024-11-20T15:13:40Z",
+      "closedAt": "2024-11-20T15:13:40Z",
+      "comments": []
+    },
+    {
+      "number": 7,
+      "id": "I_kwDONM5XRM6fejpM",
+      "title": "DE check 1 is unclear",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/7",
+      "state": "CLOSED",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "thomas-fossati"
+      ],
+      "labels": [],
+      "body": "We have the current text:\r\n\r\n> 1. The content-type associated with the requested Content-Format must be associated with an already registered CoAP Content-Format;\r\n\r\nWhat is intended with this?  The content-type entry must refer to an already-registered media type? \r\n(This is also in 2.)",
+      "createdAt": "2024-11-20T11:34:12Z",
+      "updatedAt": "2024-11-20T15:13:26Z",
+      "closedAt": "2024-11-20T15:13:26Z",
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "body": "> We have the current text:\r\n> \r\n> > 1. The content-type associated with the requested Content-Format must be associated with an already registered CoAP Content-Format;\r\n> \r\n> What is intended with this? The content-type entry must refer to an already-registered media type? (This is also in 2.)\r\n\r\nGood catch!  It's a typo (missing \"not\" && missing \"and content coding\").  It should say:\r\n\r\n> _\"The combination of content-type and content coding for which the registration is requested must not be already present in the registry;\"_\r\n",
+          "createdAt": "2024-11-20T12:42:31Z",
+          "updatedAt": "2024-11-20T12:42:31Z"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "id": "I_kwDONM5XRM6fh4ok",
+      "title": "Define FCFS+ and Expert Check",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/10",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "> _Right now, there isn't really text that introduces and explains FCFS+ or \"Expert Check\"._\r\n\r\n_Originally posted by @cabo in https://github.com/thomas-fossati/draft-cf-reg-update/issues/5#issuecomment-2489031775_\r\n            ",
+      "createdAt": "2024-11-20T16:36:18Z",
+      "updatedAt": "2024-11-20T16:36:36Z",
       "closedAt": null,
       "comments": []
     }
@@ -75,20 +187,216 @@
       "id": "PR_kwDONM5XRM6CCicg",
       "title": "fix: s/registry/registry group/g ; s/sub-registry/registry/g",
       "url": "https://github.com/thomas-fossati/draft-cf-reg-update/pull/2",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Fix #1 \r\n\r\ncc @cabo",
       "createdAt": "2024-11-15T12:13:43Z",
-      "updatedAt": "2024-11-15T12:13:43Z",
+      "updatedAt": "2024-11-19T12:30:29Z",
       "baseRepository": "thomas-fossati/draft-cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "31fba2111a345c00979592a9e96b597131ce3497",
       "headRepository": "thomas-fossati/draft-cf-reg-update",
       "headRefName": "iana-terminology",
       "headRefOid": "71f4a9c1dd16176117b16263cdc38707f1dd03a2",
+      "closedAt": "2024-11-19T12:30:26Z",
+      "mergedAt": "2024-11-19T12:30:25Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "7feca200efe76adcd0a02dd8a535631bd321fa6a"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6RvtaZ",
+          "commit": {
+            "abbreviatedOid": "71f4a9c"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-11-19T11:45:58Z",
+          "updatedAt": "2024-11-19T11:45:58Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "id": "PR_kwDONM5XRM6CdzsD",
+      "title": "FCFS+",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/pull/5",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #3 \r\n\r\ncc @cabo\r\ncc @fpalombini",
+      "createdAt": "2024-11-20T03:09:46Z",
+      "updatedAt": "2024-11-20T16:22:14Z",
+      "baseRepository": "thomas-fossati/draft-cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "7feca200efe76adcd0a02dd8a535631bd321fa6a",
+      "headRepository": "thomas-fossati/draft-cf-reg-update",
+      "headRefName": "fcfs+",
+      "headRefOid": "fdff0f05170190f04f4222f5cc0433eb51ea1dfc",
+      "closedAt": "2024-11-20T11:02:29Z",
+      "mergedAt": "2024-11-20T11:02:29Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "f153057cc7435401c8eb3bc4b54d7c5988394ff6"
+      },
+      "comments": [
+        {
+          "author": "cabo",
+          "authorAssociation": "NONE",
+          "body": "Right now, there isn't really text that introduces and explains FCFS+ or \"Expert Check\".\r\n",
+          "createdAt": "2024-11-20T16:22:12Z",
+          "updatedAt": "2024-11-20T16:22:12Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6R3i4t",
+          "commit": {
+            "abbreviatedOid": "d208560"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-11-20T03:16:51Z",
+          "updatedAt": "2024-11-20T03:16:52Z",
+          "comments": [
+            {
+              "originalPosition": 20,
+              "body": "```suggestion\r\nThe DE checks consist of the following steps:\r\n```",
+              "createdAt": "2024-11-20T03:16:52Z",
+              "updatedAt": "2024-11-20T03:16:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6R7YOk",
+          "commit": {
+            "abbreviatedOid": "fdff0f0"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Agree, based on what FCFS entails, going for this lightweight expert review seems the only viable option.",
+          "createdAt": "2024-11-20T10:54:12Z",
+          "updatedAt": "2024-11-20T10:54:12Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "id": "PR_kwDONM5XRM6Chs1j",
+      "title": "fix: typo(s) in DE check 1",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/pull/8",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix typos and increase clarity in DE's check 1.\r\n\r\nFix #7",
+      "createdAt": "2024-11-20T12:44:12Z",
+      "updatedAt": "2024-11-20T15:13:29Z",
+      "baseRepository": "thomas-fossati/draft-cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "f153057cc7435401c8eb3bc4b54d7c5988394ff6",
+      "headRepository": "thomas-fossati/draft-cf-reg-update",
+      "headRefName": "de-check-1",
+      "headRefOid": "4a26e48a08458fa4016635d53eb67cb4fa8166c6",
+      "closedAt": "2024-11-20T15:13:25Z",
+      "mergedAt": "2024-11-20T15:13:25Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "cd0f52c9221b9498cc42b2676e1f904c46b684d7"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6R9ACD",
+          "commit": {
+            "abbreviatedOid": "4a26e48"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "thanks! clear now",
+          "createdAt": "2024-11-20T13:53:29Z",
+          "updatedAt": "2024-11-20T13:53:29Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "id": "PR_kwDONM5XRM6Chu6G",
+      "title": "fix: s/C-F/Content-Format/g",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/pull/9",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #6 ",
+      "createdAt": "2024-11-20T12:48:35Z",
+      "updatedAt": "2024-11-20T15:13:42Z",
+      "baseRepository": "thomas-fossati/draft-cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "f153057cc7435401c8eb3bc4b54d7c5988394ff6",
+      "headRepository": "thomas-fossati/draft-cf-reg-update",
+      "headRefName": "undefined-C-F",
+      "headRefOid": "24b6f64e4ad3f855581bd1daf3959794cb273d90",
+      "closedAt": "2024-11-20T15:13:39Z",
+      "mergedAt": "2024-11-20T15:13:39Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "d81da6e25be7f06c740cfce01e94695d4c759863"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6R8_CT",
+          "commit": {
+            "abbreviatedOid": "24b6f64"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-11-20T13:51:51Z",
+          "updatedAt": "2024-11-20T13:51:51Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "id": "PR_kwDONM5XRM6ClIFt",
+      "title": "define \"Expert Check: FCFS+\"",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/pull/11",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #10 ",
+      "createdAt": "2024-11-20T20:44:59Z",
+      "updatedAt": "2024-11-20T20:45:09Z",
+      "baseRepository": "thomas-fossati/draft-cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "d81da6e25be7f06c740cfce01e94695d4c759863",
+      "headRepository": "thomas-fossati/draft-cf-reg-update",
+      "headRefName": "def-fcfs+",
+      "headRefOid": "81de189a8821565edf0a694a189dfdf4a32f180e",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
