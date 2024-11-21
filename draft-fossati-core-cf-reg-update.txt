@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 24 May 2025                                    20 November 2024
+Expires: 25 May 2025                                    21 November 2024
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 May 2025.
+   This Internet-Draft will expire on 25 May 2025.
 
 Copyright Notice
 
@@ -78,6 +78,9 @@ Table of Contents
      3.4.  The Content Coding is Unknown
    4.  Security Considerations
    5.  IANA Considerations
+     5.1.  Expert Review with Expert Check "FCFS+"
+     5.2.  CoAP Content-Formats Registration Procedures Update
+       5.2.1.  FCFS+ Checks
    6.  References
      6.1.  Normative References
      6.2.  Informative References
@@ -193,8 +196,23 @@ Table of Contents
 
 5.  IANA Considerations
 
+5.1.  Expert Review with Expert Check "FCFS+"
+
+   This document introduces the term "Expert Review (Expert Check:
+   FCFS+)" to describe a registration policy that would typically have
+   been handled as FCFS, except the approval checklist is complex enough
+   to require advice from a DE.  Such policy can be viewed as a
+   "lightweight" form of the "full" Expert Review.
+
+   A protocol that requires "Expert Check: FCFS+" for registration of
+   its parameters MUST specify what the FCFS+ checks entail.
+
+5.2.  CoAP Content-Formats Registration Procedures Update
+
    The CoAP Content-Formats registration procedures defined in
-   Section 12.3 of [RFC7252] are updated as follows:
+   Section 12.3 of [RFC7252] are modified to transition the 10000-64999
+   range from FCFS to "Expert Review (Expert Check: FCFS+)", with the
+   FCFS+ checklist described in Section 5.2.1.
 
           +=============+=======================================+
           | Range       | Registration Procedures               |
@@ -211,7 +229,18 @@ Table of Contents
              Table 5: Updated CoAP Content-Formats Registration
                                  Procedures
 
-   The DE checks consist of the following steps:
+   The registration procedure for the 0-255 range has been slightly
+   modified -- from "Expert Review" to "Expert Review (Full)" -- to
+   clearly distinguish it from the policy that applies to the
+   10000-64999 range.  For the 0-255 range, the DE must also evaluate
+   the requested codepoint concerning the limited availability of the
+   1-byte codepoint space.  For the 10000-64999 range, this criterion
+   does not apply.
+
+5.2.1.  FCFS+ Checks
+
+   The "Expert Check: FCFS+" checklist for the CoAP Content-Formats
+   registry consist of the following steps:
 
    1.  The combination of content-type and content coding for which the
        registration is requested must not be already present in the
@@ -229,14 +258,6 @@ Table of Contents
        Content Coding Registry" of the "Hypertext Transfer Protocol
        (HTTP) Parameters" [IANA.http-parameters], or IANA has approved
        its registration.
-
-   The registration procedure for the 0-255 range has been slightly
-   modified -- from "Expert Review" to "Expert Review (Full)" -- to
-   clearly distinguish it from the new "Expert Review (Expert Check:
-   FCFS+)" policy that applies to the 10000-64999 range.  For the 0-255
-   range, the DE must also evaluate the requested codepoint concerning
-   the limited availability of the 1-byte codepoint space.  For the
-   10000-64999 range, this criterion does not apply.
 
 6.  References
 
