@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-21T00:36:03.716582+00:00",
+  "timestamp": "2024-11-24T00:39:16.825189+00:00",
   "repo": "thomas-fossati/draft-cf-reg-update",
   "labels": [
     {
@@ -169,15 +169,15 @@
       "id": "I_kwDONM5XRM6fh4ok",
       "title": "Define FCFS+ and Expert Check",
       "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/10",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "> _Right now, there isn't really text that introduces and explains FCFS+ or \"Expert Check\"._\r\n\r\n_Originally posted by @cabo in https://github.com/thomas-fossati/draft-cf-reg-update/issues/5#issuecomment-2489031775_\r\n            ",
       "createdAt": "2024-11-20T16:36:18Z",
-      "updatedAt": "2024-11-20T16:36:36Z",
-      "closedAt": null,
+      "updatedAt": "2024-11-21T09:38:26Z",
+      "closedAt": "2024-11-21T09:38:26Z",
       "comments": []
     }
   ],
@@ -383,26 +383,64 @@
       "id": "PR_kwDONM5XRM6ClIFt",
       "title": "define \"Expert Check: FCFS+\"",
       "url": "https://github.com/thomas-fossati/draft-cf-reg-update/pull/11",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Fix #10 ",
       "createdAt": "2024-11-20T20:44:59Z",
-      "updatedAt": "2024-11-20T20:45:09Z",
+      "updatedAt": "2024-11-21T10:11:56Z",
       "baseRepository": "thomas-fossati/draft-cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "d81da6e25be7f06c740cfce01e94695d4c759863",
       "headRepository": "thomas-fossati/draft-cf-reg-update",
       "headRefName": "def-fcfs+",
       "headRefOid": "81de189a8821565edf0a694a189dfdf4a32f180e",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "closedAt": "2024-11-21T09:38:25Z",
+      "mergedAt": "2024-11-21T09:38:25Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "d19b34317c6bc43c78e562b5f5ad62df4c137f4a"
+      },
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "body": "> Agree to add this. One remaining comment/question is that the current IANA registry policy description is more clear as it spells out \"First Come First Served\".\r\n\r\nTrue that.\r\n\r\nAs a side note, after writing everything down, I'm beginning to think that the difference between \"Expert Review (full)\" and \"Expert Review (Expert Check: FCFS+),\" as suggested by @cabo, may not be significant enough to warrant different terms.\r\n\r\nAll the checks would equally apply to both ranges.  The only difference is that 0-255 requires the DE to judge the potential popularity of the requested C-F in constrained protocols, whilst 10000-64999 doesn't.\r\n\r\nIs that worth introducing new semantics?  (Also, would we need to \"Update: 8126\" if we do that?)\r\n\r\nWe have a bug in our registration procedures, which has already been abused and can be abused again until we fix it.  If we bundle the fix with the wider IANAbis discussion, we risk delaying an urgent action.\r\n\r\n",
+          "createdAt": "2024-11-21T09:38:13Z",
+          "updatedAt": "2024-11-21T09:38:13Z"
+        },
+        {
+          "author": "cabo",
+          "authorAssociation": "NONE",
+          "body": "We are not updating 8126.\r\nBoth policies are Expert Review (Section 4.5) according to 8126.\r\nThey differ only in their DE instructions.\r\n\r\nExpert Check/FCFS+ only has the well-formedness check; this could be done by machine if the media type registry had an API.\r\nFull Review has that, as well as the DE looking at the registration and trying to understand it, e.g., if somebody registers a media type parameter set to 800 Hz, they might question whether that should be 8000 Hz instead.\r\n\r\nYes, the difference in DE instructions is somewhat subtle here, but we might have stronger differences later, e.g., in CoAP Option numbers.",
+          "createdAt": "2024-11-21T09:57:58Z",
+          "updatedAt": "2024-11-21T09:58:30Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "body": "If you believe there is no need to update 8126, I trust your (superior) judgment.\r\n\r\nLet's run this through IANA (#4) and see if they like the idea.",
+          "createdAt": "2024-11-21T10:11:55Z",
+          "updatedAt": "2024-11-21T10:11:55Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6SEvc6",
+          "commit": {
+            "abbreviatedOid": "81de189"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Agree to add this. One remaining comment/question is that the current IANA registry policy description is more clear as it spells out \"First Come First Served\".\r\n\r\nIn the future a visitor of the registry page will see \"FCFS+\" and may have no idea what this means. It's not a common abbreviation. So for the final text going into the IANA registry there's possibly a need to spell that out.  In the draft we can of course just use this term, it's properly defined.",
+          "createdAt": "2024-11-21T09:18:04Z",
+          "updatedAt": "2024-11-21T09:18:04Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
