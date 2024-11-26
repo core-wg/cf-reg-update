@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-24T00:39:16.825189+00:00",
+  "timestamp": "2024-11-26T00:36:47.136599+00:00",
   "repo": "thomas-fossati/draft-cf-reg-update",
   "labels": [
     {
@@ -118,9 +118,17 @@
       "labels": [],
       "body": "Note from @fpalombini:\r\n\r\n* [ ] I think it is worth sending the doc to that wg [IANAbis] when it gets towards the latest stages.\r\n* [ ] It is also worth asking for an early review from IANA.\r\n",
       "createdAt": "2024-11-19T14:05:14Z",
-      "updatedAt": "2024-11-19T14:05:14Z",
+      "updatedAt": "2024-11-25T08:46:28Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Below is a (somewhat reworded & abbreviated) copy of the IANA review comments on -02:\r\n\r\n1) Proposal to add a \"Notes\" column as below:\r\n\r\nRange | Registration Procedure | Notes\r\n0-255 | Expert Review\r\n256-9999 | IETF Review or IESG Approval\r\n10000-64999 | Expert Review | Lightweight review described in RFC XXXX, Section 5.2.1\r\n65000-65535 | Experimental Use | No operational use\r\n\r\n2) in Section 5.2.1, items 2 and 4 end with \u201c\u2026 or IANA has approved its registration.\u201d However, IANA isn\u2019t the party that approves non-FCFS registrations. Media types are approved by either IESG-designated experts (vendor tree) or the IESG (standards tree, usually via the RFC publication process), while HTTP Content Codings require IETF Review (the IESG approves an IETF Stream I-D for publication as an RFC). In practical terms, if an expert approves a registration, IANA should add that entry to the registry within a day or two, and if the IESG approves a document for publication, \r\n\r\n\u201c\u2026 must exist in the registration in the [X] registry\u201d could be changed to \u201c\u2026 must have been approved for registration in the [X] registry\u201d\r\n",
+          "createdAt": "2024-11-25T08:46:27Z",
+          "updatedAt": "2024-11-25T08:46:27Z"
+        }
+      ]
     },
     {
       "number": 6,
@@ -179,6 +187,70 @@
       "updatedAt": "2024-11-21T09:38:26Z",
       "closedAt": "2024-11-21T09:38:26Z",
       "comments": []
+    },
+    {
+      "number": 12,
+      "id": "I_kwDONM5XRM6gUrqt",
+      "title": "Amanda's review and editorial suggestions",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/12",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "> [...] in Section 5.2.1, items 2 and 4 end with \u201c\u2026 or IANA has\r\n> approved its registration.\u201d However, IANA isn\u2019t the party that\r\n> approves non-FCFS registrations. Media types are approved by either\r\n> IESG-designated experts (vendor tree) or the IESG (standards tree,\r\n> usually via the RFC publication process), while HTTP Content Codings\r\n> require IETF Review (the IESG approves an IETF Stream I-D for\r\n> publication as an RFC). In practical terms, if an expert approves a\r\n> registration, IANA should add that entry to the registry within a day\r\n> or two, and if the IESG approves a document for publication, IANA has\r\n> 14 days to complete the registry actions, per its MoU with the IETF.\r\n>\r\n> Maybe \u201c\u2026 must exist in the registration in the [X] registry\u201d could be\r\n> changed to \u201c\u2026 must have been approved for registration in the [X]\r\n> registry\u201d?",
+      "createdAt": "2024-11-25T08:42:46Z",
+      "updatedAt": "2024-11-25T09:08:46Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "See also #4 where I added the two main IANA review comments ;-)",
+          "createdAt": "2024-11-25T08:47:28Z",
+          "updatedAt": "2024-11-25T08:47:28Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "body": "> See also #4 where I added the two main IANA review comments ;-)\r\n\r\nOh, my apologies; I didn't see it! If we see both as actionable (I think so), we should create separate issues to track the associated changes.",
+          "createdAt": "2024-11-25T09:08:45Z",
+          "updatedAt": "2024-11-25T09:08:45Z"
+        }
+      ]
+    },
+    {
+      "number": 13,
+      "id": "I_kwDONM5XRM6gU8Va",
+      "title": "Potential new \"bad\" examples: duplication of an existing entry even though the fields are different?",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/13",
+      "state": "OPEN",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "thomas-fossati"
+      ],
+      "labels": [],
+      "body": "I was thinking of a registration for an existing entry, where the strings look different but the content-format is effectively duplicating one that already exists.\r\n\r\nMaybe cases like\r\n1. Registration with a parameter having the default value \"par=default\", whereas the content-format without the \"par=default\" string was already registered.  Effectively they would be the same conent format with duplicate numbers then.\r\n2. Someone registers with \"Coding = identity\" which is the default coding. This could duplicate an entry in which the \"Coding\" field is left empty.",
+      "createdAt": "2024-11-25T08:52:07Z",
+      "updatedAt": "2024-11-25T08:59:22Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thomas-fossati to have a look what you think.",
+          "createdAt": "2024-11-25T08:52:31Z",
+          "updatedAt": "2024-11-25T08:52:31Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "body": "Thanks, Esko.  They both look like good cases to add to our \"What could possibly go wrong?\" list.",
+          "createdAt": "2024-11-25T08:59:20Z",
+          "updatedAt": "2024-11-25T08:59:20Z"
+        }
+      ]
     }
   ],
   "pulls": [
