@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-26T00:36:47.136599+00:00",
+  "timestamp": "2024-11-28T00:37:06.472243+00:00",
   "repo": "thomas-fossati/draft-cf-reg-update",
   "labels": [
     {
@@ -249,6 +249,30 @@
           "body": "Thanks, Esko.  They both look like good cases to add to our \"What could possibly go wrong?\" list.",
           "createdAt": "2024-11-25T08:59:20Z",
           "updatedAt": "2024-11-25T08:59:20Z"
+        }
+      ]
+    },
+    {
+      "number": 14,
+      "id": "I_kwDONM5XRM6gjp23",
+      "title": "Add note to remove note",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/14",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "The following note has been added to the registry:\r\n\r\n> _\"Note: The validity of the combination of Content Coding, Content Type and parameters is checked prior to assignment.\"_\r\n\r\nThis temporary bandaid should be removed when the new procedure is approved.\r\n",
+      "createdAt": "2024-11-26T08:37:37Z",
+      "updatedAt": "2024-11-26T09:39:16Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I love the enigmatic, seemingly self-referential title of this issue :-) ",
+          "createdAt": "2024-11-26T09:39:15Z",
+          "updatedAt": "2024-11-26T09:39:15Z"
         }
       ]
     }
