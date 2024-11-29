@@ -41,6 +41,9 @@ informative:
   Err4954: 7252
   RFC9193: senml-cf
 
+entity:
+  SELF: "RFCthis"
+
 --- abstract
 
 This document updates the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group, defined in Section 12.3 of RFC7252.
@@ -114,32 +117,30 @@ Other than that, it does not change the Security Considerations of {{-coap}}.
 
 # IANA Considerations {#iana}
 
-## Expert Review with Expert Check "FCFS+"
+The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -coap}} are modified as shown in {{tbl-new-cf-proc}}.
 
-This document introduces the term "Expert Review (Expert Check: FCFS+)" to describe a registration policy that would typically have been handled as FCFS, except the approval checklist is complex enough to require advice from a DE.
-Such policy can be viewed as a "lightweight" form of the "full" Expert Review.
-
-A protocol that requires "Expert Check: FCFS+" for registration of its parameters MUST specify what the FCFS+ checks entail.
-
-## CoAP Content-Formats Registration Procedures Update
-
-The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -coap}} are modified to transition the 10000-64999 range from FCFS to "Expert Review (Expert Check: FCFS+)", with the FCFS+ checklist described in {{checks}}.
-
-| Range | Registration Procedures |
+| Range | Registration Procedures | Note |
 |--------|--------|
-| 0-255 | Expert Review (Full) |
-| 256-9999 | IETF Review or IESG Approval |
-| 10000-64999 | Expert Review (Expert Check: FCFS+) |
+| 0-255 | Expert Review (Full) | |
+| 256-9999 | IETF Review or IESG Approval | |
+| 10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry) | First Come First Served | Corresponding media type registration required |
+| 10000-64999 (Includes parameters and/or Content Coding) | Expert Review | Lightweight review described in {{&SELF}}, {{checks}} |
 | 65000-65535 | Experimental use (no operational use) |
 {: #tbl-new-cf-proc title="Updated CoAP Content-Formats Registration Procedures"}
 
-The registration procedure for the 0-255 range has been slightly modified -- from "Expert Review" to "Expert Review (Full)" -- to clearly distinguish it from the policy that applies to the 10000-64999 range.
+The 10000-64999 range now has two separate registration procedures.
+If the registration consists solely of a registered media type name in the "Content Type" field, without any parameter names or "Content Coding", and the media type has not yet been used in this registry, then the policy is FCFS, as before.
+In all other cases, the policy will be Expert Review, following the checklist described in {{checks}}.
+
+A new column with the title "Note" has been added to the registry, which contains information about expected checks.
+
+The registration procedure for the 0-255 range has been slightly modified -- from "Expert Review" to "Expert Review (Full)" -- to clearly distinguish it from the "lightweight" Expert Review that may apply to the 10000-64999 range.
 For the 0-255 range, the DE must also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
 For the 10000-64999 range, this criterion does not apply.
 
-### FCFS+ Checks {#checks}
+## "Lightweight" Expert Review Checks {#checks}
 
-The "Expert Check: FCFS+" checklist for the CoAP Content-Formats registry consist of the following steps:
+The "lightweight" DE review checklist for the CoAP Content-Formats registry consists of the following steps:
 
 1. The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;
 1. The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry {{?IANA.media-types}};
