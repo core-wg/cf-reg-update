@@ -142,9 +142,9 @@ For the 10000-64999 range, this criterion does not apply.
 The "Expert Check: FCFS+" checklist for the CoAP Content-Formats registry consist of the following steps:
 
 1. The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;
-1. The media type associated with the requested Content-Format must exist in the "Media Types" registry {{?IANA.media-types}}, or IANA has approved its registration;
+1. The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry {{?IANA.media-types}};
 1. The optional parameter names must exist in association with the media type, and any parameter values associated with such parameter names are as expected;
-1. If a Content Coding is specified, it must exist in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" {{?IANA.http-parameters}}, or IANA has approved its registration.
+1. If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" {{?IANA.http-parameters}}.
 
 --- back
 
@@ -152,8 +152,9 @@ The "Expert Check: FCFS+" checklist for the CoAP Content-Formats registry consis
 {:numbered="false"}
 
 Thank you
+Amanda Baber,
 Carsten Bormann,
 Francesca Palombini
 and
 Marco Tiloca
-for your reviews and comments.
+for your reviews, comments, suggestions and fixes.
