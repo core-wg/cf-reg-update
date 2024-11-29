@@ -147,6 +147,14 @@ The "lightweight" DE review checklist for the CoAP Content-Formats registry cons
 1. The optional parameter names must exist in association with the media type, and any parameter values associated with such parameter names are as expected;
 1. If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" {{?IANA.http-parameters}}.
 
+## Temporary Note Removal
+
+The following note has been added to the registry as a temporary fix:
+
+> "Note: The validity of the combination of Content Coding, Content Type and parameters is checked prior to assignment."
+
+IANA is instructed to remove it when the this document is approved for publication.
+
 --- back
 
 # Acknowledgments
