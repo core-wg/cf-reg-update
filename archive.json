@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-11-28T00:37:06.472243+00:00",
+  "timestamp": "2024-12-01T00:44:35.059519+00:00",
   "repo": "thomas-fossati/draft-cf-reg-update",
   "labels": [
     {
@@ -116,9 +116,9 @@
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
-      "body": "Note from @fpalombini:\r\n\r\n* [ ] I think it is worth sending the doc to that wg [IANAbis] when it gets towards the latest stages.\r\n* [ ] It is also worth asking for an early review from IANA.\r\n",
+      "body": "Note from @fpalombini:\r\n\r\n* [ ] I think it is worth sending the doc to that wg [IANAbis] when it gets towards the latest stages.\r\n* [x] It is also worth asking for an early review from IANA.\r\n",
       "createdAt": "2024-11-19T14:05:14Z",
-      "updatedAt": "2024-11-25T08:46:28Z",
+      "updatedAt": "2024-11-29T11:17:21Z",
       "closedAt": null,
       "comments": [
         {
@@ -275,6 +275,60 @@
           "updatedAt": "2024-11-26T09:39:15Z"
         }
       ]
+    },
+    {
+      "number": 15,
+      "id": "I_kwDONM5XRM6hAh81",
+      "title": "an optimisation for simple cases",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/15",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Amanda suggests two separate registration procedures for the 10000-64999 range: \r\n\r\n> _\"One other thought about the FCFS range: if the registration consists entirely of a registered media type name in the \u201cContent Type\u201d field, with no parameter names in that field and no \u201cContent Coding\u201d entry, IANA can check for a corresponding media type registration (although it would be helpful to be explicitly told to do so, and to be able to refer to it in the registration procedure table). Maybe that could look something like this:\"_\r\n\r\n> Range | Registration Procedures | Note\r\n> --|--|--\r\n> 10000-64999 (no parameters or content coding) | FCFS | Corresponding media type registration required\r\n> 10000-64999 (includes parameters and/or content coding) | Expert Review | Lightweight review described in RFC XXXX, Section 5.2.1",
+      "createdAt": "2024-11-28T08:26:41Z",
+      "updatedAt": "2024-11-28T09:35:28Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Seems ok - but it also needs to be checked by IANA that the media type is not already registered somewhere in the CF registry. If it is already registered (possibly with/without parameters, or with/without content coding) then it's again into the Expert Review bucket I think.",
+          "createdAt": "2024-11-28T09:05:47Z",
+          "updatedAt": "2024-11-28T09:05:47Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "body": "> Seems ok - but it also needs to be checked by IANA that the media type is not already registered somewhere in the CF registry. If it is already registered (possibly with/without parameters, or with/without content coding) then it's again into the Expert Review bucket I think.\r\n\r\nYes, if there is any potential conflict with what's already in the registry, the procedure needs to move to Expert Review.\r\n\r\nHow can we express that concisely and understandably?\r\n\r\n\r\n",
+          "createdAt": "2024-11-28T09:16:48Z",
+          "updatedAt": "2024-11-28T09:16:48Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Maybe like this:\r\n\r\n| Range                                    | Registration Procedure | Note                                                                 |\r\n|------------------------------------------|--------------------------|----------------------------------------------------------------------|\r\n| 10000-64999 (no parameters and empty Content Coding)       | First Come First Served               | Corresponding media type registration required; and media type not yet used in this registry       |\r\n| 10000-64999 (includes parameters and/or Content Coding) | Expert Review           | Lightweight review described in RFC XXXX, Section 5.2.1            |\r\n",
+          "createdAt": "2024-11-28T09:35:27Z",
+          "updatedAt": "2024-11-28T09:35:27Z"
+        }
+      ]
+    },
+    {
+      "number": 16,
+      "id": "I_kwDONM5XRM6hPk3h",
+      "title": "Add a Notes column to the registry",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/16",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Split from #4 for easier tracking:\r\n\r\nAmanda proposes to add a \"Notes\" column as below:\r\n\r\nRange | Registration Procedure | Notes\r\n-- | -- | --\r\n0-255 | Expert Review\r\n256-9999 | IETF Review or IESG Approval\r\n10000-64999 | Expert Review | Lightweight review described in RFC XXXX, Section 5.2.1\r\n65000-65535 | Experimental Use | No operational use\r\n\r\nto provide further info to the registrar",
+      "createdAt": "2024-11-29T14:01:19Z",
+      "updatedAt": "2024-11-29T14:01:19Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -537,6 +591,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 17,
+      "id": "PR_kwDONM5XRM6DkyDg",
+      "title": "Amanda feedback",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/pull/17",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #12 \r\nFix #14 \r\nFix #15 \r\nFix #16 \r\n\r\nSee individual commits for the details.",
+      "createdAt": "2024-11-29T14:08:22Z",
+      "updatedAt": "2024-11-29T14:10:37Z",
+      "baseRepository": "thomas-fossati/draft-cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "d19b34317c6bc43c78e562b5f5ad62df4c137f4a",
+      "headRepository": "thomas-fossati/draft-cf-reg-update",
+      "headRefName": "amanda-feedback",
+      "headRefOid": "de18129176b30e60d6a3ab16bb7f778151d50063",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
