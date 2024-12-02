@@ -106,6 +106,29 @@ The registrant requests an FCFS Content-Format ID for an existing media type wit
 | application/senml+cbor | inflate | 64999 |
 {: align="left" title="Attempt at Registering Content-Format with Unknown Content Coding"}
 
+## Duplicate Entry with Default Media Type Parameters
+
+The registrant requests an FCFS Content-Format ID for a media type that includes a parameter set to its default value.
+This media type is already registered without that parameter.
+As a result, this could lead to the creation of two separate Content-Format IDs for the same "logical" entry.
+
+| Content Type | Content Coding | ID |
+|--|--|--|
+| application/my | - | 64900 |
+| application/my; parameter=default | - | 64999 |
+{: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (1)"}
+
+## Duplicate Entry with Default Content Coding
+
+The registrant requests an FCFS Content-Format ID for the "identity" Content Coding, which is the default coding.
+If accepted, this request would duplicate an entry where the "Content Coding" field is left empty.
+
+| Content Type | Content Coding | ID |
+|--|--|--|
+| application/my | - | 64900 |
+| application/my | identity | 64999 |
+{: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (2)"}
+
 # Security Considerations
 
 This memo hardens the registration procedures of CoAP Content-Formats in ways that reduce the chances of malicious manipulation of the associated registry.
