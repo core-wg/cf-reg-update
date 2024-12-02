@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 2 June 2025                                    29 November 2024
+Expires: 5 June 2025                                     2 December 2024
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 2 June 2025.
+   This Internet-Draft will expire on 5 June 2025.
 
 Copyright Notice
 
@@ -249,8 +249,8 @@ Table of Contents
 
 5.1.  "Lightweight" Expert Review Checks
 
-   The "lightweight" DE review checklist for the CoAP Content-Formats
-   registry consists of the following steps:
+   The "lightweight" Designated Expert review checklist for the CoAP
+   Content-Formats registry consists of the following steps:
 
    1.  The combination of content-type and content coding for which the
        registration is requested must not be already present in the
