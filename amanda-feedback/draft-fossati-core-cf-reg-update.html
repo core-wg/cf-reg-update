@@ -1185,10 +1185,13 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
-                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-lightweight-expert-review-c" class="internal xref">"Lightweight" Expert Review Checks</a></p>
+                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-full-expert-review-checks" class="internal xref">"Full" Expert Review Checks</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
-                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-temporary-note-removal" class="internal xref">Temporary Note Removal</a></p>
+                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-lightweight-expert-review-c" class="internal xref">"Lightweight" Expert Review Checks</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3">
+                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-temporary-note-removal" class="internal xref">Temporary Note Removal</a></p>
 </li>
             </ul>
 </li>
@@ -1391,8 +1394,9 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <tbody>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">0-255</td>
-            <td class="text-left" rowspan="1" colspan="1">Expert Review (Full)</td>
-            <td class="text-left" rowspan="1" colspan="1"> </td>
+            <td class="text-left" rowspan="1" colspan="1">Expert Review</td>
+            <td class="text-left" rowspan="1" colspan="1">Full review described in RFCthis, <a href="#full-checks" class="auto internal xref">Section 5.1</a>
+</td>
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">256-9999</td>
@@ -1407,7 +1411,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
           <tr>
             <td class="text-left" rowspan="1" colspan="1">10000-64999 (Includes parameters and/or Content Coding)</td>
             <td class="text-left" rowspan="1" colspan="1">Expert Review</td>
-            <td class="text-left" rowspan="1" colspan="1">Lightweight review described in RFCthis, <a href="#checks" class="auto internal xref">Section 5.1</a>
+            <td class="text-left" rowspan="1" colspan="1">Lightweight review described in RFCthis, <a href="#checks" class="auto internal xref">Section 5.2</a>
 </td>
           </tr>
           <tr>
@@ -1420,45 +1424,52 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 </div>
 <p id="section-5-3">The 10000-64999 range now has two separate registration procedures.
 If the registration consists solely of a registered media type name in the "Content Type" field, without any parameter names or "Content Coding", and the media type has not yet been used in this registry, then the policy is FCFS, as before.
-In all other cases, the policy will be Expert Review, following the checklist described in <a href="#checks" class="auto internal xref">Section 5.1</a>.<a href="#section-5-3" class="pilcrow">¶</a></p>
+In all other cases, the policy will be Expert Review, following the checklist described in <a href="#checks" class="auto internal xref">Section 5.2</a>.<a href="#section-5-3" class="pilcrow">¶</a></p>
 <p id="section-5-4">A new column with the title "Note" has been added to the registry, which contains information about expected checks.<a href="#section-5-4" class="pilcrow">¶</a></p>
-<p id="section-5-5">The registration procedure for the 0-255 range has been slightly modified -- from "Expert Review" to "Expert Review (Full)" -- to clearly distinguish it from the "lightweight" Expert Review that may apply to the 10000-64999 range.
-For the 0-255 range, the DE must also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
-For the 10000-64999 range, this criterion does not apply.<a href="#section-5-5" class="pilcrow">¶</a></p>
-<div id="checks">
+<div id="full-checks">
 <section id="section-5.1">
-        <h3 id="name-lightweight-expert-review-c">
-<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-lightweight-expert-review-c" class="section-name selfRef">"Lightweight" Expert Review Checks</a>
+        <h3 id="name-full-expert-review-checks">
+<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-full-expert-review-checks" class="section-name selfRef">"Full" Expert Review Checks</a>
         </h3>
-<p id="section-5.1-1">The "lightweight" Designated Expert review checklist for the CoAP Content-Formats registry consists of the following steps:<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-5.1-2">
-<li id="section-5.1-2.1">
-            <p id="section-5.1-2.1.1">The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;<a href="#section-5.1-2.1.1" class="pilcrow">¶</a></p>
+<p id="section-5.1-1">The registration procedure for the 0-255 range has been slightly modified -- from "Expert Review" to "Expert Review (Full)" -- to clearly distinguish it from the "lightweight" Expert Review that may apply to the 10000-64999 range.
+For the 0-255 range, in addition to the checks described in <a href="#checks" class="auto internal xref">Section 5.2</a>, the DE must also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
+For the 10000-64999 range, this criterion does not apply.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="checks">
+<section id="section-5.2">
+        <h3 id="name-lightweight-expert-review-c">
+<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-lightweight-expert-review-c" class="section-name selfRef">"Lightweight" Expert Review Checks</a>
+        </h3>
+<p id="section-5.2-1">The "lightweight" Designated Expert review checklist for the CoAP Content-Formats registry consists of the following steps:<a href="#section-5.2-1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-5.2-2">
+<li id="section-5.2-2.1">
+            <p id="section-5.2-2.1.1">The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;<a href="#section-5.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-5.1-2.2">
-            <p id="section-5.1-2.2.1">The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>;<a href="#section-5.1-2.2.1" class="pilcrow">¶</a></p>
+          <li id="section-5.2-2.2">
+            <p id="section-5.2-2.2.1">The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>;<a href="#section-5.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-5.1-2.3">
-            <p id="section-5.1-2.3.1">The optional parameter names must exist in association with the media type, and any parameter values associated with such parameter names are as expected;<a href="#section-5.1-2.3.1" class="pilcrow">¶</a></p>
+          <li id="section-5.2-2.3">
+            <p id="section-5.2-2.3.1">The optional parameter names must exist in association with the media type, and any parameter values associated with such parameter names are as expected;<a href="#section-5.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-5.1-2.4">
-            <p id="section-5.1-2.4.1">If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" <span>[<a href="#IANA.http-parameters" class="cite xref">IANA.http-parameters</a>]</span>.<a href="#section-5.1-2.4.1" class="pilcrow">¶</a></p>
+          <li id="section-5.2-2.4">
+            <p id="section-5.2-2.4.1">If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" <span>[<a href="#IANA.http-parameters" class="cite xref">IANA.http-parameters</a>]</span>.<a href="#section-5.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
 </section>
 </div>
 <div id="temporary-note-removal">
-<section id="section-5.2">
+<section id="section-5.3">
         <h3 id="name-temporary-note-removal">
-<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-temporary-note-removal" class="section-name selfRef">Temporary Note Removal</a>
+<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-temporary-note-removal" class="section-name selfRef">Temporary Note Removal</a>
         </h3>
-<p id="section-5.2-1">The following note has been added to the registry as a temporary fix:<a href="#section-5.2-1" class="pilcrow">¶</a></p>
+<p id="section-5.3-1">The following note has been added to the registry as a temporary fix:<a href="#section-5.3-1" class="pilcrow">¶</a></p>
 <ul class="normal ulEmpty">
-<li class="normal ulEmpty" id="section-5.2-2.1">
-            <p id="section-5.2-2.1.1">"Note: The validity of the combination of Content Coding, Content Type and parameters is checked prior to assignment."<a href="#section-5.2-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal ulEmpty" id="section-5.3-2.1">
+            <p id="section-5.3-2.1.1">"Note: The validity of the combination of Content Coding, Content Type and parameters is checked prior to assignment."<a href="#section-5.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-5.2-3">IANA is instructed to remove it when the this document is approved for publication.<a href="#section-5.2-3" class="pilcrow">¶</a></p>
+<p id="section-5.3-3">IANA is instructed to remove it when the this document is approved for publication.<a href="#section-5.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>

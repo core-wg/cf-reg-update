@@ -78,8 +78,9 @@ Table of Contents
      3.4.  The Content Coding is Unknown
    4.  Security Considerations
    5.  IANA Considerations
-     5.1.  "Lightweight" Expert Review Checks
-     5.2.  Temporary Note Removal
+     5.1.  "Full" Expert Review Checks
+     5.2.  "Lightweight" Expert Review Checks
+     5.3.  Temporary Note Removal
    6.  References
      6.1.  Normative References
      6.2.  Informative References
@@ -198,33 +199,32 @@ Table of Contents
    The CoAP Content-Formats registration procedures defined in
    Section 12.3 of [RFC7252] are modified as shown in Table 5.
 
-     +============================+==============+==================+
-     | Range                      | Registration | Note             |
-     |                            | Procedures   |                  |
-     +============================+==============+==================+
-     | 0-255                      | Expert       |                  |
-     |                            | Review       |                  |
-     |                            | (Full)       |                  |
-     +----------------------------+--------------+------------------+
-     | 256-9999                   | IETF Review  |                  |
-     |                            | or IESG      |                  |
-     |                            | Approval     |                  |
-     +----------------------------+--------------+------------------+
-     | 10000-64999 (No parameters | First Come   | Corresponding    |
-     | and empty Content Coding   | First Served | media type       |
-     | and media type not yet     |              | registration     |
-     | used in this registry)     |              | required         |
-     +----------------------------+--------------+------------------+
-     | 10000-64999 (Includes      | Expert       | Lightweight      |
-     | parameters and/or Content  | Review       | review described |
-     | Coding)                    |              | in RFCthis,      |
-     |                            |              | Section 5.1      |
-     +----------------------------+--------------+------------------+
-     | 65000-65535                | Experimental |                  |
-     |                            | use (no      |                  |
-     |                            | operational  |                  |
-     |                            | use)         |                  |
-     +----------------------------+--------------+------------------+
+   +============================+==============+======================+
+   | Range                      | Registration | Note                 |
+   |                            | Procedures   |                      |
+   +============================+==============+======================+
+   | 0-255                      | Expert       | Full review          |
+   |                            | Review       | described in         |
+   |                            |              | RFCthis, Section 5.1 |
+   +----------------------------+--------------+----------------------+
+   | 256-9999                   | IETF Review  |                      |
+   |                            | or IESG      |                      |
+   |                            | Approval     |                      |
+   +----------------------------+--------------+----------------------+
+   | 10000-64999 (No parameters | First Come   | Corresponding media  |
+   | and empty Content Coding   | First Served | type registration    |
+   | and media type not yet     |              | required             |
+   | used in this registry)     |              |                      |
+   +----------------------------+--------------+----------------------+
+   | 10000-64999 (Includes      | Expert       | Lightweight review   |
+   | parameters and/or Content  | Review       | described in         |
+   | Coding)                    |              | RFCthis, Section 5.2 |
+   +----------------------------+--------------+----------------------+
+   | 65000-65535                | Experimental |                      |
+   |                            | use (no      |                      |
+   |                            | operational  |                      |
+   |                            | use)         |                      |
+   +----------------------------+--------------+----------------------+
 
       Table 5: Updated CoAP Content-Formats Registration Procedures
 
@@ -234,20 +234,23 @@ Table of Contents
    Coding", and the media type has not yet been used in this registry,
    then the policy is FCFS, as before.  In all other cases, the policy
    will be Expert Review, following the checklist described in
-   Section 5.1.
+   Section 5.2.
 
    A new column with the title "Note" has been added to the registry,
    which contains information about expected checks.
 
+5.1.  "Full" Expert Review Checks
+
    The registration procedure for the 0-255 range has been slightly
    modified -- from "Expert Review" to "Expert Review (Full)" -- to
    clearly distinguish it from the "lightweight" Expert Review that may
-   apply to the 10000-64999 range.  For the 0-255 range, the DE must
-   also evaluate the requested codepoint concerning the limited
-   availability of the 1-byte codepoint space.  For the 10000-64999
-   range, this criterion does not apply.
+   apply to the 10000-64999 range.  For the 0-255 range, in addition to
+   the checks described in Section 5.2, the DE must also evaluate the
+   requested codepoint concerning the limited availability of the 1-byte
+   codepoint space.  For the 10000-64999 range, this criterion does not
+   apply.
 
-5.1.  "Lightweight" Expert Review Checks
+5.2.  "Lightweight" Expert Review Checks
 
    The "lightweight" Designated Expert review checklist for the CoAP
    Content-Formats registry consists of the following steps:
@@ -269,7 +272,7 @@ Table of Contents
        Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters"
        [IANA.http-parameters].
 
-5.2.  Temporary Note Removal
+5.3.  Temporary Note Removal
 
    The following note has been added to the registry as a temporary fix:
 
