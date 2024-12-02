@@ -121,7 +121,7 @@ The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -c
 
 | Range | Registration Procedures | Note |
 |--------|--------|
-| 0-255 | Expert Review (Full) | |
+| 0-255 | Expert Review | Full review described in {{&SELF}}, {{full-checks}} |
 | 256-9999 | IETF Review or IESG Approval | |
 | 10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry) | First Come First Served | Corresponding media type registration required |
 | 10000-64999 (Includes parameters and/or Content Coding) | Expert Review | Lightweight review described in {{&SELF}}, {{checks}} |
@@ -134,8 +134,10 @@ In all other cases, the policy will be Expert Review, following the checklist de
 
 A new column with the title "Note" has been added to the registry, which contains information about expected checks.
 
+## "Full" Expert Review Checks {#full-checks}
+
 The registration procedure for the 0-255 range has been slightly modified -- from "Expert Review" to "Expert Review (Full)" -- to clearly distinguish it from the "lightweight" Expert Review that may apply to the 10000-64999 range.
-For the 0-255 range, the DE must also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
+For the 0-255 range, in addition to the checks described in {{checks}}, the DE must also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
 For the 10000-64999 range, this criterion does not apply.
 
 ## "Lightweight" Expert Review Checks {#checks}
