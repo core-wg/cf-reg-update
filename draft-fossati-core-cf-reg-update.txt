@@ -76,6 +76,8 @@ Table of Contents
      3.2.  The Media Type Parameter is Unknown
      3.3.  The Media Type Parameter Value is Invalid
      3.4.  The Content Coding is Unknown
+     3.5.  Duplicate Entry with Default Media Type Parameters
+     3.6.  Duplicate Entry with Default Content Coding
    4.  Security Considerations
    5.  IANA Considerations
      5.1.  "Full" Expert Review Checks
@@ -185,6 +187,44 @@ Table of Contents
       Table 4: Attempt at Registering Content-Format
                with Unknown Content Coding
 
+3.5.  Duplicate Entry with Default Media Type Parameters
+
+   The registrant requests an FCFS Content-Format ID for a media type
+   that includes a parameter set to its default value.  This media type
+   is already registered without that parameter.  As a result, this
+   could lead to the creation of two separate Content-Format IDs for the
+   same "logical" entry.
+
+   +===================================+================+=======+
+   | Content Type                      | Content Coding | ID    |
+   +===================================+================+=======+
+   | application/my                    | -              | 64900 |
+   +-----------------------------------+----------------+-------+
+   | application/my; parameter=default | -              | 64999 |
+   +-----------------------------------+----------------+-------+
+
+       Table 5: Attempt at Registering an Equivalent Logical
+            Entry with a Different Content-Format ID (1)
+
+3.6.  Duplicate Entry with Default Content Coding
+
+   The registrant requests an FCFS Content-Format ID for the "identity"
+   Content Coding, which is the default coding.  If accepted, this
+   request would duplicate an entry where the "Content Coding" field is
+   left empty.
+
+   +================+================+=======+
+   | Content Type   | Content Coding | ID    |
+   +================+================+=======+
+   | application/my | -              | 64900 |
+   +----------------+----------------+-------+
+   | application/my | identity       | 64999 |
+   +----------------+----------------+-------+
+
+        Table 6: Attempt at Registering an
+         Equivalent Logical Entry with a
+         Different Content-Format ID (2)
+
 4.  Security Considerations
 
    This memo hardens the registration procedures of CoAP Content-Formats
@@ -197,7 +237,7 @@ Table of Contents
 5.  IANA Considerations
 
    The CoAP Content-Formats registration procedures defined in
-   Section 12.3 of [RFC7252] are modified as shown in Table 5.
+   Section 12.3 of [RFC7252] are modified as shown in Table 7.
 
    +============================+==============+======================+
    | Range                      | Registration | Note                 |
@@ -226,7 +266,7 @@ Table of Contents
    |                            | use)         |                      |
    +----------------------------+--------------+----------------------+
 
-      Table 5: Updated CoAP Content-Formats Registration Procedures
+      Table 7: Updated CoAP Content-Formats Registration Procedures
 
    The 10000-64999 range now has two separate registration procedures.
    If the registration consists solely of a registered media type name
