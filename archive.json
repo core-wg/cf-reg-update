@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-01T00:44:35.059519+00:00",
+  "timestamp": "2024-12-03T00:38:28.982579+00:00",
   "repo": "thomas-fossati/draft-cf-reg-update",
   "labels": [
     {
@@ -604,13 +604,180 @@
       "labels": [],
       "body": "Fix #12 \r\nFix #14 \r\nFix #15 \r\nFix #16 \r\n\r\nSee individual commits for the details.",
       "createdAt": "2024-11-29T14:08:22Z",
-      "updatedAt": "2024-11-29T14:10:37Z",
+      "updatedAt": "2024-12-02T12:52:28Z",
       "baseRepository": "thomas-fossati/draft-cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "d19b34317c6bc43c78e562b5f5ad62df4c137f4a",
       "headRepository": "thomas-fossati/draft-cf-reg-update",
       "headRefName": "amanda-feedback",
-      "headRefOid": "de18129176b30e60d6a3ab16bb7f778151d50063",
+      "headRefOid": "0369f8e1d93b08290cfd4e5bf55486d9f3f21106",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6TWn6J",
+          "commit": {
+            "abbreviatedOid": "de18129"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-02T09:31:38Z",
+          "updatedAt": "2024-12-02T09:31:38Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "Here it would be better to place the \"(Full)\" into the Note column. So something like:\r\n| Expert Review | Full review\r\n\r\nor \r\n| Expert Review | Full review described in [RFCthis], Section X\r\n\r\nin case we have any description of what \"full\" review means. For example we have the sentence \"the DE must also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.\" which is already describing a part of the \"full\" review.",
+              "createdAt": "2024-12-02T09:31:38Z",
+              "updatedAt": "2024-12-02T09:31:39Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6TWos8",
+          "commit": {
+            "abbreviatedOid": "de18129"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-02T09:33:02Z",
+          "updatedAt": "2024-12-02T09:33:02Z",
+          "comments": [
+            {
+              "originalPosition": 54,
+              "body": "```suggestion\r\nThe \"lightweight\" Designated Expert review checklist for the CoAP Content-Formats registry consists of the following steps:\r\n```",
+              "createdAt": "2024-12-02T09:33:02Z",
+              "updatedAt": "2024-12-02T09:33:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6TW4XH",
+          "commit": {
+            "abbreviatedOid": "de18129"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-02T09:59:45Z",
+          "updatedAt": "2024-12-02T09:59:45Z",
+          "comments": [
+            {
+              "originalPosition": 54,
+              "body": "I am fine with expanding here, but in the introduction, we have already defined DE as the abbreviation for Designated Expert.  What ambiguity would this change help to solve?",
+              "createdAt": "2024-12-02T09:59:45Z",
+              "updatedAt": "2024-12-02T09:59:45Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6TW698",
+          "commit": {
+            "abbreviatedOid": "de18129"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-02T10:04:17Z",
+          "updatedAt": "2024-12-02T10:04:17Z",
+          "comments": [
+            {
+              "originalPosition": 54,
+              "body": "Ah, sorry I didn't explain the reason :)  it's to cater for the typical expected use cases where a reader jumps straight from the IANA registry note to the referenced section number and reads it, without reading the intro or rest of the document. Then it's good to not have to jump back through the document to find what \"DE\" means as it's an uncommon abbreviation. So it's to streamline the future reader's experience.",
+              "createdAt": "2024-12-02T10:04:17Z",
+              "updatedAt": "2024-12-02T10:04:17Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6TXkRb",
+          "commit": {
+            "abbreviatedOid": "de18129"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-02T11:19:51Z",
+          "updatedAt": "2024-12-02T11:19:51Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "This is a very good point.  We have left \"full\" to the discretion of the DE, but it seems like a good idea to go the full mile.",
+              "createdAt": "2024-12-02T11:19:51Z",
+              "updatedAt": "2024-12-02T11:19:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6TYRO4",
+          "commit": {
+            "abbreviatedOid": "de18129"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-02T12:51:34Z",
+          "updatedAt": "2024-12-02T12:51:35Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "@EskoDijk, please see if [0369f8e](https://github.com/thomas-fossati/draft-cf-reg-update/pull/17/commits/0369f8e1d93b08290cfd4e5bf55486d9f3f21106) works for you.",
+              "createdAt": "2024-12-02T12:51:34Z",
+              "updatedAt": "2024-12-02T12:51:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6TYRq4",
+          "commit": {
+            "abbreviatedOid": "de18129"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-02T12:52:27Z",
+          "updatedAt": "2024-12-02T12:52:28Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "If needed, we can add more extra checks for \"full\" reviewers over \"lightweight\" ones.",
+              "createdAt": "2024-12-02T12:52:28Z",
+              "updatedAt": "2024-12-02T12:52:28Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 18,
+      "id": "PR_kwDONM5XRM6DvEQq",
+      "title": "Esko's \"what could possibly go wrong\" examples",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/pull/18",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #13 ",
+      "createdAt": "2024-12-02T11:45:50Z",
+      "updatedAt": "2024-12-02T11:45:55Z",
+      "baseRepository": "thomas-fossati/draft-cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "d19b34317c6bc43c78e562b5f5ad62df4c137f4a",
+      "headRepository": "thomas-fossati/draft-cf-reg-update",
+      "headRefName": "esko-examples",
+      "headRefOid": "ac24d9d8721607fc9972c98797a16453a04cb8dc",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
