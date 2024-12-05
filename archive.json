@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-03T00:38:28.982579+00:00",
+  "timestamp": "2024-12-05T00:37:52.564393+00:00",
   "repo": "thomas-fossati/draft-cf-reg-update",
   "labels": [
     {
@@ -118,7 +118,7 @@
       "labels": [],
       "body": "Note from @fpalombini:\r\n\r\n* [ ] I think it is worth sending the doc to that wg [IANAbis] when it gets towards the latest stages.\r\n* [x] It is also worth asking for an early review from IANA.\r\n",
       "createdAt": "2024-11-19T14:05:14Z",
-      "updatedAt": "2024-11-29T11:17:21Z",
+      "updatedAt": "2024-12-03T08:42:50Z",
       "closedAt": null,
       "comments": [
         {
@@ -127,6 +127,13 @@
           "body": "Below is a (somewhat reworded & abbreviated) copy of the IANA review comments on -02:\r\n\r\n1) Proposal to add a \"Notes\" column as below:\r\n\r\nRange | Registration Procedure | Notes\r\n0-255 | Expert Review\r\n256-9999 | IETF Review or IESG Approval\r\n10000-64999 | Expert Review | Lightweight review described in RFC XXXX, Section 5.2.1\r\n65000-65535 | Experimental Use | No operational use\r\n\r\n2) in Section 5.2.1, items 2 and 4 end with \u201c\u2026 or IANA has approved its registration.\u201d However, IANA isn\u2019t the party that approves non-FCFS registrations. Media types are approved by either IESG-designated experts (vendor tree) or the IESG (standards tree, usually via the RFC publication process), while HTTP Content Codings require IETF Review (the IESG approves an IETF Stream I-D for publication as an RFC). In practical terms, if an expert approves a registration, IANA should add that entry to the registry within a day or two, and if the IESG approves a document for publication, \r\n\r\n\u201c\u2026 must exist in the registration in the [X] registry\u201d could be changed to \u201c\u2026 must have been approved for registration in the [X] registry\u201d\r\n",
           "createdAt": "2024-11-25T08:46:27Z",
           "updatedAt": "2024-11-25T08:46:27Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "body": "> Below is a (somewhat reworded & abbreviated) copy of the IANA review comments on -02:\r\n> \r\n> 1. Proposal to add a \"Notes\" column as below:\r\n> \r\n> Range | Registration Procedure | Notes 0-255 | Expert Review 256-9999 | IETF Review or IESG Approval 10000-64999 | Expert Review | Lightweight review described in RFC XXXX, Section 5.2.1 65000-65535 | Experimental Use | No operational use\r\n\r\nThis has been addressed in #16 \r\n\r\n> 2. in Section 5.2.1, items 2 and 4 end with \u201c\u2026 or IANA has approved its registration.\u201d However, IANA isn\u2019t the party that approves non-FCFS registrations. Media types are approved by either IESG-designated experts (vendor tree) or the IESG (standards tree, usually via the RFC publication process), while HTTP Content Codings require IETF Review (the IESG approves an IETF Stream I-D for publication as an RFC). In practical terms, if an expert approves a registration, IANA should add that entry to the registry within a day or two, and if the IESG approves a document for publication,\r\n> \r\n> \u201c\u2026 must exist in the registration in the [X] registry\u201d could be changed to \u201c\u2026 must have been approved for registration in the [X] registry\u201d\r\n\r\nThis has been addressed in #12 \r\n",
+          "createdAt": "2024-12-03T08:42:48Z",
+          "updatedAt": "2024-12-03T08:42:48Z"
         }
       ]
     },
@@ -193,15 +200,15 @@
       "id": "I_kwDONM5XRM6gUrqt",
       "title": "Amanda's review and editorial suggestions",
       "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/12",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "> [...] in Section 5.2.1, items 2 and 4 end with \u201c\u2026 or IANA has\r\n> approved its registration.\u201d However, IANA isn\u2019t the party that\r\n> approves non-FCFS registrations. Media types are approved by either\r\n> IESG-designated experts (vendor tree) or the IESG (standards tree,\r\n> usually via the RFC publication process), while HTTP Content Codings\r\n> require IETF Review (the IESG approves an IETF Stream I-D for\r\n> publication as an RFC). In practical terms, if an expert approves a\r\n> registration, IANA should add that entry to the registry within a day\r\n> or two, and if the IESG approves a document for publication, IANA has\r\n> 14 days to complete the registry actions, per its MoU with the IETF.\r\n>\r\n> Maybe \u201c\u2026 must exist in the registration in the [X] registry\u201d could be\r\n> changed to \u201c\u2026 must have been approved for registration in the [X]\r\n> registry\u201d?",
       "createdAt": "2024-11-25T08:42:46Z",
-      "updatedAt": "2024-11-25T09:08:46Z",
-      "closedAt": null,
+      "updatedAt": "2024-12-03T08:40:14Z",
+      "closedAt": "2024-12-03T08:40:14Z",
       "comments": [
         {
           "author": "EskoDijk",
@@ -224,7 +231,7 @@
       "id": "I_kwDONM5XRM6gU8Va",
       "title": "Potential new \"bad\" examples: duplication of an existing entry even though the fields are different?",
       "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/13",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -233,8 +240,8 @@
       "labels": [],
       "body": "I was thinking of a registration for an existing entry, where the strings look different but the content-format is effectively duplicating one that already exists.\r\n\r\nMaybe cases like\r\n1. Registration with a parameter having the default value \"par=default\", whereas the content-format without the \"par=default\" string was already registered.  Effectively they would be the same conent format with duplicate numbers then.\r\n2. Someone registers with \"Coding = identity\" which is the default coding. This could duplicate an entry in which the \"Coding\" field is left empty.",
       "createdAt": "2024-11-25T08:52:07Z",
-      "updatedAt": "2024-11-25T08:59:22Z",
-      "closedAt": null,
+      "updatedAt": "2024-12-03T08:41:09Z",
+      "closedAt": "2024-12-03T08:41:09Z",
       "comments": [
         {
           "author": "EskoDijk",
@@ -257,15 +264,15 @@
       "id": "I_kwDONM5XRM6gjp23",
       "title": "Add note to remove note",
       "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/14",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "The following note has been added to the registry:\r\n\r\n> _\"Note: The validity of the combination of Content Coding, Content Type and parameters is checked prior to assignment.\"_\r\n\r\nThis temporary bandaid should be removed when the new procedure is approved.\r\n",
       "createdAt": "2024-11-26T08:37:37Z",
-      "updatedAt": "2024-11-26T09:39:16Z",
-      "closedAt": null,
+      "updatedAt": "2024-12-03T08:40:14Z",
+      "closedAt": "2024-12-03T08:40:14Z",
       "comments": [
         {
           "author": "EskoDijk",
@@ -281,15 +288,15 @@
       "id": "I_kwDONM5XRM6hAh81",
       "title": "an optimisation for simple cases",
       "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/15",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Amanda suggests two separate registration procedures for the 10000-64999 range: \r\n\r\n> _\"One other thought about the FCFS range: if the registration consists entirely of a registered media type name in the \u201cContent Type\u201d field, with no parameter names in that field and no \u201cContent Coding\u201d entry, IANA can check for a corresponding media type registration (although it would be helpful to be explicitly told to do so, and to be able to refer to it in the registration procedure table). Maybe that could look something like this:\"_\r\n\r\n> Range | Registration Procedures | Note\r\n> --|--|--\r\n> 10000-64999 (no parameters or content coding) | FCFS | Corresponding media type registration required\r\n> 10000-64999 (includes parameters and/or content coding) | Expert Review | Lightweight review described in RFC XXXX, Section 5.2.1",
       "createdAt": "2024-11-28T08:26:41Z",
-      "updatedAt": "2024-11-28T09:35:28Z",
-      "closedAt": null,
+      "updatedAt": "2024-12-03T08:40:14Z",
+      "closedAt": "2024-12-03T08:40:14Z",
       "comments": [
         {
           "author": "EskoDijk",
@@ -319,15 +326,15 @@
       "id": "I_kwDONM5XRM6hPk3h",
       "title": "Add a Notes column to the registry",
       "url": "https://github.com/thomas-fossati/draft-cf-reg-update/issues/16",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Split from #4 for easier tracking:\r\n\r\nAmanda proposes to add a \"Notes\" column as below:\r\n\r\nRange | Registration Procedure | Notes\r\n-- | -- | --\r\n0-255 | Expert Review\r\n256-9999 | IETF Review or IESG Approval\r\n10000-64999 | Expert Review | Lightweight review described in RFC XXXX, Section 5.2.1\r\n65000-65535 | Experimental Use | No operational use\r\n\r\nto provide further info to the registrar",
       "createdAt": "2024-11-29T14:01:19Z",
-      "updatedAt": "2024-11-29T14:01:19Z",
-      "closedAt": null,
+      "updatedAt": "2024-12-03T08:40:15Z",
+      "closedAt": "2024-12-03T08:40:15Z",
       "comments": []
     }
   ],
@@ -597,24 +604,26 @@
       "id": "PR_kwDONM5XRM6DkyDg",
       "title": "Amanda feedback",
       "url": "https://github.com/thomas-fossati/draft-cf-reg-update/pull/17",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Fix #12 \r\nFix #14 \r\nFix #15 \r\nFix #16 \r\n\r\nSee individual commits for the details.",
       "createdAt": "2024-11-29T14:08:22Z",
-      "updatedAt": "2024-12-02T12:52:28Z",
+      "updatedAt": "2024-12-03T08:40:16Z",
       "baseRepository": "thomas-fossati/draft-cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "d19b34317c6bc43c78e562b5f5ad62df4c137f4a",
       "headRepository": "thomas-fossati/draft-cf-reg-update",
       "headRefName": "amanda-feedback",
       "headRefOid": "0369f8e1d93b08290cfd4e5bf55486d9f3f21106",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-12-03T08:40:13Z",
+      "mergedAt": "2024-12-03T08:40:13Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "56172d3565f00d6e3b173f9b25bc0bd1aa508768"
+      },
       "comments": [],
       "reviews": [
         {
@@ -756,6 +765,39 @@
               "updatedAt": "2024-12-02T12:52:28Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6Tg4iF",
+          "commit": {
+            "abbreviatedOid": "de18129"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-03T08:13:32Z",
+          "updatedAt": "2024-12-03T08:13:32Z",
+          "comments": [
+            {
+              "originalPosition": 32,
+              "body": "Yes, that looks ok, thanks.",
+              "createdAt": "2024-12-03T08:13:32Z",
+              "updatedAt": "2024-12-03T08:13:33Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6Tg4-e",
+          "commit": {
+            "abbreviatedOid": "0369f8e"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-12-03T08:14:24Z",
+          "updatedAt": "2024-12-03T08:14:24Z",
+          "comments": []
         }
       ]
     },
@@ -764,26 +806,42 @@
       "id": "PR_kwDONM5XRM6DvEQq",
       "title": "Esko's \"what could possibly go wrong\" examples",
       "url": "https://github.com/thomas-fossati/draft-cf-reg-update/pull/18",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "Fix #13 ",
       "createdAt": "2024-12-02T11:45:50Z",
-      "updatedAt": "2024-12-02T11:45:55Z",
+      "updatedAt": "2024-12-03T08:41:12Z",
       "baseRepository": "thomas-fossati/draft-cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "d19b34317c6bc43c78e562b5f5ad62df4c137f4a",
       "headRepository": "thomas-fossati/draft-cf-reg-update",
       "headRefName": "esko-examples",
       "headRefOid": "ac24d9d8721607fc9972c98797a16453a04cb8dc",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-12-03T08:41:08Z",
+      "mergedAt": "2024-12-03T08:41:08Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "d2a2c7746444fad29b5eefe23419b4ae15447321"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6Tg7Wg",
+          "commit": {
+            "abbreviatedOid": "ac24d9d"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Thanks Thomas for adding this!",
+          "createdAt": "2024-12-03T08:17:38Z",
+          "updatedAt": "2024-12-03T08:17:38Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
