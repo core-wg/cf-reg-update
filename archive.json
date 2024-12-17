@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-15T00:41:12.280205+00:00",
+  "timestamp": "2024-12-17T00:37:44.897654+00:00",
   "repo": "thomas-fossati/draft-cf-reg-update",
   "labels": [
     {
@@ -840,6 +840,86 @@
           "createdAt": "2024-12-03T08:17:38Z",
           "updatedAt": "2024-12-03T08:17:38Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "id": "PR_kwDONM5XRM6FXoPR",
+      "title": "Nits and editorial improvements discovered during WGA review",
+      "url": "https://github.com/thomas-fossati/draft-cf-reg-update/pull/19",
+      "state": "OPEN",
+      "author": "cabo",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-12-16T14:58:29Z",
+      "updatedAt": "2024-12-16T16:30:36Z",
+      "baseRepository": "thomas-fossati/draft-cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "d2a2c7746444fad29b5eefe23419b4ae15447321",
+      "headRepository": "cabo/draft-cf-reg-update",
+      "headRefName": "wga-nits",
+      "headRefOid": "0c1bdd1235ce5ec584fd658d4fcc769eb43dcc22",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6VaPml",
+          "commit": {
+            "abbreviatedOid": "0c1bdd1"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-16T16:24:04Z",
+          "updatedAt": "2024-12-16T16:24:05Z",
+          "comments": [
+            {
+              "originalPosition": 38,
+              "body": "what is this crazy concoction? \ud83e\udd23 ",
+              "createdAt": "2024-12-16T16:24:05Z",
+              "updatedAt": "2024-12-16T16:24:05Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6VaP80",
+          "commit": {
+            "abbreviatedOid": "0c1bdd1"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "Thanks much!",
+          "createdAt": "2024-12-16T16:24:21Z",
+          "updatedAt": "2024-12-16T16:24:21Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6VaUKL",
+          "commit": {
+            "abbreviatedOid": "0c1bdd1"
+          },
+          "author": "cabo",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-16T16:30:35Z",
+          "updatedAt": "2024-12-16T16:30:36Z",
+          "comments": [
+            {
+              "originalPosition": 38,
+              "body": "This turns the reference into one for BCP14 (cleaning up the normative references) while still almost looking like the prescribed boilerplate from RFC 8174.\r\n(Of course, idnits still stumbles, but I prefer BCP14 references a lot over keeping the two related references completely separate in the normative section.)",
+              "createdAt": "2024-12-16T16:30:36Z",
+              "updatedAt": "2024-12-16T16:30:36Z"
+            }
+          ]
         }
       ]
     }
