@@ -23,8 +23,8 @@ venue:
   type: "Working Group"
   mail: "core@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/core/"
-  github: "thomas-fossati/draft-cf-reg-update"
-  latest: "https://thomas-fossati.github.io/draft-cf-reg-update/draft-fossati-core-cf-reg-update.html"
+  github: "core-wg/cf-reg-update"
+  latest: "https://core-wg.github.io/cf-reg-update/draft-ietf-core-cf-reg-update.html"
 
 author:
  - fullname: Thomas Fossati
