@@ -11,29 +11,29 @@
        This document updates the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group, defined in Section 12.3 of RFC7252.
 Specifically, those regarding the First Come First Served (FCFS) portion of the registry. 
     ' name="description">
-<meta content="xml2rfc 3.24.0" name="generator">
+<meta content="xml2rfc 3.25.0" name="generator">
 <meta content="IANA" name="keyword">
 <meta content="registration" name="keyword">
 <meta content="update" name="keyword">
 <meta content="CoAP" name="keyword">
 <meta content="Content-Format" name="keyword">
-<meta content="draft-fossati-core-cf-reg-update-latest" name="ietf.draft">
+<meta content="draft-ietf-core-cf-reg-update-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.24.0
-    Python 3.12.7
+  xml2rfc 3.25.0
+    Python 3.12.8
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.4
     lxml 5.3.0
     platformdirs 4.3.6
-    pycountry 22.3.5
-    PyYAML 6.0.1
+    pycountry 24.6.1
+    PyYAML 6.0.2
     requests 2.32.3
     setuptools 70.3.0
     wcwidth 0.2.13
 -->
-<link href="draft-fossati-core-cf-reg-update.xml" rel="alternate" type="application/rfc+xml">
+<link href="draft-ietf-core-cf-reg-update.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
 <style type="text/css">@font-face {
   font-family: 'Lora';
@@ -284,6 +284,12 @@ body {
 }
 
 /* headings */
+section {
+  clear: both;
+}
+.section-number {
+  padding-right: 0.5em;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-title);
   font-weight: 680;
@@ -315,6 +321,7 @@ h4, h5, h6 {
 /* general structure */
 .author {
   padding-bottom: 0.3em;
+  vertical-align: top;
 }
 #abstract+p {
   font-size: 18px;
@@ -392,25 +399,26 @@ svg[font-family~="monospace" i], svg [font-family~="monospace" i] {
 ol, ul {
   padding: 0;
   margin: 0 0 0.5em 2em;
-}
-:is(ol, ul) :is(ol, ul) {
-  margin-left: 1em;
+  & :is(ol, ul) {
+    margin-left: 1em;
+  }
 }
 li {
   margin: 0 0 0.25em 0;
 }
-.ulCompact li {
-  margin: 0;
-}
 ul.empty, .ulEmpty {
   list-style-type: none;
-}
-ul.empty li, .ulEmpty li {
-  margin-top: 0.5em;
+  & li {
+    margin-top: 0.5em;
+  }
 }
 :is(ul, ol).compact, .ulCompact, .olCompact {
-  line-height: 1;
   margin: 0 0 0 2em;
+  & li {
+    margin: 0;
+    & :first-child { margin-top: 0; }
+    & :last-child { margin-bottom: 0; }
+  }
 }
 
 /* definition lists */
@@ -418,38 +426,39 @@ dl {
   clear: left;
   --indent: 3ch;
   /* --indent: attr(indent ch); not supported in any browser, but we can dream */
-}
-dl.olPercent {
-  --indent: 5ch;
+  &.olPercent {
+    --indent: 5ch;
+    & > dt {
+      min-width: calc(var(--indent) - 2ch);
+    }
+  }
+  &.olPercent > dt {
+    float: none;
+  }
+
+  dl > dd > & {
+    margin-top: 0.5em;
+    margin-bottom: 0;
+  }
 }
 dl > dt {
   float: left;
   margin-right: 2ch;
   min-width: 8ch;
 }
-dl.dlNewline > dt {
-  float: none;
-}
 dl > dd {
   margin-bottom: .8em;
   margin-left: var(--indent) !important; /* stupid element overrides */
   min-height: 2ex;
 }
-dl.olPercent > dt {
-  min-width: calc(var(--indent) - 2ch);
-}
 :is(dl.compact, .dlCompact) > dd {
   margin-bottom: 0;
-}
-:is(dl.compact, .dlCompact) > dd > :is(:first-child, .break:first-child + *) {
-  margin-top: 0;
-}
-:is(dl.compact, .dlCompact) > dd > :is(:last-child) {
-  margin-bottom: 0;
-}
-dl > dd > dl {
-  margin-top: 0.5em;
-  margin-bottom: 0;
+  & > :is(:first-child, .break:first-child + *) {
+    margin-top: 0;
+  }
+  & > :is(:last-child) {
+    margin-bottom: 0;
+  }
 }
 :is(dd, span).break {
   display: none;
@@ -513,6 +522,7 @@ figcaption, caption {
   font-style: italic;
   margin: 0.5em 1.5em;
   text-align: left;
+  caption-side: bottom;
 }
 @media screen {
   /* Auto-collapse boilerplate. */
@@ -530,7 +540,11 @@ figcaption, caption {
   }
   pre, svg {
     display: inline-block;
-    overflow-x: auto;
+    /* In the horizontal direction, sometimes people make over-sized figures.
+       Scrollbars for those is therefore necessary: auto adds them as necessary..
+       In the vertical direction, the line-height can combine with the font
+       asender/descender height to produce scrollbars: hidden avoids that. */
+    overflow: auto hidden;
   }
   pre {
     max-width: 100%;
@@ -567,6 +581,7 @@ cite {
 
 /* tables */
 table {
+  width: auto;
   max-width: 100%;
   margin: 0 0 1em;
   border-collapse: collapse;
@@ -581,6 +596,16 @@ table.center {
 table.left {
   margin-right: auto;
 }
+table .text-left {
+  text-align: left;
+}
+table .text-center {
+  text-align: center;
+}
+table .text-right {
+  text-align: right;
+}
+
 thead, tbody {
   border: 1px solid var(--line-color);
 }
@@ -611,9 +636,11 @@ a.pilcrow {
   margin-left: 3px;
   opacity: 0.2;
   user-select: none;
+  &[href] {
+    color: var(--pilcrow-weak);
+    &:hover { text-decoration: none; }
+  }
 }
-a.pilcrow[href] { color: var(--pilcrow-weak); }
-a.pilcrow[href]:hover { text-decoration: none; }
 @media not print {
   :hover > a.pilcrow {
     opacity: 1;
@@ -653,26 +680,28 @@ sub, sup {
   font-size: var(--small-font-size);
   line-height: 18px;
   --identifier-width: 15ch;
-}
-#identifiers dt {
-  width: var(--identifier-width);
-  min-width: var(--identifier-width);
-  clear: left;
-  float: left;
-  text-align: right;
-  margin-right: 1ch;
-}
-#identifiers dd {
-  margin: 0;
-  margin-left: calc(1em + var(--identifier-width)) !important;
-  min-width: 5em;
-}
-#identifiers .authors .author {
-  display: inline-block;
-  margin-right: 1.5em;
-}
-#identifiers .authors .org {
-  font-style: italic;
+  & dt {
+    width: var(--identifier-width);
+    min-width: var(--identifier-width);
+    clear: left;
+    float: left;
+    text-align: right;
+    margin-right: 1ch;
+  }
+  & dd {
+    margin: 0;
+    margin-left: calc(1em + var(--identifier-width)) !important;
+    min-width: 5em;
+  }
+  & .authors {
+    & .author {
+      display: inline-block;
+      margin-right: 1.5em;
+    }
+    & .org {
+      font-style: italic;
+    }
+  }
 }
 
 /* The prepared/rendered info at the very bottom of the page */
@@ -683,9 +712,6 @@ sub, sup {
   margin-top: 2em;
 }
 .docInfo .prepared {
-  float: left;
-}
-.docInfo .prepared {
   float: right;
 }
 
@@ -693,53 +719,48 @@ sub, sup {
 #toc {
   padding: 0.75em 0 2em 0;
   margin-bottom: 1em;
-}
-@media screen {
-  #toc nav {
-    font-family: var(--font-title);
-    font-weight: 360;
+
+  & nav {
+    & ul {
+      margin: 0 0.5em 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    & li {
+      line-height: 1.3em;
+      margin: 2px 0;
+      padding-left: 1.2em;
+      text-indent: -1.2em;
+    }
+  }
+  & a.xref {
+    white-space: normal;
   }
 }
-#toc nav ul {
-  margin: 0 0.5em 0 0;
-  padding: 0;
-  list-style: none;
-}
-#toc nav li {
-  line-height: 1.3em;
-  margin: 2px 0;
-  padding-left: 1.2em;
-  text-indent: -1.2em;
-}
-#toc a.xref {
-  white-space: normal;
-}
-/* references */
-.references dt {
-  text-align: right;
-  font-weight: bold;
-  min-width: 10ch;
-  margin-right: 1.5ch;
-}
-.references dt:target::before {
-  content: "⇒";
-  width: 15px;
-  margin: 0 10px 0 -25px;
-}
-.references dd {
-  margin-left: 12ch !important;
-  overflow: auto;
+
+.references {
+  & > dt {
+    text-align: right;
+    font-weight: bold;
+    min-width: 10ch;
+    margin-right: 1.5ch;
+    &:target::before {
+      content: "⇒";
+      margin: 0 10px 0 -25px;
+    }
+  }
+  & > dd {
+    margin-left: 12ch !important;
+    overflow: visible;
+    & .refInstance {
+      margin-bottom: 0.8em;
+    }
+    & .ascii {
+      margin-bottom: 0.25em;
+    }
+  }
 }
 
-.refInstance {
-  margin-bottom: 1.25em;
-}
-
-.references .ascii {
-  margin-bottom: 0.25em;
-}
-
-/* index */
 #rfc\.index\.index + ul {
   margin-left: 0;
 }
@@ -747,21 +768,33 @@ sub, sup {
 /* authors */
 address.vcard {
   font-style: normal;
-  margin: 1em 0;
+  max-width: 20em;
+  margin: 1em auto 1em 0;
+
+  & .nameRole {
+    font-weight: 700;
+    margin-left: 0;
+  }
+  & .label {
+    margin: 0.5em 0;
+  }
+  & .type {
+    display: none;
+  }
+  & .alternative-contact {
+    margin: 0.5em 0 0.25em 0;
+  }
+  & .non-ascii {
+    margin: 0 0 0 2em;
+  }
+  & div.left {
+    text-align: left;
+  }
+  & div.right {
+    text-align: right;
+  }
 }
-address.vcard .nameRole {
-  font-weight: 700;
-  margin-left: 0;
-}
-address.vcard .label {
-  margin: 0.5em 0;
-}
-address.vcard .type {
-  display: none;
-}
-.alternative-contact {
-  margin: 1.5em 0 1em;
-}
+
 hr.addr {
   border-top: 1px dashed;
   margin: 0;
@@ -783,6 +816,7 @@ hr.addr {
   }
 }
 
+/* Comments */
 .rfcEditorRemove p:first-of-type {
   font-style: italic;
 }
@@ -793,7 +827,31 @@ hr.addr {
 .crefSource {
   font-style: italic;
 }
-/* alternative layout for smaller screens */
+
+@media screen {
+  #toc nav {
+    font-family: var(--font-title);
+    font-weight: 360;
+    & > ul { margin-bottom: 2em; }
+    & ul {
+      margin: 0 0 0 4px;
+      & :is(p, li) {
+        margin: 2px 0;
+      }
+    }
+  }
+  #toc a.toplink {
+    float: right;
+  }
+}
+@media not screen {
+  #toc a.toplink {
+    display: none;
+  }
+}
+
+
+/* TOC layout for smaller screens */
 @media screen and (max-width: 929px) {
   #toc {
     position: fixed;
@@ -804,9 +862,6 @@ hr.addr {
     margin: 0;
     border-bottom: 1px solid #ccc;
     opacity: 0.6;
-  }
-  #toc.active {
-      opacity: 1;
   }
   #toc h2 {
     margin: 0;
@@ -819,17 +874,17 @@ hr.addr {
     background-color: #444;
     color: white;
     cursor: pointer;
-  }
-  #toc h2::before { /* css hamburger */
-    float: right;
-    position: relative;
-    width: 1em;
-    height: 1px;
-    left: -164px;
-    margin: 8px 0 0 0;
-    background: white none repeat scroll 0 0;
-    box-shadow: 0 4px 0 0 white, 0 8px 0 0 white;
-    content: "";
+    &::before { /* css hamburger */
+      float: right;
+      position: relative;
+      width: 1em;
+      height: 1px;
+      left: -164px;
+      margin: 8px 0 0 0;
+      background: white none repeat scroll 0 0;
+      box-shadow: 0 4px 0 0 white, 0 8px 0 0 white;
+      content: "";
+    }
   }
   #toc nav {
     display: none;
@@ -840,14 +895,13 @@ hr.addr {
     height: calc(100vh - 48px);
     border-left: 1px solid #ddd;
   }
-  #toc.active nav {
-    display: block;
+  #toc.active {
+    opacity: 1;
+    & nav { display: block; }
   }
   /* Make the collapsed ToC header render white on gray also when it's a link */
   #toc h2 a,
-  #toc h2 a:link,
-  #toc h2 a:focus,
-  #toc h2 a:hover,
+  #toc h2 a:is(:link, :focus, :hover),
   #toc a.toplink,
   #toc a.toplink:hover {
     color: white;
@@ -855,11 +909,11 @@ hr.addr {
     text-decoration: none;
   }
   #toc a.toplink {
-    margin-top: 2px;
+    margin: 2px 0.5em 0;
   }
 }
 
-/* alternative layout for wide screens */
+/* TOC layout for wide screens */
 @media screen and (min-width: 930px) {
   body {
     padding-right: 360px;
@@ -888,20 +942,12 @@ hr.addr {
     overscroll-behavior: contain;
     scrollbar-width: thin;
   }
-  #toc nav > ul  {
-    margin-bottom: 2em;
-  }
-  #toc ul {
-    margin: 0 0 0 4px;
-    font-size: var(--small-font-size);
-  }
-  #toc ul :is(p, li) {
-    margin: 2px 0;
-    line-height: 22px;
-  }
   img { /* future proofing */
     max-width: 100%;
     height: auto;
+  }
+  #toc a.toplink {
+    margin: 8px 0.5em 0;
   }
 }
 
@@ -944,9 +990,6 @@ hr.addr {
   td {
     border-top: 1px solid #ddd;
   }
-  .toplink {
-    display: none;
-  }
 }
 
 @page :first {
@@ -969,82 +1012,6 @@ hr.addr {
   size: A4;
   margin-bottom: 45mm;
   padding-top: 20px;
-}
-
-/* Changes introduced to fix issues found during implementation */
-
-/* Separate body from document info even without intervening H1 */
-section {
-  clear: both;
-}
-
-/* Top align author divs, to avoid names without organization dropping level with org names */
-.author {
-  vertical-align: top;
-}
-
-/* Style section numbers with more space between number and title */
-.section-number {
-  padding-right: 0.5em;
-}
-
-/* Add styling for a link in the ToC that points to the top of the document */
-a.toplink {
-  float: right;
-  margin: 8px 0.5em 0;
-}
-
-/* Provide styling for table cell text alignment */
-table .text-left {
-  text-align: left;
-}
-table .text-center {
-  text-align: center;
-}
-table .text-right {
-  text-align: right;
-}
-
-/* Make the alternative author contact information look less like just another
-   author, and group it closer with the primary author contact information */
-.alternative-contact {
-  margin: 0.5em 0 0.25em 0;
-}
-address .non-ascii {
-  margin: 0 0 0 2em;
-}
-
-/* With it being possible to set tables with alignment
-  left, center, and right, { width: 100%; } does not make sense */
-table {
-  width: auto;
-}
-
-/* Avoid reference text that sits in a block with very wide left margin,
-   because of a long floating dt label.*/
-.references dd {
-  overflow: visible;
-}
-
-/* Control caption placement */
-caption {
-  caption-side: bottom;
-}
-
-/* Limit the width of the author address vcard, so names in right-to-left
-   script don't end up on the other side of the page. */
-
-address.vcard {
-  max-width: 20em;
-  margin-right: auto;
-}
-
-/* For address alignment dependent on LTR or RTL scripts */
-address div.left {
-  text-align: left;
-}
-address div.right {
-  text-align: right;
 }
 
 /* Dark mode. */
@@ -1082,12 +1049,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <table class="ears">
 <thead><tr>
 <td class="left">Internet-Draft</td>
-<td class="center">CoAP C-F Registrations Update</td>
-<td class="right">November 2024</td>
+<td class="center">CoAP Content-Format Registrations Update</td>
+<td class="right">December 2024</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Fossati &amp; Dijk</td>
-<td class="center">Expires 19 May 2025</td>
+<td class="center">Expires 21 June 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1097,18 +1064,18 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dt class="label-workgroup">Workgroup:</dt>
 <dd class="workgroup">Constrained RESTful Environments</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-fossati-core-cf-reg-update-latest</dd>
+<dd class="internet-draft">draft-ietf-core-cf-reg-update-latest</dd>
 <dt class="label-updates">Updates:</dt>
 <dd class="updates">
 <a href="https://www.rfc-editor.org/rfc/rfc7252" class="eref">7252</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-11-15" class="published">15 November 2024</time>
+<time datetime="2024-12-18" class="published">18 December 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-05-19">19 May 2025</time></dd>
+<dd class="expires"><time datetime="2025-06-21">21 June 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1134,15 +1101,15 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
       </h2>
 <p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
 <p id="section-note.1-2">
-        The latest revision of this draft can be found at <span><a href="https://thomas-fossati.github.io/draft-cf-reg-update/draft-fossati-core-cf-reg-update.html">https://thomas-fossati.github.io/draft-cf-reg-update/draft-fossati-core-cf-reg-update.html</a></span>.
-        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-fossati-core-cf-reg-update/">https://datatracker.ietf.org/doc/draft-fossati-core-cf-reg-update/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+        The latest revision of this draft can be found at <span><a href="https://core-wg.github.io/cf-reg-update/draft-ietf-core-cf-reg-update.html">https://core-wg.github.io/cf-reg-update/draft-ietf-core-cf-reg-update.html</a></span>.
+        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-ietf-core-cf-reg-update/">https://datatracker.ietf.org/doc/draft-ietf-core-cf-reg-update/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
 <p id="section-note.1-3">
         Discussion of this document takes place on the
         Constrained RESTful Environments Working Group mailing list (<span><a href="mailto:core@ietf.org">mailto:core@ietf.org</a></span>),
         which is archived at <span><a href="https://mailarchive.ietf.org/arch/browse/core/">https://mailarchive.ietf.org/arch/browse/core/</a></span>.
         Subscribe at <span><a href="https://www.ietf.org/mailman/listinfo/core/">https://www.ietf.org/mailman/listinfo/core/</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
 <p id="section-note.1-4">Source for this draft and an issue tracker can be found at
-        <span><a href="https://github.com/thomas-fossati/draft-cf-reg-update">https://github.com/thomas-fossati/draft-cf-reg-update</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
+        <span><a href="https://github.com/core-wg/cf-reg-update">https://github.com/core-wg/cf-reg-update</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1163,7 +1130,7 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 19 May 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 21 June 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1213,6 +1180,12 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.4">
                 <p id="section-toc.1-1.3.2.4.1"><a href="#section-3.4" class="auto internal xref">3.4</a>.  <a href="#name-the-content-coding-is-unkno" class="internal xref">The Content Coding is Unknown</a></p>
 </li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.5">
+                <p id="section-toc.1-1.3.2.5.1"><a href="#section-3.5" class="auto internal xref">3.5</a>.  <a href="#name-duplicate-entry-with-defaul" class="internal xref">Duplicate Entry with Default Media Type Parameters</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.6">
+                <p id="section-toc.1-1.3.2.6.1"><a href="#section-3.6" class="auto internal xref">3.6</a>.  <a href="#name-duplicate-entry-with-default" class="internal xref">Duplicate Entry with Default Content Coding</a></p>
+</li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
@@ -1220,6 +1193,17 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
             <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
+                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-full-expert-review-checks" class="internal xref">"Full" Expert Review Checks</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
+                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-lightweight-expert-review-c" class="internal xref">"Lightweight" Expert Review Checks</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3">
+                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-temporary-note-removal" class="internal xref">Temporary Note Removal</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
             <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-references" class="internal xref">References</a></p>
@@ -1233,7 +1217,10 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1277,11 +1264,11 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <h3 id="name-the-media-type-is-unknown">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-the-media-type-is-unknown" class="section-name selfRef">The Media Type is Unknown</a>
         </h3>
-<p id="section-3.1-1">The registrant requests an FCFS C-F ID for an unknown media type:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
-<span id="name-attempt-at-registering-c-f-"></span><table class="left" id="table-1">
+<p id="section-3.1-1">The registrant requests an FCFS Content-Format ID for an unknown media type:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<span id="name-attempt-at-registering-cont"></span><table class="left" id="table-1">
           <caption>
 <a href="#table-1" class="selfRef">Table 1</a>:
-<a href="#name-attempt-at-registering-c-f-" class="selfRef">Attempt at Registering C-F for an Unknown Media Type</a>
+<a href="#name-attempt-at-registering-cont" class="selfRef">Attempt at Registering Content-Format for an Unknown Media Type</a>
           </caption>
 <thead>
             <tr>
@@ -1305,11 +1292,11 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <h3 id="name-the-media-type-parameter-is">
 <a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-the-media-type-parameter-is" class="section-name selfRef">The Media Type Parameter is Unknown</a>
         </h3>
-<p id="section-3.2-1">The registrant requests an FCFS C-F ID for an existing media type with an unknown parameter:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
-<span id="name-attempt-at-registering-c-f-f"></span><table class="left" id="table-2">
+<p id="section-3.2-1">The registrant requests an FCFS Content-Format ID for an existing media type with an unknown parameter:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<span id="name-attempt-at-registering-conte"></span><table class="left" id="table-2">
           <caption>
 <a href="#table-2" class="selfRef">Table 2</a>:
-<a href="#name-attempt-at-registering-c-f-f" class="selfRef">Attempt at Registering C-F for Media Type with Unknown Parameter</a>
+<a href="#name-attempt-at-registering-conte" class="selfRef">Attempt at Registering Content-Format for Media Type with Unknown Parameter</a>
           </caption>
 <thead>
             <tr>
@@ -1333,11 +1320,11 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <h3 id="name-the-media-type-parameter-va">
 <a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-the-media-type-parameter-va" class="section-name selfRef">The Media Type Parameter Value is Invalid</a>
         </h3>
-<p id="section-3.3-1">The registrant requests an FCFS C-F ID for an existing media type with an invalid parameter value:<a href="#section-3.3-1" class="pilcrow">¶</a></p>
-<span id="name-attempt-at-registering-c-f-fo"></span><table class="left" id="table-3">
+<p id="section-3.3-1">The registrant requests an FCFS Content-Format ID for an existing media type with an invalid parameter value:<a href="#section-3.3-1" class="pilcrow">¶</a></p>
+<span id="name-attempt-at-registering-conten"></span><table class="left" id="table-3">
           <caption>
 <a href="#table-3" class="selfRef">Table 3</a>:
-<a href="#name-attempt-at-registering-c-f-fo" class="selfRef">Attempt at Registering C-F for Media Type with Invalid Parameter Value</a>
+<a href="#name-attempt-at-registering-conten" class="selfRef">Attempt at Registering Content-Format for Media Type with Invalid Parameter Value</a>
           </caption>
 <thead>
             <tr>
@@ -1361,11 +1348,11 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <h3 id="name-the-content-coding-is-unkno">
 <a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-the-content-coding-is-unkno" class="section-name selfRef">The Content Coding is Unknown</a>
         </h3>
-<p id="section-3.4-1">The registrant requests an FCFS C-F ID for an existing media type with an unknown content coding, "inflate":<a href="#section-3.4-1" class="pilcrow">¶</a></p>
-<span id="name-attempt-at-registering-c-f-w"></span><table class="left" id="table-4">
+<p id="section-3.4-1">The registrant requests an FCFS Content-Format ID for an existing media type with an unknown content coding, "inflate":<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+<span id="name-attempt-at-registering-content"></span><table class="left" id="table-4">
           <caption>
 <a href="#table-4" class="selfRef">Table 4</a>:
-<a href="#name-attempt-at-registering-c-f-w" class="selfRef">Attempt at Registering C-F with Unknown Content Coding</a>
+<a href="#name-attempt-at-registering-content" class="selfRef">Attempt at Registering Content-Format with Unknown Content Coding</a>
           </caption>
 <thead>
             <tr>
@@ -1378,6 +1365,75 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
             <tr>
               <td class="text-left" rowspan="1" colspan="1">application/senml+cbor</td>
               <td class="text-left" rowspan="1" colspan="1">inflate</td>
+              <td class="text-left" rowspan="1" colspan="1">64999</td>
+            </tr>
+          </tbody>
+        </table>
+</section>
+</div>
+<div id="duplicate-entry-with-default-media-type-parameters">
+<section id="section-3.5">
+        <h3 id="name-duplicate-entry-with-defaul">
+<a href="#section-3.5" class="section-number selfRef">3.5. </a><a href="#name-duplicate-entry-with-defaul" class="section-name selfRef">Duplicate Entry with Default Media Type Parameters</a>
+        </h3>
+<p id="section-3.5-1">The registrant requests an FCFS Content-Format ID for a media type that includes a parameter set to its default value.
+This media type is already registered without that parameter.
+As a result, this could lead to the creation of two separate Content-Format IDs for the same "logical" entry.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
+<span id="name-attempt-at-registering-an-e"></span><table class="left" id="table-5">
+          <caption>
+<a href="#table-5" class="selfRef">Table 5</a>:
+<a href="#name-attempt-at-registering-an-e" class="selfRef">Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (1)</a>
+          </caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">Content Type</th>
+              <th class="text-left" rowspan="1" colspan="1">Content Coding</th>
+              <th class="text-left" rowspan="1" colspan="1">ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">application/my</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
+              <td class="text-left" rowspan="1" colspan="1">64900</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">application/my; parameter=default</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
+              <td class="text-left" rowspan="1" colspan="1">64999</td>
+            </tr>
+          </tbody>
+        </table>
+</section>
+</div>
+<div id="duplicate-entry-with-default-content-coding">
+<section id="section-3.6">
+        <h3 id="name-duplicate-entry-with-default">
+<a href="#section-3.6" class="section-number selfRef">3.6. </a><a href="#name-duplicate-entry-with-default" class="section-name selfRef">Duplicate Entry with Default Content Coding</a>
+        </h3>
+<p id="section-3.6-1">The registrant requests an FCFS Content-Format ID for the "identity" Content Coding, which is the default coding.
+If accepted, this request would duplicate an entry where the "Content Coding" field is left empty.<a href="#section-3.6-1" class="pilcrow">¶</a></p>
+<span id="name-attempt-at-registering-an-eq"></span><table class="left" id="table-6">
+          <caption>
+<a href="#table-6" class="selfRef">Table 6</a>:
+<a href="#name-attempt-at-registering-an-eq" class="selfRef">Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (2)</a>
+          </caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">Content Type</th>
+              <th class="text-left" rowspan="1" colspan="1">Content Coding</th>
+              <th class="text-left" rowspan="1" colspan="1">ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">application/my</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
+              <td class="text-left" rowspan="1" colspan="1">64900</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">application/my</td>
+              <td class="text-left" rowspan="1" colspan="1">identity</td>
               <td class="text-left" rowspan="1" colspan="1">64999</td>
             </tr>
           </tbody>
@@ -1400,24 +1456,101 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-iana-considerations">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-5-1">Before assigning a new Content-Format in the FCFS space, the registrar <span class="bcp14">MUST</span> check that:<a href="#section-5-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-5-2">
-<li id="section-5-2.1">
-          <p id="section-5-2.1.1">The content-type associated with the requested Content-Format is not associated with an already registered CoAP Content-Format;<a href="#section-5-2.1.1" class="pilcrow">¶</a></p>
+<p id="section-5-1">The CoAP Content-Formats registration procedures defined in <span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> are modified as shown in <a href="#tbl-new-cf-proc" class="auto internal xref">Table 7</a>.<a href="#section-5-1" class="pilcrow">¶</a></p>
+<span id="name-updated-coap-content-format"></span><div id="tbl-new-cf-proc">
+<table class="center" id="table-7">
+        <caption>
+<a href="#table-7" class="selfRef">Table 7</a>:
+<a href="#name-updated-coap-content-format" class="selfRef">Updated CoAP Content-Formats Registration Procedures</a>
+        </caption>
+<thead>
+          <tr>
+            <th class="text-left" rowspan="1" colspan="1">Range</th>
+            <th class="text-left" rowspan="1" colspan="1">Registration Procedures</th>
+            <th class="text-left" rowspan="1" colspan="1">Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">0-255</td>
+            <td class="text-left" rowspan="1" colspan="1">Expert Review</td>
+            <td class="text-left" rowspan="1" colspan="1">Full review described in RFCthis, <a href="#full-checks" class="auto internal xref">Section 5.1</a>
+</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">256-9999</td>
+            <td class="text-left" rowspan="1" colspan="1">IETF Review or IESG Approval</td>
+            <td class="text-left" rowspan="1" colspan="1"> </td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry)</td>
+            <td class="text-left" rowspan="1" colspan="1">First Come First Served</td>
+            <td class="text-left" rowspan="1" colspan="1">Corresponding media type registration required</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">10000-64999 (Includes parameters and/or Content Coding)</td>
+            <td class="text-left" rowspan="1" colspan="1">Expert Review</td>
+            <td class="text-left" rowspan="1" colspan="1">Lightweight review described in RFCthis, <a href="#checks" class="auto internal xref">Section 5.2</a>
+</td>
+          </tr>
+          <tr>
+            <td class="text-left" rowspan="1" colspan="1">65000-65535</td>
+            <td class="text-left" rowspan="1" colspan="1">Experimental use (no operational use)</td>
+            <td class="text-left" rowspan="1" colspan="1"> </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<p id="section-5-3">The 10000-64999 range now has two separate registration procedures.
+If the registration consists solely of a registered media type name in the "Content Type" field, without any parameter names or "Content Coding", and the media type has not yet been used in this registry, then the policy is FCFS, as before.
+In all other cases, the policy will be Expert Review, following the checklist described in <a href="#checks" class="auto internal xref">Section 5.2</a>.<a href="#section-5-3" class="pilcrow">¶</a></p>
+<p id="section-5-4">A new column with the title "Note" has been added to the registry, which contains information about expected checks.<a href="#section-5-4" class="pilcrow">¶</a></p>
+<div id="full-checks">
+<section id="section-5.1">
+        <h3 id="name-full-expert-review-checks">
+<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-full-expert-review-checks" class="section-name selfRef">"Full" Expert Review Checks</a>
+        </h3>
+<p id="section-5.1-1">The registration procedure for the 0-255 range has been slightly modified -- from "Expert Review" to "Expert Review (Full)" -- to clearly distinguish it from the "lightweight" Expert Review that may apply to the 10000-64999 range.
+For the 0-255 range, in addition to the checks described in <a href="#checks" class="auto internal xref">Section 5.2</a>, the DE must also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
+For the 10000-64999 range, this criterion does not apply.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="checks">
+<section id="section-5.2">
+        <h3 id="name-lightweight-expert-review-c">
+<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-lightweight-expert-review-c" class="section-name selfRef">"Lightweight" Expert Review Checks</a>
+        </h3>
+<p id="section-5.2-1">The "lightweight" Designated Expert review checklist for the CoAP Content-Formats registry consists of the following steps:<a href="#section-5.2-1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-5.2-2">
+<li id="section-5.2-2.1">
+            <p id="section-5.2-2.1.1">The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;<a href="#section-5.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li id="section-5-2.2">
-          <p id="section-5-2.2.1">The media type associated with the requested Content-Format exists in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>, or its registration has been approved;<a href="#section-5-2.2.1" class="pilcrow">¶</a></p>
+          <li id="section-5.2-2.2">
+            <p id="section-5.2-2.2.1">The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>;<a href="#section-5.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li id="section-5-2.3">
-          <p id="section-5-2.3.1">The optional parameter names exist in association with the media type, and any parameter values associated with such parameter names are as expected;<a href="#section-5-2.3.1" class="pilcrow">¶</a></p>
+          <li id="section-5.2-2.3">
+            <p id="section-5.2-2.3.1">The optional parameter names must exist in association with the media type, and any parameter values associated with such parameter names are as expected;<a href="#section-5.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li id="section-5-2.4">
-          <p id="section-5-2.4.1">If a Content Coding is specified, it exists in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" <span>[<a href="#IANA.http-parameters" class="cite xref">IANA.http-parameters</a>]</span>.<a href="#section-5-2.4.1" class="pilcrow">¶</a></p>
+          <li id="section-5.2-2.4">
+            <p id="section-5.2-2.4.1">If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" <span>[<a href="#IANA.http-parameters" class="cite xref">IANA.http-parameters</a>]</span>.<a href="#section-5.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
-      </ol>
-<p id="section-5-3">The registrar <span class="bcp14">MAY</span> forward the registration of a CoAP Content-Format in the FCFS portion of the registry (i.e., one for a CoAP Content-Format identifier in range 10000-64999) to one or more DEs of the registry for consultation.<a href="#section-5-3" class="pilcrow">¶</a></p>
-<p id="section-5-4">The registrar <span class="bcp14">MUST</span> forward the registration to one or more DEs of the registry when such registration involves any media type parameters.<a href="#section-5-4" class="pilcrow">¶</a></p>
-<p id="section-5-5">If the request is forwarded to the DE, their judgement is binding.<a href="#section-5-5" class="pilcrow">¶</a></p>
+        </ol>
+</section>
+</div>
+<div id="temporary-note-removal">
+<section id="section-5.3">
+        <h3 id="name-temporary-note-removal">
+<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-temporary-note-removal" class="section-name selfRef">Temporary Note Removal</a>
+        </h3>
+<p id="section-5.3-1">The following note has been added to the registry as a temporary fix:<a href="#section-5.3-1" class="pilcrow">¶</a></p>
+<ul class="normal ulEmpty">
+<li class="normal ulEmpty" id="section-5.3-2.1">
+            <p id="section-5.3-2.1.1">"Note: The validity of the combination of Content Coding, Content Type and parameters is checked prior to assignment."<a href="#section-5.3-2.1.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<p id="section-5.3-3">IANA is instructed to remove it when the this document is approved for publication.<a href="#section-5.3-3" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="sec-combined-references">
@@ -1477,8 +1610,22 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 </div>
 </section>
 </div>
-<div id="authors-addresses">
+<div id="acknowledgments">
 <section id="appendix-A">
+      <h2 id="name-acknowledgments">
+<a href="#name-acknowledgments" class="section-name selfRef">Acknowledgments</a>
+      </h2>
+<p id="appendix-A-1">Thank you
+Amanda Baber,
+Carsten Bormann,
+Francesca Palombini
+and
+Marco Tiloca
+for your reviews, comments, suggestions and fixes.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="authors-addresses">
+<section id="appendix-B">
       <h2 id="name-authors-addresses">
 <a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>

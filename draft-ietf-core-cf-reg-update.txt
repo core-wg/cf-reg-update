@@ -6,11 +6,11 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 6 June 2025                                     3 December 2024
+Expires: 21 June 2025                                   18 December 2024
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
-                draft-fossati-core-cf-reg-update-latest
+                  draft-ietf-core-cf-reg-update-latest
 
 Abstract
 
@@ -23,10 +23,10 @@ About This Document
 
    This note is to be removed before publishing as an RFC.
 
-   The latest revision of this draft can be found at https://thomas-
-   fossati.github.io/draft-cf-reg-update/draft-fossati-core-cf-reg-
-   update.html.  Status information for this document may be found at
-   https://datatracker.ietf.org/doc/draft-fossati-core-cf-reg-update/.
+   The latest revision of this draft can be found at https://core-
+   wg.github.io/cf-reg-update/draft-ietf-core-cf-reg-update.html.
+   Status information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-ietf-core-cf-reg-update/.
 
    Discussion of this document takes place on the Constrained RESTful
    Environments Working Group mailing list (mailto:core@ietf.org), which
@@ -34,7 +34,7 @@ About This Document
    Subscribe at https://www.ietf.org/mailman/listinfo/core/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/thomas-fossati/draft-cf-reg-update.
+   https://github.com/core-wg/cf-reg-update.
 
 Status of This Memo
 
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 6 June 2025.
+   This Internet-Draft will expire on 21 June 2025.
 
 Copyright Notice
 
