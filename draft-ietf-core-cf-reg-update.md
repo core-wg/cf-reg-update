@@ -3,7 +3,7 @@ title: "Update to the IANA CoAP Content-Formats Registration Procedures"
 abbrev: "CoAP Content-Format Registrations Update"
 category: std
 
-docname: draft-fossati-core-cf-reg-update-latest
+docname: draft-ietf-core-cf-reg-update-latest
 submissiontype: IETF
 number:
 updates: 7252
