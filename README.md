@@ -1,17 +1,17 @@
 # Update to the IANA CoAP Content-Formats Registration Procedures
 
-This is the working area for the individual Internet-Draft, "Update to the IANA CoAP Content-Formats Registration Procedures".
+This is the working area for the IETF [CORE Working Group](https://datatracker.ietf.org/wg/core/documents/) Internet-Draft, "Update to the IANA CoAP Content-Formats Registration Procedures".
 
-* [Editor's Copy](https://thomas-fossati.github.io/draft-cf-reg-update/#go.draft-fossati-core-cf-reg-update.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-fossati-core-cf-reg-update)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-fossati-core-cf-reg-update)
-* [Compare Editor's Copy to Individual Draft](https://thomas-fossati.github.io/draft-cf-reg-update/#go.draft-fossati-core-cf-reg-update.diff)
+* [Editor's Copy](https://core-wg.github.io/cf-reg-update/#go.draft-ietf-core-cf-reg-update.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-core-cf-reg-update)
+* [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-core-cf-reg-update)
+* [Compare Editor's Copy to Working Group Draft](https://core-wg.github.io/cf-reg-update/#go.draft-ietf-core-cf-reg-update.diff)
 
 
 ## Contributing
 
 See the
-[guidelines for contributions](https://github.com/thomas-fossati/draft-cf-reg-update/blob/main/CONTRIBUTING.md).
+[guidelines for contributions](https://github.com/core-wg/cf-reg-update/blob/main/CONTRIBUTING.md).
 
 Contributions can be made by creating pull requests.
 The GitHub interface supports creating pull requests using the Edit (✏) button.
