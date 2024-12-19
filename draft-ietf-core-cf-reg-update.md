@@ -168,7 +168,7 @@ For the 10000-64999 range, this criterion does not apply.
 
 ## "Lightweight" Expert Review Checks {#checks}
 
-For the 10000-64999 range, the DE is instructed to perform the "lightweight" Expert review, as described by the following checklist:
+For the 10000-64999 range, the Designated Expert is instructed to perform the "lightweight" Expert review, as described by the following checklist:
 
 1. The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;
 1. The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry {{IANA.media-types}};
