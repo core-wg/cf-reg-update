@@ -40,38 +40,41 @@ normative:
 informative:
   Err4954: 7252
   RFC9193: senml-cf
+  IANA.core-parameters:
+  IANA.media-types:
+  IANA.http-parameters:
 
 entity:
   SELF: "RFCthis"
 
 --- abstract
 
-This document updates the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group, defined in Section 12.3 of RFC7252.
-Specifically, those regarding the First Come First Served (FCFS) portion of the registry.
+This document updates the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group, defined in Section 12.3 of RFC7252,
+specifically, those regarding the First Come First Served (FCFS) portion of the registry.
 
 --- middle
 
 # Introduction
 
-{{Section 12.3 of -coap}} describes the registration procedures for the "CoAP Content-Formats" registry within the "CoRE Parameters" registry group {{?IANA.core-parameters}}.
+{{Section 12.3 of -coap}} describes the registration procedures for the "CoAP Content-Formats" registry within the "CoRE Parameters" registry group {{IANA.core-parameters}}.
 (Note that the columns of this registry have been revised according to {{Err4954}}.)
 In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the First Come First Served (FCFS) portion of the registry (10000-64999).
 These rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
 Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
-This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is unfair to demand solely from the registrar.
-This lack of guidance may engender confusion in both the registering party and the registrar, and could eventually lead to erroneous registrations.
+This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is not a task to demand solely from the registrar.
+This lack of guidance may engender confusion in both the registering party and the registrar, and has already led to erroneous registrations.
 
 {{iana}} of this memo updates the registration procedures for the "CoAP Content-Formats" registry regarding its FCFS portion to reduce the risk of accidental or malicious errors.
 
 # Conventions and Definitions
 
-{::boilerplate bcp14-tagged}
+{::boilerplate bcp14-tagged-bcp14}
 
 This document uses the terms "media type", "content coding", "content-type" and "content format" as defined in {{Section 2 of -senml-cf}}.
 
-# (Bad) Examples
+# Examples for Erroneous Registrations
 
-This section contains a few examples of registration requests for a CoAP Content-Format with identifier in the FCFS space (64999) that should not be allowed to succeed.
+This section contains a few examples of registration requests for a CoAP Content-Format with identifier in the FCFS space (64999) that must not be allowed to succeed.
 
 ## The Media Type is Unknown {#ex-unknown-mt}
 
@@ -102,7 +105,7 @@ The registrant requests an FCFS Content-Format ID for an existing media type wit
 
 ## The Content Coding is Unknown
 
-The registrant requests an FCFS Content-Format ID for an existing media type with an unknown content coding, "inflate":
+The registrant requests an FCFS Content-Format ID for an existing media type with an unknown content coding:
 
 | Content Type | Content Coding | ID |
 |--|--|--|
@@ -111,8 +114,8 @@ The registrant requests an FCFS Content-Format ID for an existing media type wit
 
 ## Duplicate Entry with Default Media Type Parameters
 
-The registrant requests an FCFS Content-Format ID for a media type that includes a parameter set to its default value.
-This media type is already registered without that parameter.
+The registrant requests an FCFS Content-Format ID for a media type that includes a parameter set to its default value, while
+this media type is already registered without that parameter.
 As a result, this could lead to the creation of two separate Content-Format IDs for the same "logical" entry.
 
 | Content Type | Content Coding | ID |
@@ -159,26 +162,30 @@ A new column with the title "Note" has been added to the registry, which contain
 
 ## "Full" Expert Review Checks {#full-checks}
 
-The registration procedure for the 0-255 range has been slightly modified -- from "Expert Review" to "Expert Review (Full)" -- to clearly distinguish it from the "lightweight" Expert Review that may apply to the 10000-64999 range.
-For the 0-255 range, in addition to the checks described in {{checks}}, the DE must also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
+For the 0-255 range, the DE is instructed to perform a "Full Review" described in this section, not only the "lightweight" Expert Review that may apply to the 10000-64999 range.
+For this range, in addition to the checks described in {{checks}}, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
 For the 10000-64999 range, this criterion does not apply.
 
 ## "Lightweight" Expert Review Checks {#checks}
 
-The "lightweight" Designated Expert review checklist for the CoAP Content-Formats registry consists of the following steps:
+For the 10000-64999 range, the Designated Expert is instructed to perform the "lightweight" Expert review, as described by the following checklist:
 
 1. The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;
-1. The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry {{?IANA.media-types}};
-1. The optional parameter names must exist in association with the media type, and any parameter values associated with such parameter names are as expected;
-1. If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" {{?IANA.http-parameters}}.
+1. The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry {{IANA.media-types}};
+1. The optional parameter names must have been defined in association with the media type, and any parameter values associated with such parameter names must be as permitted;
+1. If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding" registry of the "Hypertext Transfer Protocol (HTTP) Parameters" {{IANA.http-parameters}}.
+
+<!-- Should these actually use BCP14 MUSTs? -->
 
 ## Temporary Note Removal
+{:removeinrfc}
 
 The following note has been added to the registry as a temporary fix:
 
 > "Note: The validity of the combination of Content Coding, Content Type and parameters is checked prior to assignment."
 
-IANA is instructed to remove it when the this document is approved for publication.
+IANA is instructed to remove this note from the registry when this document is approved for publication.
+RFC-Editor: please remove this section once the note has been removed.
 
 --- back
 
@@ -188,7 +195,7 @@ IANA is instructed to remove it when the this document is approved for publicati
 Thank you
 Amanda Baber,
 Carsten Bormann,
-Francesca Palombini
+Francesca Palombini,
 and
 Marco Tiloca
 for your reviews, comments, suggestions and fixes.
