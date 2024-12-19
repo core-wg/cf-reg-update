@@ -8,8 +8,8 @@
 <meta content="Thomas Fossati" name="author">
 <meta content="Esko Dijk" name="author">
 <meta content='
-       This document updates the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group, defined in Section 12.3 of RFC7252.
-Specifically, those regarding the First Come First Served (FCFS) portion of the registry. 
+       This document updates the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group, defined in Section 12.3 of RFC7252,
+specifically, those regarding the First Come First Served (FCFS) portion of the registry. 
     ' name="description">
 <meta content="xml2rfc 3.25.0" name="generator">
 <meta content="IANA" name="keyword">
@@ -1054,7 +1054,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Fossati &amp; Dijk</td>
-<td class="center">Expires 21 June 2025</td>
+<td class="center">Expires 22 June 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1070,12 +1070,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc7252" class="eref">7252</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-12-18" class="published">18 December 2024</time>
+<time datetime="2024-12-19" class="published">19 December 2024</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-06-21">21 June 2025</time></dd>
+<dd class="expires"><time datetime="2025-06-22">22 June 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1092,8 +1092,8 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">Update to the IANA CoAP Content-Formats Registration Procedures</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document updates the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group, defined in Section 12.3 of RFC7252.
-Specifically, those regarding the First Come First Served (FCFS) portion of the registry.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document updates the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group, defined in Section 12.3 of RFC7252,
+specifically, those regarding the First Come First Served (FCFS) portion of the registry.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1130,7 +1130,7 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 21 June 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 22 June 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1166,7 +1166,7 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-bad-examples" class="internal xref">(Bad) Examples</a></p>
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-examples-for-erroneous-regi" class="internal xref">Examples for Erroneous Registrations</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
                 <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-the-media-type-is-unknown" class="internal xref">The Media Type is Unknown</a></p>
@@ -1236,8 +1236,8 @@ Specifically, those regarding the First Come First Served (FCFS) portion of the 
 In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the First Come First Served (FCFS) portion of the registry (10000-64999).
 These rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
 Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
-This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is unfair to demand solely from the registrar.
-This lack of guidance may engender confusion in both the registering party and the registrar, and could eventually lead to erroneous registrations.<a href="#section-1-1" class="pilcrow">¶</a></p>
+This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is not a task to demand solely from the registrar.
+This lack of guidance may engender confusion in both the registering party and the registrar, and has already led to erroneous registrations.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2"><a href="#iana" class="auto internal xref">Section 5</a> of this memo updates the registration procedures for the "CoAP Content-Formats" registry regarding its FCFS portion to reduce the risk of accidental or malicious errors.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1248,17 +1248,17 @@ This lack of guidance may engender confusion in both the registering party and t
       </h2>
 <p id="section-2-1">The key words "<span class="bcp14">MUST</span>", "<span class="bcp14">MUST NOT</span>", "<span class="bcp14">REQUIRED</span>", "<span class="bcp14">SHALL</span>", "<span class="bcp14">SHALL NOT</span>", "<span class="bcp14">SHOULD</span>", "<span class="bcp14">SHOULD NOT</span>", "<span class="bcp14">RECOMMENDED</span>", "<span class="bcp14">NOT RECOMMENDED</span>",
 "<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
-described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they
+described in <span>[<a href="#BCP14" class="cite xref">BCP14</a>]</span> (<a href="#RFC2119" class="auto internal xref">RFC2119</a>) (<a href="#RFC8174" class="auto internal xref">RFC8174</a>) when, and only when, they
 appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
 <p id="section-2-2">This document uses the terms "media type", "content coding", "content-type" and "content format" as defined in <span><a href="https://rfc-editor.org/rfc/rfc9193#section-2" class="relref">Section 2</a> of [<a href="#RFC9193" class="cite xref">RFC9193</a>]</span>.<a href="#section-2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="bad-examples">
+<div id="examples-for-erroneous-registrations">
 <section id="section-3">
-      <h2 id="name-bad-examples">
-<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-bad-examples" class="section-name selfRef">(Bad) Examples</a>
+      <h2 id="name-examples-for-erroneous-regi">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-examples-for-erroneous-regi" class="section-name selfRef">Examples for Erroneous Registrations</a>
       </h2>
-<p id="section-3-1">This section contains a few examples of registration requests for a CoAP Content-Format with identifier in the FCFS space (64999) that should not be allowed to succeed.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">This section contains a few examples of registration requests for a CoAP Content-Format with identifier in the FCFS space (64999) that must not be allowed to succeed.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <div id="ex-unknown-mt">
 <section id="section-3.1">
         <h3 id="name-the-media-type-is-unknown">
@@ -1348,7 +1348,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <h3 id="name-the-content-coding-is-unkno">
 <a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-the-content-coding-is-unkno" class="section-name selfRef">The Content Coding is Unknown</a>
         </h3>
-<p id="section-3.4-1">The registrant requests an FCFS Content-Format ID for an existing media type with an unknown content coding, "inflate":<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+<p id="section-3.4-1">The registrant requests an FCFS Content-Format ID for an existing media type with an unknown content coding:<a href="#section-3.4-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-content"></span><table class="left" id="table-4">
           <caption>
 <a href="#table-4" class="selfRef">Table 4</a>:
@@ -1376,8 +1376,8 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
         <h3 id="name-duplicate-entry-with-defaul">
 <a href="#section-3.5" class="section-number selfRef">3.5. </a><a href="#name-duplicate-entry-with-defaul" class="section-name selfRef">Duplicate Entry with Default Media Type Parameters</a>
         </h3>
-<p id="section-3.5-1">The registrant requests an FCFS Content-Format ID for a media type that includes a parameter set to its default value.
-This media type is already registered without that parameter.
+<p id="section-3.5-1">The registrant requests an FCFS Content-Format ID for a media type that includes a parameter set to its default value, while
+this media type is already registered without that parameter.
 As a result, this could lead to the creation of two separate Content-Format IDs for the same "logical" entry.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-an-e"></span><table class="left" id="table-5">
           <caption>
@@ -1510,8 +1510,8 @@ In all other cases, the policy will be Expert Review, following the checklist de
         <h3 id="name-full-expert-review-checks">
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-full-expert-review-checks" class="section-name selfRef">"Full" Expert Review Checks</a>
         </h3>
-<p id="section-5.1-1">The registration procedure for the 0-255 range has been slightly modified -- from "Expert Review" to "Expert Review (Full)" -- to clearly distinguish it from the "lightweight" Expert Review that may apply to the 10000-64999 range.
-For the 0-255 range, in addition to the checks described in <a href="#checks" class="auto internal xref">Section 5.2</a>, the DE must also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
+<p id="section-5.1-1">For the 0-255 range, the DE is instructed to perform a "Full Review" described in this section, not only the "lightweight" Expert Review that may apply to the 10000-64999 range.
+For this range, in addition to the checks described in <a href="#checks" class="auto internal xref">Section 5.2</a>, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
 For the 10000-64999 range, this criterion does not apply.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1520,7 +1520,7 @@ For the 10000-64999 range, this criterion does not apply.<a href="#section-5.1-1
         <h3 id="name-lightweight-expert-review-c">
 <a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-lightweight-expert-review-c" class="section-name selfRef">"Lightweight" Expert Review Checks</a>
         </h3>
-<p id="section-5.2-1">The "lightweight" Designated Expert review checklist for the CoAP Content-Formats registry consists of the following steps:<a href="#section-5.2-1" class="pilcrow">¶</a></p>
+<p id="section-5.2-1">For the 10000-64999 range, the Designated Expert is instructed to perform the "lightweight" Expert review, as described by the following checklist:<a href="#section-5.2-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-5.2-2">
 <li id="section-5.2-2.1">
             <p id="section-5.2-2.1.1">The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;<a href="#section-5.2-2.1.1" class="pilcrow">¶</a></p>
@@ -1529,10 +1529,10 @@ For the 10000-64999 range, this criterion does not apply.<a href="#section-5.1-1
             <p id="section-5.2-2.2.1">The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>;<a href="#section-5.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-5.2-2.3">
-            <p id="section-5.2-2.3.1">The optional parameter names must exist in association with the media type, and any parameter values associated with such parameter names are as expected;<a href="#section-5.2-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.3.1">The optional parameter names must have been defined in association with the media type, and any parameter values associated with such parameter names must be as permitted;<a href="#section-5.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-5.2-2.4">
-            <p id="section-5.2-2.4.1">If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding Registry" of the "Hypertext Transfer Protocol (HTTP) Parameters" <span>[<a href="#IANA.http-parameters" class="cite xref">IANA.http-parameters</a>]</span>.<a href="#section-5.2-2.4.1" class="pilcrow">¶</a></p>
+            <p id="section-5.2-2.4.1">If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding" registry of the "Hypertext Transfer Protocol (HTTP) Parameters" <span>[<a href="#IANA.http-parameters" class="cite xref">IANA.http-parameters</a>]</span>.<a href="#section-5.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
 </section>
@@ -1542,13 +1542,15 @@ For the 10000-64999 range, this criterion does not apply.<a href="#section-5.1-1
         <h3 id="name-temporary-note-removal">
 <a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-temporary-note-removal" class="section-name selfRef">Temporary Note Removal</a>
         </h3>
-<p id="section-5.3-1">The following note has been added to the registry as a temporary fix:<a href="#section-5.3-1" class="pilcrow">¶</a></p>
+<p id="section-5.3-1">This section is to be removed before publishing as an RFC.<a href="#section-5.3-1" class="pilcrow">¶</a></p>
+<p id="section-5.3-2">The following note has been added to the registry as a temporary fix:<a href="#section-5.3-2" class="pilcrow">¶</a></p>
 <ul class="normal ulEmpty">
-<li class="normal ulEmpty" id="section-5.3-2.1">
-            <p id="section-5.3-2.1.1">"Note: The validity of the combination of Content Coding, Content Type and parameters is checked prior to assignment."<a href="#section-5.3-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal ulEmpty" id="section-5.3-3.1">
+            <p id="section-5.3-3.1.1">"Note: The validity of the combination of Content Coding, Content Type and parameters is checked prior to assignment."<a href="#section-5.3-3.1.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-5.3-3">IANA is instructed to remove it when the this document is approved for publication.<a href="#section-5.3-3" class="pilcrow">¶</a></p>
+<p id="section-5.3-4">IANA is instructed to remove this note from the registry when this document is approved for publication.
+RFC-Editor: please remove this section once the note has been removed.<a href="#section-5.3-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1564,17 +1566,19 @@ For the 10000-64999 range, this criterion does not apply.<a href="#section-5.1-1
 <a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
-<dt id="RFC2119">[RFC2119]</dt>
+<dt id="BCP14">[BCP14]</dt>
         <dd>
-<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
+<div class="refInstance">Best Current Practice 14, <span>&lt;<a href="https://www.rfc-editor.org/info/bcp14">https://www.rfc-editor.org/info/bcp14</a>&gt;</span>.<br><span>At the time of writing, this BCP comprises the following:</span>
+</div>
+<div class="refInstance" id="RFC2119">
+            <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>&gt;</span>. </div>
+<div class="refInstance" id="RFC8174">
+            <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;</span>. </div>
+</dd>
 <dd class="break"></dd>
 <dt id="RFC7252">[RFC7252]</dt>
-        <dd>
-<span class="refAuthor">Shelby, Z.</span>, <span class="refAuthor">Hartke, K.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"The Constrained Application Protocol (CoAP)"</span>, <span class="seriesInfo">RFC 7252</span>, <span class="seriesInfo">DOI 10.17487/RFC7252</span>, <time datetime="2014-06" class="refDate">June 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7252">https://www.rfc-editor.org/rfc/rfc7252</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC8174">[RFC8174]</dt>
       <dd>
-<span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
+<span class="refAuthor">Shelby, Z.</span>, <span class="refAuthor">Hartke, K.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"The Constrained Application Protocol (CoAP)"</span>, <span class="seriesInfo">RFC 7252</span>, <span class="seriesInfo">DOI 10.17487/RFC7252</span>, <time datetime="2014-06" class="refDate">June 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7252">https://www.rfc-editor.org/rfc/rfc7252</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1618,7 +1622,7 @@ For the 10000-64999 range, this criterion does not apply.<a href="#section-5.1-1
 <p id="appendix-A-1">Thank you
 Amanda Baber,
 Carsten Bormann,
-Francesca Palombini
+Francesca Palombini,
 and
 Marco Tiloca
 for your reviews, comments, suggestions and fixes.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
