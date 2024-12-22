@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-12-19T00:36:47.587465+00:00",
+  "timestamp": "2024-12-22T00:38:06.291118+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -936,26 +936,62 @@
       "id": "PR_kwDONM5XRM6Fri0F",
       "title": "Carsten's fixes for ietf-01",
       "url": "https://github.com/core-wg/cf-reg-update/pull/20",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "Equivalent to 0c1bdd1235ce5ec584fd658d4fcc769eb43dcc22 (i.e., #19)\r\n\r\n(I had to cherry-pick it because I confused git with the document renaming.)",
       "createdAt": "2024-12-18T17:41:55Z",
-      "updatedAt": "2024-12-18T17:47:27Z",
+      "updatedAt": "2024-12-19T11:26:35Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "fc4cbe1a465dbf2b25b451dbaab31a0edb7861c1",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "cabo-fixes",
-      "headRefOid": "57dac35ce071cfa7f49bab7b75011a35285eb597",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "7cfd8d98e2a11c5f72bc126753564b875e5d29c6",
+      "closedAt": "2024-12-19T11:26:31Z",
+      "mergedAt": "2024-12-19T11:26:31Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "c94bbe136710f5138075e0892efcf5b3dd0488cd"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6V2r13",
+          "commit": {
+            "abbreviatedOid": "57dac35"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2024-12-19T11:21:07Z",
+          "updatedAt": "2024-12-19T11:21:07Z",
+          "comments": [
+            {
+              "originalPosition": 83,
+              "body": "\"DE\" needs to be written in full here. This was the result of an earlier change I proposed, related to the typical usage of this text section that would get accessed by most readers from a direct link from the IANA registry. For that reason it should be readable without jumping back to find acronyms. \r\n\r\n```suggestion\r\nFor the 10000-64999 range, the Designated Expert is instructed to perform the \"lightweight\" Expert review, as described by the following checklist:\r\n```",
+              "createdAt": "2024-12-19T11:21:07Z",
+              "updatedAt": "2024-12-19T11:21:08Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6V2t1w",
+          "commit": {
+            "abbreviatedOid": "7cfd8d9"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "I've made one small change DE -> Designated Expert with notes on the why.\r\nThis should be ready to merge! Thanks for the improvements.",
+          "createdAt": "2024-12-19T11:25:23Z",
+          "updatedAt": "2024-12-19T11:25:23Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
