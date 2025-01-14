@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-12T00:38:42.827484+00:00",
+  "timestamp": "2025-01-14T00:33:06.221279+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -345,16 +345,18 @@
     {
       "number": 21,
       "id": "I_kwDONM5XRM6lbIkg",
-      "title": "Marco's WGLC",
+      "title": "Marco's WGLC review",
       "url": "https://github.com/core-wg/cf-reg-update/issues/21",
       "state": "OPEN",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "WGLC"
+      ],
       "body": "https://mailarchive.ietf.org/arch/msg/core/G4RdYYTcku3ss6Qg3hG-tLrJqnM/\r\n\r\n```\r\n[Abstract]\r\n\r\n* Proposed rephrasing, in order to plainly state \"this document updates that document\":\r\n\r\nOLD\r\nThis document updates the registration procedures ...\r\n\r\nNEW\r\nThis document updates RFC7252 as to the registration procedures ...\r\n\r\n\r\n[Section 1]\r\n\r\n* Building on the previous comment and avoiding \"memo\", proposed rephrasing:\r\n\r\nOLD\r\nSection 5 of this memo updates the registration procedures ...\r\n\r\nNEW\r\nThrough its Section 5, this document updates [RFC7252] by updating the registration procedures ...\r\n\r\n\r\n[Section 3]\r\n\r\n* Proposed rephrasing\r\n\r\nOLD\r\n... a CoAP Content-Format with identifier in the FCFS space (64999) that ...\r\n\r\nNEW\r\n... a CoAP Content-Format with identifier 64999 in the FCFS space that ...\r\n\r\n\r\n[Section 3.5]\r\n\r\n* Proposed rephrasing\r\n\r\nOLD\r\n... while this media type is already registered without that parameter.\r\n\r\nNEW\r\n... while a Content-Format ID 64900 is already registered for this media type without that parameter.\r\n\r\n\r\n[Section 3.6]\r\n\r\n* Proposed rephrasing\r\n\r\nOLD\r\nIf accepted, this request would duplicate an entry where ...\r\n\r\nNEW\r\nIf accepted, this request would duplicate an entry with Content-Format ID 64900 where ...\r\n\r\n\r\n[Section 5]\r\n\r\n* Please add a note to the RFC Editor about replacing \"RFCthis\" with the RFC number assigned to this document.\r\n\r\n* For the portion that stays FCFS, the Note says\r\n\r\n  > Corresponding media type registration required\r\n\r\n  Maybe it's better to expand it along the lines of point 2 in Section 5.2, i.e.:\r\n\r\n  > Corresponding media type must be registered (or approved for publication) in the \"Media Types\" registry [IANA.media-types]\r\n\r\n\r\n[Nits]\r\n\r\n* Section 1\r\n- s/portion to reduce/portion, in order to reduce\r\n\r\n* Section 2\r\n- s/type\" and \"content/type\", and \"content\r\n\r\n* Section 4\r\n- s/This memo/This document\r\n\r\n* Section 5.3\r\n- s/Type and parameters/Type, and parameters\r\n\r\n* Acknowledgments\r\n- s/suggestions and fixes/suggestions, and fixes\r\n```",
       "createdAt": "2025-01-08T13:06:48Z",
-      "updatedAt": "2025-01-08T13:06:48Z",
+      "updatedAt": "2025-01-13T08:40:49Z",
       "closedAt": null,
       "comments": []
     }
