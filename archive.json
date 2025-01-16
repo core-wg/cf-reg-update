@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-14T00:33:06.221279+00:00",
+  "timestamp": "2025-01-16T00:33:42.658725+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -357,6 +357,54 @@
       "body": "https://mailarchive.ietf.org/arch/msg/core/G4RdYYTcku3ss6Qg3hG-tLrJqnM/\r\n\r\n```\r\n[Abstract]\r\n\r\n* Proposed rephrasing, in order to plainly state \"this document updates that document\":\r\n\r\nOLD\r\nThis document updates the registration procedures ...\r\n\r\nNEW\r\nThis document updates RFC7252 as to the registration procedures ...\r\n\r\n\r\n[Section 1]\r\n\r\n* Building on the previous comment and avoiding \"memo\", proposed rephrasing:\r\n\r\nOLD\r\nSection 5 of this memo updates the registration procedures ...\r\n\r\nNEW\r\nThrough its Section 5, this document updates [RFC7252] by updating the registration procedures ...\r\n\r\n\r\n[Section 3]\r\n\r\n* Proposed rephrasing\r\n\r\nOLD\r\n... a CoAP Content-Format with identifier in the FCFS space (64999) that ...\r\n\r\nNEW\r\n... a CoAP Content-Format with identifier 64999 in the FCFS space that ...\r\n\r\n\r\n[Section 3.5]\r\n\r\n* Proposed rephrasing\r\n\r\nOLD\r\n... while this media type is already registered without that parameter.\r\n\r\nNEW\r\n... while a Content-Format ID 64900 is already registered for this media type without that parameter.\r\n\r\n\r\n[Section 3.6]\r\n\r\n* Proposed rephrasing\r\n\r\nOLD\r\nIf accepted, this request would duplicate an entry where ...\r\n\r\nNEW\r\nIf accepted, this request would duplicate an entry with Content-Format ID 64900 where ...\r\n\r\n\r\n[Section 5]\r\n\r\n* Please add a note to the RFC Editor about replacing \"RFCthis\" with the RFC number assigned to this document.\r\n\r\n* For the portion that stays FCFS, the Note says\r\n\r\n  > Corresponding media type registration required\r\n\r\n  Maybe it's better to expand it along the lines of point 2 in Section 5.2, i.e.:\r\n\r\n  > Corresponding media type must be registered (or approved for publication) in the \"Media Types\" registry [IANA.media-types]\r\n\r\n\r\n[Nits]\r\n\r\n* Section 1\r\n- s/portion to reduce/portion, in order to reduce\r\n\r\n* Section 2\r\n- s/type\" and \"content/type\", and \"content\r\n\r\n* Section 4\r\n- s/This memo/This document\r\n\r\n* Section 5.3\r\n- s/Type and parameters/Type, and parameters\r\n\r\n* Acknowledgments\r\n- s/suggestions and fixes/suggestions, and fixes\r\n```",
       "createdAt": "2025-01-08T13:06:48Z",
       "updatedAt": "2025-01-13T08:40:49Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 22,
+      "id": "I_kwDONM5XRM6mRuam",
+      "title": "Add sentence to explain both quoted/non-quoted parameters can be registered in media type?",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/22",
+      "state": "OPEN",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Example:\r\n\r\napplication/my; param=\"string1\"\r\napplication/my; param=string1\r\n\r\nWe can say the preferred form is unquoted if it is allowed per RFC 9110.\r\nE.g. for absolute URI/URN in parameter values, the quotes would be always needed.",
+      "createdAt": "2025-01-15T12:15:07Z",
+      "updatedAt": "2025-01-15T12:15:07Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 23,
+      "id": "I_kwDONM5XRM6mRvwG",
+      "title": "Update 'erroneous' examples with parameter value equivalence cases (although string differs)",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/23",
+      "state": "OPEN",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Example: \r\n\r\n```\r\napplication/my; uriparam=\"urn:foo:1\"\r\napplication/my;uriparam=\"urn:foo:1\"\r\napplication/my;uriparam=\"urn:FOO:1\"\r\n```",
+      "createdAt": "2025-01-15T12:17:04Z",
+      "updatedAt": "2025-01-15T12:17:04Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 24,
+      "id": "I_kwDONM5XRM6mR8wB",
+      "title": "Adding an \"Associated Media Type\" or similar field as registry column",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/24",
+      "state": "OPEN",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "(Idea that has been discussed with IANA & AD so far. Also to propose to WG.)\r\n\r\nThe idea is to add a new field/column, that shows the base media type that the C-F registration uses.\r\nThis type can be shown as clickable link to the IANA pages that define the template for each media type, such as e.g. these pages:\r\n\r\nhttps://www.iana.org/assignments/media-types/application/pkcs7-mime\r\nhttps://www.iana.org/assignments/media-types/application/vc+cose\r\n\r\nThe benefit is that having the field automatically ensures that the base media type exists.",
+      "createdAt": "2025-01-15T12:35:09Z",
+      "updatedAt": "2025-01-15T12:35:32Z",
       "closedAt": null,
       "comments": []
     }
