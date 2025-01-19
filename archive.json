@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-16T00:33:42.658725+00:00",
+  "timestamp": "2025-01-19T00:36:53.668894+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -404,9 +404,17 @@
       "labels": [],
       "body": "(Idea that has been discussed with IANA & AD so far. Also to propose to WG.)\r\n\r\nThe idea is to add a new field/column, that shows the base media type that the C-F registration uses.\r\nThis type can be shown as clickable link to the IANA pages that define the template for each media type, such as e.g. these pages:\r\n\r\nhttps://www.iana.org/assignments/media-types/application/pkcs7-mime\r\nhttps://www.iana.org/assignments/media-types/application/vc+cose\r\n\r\nThe benefit is that having the field automatically ensures that the base media type exists.",
       "createdAt": "2025-01-15T12:35:09Z",
-      "updatedAt": "2025-01-15T12:35:32Z",
+      "updatedAt": "2025-01-17T20:26:00Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Amanda's note:\n\n> _\"When a media type only appears in the Provisional Standard Media Type registry \u2013 which should be rare and temporary, and which I forgot can happen \u2013 I believe we would have to point to https://www.iana.org/assignments/provisional-standard-media-types itself. We\u2019re not allowed to post registration templates for provisional registrations.\"_",
+          "createdAt": "2025-01-17T20:25:52Z",
+          "updatedAt": "2025-01-17T20:26:00Z"
+        }
+      ]
     }
   ],
   "pulls": [
