@@ -264,7 +264,9 @@ Table of Contents
     +------------------------+--------------+-------------------------+
     | 10000-64999 (Includes  | Expert       | Lightweight review      |
     | parameters and/or      | Review       | described in RFCthis,   |
-    | Content Coding)        |              | Section 5.2             |
+    | Content Coding and/or  |              | Section 5.2             |
+    | media type appears in  |              |                         |
+    | this registry)         |              |                         |
     +------------------------+--------------+-------------------------+
     | 65000-65535            | Experimental |                         |
     |                        | use (no      |                         |
