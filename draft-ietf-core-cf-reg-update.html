@@ -8,7 +8,7 @@
 <meta content="Thomas Fossati" name="author">
 <meta content="Esko Dijk" name="author">
 <meta content='
-       This document updates the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group, defined in Section 12.3 of RFC7252,
+       This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group,
 specifically, those regarding the First Come First Served (FCFS) portion of the registry. 
     ' name="description">
 <meta content="xml2rfc 3.25.0" name="generator">
@@ -24,7 +24,7 @@ specifically, those regarding the First Come First Served (FCFS) portion of the 
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
-    Jinja2 3.1.4
+    Jinja2 3.1.5
     lxml 5.3.0
     platformdirs 4.3.6
     pycountry 24.6.1
@@ -1050,11 +1050,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CoAP Content-Format Registrations Update</td>
-<td class="right">December 2024</td>
+<td class="right">January 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Fossati &amp; Dijk</td>
-<td class="center">Expires 22 June 2025</td>
+<td class="center">Expires 24 July 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1070,12 +1070,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc7252" class="eref">7252</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2024-12-19" class="published">19 December 2024</time>
+<time datetime="2025-01-20" class="published">20 January 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-06-22">22 June 2025</time></dd>
+<dd class="expires"><time datetime="2025-07-24">24 July 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1092,7 +1092,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">Update to the IANA CoAP Content-Formats Registration Procedures</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document updates the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group, defined in Section 12.3 of RFC7252,
+<p id="section-abstract-1">This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group,
 specifically, those regarding the First Come First Served (FCFS) portion of the registry.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
@@ -1130,7 +1130,7 @@ specifically, those regarding the First Come First Served (FCFS) portion of the 
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 22 June 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 24 July 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1139,7 +1139,7 @@ specifically, those regarding the First Come First Served (FCFS) portion of the 
 <a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
         </h2>
 <p id="section-boilerplate.2-1">
-            Copyright (c) 2024 IETF Trust and the persons identified as the
+            Copyright (c) 2025 IETF Trust and the persons identified as the
             document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.2-2">
             This document is subject to BCP 78 and the IETF Trust's Legal
@@ -1238,7 +1238,7 @@ These rules do not involve the Designated Expert (DE) and are managed solely by 
 Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
 This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is not a task to demand solely from the registrar.
 This lack of guidance may engender confusion in both the registering party and the registrar, and has already led to erroneous registrations.<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2"><a href="#iana" class="auto internal xref">Section 5</a> of this memo updates the registration procedures for the "CoAP Content-Formats" registry regarding its FCFS portion to reduce the risk of accidental or malicious errors.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-2">In <a href="#iana" class="auto internal xref">Section 5</a>, this document updates <span>[<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> by modifying the registration procedures for the "CoAP Content-Formats" registry regarding its FCFS portion, to mitigate the risk of unintentional or malicious errors.<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1258,7 +1258,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-examples-for-erroneous-regi">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-examples-for-erroneous-regi" class="section-name selfRef">Examples for Erroneous Registrations</a>
       </h2>
-<p id="section-3-1">This section contains a few examples of registration requests for a CoAP Content-Format with identifier in the FCFS space (64999) that must not be allowed to succeed.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">This section contains a few examples of registration requests for a CoAP Content-Format with identifier 64999 in the FCFS space that must not be allowed to succeed.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <div id="ex-unknown-mt">
 <section id="section-3.1">
         <h3 id="name-the-media-type-is-unknown">
@@ -1377,7 +1377,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <a href="#section-3.5" class="section-number selfRef">3.5. </a><a href="#name-duplicate-entry-with-defaul" class="section-name selfRef">Duplicate Entry with Default Media Type Parameters</a>
         </h3>
 <p id="section-3.5-1">The registrant requests an FCFS Content-Format ID for a media type that includes a parameter set to its default value, while
-this media type is already registered without that parameter.
+a Content-Format ID 64900 is already registered for this media type without that parameter.
 As a result, this could lead to the creation of two separate Content-Format IDs for the same "logical" entry.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-an-e"></span><table class="left" id="table-5">
           <caption>
@@ -1412,7 +1412,7 @@ As a result, this could lead to the creation of two separate Content-Format IDs 
 <a href="#section-3.6" class="section-number selfRef">3.6. </a><a href="#name-duplicate-entry-with-default" class="section-name selfRef">Duplicate Entry with Default Content Coding</a>
         </h3>
 <p id="section-3.6-1">The registrant requests an FCFS Content-Format ID for the "identity" Content Coding, which is the default coding.
-If accepted, this request would duplicate an entry where the "Content Coding" field is left empty.<a href="#section-3.6-1" class="pilcrow">¶</a></p>
+If accepted, this request would duplicate an entry with Content-Format ID 64900 where the "Content Coding" field is left empty.<a href="#section-3.6-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-an-eq"></span><table class="left" id="table-6">
           <caption>
 <a href="#table-6" class="selfRef">Table 6</a>:
@@ -1447,7 +1447,7 @@ If accepted, this request would duplicate an entry where the "Content Coding" fi
       <h2 id="name-security-considerations">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
-<p id="section-4-1">This memo hardens the registration procedures of CoAP Content-Formats in ways that reduce the chances of malicious manipulation of the associated registry.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">This document hardens the registration procedures of CoAP Content-Formats in ways that reduce the chances of malicious manipulation of the associated registry.<a href="#section-4-1" class="pilcrow">¶</a></p>
 <p id="section-4-2">Other than that, it does not change the Security Considerations of <span>[<a href="#RFC7252" class="cite xref">RFC7252</a>]</span>.<a href="#section-4-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1456,7 +1456,8 @@ If accepted, this request would duplicate an entry where the "Content Coding" fi
       <h2 id="name-iana-considerations">
 <a href="#section-5" class="section-number selfRef">5. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-5-1">The CoAP Content-Formats registration procedures defined in <span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> are modified as shown in <a href="#tbl-new-cf-proc" class="auto internal xref">Table 7</a>.<a href="#section-5-1" class="pilcrow">¶</a></p>
+<p id="section-5-1"><span class="cref" id="replace-self">RFC Editor: in this section, please replace RFCthis with the RFC number assigned to this document and remove this note.</span><a href="#section-5-1" class="pilcrow">¶</a></p>
+<p id="section-5-2">The CoAP Content-Formats registration procedures defined in <span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> are modified as shown in <a href="#tbl-new-cf-proc" class="auto internal xref">Table 7</a>.<a href="#section-5-2" class="pilcrow">¶</a></p>
 <span id="name-updated-coap-content-format"></span><div id="tbl-new-cf-proc">
 <table class="center" id="table-7">
         <caption>
@@ -1485,7 +1486,8 @@ If accepted, this request would duplicate an entry where the "Content Coding" fi
           <tr>
             <td class="text-left" rowspan="1" colspan="1">10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry)</td>
             <td class="text-left" rowspan="1" colspan="1">First Come First Served</td>
-            <td class="text-left" rowspan="1" colspan="1">Corresponding media type registration required</td>
+            <td class="text-left" rowspan="1" colspan="1">The corresponding media type must be registered (or approved for publication) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>
+</td>
           </tr>
           <tr>
             <td class="text-left" rowspan="1" colspan="1">10000-64999 (Includes parameters and/or Content Coding)</td>
@@ -1501,10 +1503,10 @@ If accepted, this request would duplicate an entry where the "Content Coding" fi
         </tbody>
       </table>
 </div>
-<p id="section-5-3">The 10000-64999 range now has two separate registration procedures.
+<p id="section-5-4">The 10000-64999 range now has two separate registration procedures.
 If the registration consists solely of a registered media type name in the "Content Type" field, without any parameter names or "Content Coding", and the media type has not yet been used in this registry, then the policy is FCFS, as before.
-In all other cases, the policy will be Expert Review, following the checklist described in <a href="#checks" class="auto internal xref">Section 5.2</a>.<a href="#section-5-3" class="pilcrow">¶</a></p>
-<p id="section-5-4">A new column with the title "Note" has been added to the registry, which contains information about expected checks.<a href="#section-5-4" class="pilcrow">¶</a></p>
+In all other cases, the policy will be Expert Review, following the checklist described in <a href="#checks" class="auto internal xref">Section 5.2</a>.<a href="#section-5-4" class="pilcrow">¶</a></p>
+<p id="section-5-5">A new column with the title "Note" has been added to the registry, which contains information about expected checks.<a href="#section-5-5" class="pilcrow">¶</a></p>
 <div id="full-checks">
 <section id="section-5.1">
         <h3 id="name-full-expert-review-checks">
