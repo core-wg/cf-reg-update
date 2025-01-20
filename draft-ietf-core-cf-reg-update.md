@@ -49,7 +49,7 @@ entity:
 
 --- abstract
 
-This document updates the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group, defined in Section 12.3 of RFC7252,
+This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group,
 specifically, those regarding the First Come First Served (FCFS) portion of the registry.
 
 --- middle
@@ -64,7 +64,7 @@ Unfortunately, the instructions do not explicitly require checking that the comb
 This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is not a task to demand solely from the registrar.
 This lack of guidance may engender confusion in both the registering party and the registrar, and has already led to erroneous registrations.
 
-{{iana}} of this memo updates the registration procedures for the "CoAP Content-Formats" registry regarding its FCFS portion to reduce the risk of accidental or malicious errors.
+In {{iana}}, this document updates {{-coap}} by modifying the registration procedures for the "CoAP Content-Formats" registry regarding its FCFS portion, to mitigate the risk of unintentional or malicious errors.
 
 # Conventions and Definitions
 
@@ -74,7 +74,7 @@ This document uses the terms "media type", "content coding", "content-type" and 
 
 # Examples for Erroneous Registrations
 
-This section contains a few examples of registration requests for a CoAP Content-Format with identifier in the FCFS space (64999) that must not be allowed to succeed.
+This section contains a few examples of registration requests for a CoAP Content-Format with identifier 64999 in the FCFS space that must not be allowed to succeed.
 
 ## The Media Type is Unknown {#ex-unknown-mt}
 
@@ -115,7 +115,7 @@ The registrant requests an FCFS Content-Format ID for an existing media type wit
 ## Duplicate Entry with Default Media Type Parameters
 
 The registrant requests an FCFS Content-Format ID for a media type that includes a parameter set to its default value, while
-this media type is already registered without that parameter.
+a Content-Format ID 64900 is already registered for this media type without that parameter.
 As a result, this could lead to the creation of two separate Content-Format IDs for the same "logical" entry.
 
 | Content Type | Content Coding | ID |
@@ -127,7 +127,8 @@ As a result, this could lead to the creation of two separate Content-Format IDs 
 ## Duplicate Entry with Default Content Coding
 
 The registrant requests an FCFS Content-Format ID for the "identity" Content Coding, which is the default coding.
-If accepted, this request would duplicate an entry where the "Content Coding" field is left empty.
+If accepted, this request would duplicate an entry with Content-Format ID 64900 where the "Content Coding" field is left empty.
+
 
 | Content Type | Content Coding | ID |
 |--|--|--|
@@ -137,11 +138,13 @@ If accepted, this request would duplicate an entry where the "Content Coding" fi
 
 # Security Considerations
 
-This memo hardens the registration procedures of CoAP Content-Formats in ways that reduce the chances of malicious manipulation of the associated registry.
+This document hardens the registration procedures of CoAP Content-Formats in ways that reduce the chances of malicious manipulation of the associated registry.
 
 Other than that, it does not change the Security Considerations of {{-coap}}.
 
 # IANA Considerations {#iana}
+
+[^replace-self]
 
 The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -coap}} are modified as shown in {{tbl-new-cf-proc}}.
 
@@ -149,7 +152,7 @@ The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -c
 |--------|--------|
 | 0-255 | Expert Review | Full review described in {{&SELF}}, {{full-checks}} |
 | 256-9999 | IETF Review or IESG Approval | |
-| 10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry) | First Come First Served | Corresponding media type registration required |
+| 10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry) | First Come First Served | The corresponding media type must be registered (or approved for publication) in the "Media Types" registry {{IANA.media-types}} |
 | 10000-64999 (Includes parameters and/or Content Coding and/or media type appears in this registry) | Expert Review | Lightweight review described in {{&SELF}}, {{checks}} |
 | 65000-65535 | Experimental use (no operational use) |
 {: #tbl-new-cf-proc title="Updated CoAP Content-Formats Registration Procedures"}
@@ -199,3 +202,5 @@ Francesca Palombini,
 and
 Marco Tiloca
 for your reviews, comments, suggestions and fixes.
+
+[^replace-self]: RFC Editor: in this section, please replace {{&SELF}} with the RFC number assigned to this document and remove this note.
