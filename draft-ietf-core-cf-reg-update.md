@@ -115,7 +115,7 @@ The registrant requests an FCFS Content-Format ID for an existing media type wit
 ## Duplicate Entry with Default Media Type Parameters
 
 The registrant requests an FCFS Content-Format ID for a media type that includes a parameter set to its default value, while
-a Content-Format ID 64900 is already registered for this media type without that parameter.
+a (hypothetical) Content-Format ID 64900 is already registered for this media type without that parameter.
 As a result, this could lead to the creation of two separate Content-Format IDs for the same "logical" entry.
 
 | Content Type | Content Coding | ID |
@@ -127,7 +127,8 @@ As a result, this could lead to the creation of two separate Content-Format IDs 
 ## Duplicate Entry with Default Content Coding
 
 The registrant requests an FCFS Content-Format ID for the "identity" Content Coding, which is the default coding.
-If accepted, this request would duplicate an entry with Content-Format ID 64900 where the "Content Coding" field is left empty.
+If accepted, this request would duplicate an entry with (hypothetical)
+Content-Format ID 64900 where the "Content Coding" field is left empty.
 
 
 | Content Type | Content Coding | ID |
