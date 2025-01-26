@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-23T00:34:03.404831+00:00",
+  "timestamp": "2025-01-26T00:34:57.748238+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -430,7 +430,7 @@
       ],
       "body": "(Idea that has been discussed with IANA & AD so far. Also to propose to WG.)\r\n\r\nThe idea is to add a new field/column, that shows the base media type that the C-F registration uses.\r\nThis type can be shown as clickable link to the IANA pages that define the template for each media type, such as e.g. these pages:\r\n\r\nhttps://www.iana.org/assignments/media-types/application/pkcs7-mime\r\nhttps://www.iana.org/assignments/media-types/application/vc+cose\r\n\r\nThe benefit is that having the field automatically ensures that the base media type exists.",
       "createdAt": "2025-01-15T12:35:09Z",
-      "updatedAt": "2025-01-20T13:37:29Z",
+      "updatedAt": "2025-01-24T14:40:53Z",
       "closedAt": null,
       "comments": [
         {
@@ -439,6 +439,13 @@
           "body": "Amanda's note:\n\n> _\"When a media type only appears in the Provisional Standard Media Type registry \u2013 which should be rare and temporary, and which I forgot can happen \u2013 I believe we would have to point to https://www.iana.org/assignments/provisional-standard-media-types itself. We\u2019re not allowed to post registration templates for provisional registrations.\"_",
           "createdAt": "2025-01-17T20:25:52Z",
           "updatedAt": "2025-01-17T20:26:00Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Email sent to the [core@](https://mailarchive.ietf.org/arch/msg/core/7VPASCA--UyTrWozOrTHJoahMfw/)",
+          "createdAt": "2025-01-24T14:40:51Z",
+          "updatedAt": "2025-01-24T14:40:51Z"
         }
       ]
     }
@@ -1181,6 +1188,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 27,
+      "id": "PR_kwDONM5XRM6I_MGv",
+      "title": "Clarify that 64900 is hypothetical (twice)",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/27",
+      "state": "OPEN",
+      "author": "cabo",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-01-25T18:59:04Z",
+      "updatedAt": "2025-01-25T18:59:05Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "3d3124f6f4f575de0a9e2286e9547b845a5d324e",
+      "headRepository": "cabo/draft-cf-reg-update",
+      "headRefName": "twomore",
+      "headRefOid": "ffe219bb5e7498c5ba5a9956b954299c68307f87",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
