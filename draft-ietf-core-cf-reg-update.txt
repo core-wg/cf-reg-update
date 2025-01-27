@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 24 July 2025                                    20 January 2025
+Expires: 31 July 2025                                    27 January 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 24 July 2025.
+   This Internet-Draft will expire on 31 July 2025.
 
 Copyright Notice
 
@@ -191,10 +191,11 @@ Table of Contents
 3.5.  Duplicate Entry with Default Media Type Parameters
 
    The registrant requests an FCFS Content-Format ID for a media type
-   that includes a parameter set to its default value, while a Content-
-   Format ID 64900 is already registered for this media type without
-   that parameter.  As a result, this could lead to the creation of two
-   separate Content-Format IDs for the same "logical" entry.
+   that includes a parameter set to its default value, while a
+   (hypothetical) Content-Format ID 64900 is already registered for this
+   media type without that parameter.  As a result, this could lead to
+   the creation of two separate Content-Format IDs for the same
+   "logical" entry.
 
    +===================================+================+=======+
    | Content Type                      | Content Coding | ID    |
@@ -211,8 +212,8 @@ Table of Contents
 
    The registrant requests an FCFS Content-Format ID for the "identity"
    Content Coding, which is the default coding.  If accepted, this
-   request would duplicate an entry with Content-Format ID 64900 where
-   the "Content Coding" field is left empty.
+   request would duplicate an entry with (hypothetical) Content-Format
+   ID 64900 where the "Content Coding" field is left empty.
 
    +================+================+=======+
    | Content Type   | Content Coding | ID    |
