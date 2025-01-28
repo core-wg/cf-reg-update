@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-26T00:34:57.748238+00:00",
+  "timestamp": "2025-01-28T00:34:06.908415+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -448,6 +448,40 @@
           "updatedAt": "2025-01-24T14:40:51Z"
         }
       ]
+    },
+    {
+      "number": 28,
+      "id": "I_kwDONM5XRM6nqiTg",
+      "title": "Address \"loophole\" where DEs are not consulted in IETF stream",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/28",
+      "state": "OPEN",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "In the current draft the \"lightweight\" checks of 5.2 are only applied in the range 0-255 and FCFS range, not in the IETF/IESG stream review.\n\nThe DE is not consulted in the IETF/IESG stream; and there's no mention of anyone (e.g. IANA or DE) doing the 5.2 checks for this stream.\n",
+      "createdAt": "2025-01-27T12:51:00Z",
+      "updatedAt": "2025-01-27T12:51:00Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 29,
+      "id": "I_kwDONM5XRM6nqtGl",
+      "title": "Clarify current procedure w.r.t. TEMPORARY allocations in registry",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/29",
+      "state": "OPEN",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [
+        "needs WG discussion"
+      ],
+      "body": "See email thread: https://mailarchive.ietf.org/arch/msg/core/e75H5-2Iaeq1r1RWbBCK3wzFEfo/",
+      "createdAt": "2025-01-27T13:09:48Z",
+      "updatedAt": "2025-01-27T13:10:44Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -1194,26 +1228,55 @@
       "id": "PR_kwDONM5XRM6I_MGv",
       "title": "Clarify that 64900 is hypothetical (twice)",
       "url": "https://github.com/core-wg/cf-reg-update/pull/27",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "cabo",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2025-01-25T18:59:04Z",
-      "updatedAt": "2025-01-25T18:59:05Z",
+      "updatedAt": "2025-01-27T08:04:38Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "3d3124f6f4f575de0a9e2286e9547b845a5d324e",
       "headRepository": "cabo/draft-cf-reg-update",
       "headRefName": "twomore",
       "headRefOid": "ffe219bb5e7498c5ba5a9956b954299c68307f87",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-01-27T08:04:38Z",
+      "mergedAt": "2025-01-27T08:04:37Z",
+      "mergedBy": "EskoDijk",
+      "mergeCommit": {
+        "oid": "9fa476561a050b855942ccde9baae248f6d7a544"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6ZcEhp",
+          "commit": {
+            "abbreviatedOid": "ffe219b"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "LGTM, thanks!",
+          "createdAt": "2025-01-26T12:57:33Z",
+          "updatedAt": "2025-01-26T12:57:33Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6Zd3rk",
+          "commit": {
+            "abbreviatedOid": "ffe219b"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-01-27T08:04:08Z",
+          "updatedAt": "2025-01-27T08:04:08Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
