@@ -158,10 +158,10 @@ The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -c
 
 | Range | Registration Procedures | Note |
 |--------|--------|
-| 0-255 | Expert Review | Full review described in {{&SELF}}, {{full-checks}} |
-| 256-9999 | IETF Review with Expert Review or IESG Approval with Expert Review | Full review described in {{&SELF}}, {{full-checks}} |
+| 0-255 | Expert Review | Review checks described in {{&SELF}}, {{checks}} |
+| 256-9999 | IETF Review with Expert Review or IESG Approval with Expert Review | Review checks described in {{&SELF}}, {{checks}} |
 | 10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry) | First Come First Served | The corresponding media type must be registered (or approved for publication) in the "Media Types" registry {{IANA.media-types}} |
-| 10000-64999 (Includes parameters and/or Content Coding and/or media type appears in this registry) | Expert Review | Lightweight review described in {{&SELF}}, {{checks}} |
+| 10000-64999 (Includes parameters and/or Content Coding and/or media type appears in this registry) | Expert Review | Review checks described in {{&SELF}}, {{checks}} |
 | 65000-65535 | Experimental use (no operational use) |
 {: #tbl-new-cf-proc title="Updated CoAP Content-Formats Registration Procedures"}
 
@@ -179,21 +179,17 @@ In all other cases, the policy will be Expert Review, following the checklist de
 
 A new column with the title "Note" has been added to the registry, which contains information about expected checks.
 
-## "Full" Expert Review Checks {#full-checks}
+## Expert Review Checks {#checks}
 
-For the 0-255 range and the 256-9999 range, the DE is instructed to perform a "Full Review" described in this section, not only the "lightweight" Expert Review that may apply to the 10000-64999 range.
-
-For the 0-255 range, in addition to the checks described in {{checks}}, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
-For the 256-9999 range and the 10000-64999 range, this criterion does not apply.
-
-## "Lightweight" Expert Review Checks {#checks}
-
-For the 10000-64999 range, the Designated Expert is instructed to perform the "lightweight" Expert review, as described by the following checklist:
+The Designated Expert is instructed to perform the Expert Review, as described by the following checklist:
 
 1. The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;
 1. The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry {{IANA.media-types}};
 1. The optional parameter names must have been defined in association with the media type, and any parameter values associated with such parameter names must be as permitted;
 1. If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding" registry of the "Hypertext Transfer Protocol (HTTP) Parameters" {{IANA.http-parameters}}.
+
+For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
+For the 256-9999 range and the 10000-64999 range, this criterion does not apply.
 
 <!-- Should these actually use BCP14 MUSTs? -->
 
