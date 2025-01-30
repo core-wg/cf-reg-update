@@ -37,7 +37,7 @@ author:
 normative:
   RFC7120: iana-early
   RFC7252: coap
-  RFC9110:
+  RFC9110: http-sema
   BCP26:
     -: iana-cons
     =: RFC8126
@@ -204,8 +204,8 @@ During the review procedure, the Designated Expert(s) or IANA may rewrite a requ
 The preferred string format is as follows:
 
 1. For any case-insensitive elements, lowercase characters must be used.
-   See {{Section 8.3.1 of RFC9110}} for a definition of case-insensitive elements and some examples.
-1. Parameter values are only quoted if the value is such that it requires use of `quoted-string` per {{Section 5.6.6 of RFC9110}}.
+   See {{Section 8.3.1 of -http-sema}} for a definition of case-insensitive elements and some examples.
+1. Parameter values are only quoted if the value is such that it requires use of `quoted-string` per {{Section 5.6.6 of -http-sema}}.
    Otherwise, a parameter value is included unquoted.
 1. A semicolon followed by one space character is used as the separator between media type and parameters.
 
