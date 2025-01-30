@@ -38,7 +38,8 @@ normative:
   RFC7120: iana-early
   RFC7252: coap
   BCP26:
-#   RFC8126:
+    -: iana-cons
+    =: RFC8126
 
 informative:
   Err4954: 7252
