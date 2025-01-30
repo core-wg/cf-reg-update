@@ -292,13 +292,13 @@ Table of Contents
 
        Table 7: Updated CoAP Content-Formats Registration Procedures
 
-   The 256-9999 range has now registration procedure IETF Review with
-   Expert Review or IESG Approval with Expert Review.  In particular:
+   The 256-9999 range now has registration procedures requiring IETF
+   Review with Expert Review or IESG Approval with Expert Review.  In
+   particular:
 
    *  All assignments according to "IETF Review with Expert Review" are
-      made on an "IETF Review" basis per Section 4.8 of RFC 8126 [BCP26]
-      with "Expert Review" additionally required per Section 4.5 of RFC
-      8126 [BCP26].
+      made on an "IETF Review" basis per Section 4.8 of [BCP26] with
+      "Expert Review" additionally required per Section 4.5 of [BCP26].
 
       The procedure for early IANA allocation of "standards track code
       points" defined in [RFC7120] also applies.  When such a procedure
@@ -308,9 +308,9 @@ Table of Contents
       process outlined in Section 3.1 of [RFC7120].
 
    *  All assignments according to "IESG Approval with Expert Review"
-      are made on an "IESG Approval" basis per Section 4.10 of RFC 8126
-      [BCP26] with "Expert Review" additionally required per Section 4.5
-      of RFC 8126 [BCP26].
+      are made on an "IESG Approval" basis per Section 4.10 of [BCP26]
+      with "Expert Review" additionally required per Section 4.5 of
+      [BCP26].
 
    The 10000-64999 range now has two separate registration procedures.
    If the registration consists solely of a registered media type name
@@ -381,14 +381,10 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
-   [BCP26]    Best Current Practice 26,
-              <https://www.rfc-editor.org/info/bcp26>.
-              At the time of writing, this BCP comprises the following:
-
-              Cotton, M., Leiba, B., and T. Narten, "Guidelines for
+   [BCP26]    Cotton, M., Leiba, B., and T. Narten, "Guidelines for
               Writing an IANA Considerations Section in RFCs", BCP 26,
               RFC 8126, DOI 10.17487/RFC8126, June 2017,
-              <https://www.rfc-editor.org/info/rfc8126>.
+              <https://www.rfc-editor.org/rfc/rfc8126>.
 
    [RFC7120]  Cotton, M., "Early IANA Allocation of Standards Track Code
               Points", BCP 100, RFC 7120, DOI 10.17487/RFC7120, January
