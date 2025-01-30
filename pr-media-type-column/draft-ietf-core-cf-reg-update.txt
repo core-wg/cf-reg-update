@@ -291,12 +291,12 @@ Table of Contents
 
 5.1.  Adding the Media Type Column to the Registry
 
-   To make it easier for users of the CoAP Content-Formats registry to
-   locate details about the media type used by a CoAP Content-Format,
-   and to enforce the existence of the media type prior to the
-   registration of a new entry, IANA is requested to add a new column
-   "Media Type" to the registry.  This new column can be placed directly
-   to the right of the current "Content Type" column.
+   To assist users of the CoAP Content-Formats registry in finding
+   detailed information about the media type associated with each CoAP
+   Content-Format, and to ensure that a media type exists before a new
+   entry can be registered, IANA is requested to add a new column "Media
+   Type" to the registry.``` This new column can be placed directly to
+   the right of the current "Content Type" column.
 
    The "Media Type" field for each entry lists the (base) media type
    name and provides a hyperlink to registration information for that
