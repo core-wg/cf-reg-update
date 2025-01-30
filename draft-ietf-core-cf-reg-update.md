@@ -164,6 +164,19 @@ In all other cases, the policy will be Expert Review, following the checklist de
 
 A new column with the title "Note" has been added to the registry, which contains information about expected checks.
 
+## Temporary Content-Format Registrations
+
+This section clarifies that the CoAP Content-Formats registry accepts temporary registrations in the 0-255 and 256-9999 ranges.
+The range 10000-64999 does not accept temporary registrations.
+
+A temporary registration may be created for example by an IANA early allocation action, requested by the authors of an Internet Draft in the IETF stream.
+Or it may be created because the referenced media type is still provisional (that is, included in the IANA Provisional Standard Media Type Registry).
+
+A temporary entry is marked with an IANA note with the string "TEMPORARY" in the registry entry.
+Once the required review procedure for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry, IANA must remove the "TEMPORARY" label so that the entry becomes permanent.
+If the requested temporary entry does not successfully pass its required review procedure, IANA must remove the entry again and set the Content-Format ID value back to "Unassigned".
+This may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned, or when the referenced provisional media type is abondoned.
+
 ## "Full" Expert Review Checks {#full-checks}
 
 For the 0-255 range, the DE is instructed to perform a "Full Review" described in this section, not only the "lightweight" Expert Review that may apply to the 10000-64999 range.
