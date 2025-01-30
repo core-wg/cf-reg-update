@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-28T00:34:06.908415+00:00",
+  "timestamp": "2025-01-30T00:33:09.678458+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -380,13 +380,15 @@
       "state": "OPEN",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "EskoDijk"
+      ],
       "labels": [
         "WGLC"
       ],
       "body": "Example:\r\n\r\napplication/my; param=\"string1\"\r\napplication/my; param=string1\r\n\r\nWe can say the preferred form is unquoted if it is allowed per RFC 9110.\r\nE.g. for absolute URI/URN in parameter values, the quotes would be always needed.",
       "createdAt": "2025-01-15T12:15:07Z",
-      "updatedAt": "2025-01-20T15:43:58Z",
+      "updatedAt": "2025-01-29T15:14:16Z",
       "closedAt": null,
       "comments": [
         {
@@ -406,13 +408,15 @@
       "state": "OPEN",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "EskoDijk"
+      ],
       "labels": [
         "WGLC"
       ],
       "body": "Example: \r\n\r\n```\r\napplication/my; uriparam=\"urn:foo:1\"\r\napplication/my;uriparam=\"urn:foo:1\"\r\napplication/my;uriparam=\"urn:FOO:1\"\r\n```",
       "createdAt": "2025-01-15T12:17:04Z",
-      "updatedAt": "2025-01-20T13:34:12Z",
+      "updatedAt": "2025-01-29T15:18:38Z",
       "closedAt": null,
       "comments": []
     },
@@ -424,13 +428,15 @@
       "state": "OPEN",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "EskoDijk"
+      ],
       "labels": [
         "needs WG discussion"
       ],
       "body": "(Idea that has been discussed with IANA & AD so far. Also to propose to WG.)\r\n\r\nThe idea is to add a new field/column, that shows the base media type that the C-F registration uses.\r\nThis type can be shown as clickable link to the IANA pages that define the template for each media type, such as e.g. these pages:\r\n\r\nhttps://www.iana.org/assignments/media-types/application/pkcs7-mime\r\nhttps://www.iana.org/assignments/media-types/application/vc+cose\r\n\r\nThe benefit is that having the field automatically ensures that the base media type exists.",
       "createdAt": "2025-01-15T12:35:09Z",
-      "updatedAt": "2025-01-24T14:40:53Z",
+      "updatedAt": "2025-01-29T15:25:56Z",
       "closedAt": null,
       "comments": [
         {
@@ -457,11 +463,13 @@
       "state": "OPEN",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "marco-tiloca-sics"
+      ],
       "labels": [],
       "body": "In the current draft the \"lightweight\" checks of 5.2 are only applied in the range 0-255 and FCFS range, not in the IETF/IESG stream review.\n\nThe DE is not consulted in the IETF/IESG stream; and there's no mention of anyone (e.g. IANA or DE) doing the 5.2 checks for this stream.\n",
       "createdAt": "2025-01-27T12:51:00Z",
-      "updatedAt": "2025-01-27T12:51:00Z",
+      "updatedAt": "2025-01-29T15:30:23Z",
       "closedAt": null,
       "comments": []
     },
