@@ -237,10 +237,9 @@ Table of Contents
    parameter value are identical to the existing registration.
 
    In this example, the eat_profile parameter value (which can be any
-   URI) is set as a Uniform Resource Name (URN) [RFC8141].  And for
+   URI) is set as a Uniform Resource Name (URN) [RFC8141].  Since for
    URNs, the Namespace Identifier (foo in the example) is defined as
-   case insensitive.  Therefore the two registrations are semantically
-   identical.
+   case insensitive, the two registrations are semantically identical.
 
    +=========================+================+=======+
    | Content Type            | Content Coding | ID    |
