@@ -172,7 +172,7 @@ This new column can be placed directly to the right of the existing "Content Typ
 The "Media Type" field for each entry lists the (base) media type name and provides a hyperlink to registration information for that media type as recorded by IANA.
 In case the media type is provisional, the hyperlink can point directly to the IANA Provisional Standard Media Type registry.
 
-Note that the registration request procedure is not changed due to this: a requester does not have to separately fill out the "Media Type" field because the required information is already included in the "Content Type" field of the request.
+Note that the registration request procedure remains unchanged. A requester does not need to fill out the "Media Type" field separately, as the necessary information is already provided in the "Content Type" field of the request.
 
 ## "Full" Expert Review Checks {#full-checks}
 
