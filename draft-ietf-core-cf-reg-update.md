@@ -166,7 +166,7 @@ A new column with the title "Note" has been added to the registry, which contain
 
 ## Temporary Content-Format Registrations
 
-This section clarifies that the CoAP Content-Formats registry accepts temporary registrations in the 0-255 and 256-9999 ranges.
+This section clarifies that the CoAP Content-Formats registry allows temporary registrations within the 0-255 and 256-9999 ranges.
 The range 10000-64999 does not accept temporary registrations.
 
 A temporary registration may be created for example by an IANA early allocation action, requested by the authors of an Internet Draft in the IETF stream.
