@@ -142,7 +142,7 @@ The registrant requests an FCFS Content-Format ID for a media type that includes
 The value of this parameter appears distinct from that of a previously registered Content-Format that also includes this parameter.
 However, the semantics of the parameter value are identical to the existing registration.
 
-In this example, the `eat_profile` parameter value (which can be any URI) is set as a Uniform Resource Name (URN) {{RFC8141}}.
+In this example, the `eat_profile` parameter value (which can be any URI) is set as a Uniform Resource Name (URN) {{?RFC8141}}.
 And for URNs, the Namespace Identifier (`foo` in the example) is defined as case insensitive.
 Therefore the two registrations are semantically identical.
 
