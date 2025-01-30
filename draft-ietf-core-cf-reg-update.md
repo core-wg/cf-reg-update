@@ -130,12 +130,27 @@ The registrant requests an FCFS Content-Format ID for the "identity" Content Cod
 If accepted, this request would duplicate an entry with (hypothetical)
 Content-Format ID 64900 where the "Content Coding" field is left empty.
 
-
 | Content Type | Content Coding | ID |
 |--|--|--|
 | application/my | - | 64900 |
 | application/my | identity | 64999 |
 {: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (2)"}
+
+## Duplicate Entry with Equivalent Parameter
+
+The registrant requests an FCFS Content-Format ID for a Content Type with a parameter that has a value that looks different (based on the string) from a previously registered Content-Format that includes this parameter also.
+However, the semantics of the parameter value are identical to the existing registration.
+
+In this example, the `eat_profile` parameter value (which can be any URI) is set as a Uniform Resource Name (URN) {{RFC8141}}.
+And for URNs, the Namespace Identifier (`foo` in the example) is defined as case insensitive.
+Therefore the two registrations are semantically identical.
+
+| Content Type | Content Coding | ID |
+|--|--|--|
+| application/eat+cwt; eat_profile="urn:foo:1" | - | 64900 |
+| application/eat+cwt; eat_profile="urn:FOO:1" | - | 64999 |
+{: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (3)"}
+
 
 # Security Considerations
 
