@@ -164,6 +164,16 @@ In all other cases, the policy will be Expert Review, following the checklist de
 
 A new column with the title "Note" has been added to the registry, which contains information about expected checks.
 
+## Adding the Media Type Column to the Registry
+
+To make it easier for users of the CoAP Content-Formats registry to locate details about the media type used by a CoAP Content-Format, and to enforce the existence of the media type prior to the registration of a new entry, IANA is requested to add a new column "Media Type" to the registry.
+This new column can be placed directly to the right of the current "Content Type" column.
+
+The "Media Type" field for each entry lists the (base) media type name and provides a hyperlink to registration information for that media type as recorded by IANA.
+In case the media type is provisional, the hyperlink can point directly to the IANA Provisional Standard Media Type registry.
+
+Note that the registration request procedure is not changed due to this: a requester does not have to separately fill out the "Media Type" field because the required information is already included in the "Content Type" field of the request.
+
 ## "Full" Expert Review Checks {#full-checks}
 
 For the 0-255 range, the DE is instructed to perform a "Full Review" described in this section, not only the "lightweight" Expert Review that may apply to the 10000-64999 range.
