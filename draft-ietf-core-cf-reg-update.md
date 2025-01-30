@@ -168,7 +168,7 @@ The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -c
 
 The 256-9999 range now has registration procedures requiring IETF Review with Expert Review or IESG Approval with Expert Review. In particular:
 
-* All assignments according to "IETF Review with Expert Review" are made on an "IETF Review" basis per {{Section 4.8 of RFC8126@BCP26}} with "Expert Review" additionally required per {{Section 4.5 of RFC8126@BCP26}}.
+* All assignments according to "IETF Review with Expert Review" are made on an "IETF Review" basis per {{Section 4.8 of -iana-cons}} with "Expert Review" additionally required per {{Section 4.5 of -iana-cons}}.
 
   The procedure for early IANA allocation of "standards track code points" defined in {{RFC7120}} also applies. When such a procedure is used, IANA will ask the Designated Expert(s) to approve the early allocation before registration. In addition, working group chairs are encouraged to consult the Expert(s) early during the process outlined in {{Section 3.1 of RFC7120}}.
 
