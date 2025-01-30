@@ -138,7 +138,8 @@ Content-Format ID 64900 where the "Content Coding" field is left empty.
 
 ## Duplicate Entry with Equivalent Parameter
 
-The registrant requests an FCFS Content-Format ID for a Content Type with a parameter that has a value that looks different (based on the string) from a previously registered Content-Format that includes this parameter also.
+The registrant requests an FCFS Content-Format ID for a media type that includes a parameter.
+The value of this parameter appears distinct from that of a previously registered Content-Format that also includes this parameter.
 However, the semantics of the parameter value are identical to the existing registration.
 
 In this example, the `eat_profile` parameter value (which can be any URI) is set as a Uniform Resource Name (URN) {{RFC8141}}.
