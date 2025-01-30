@@ -296,7 +296,7 @@ Table of Contents
    Content-Format, and to ensure that a media type exists before a new
    entry can be registered, IANA is requested to add a new column "Media
    Type" to the registry.``` This new column can be placed directly to
-   the right of the current "Content Type" column.
+   the right of the existing "Content Type" column.
 
    The "Media Type" field for each entry lists the (base) media type
    name and provides a hyperlink to registration information for that
