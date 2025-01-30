@@ -300,9 +300,9 @@ Table of Contents
 
    The "Media Type" field for each entry lists the (base) media type
    name and provides a hyperlink to registration information for that
-   media type as recorded by IANA.  In case the media type is
-   provisional, the hyperlink can point directly to the IANA Provisional
-   Standard Media Type registry.
+   media type as recorded by IANA.  If the media type is provisional,
+   the hyperlink points to the IANA "Provisional Standard Media Type"
+   registry [IANA.provisional-standard-media-types].
 
    Note that the registration request procedure remains unchanged.  A
    requester does not need to fill out the "Media Type" field
@@ -394,6 +394,11 @@ Table of Contents
    [IANA.media-types]
               IANA, "Media Types",
               <https://www.iana.org/assignments/media-types>.
+
+   [IANA.provisional-standard-media-types]
+              IANA, "Provisional Standard Media Type Registry",
+              <https://www.iana.org/assignments/provisional-standard-
+              media-types>.
 
    [RFC9193]  Keränen, A. and C. Bormann, "Sensor Measurement Lists
               (SenML) Fields for Indicating Data Value Content-Format",
