@@ -304,10 +304,10 @@ Table of Contents
    provisional, the hyperlink can point directly to the IANA Provisional
    Standard Media Type registry.
 
-   Note that the registration request procedure is not changed due to
-   this: a requester does not have to separately fill out the "Media
-   Type" field because the required information is already included in
-   the "Content Type" field of the request.
+   Note that the registration request procedure remains unchanged.  A
+   requester does not need to fill out the "Media Type" field
+   separately, as the necessary information is already provided in the
+   "Content Type" field of the request.
 
 5.2.  "Full" Expert Review Checks
 
