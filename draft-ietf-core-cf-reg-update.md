@@ -43,6 +43,7 @@ informative:
   IANA.core-parameters:
   IANA.media-types:
   IANA.http-parameters:
+  IANA.provisional-standard-media-types:
 
 entity:
   SELF: "RFCthis"
@@ -170,7 +171,7 @@ To assist users of the CoAP Content-Formats registry in finding detailed informa
 This new column can be placed directly to the right of the existing "Content Type" column.
 
 The "Media Type" field for each entry lists the (base) media type name and provides a hyperlink to registration information for that media type as recorded by IANA.
-In case the media type is provisional, the hyperlink can point directly to the IANA Provisional Standard Media Type registry.
+If the media type is provisional, the hyperlink points to the IANA "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}.
 
 Note that the registration request procedure remains unchanged. A requester does not need to fill out the "Media Type" field separately, as the necessary information is already provided in the "Content Type" field of the request.
 
