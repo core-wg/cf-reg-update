@@ -35,7 +35,7 @@ author:
    email: esko.dijk@iotconsultancy.nl
 
 normative:
-  RFC7120:
+  RFC7120: iana-early
   RFC7252: coap
   BCP26:
 #   RFC8126:
