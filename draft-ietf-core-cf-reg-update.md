@@ -37,6 +37,7 @@ author:
 normative:
   RFC7120: iana-early
   RFC7252: coap
+  RFC9110:
   BCP26:
     -: iana-cons
     =: RFC8126
@@ -187,12 +188,26 @@ The Designated Expert is instructed to perform the Expert Review, as described b
 1. The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;
 1. The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry {{IANA.media-types}};
 1. The optional parameter names must have been defined in association with the media type, and any parameter values associated with such parameter names must be as permitted;
+1. The Content Type is in the preferred format defined in {{preferred-format}};
 1. If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding" registry of the "Hypertext Transfer Protocol (HTTP) Parameters" {{IANA.http-parameters}}.
 
 For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
 For the 256-9999 range and the 10000-64999 range, this criterion does not apply.
 
 <!-- Should these actually use BCP14 MUSTs? -->
+
+## Preferred Format for the Content Type Field {#preferred-format}
+
+This section defines the preferred string format for including a requested Content Type into the CoAP Content-Formats registry.
+During the review procedure, the Designated Expert(s) or IANA may rewrite a requested Content Type to this preferred string format prior to approval.
+
+The preferred string format is as follows:
+
+1. For any case-insensitive elements, lowercase characters must be used.
+   See {{Section 8.3.1 of RFC9110}} for a definition of case-insensitive elements and some examples.
+1. Parameter values are only quoted if the value is such that it requires use of `quoted-string` per {{Section 5.6.6 of RFC9110}}.
+   Otherwise, a parameter value is included unquoted.
+1. A semicolon followed by one space character is used as the separator between media type and parameters.
 
 ## Temporary Note Removal
 {:removeinrfc}
