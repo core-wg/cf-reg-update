@@ -311,7 +311,7 @@ Table of Contents
    entry again and set the Content-Format ID value back to "Unassigned".
    This may happen for example when an Internet-Draft requesting a
    Content-Format ID is abandoned, or when the referenced provisional
-   media type is abondoned.
+   media type is abandoned.
 
 5.2.  "Full" Expert Review Checks
 
