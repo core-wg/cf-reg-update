@@ -82,9 +82,8 @@ Table of Contents
      3.6.  Duplicate Entry with Default Content Coding
    4.  Security Considerations
    5.  IANA Considerations
-     5.1.  "Full" Expert Review Checks
-     5.2.  "Lightweight" Expert Review Checks
-     5.3.  Temporary Note Removal
+     5.1.  Expert Review Checks
+     5.2.  Temporary Note Removal
    6.  References
      6.1.  Normative References
      6.2.  Informative References
@@ -262,10 +261,10 @@ Table of Contents
    | Range                  | Registration   | Note                    |
    |                        | Procedures     |                         |
    +========================+================+=========================+
-   | 0-255                  | Expert Review  | Full review described   |
+   | 0-255                  | Expert Review  | Review checks described |
    |                        |                | in RFCthis, Section 5.1 |
    +------------------------+----------------+-------------------------+
-   | 256-9999               | IETF Review    | Full review described   |
+   | 256-9999               | IETF Review    | Review checks described |
    |                        | with Expert    | in RFCthis, Section 5.1 |
    |                        | Review or IESG |                         |
    |                        | Approval with  |                         |
@@ -278,9 +277,9 @@ Table of Contents
    | used in this           |                | "Media Types" registry  |
    | registry)              |                | [IANA.media-types]      |
    +------------------------+----------------+-------------------------+
-   | 10000-64999            | Expert Review  | Lightweight review      |
-   | (Includes parameters   |                | described in RFCthis,   |
-   | and/or Content         |                | Section 5.2             |
+   | 10000-64999            | Expert Review  | Review checks described |
+   | (Includes parameters   |                | in RFCthis, Section 5.1 |
+   | and/or Content         |                |                         |
    | Coding and/or media    |                |                         |
    | type appears in this   |                |                         |
    | registry)              |                |                         |
@@ -319,28 +318,15 @@ Table of Contents
    Coding", and the media type has not yet been used in this registry,
    then the policy is FCFS, as before.  In all other cases, the policy
    will be Expert Review, following the checklist described in
-   Section 5.2.
+   Section 5.1.
 
    A new column with the title "Note" has been added to the registry,
    which contains information about expected checks.
 
-5.1.  "Full" Expert Review Checks
+5.1.  Expert Review Checks
 
-   For the 0-255 range and the 256-9999 range, the DE is instructed to
-   perform a "Full Review" described in this section, not only the
-   "lightweight" Expert Review that may apply to the 10000-64999 range.
-
-   For the 0-255 range, in addition to the checks described in
-   Section 5.2, the DE is instructed to also evaluate the requested
-   codepoint concerning the limited availability of the 1-byte codepoint
-   space.  For the 256-9999 range and the 10000-64999 range, this
-   criterion does not apply.
-
-5.2.  "Lightweight" Expert Review Checks
-
-   For the 10000-64999 range, the Designated Expert is instructed to
-   perform the "lightweight" Expert review, as described by the
-   following checklist:
+   The Designated Expert is instructed to perform the Expert Review, as
+   described by the following checklist:
 
    1.  The combination of content-type and content coding for which the
        registration is requested must not be already present in the
@@ -359,7 +345,13 @@ Table of Contents
        registry of the "Hypertext Transfer Protocol (HTTP) Parameters"
        [IANA.http-parameters].
 
-5.3.  Temporary Note Removal
+   For the 0-255 range, in addition to the checks described above, the
+   DE is instructed to also evaluate the requested codepoint concerning
+   the limited availability of the 1-byte codepoint space.  For the
+   256-9999 range and the 10000-64999 range, this criterion does not
+   apply.
+
+5.2.  Temporary Note Removal
 
    This section is to be removed before publishing as an RFC.
 
