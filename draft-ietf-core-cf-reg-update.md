@@ -35,7 +35,10 @@ author:
    email: esko.dijk@iotconsultancy.nl
 
 normative:
+  RFC7120:
   RFC7252: coap
+  BCP26:
+#   RFC8126:
 
 informative:
   Err4954: 7252
@@ -49,8 +52,8 @@ entity:
 
 --- abstract
 
-This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group,
-specifically, those regarding the First Come First Served (FCFS) portion of the registry.
+This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group. The affected registration procedures are
+specifically those regarding the IETF Review or IESG Approval portion of the registry as well as those regarding the First Come First Served (FCFS) portion of the registry.
 
 --- middle
 
@@ -58,13 +61,15 @@ specifically, those regarding the First Come First Served (FCFS) portion of the 
 
 {{Section 12.3 of -coap}} describes the registration procedures for the "CoAP Content-Formats" registry within the "CoRE Parameters" registry group {{IANA.core-parameters}}.
 (Note that the columns of this registry have been revised according to {{Err4954}}.)
-In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the First Come First Served (FCFS) portion of the registry (10000-64999).
+
+In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the IETF Review or IESG Approval portion of the registry (256-9999) as well as from the First Come First Served (FCFS) portion of the registry (10000-64999).
 These rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
+
 Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
 This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is not a task to demand solely from the registrar.
 This lack of guidance may engender confusion in both the registering party and the registrar, and has already led to erroneous registrations.
 
-In {{iana}}, this document updates {{-coap}} by modifying the registration procedures for the "CoAP Content-Formats" registry regarding its FCFS portion, to mitigate the risk of unintentional or malicious errors.
+In {{iana}}, this document updates {{-coap}} by modifying the registration procedures for the "CoAP Content-Formats" registry regarding its IETF Review or IESG Approval portion as well as its FCFS portion, to mitigate the risk of unintentional or malicious errors.
 
 # Conventions and Definitions
 
@@ -75,6 +80,8 @@ This document uses the terms "media type", "content coding", "content-type" and 
 # Examples for Erroneous Registrations
 
 This section contains a few examples of registration requests for a CoAP Content-Format with identifier 64999 in the FCFS space that must not be allowed to succeed.
+
+The following considerations also apply to alternative examples where, for the same combination of content type and content coding, a registration was requested for a CoAP Content-Format with identifier in the IETF Review or IESG Approval space. That is, such registrations must not be allowed to succeed.
 
 ## The Media Type is Unknown {#ex-unknown-mt}
 
@@ -152,11 +159,19 @@ The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -c
 | Range | Registration Procedures | Note |
 |--------|--------|
 | 0-255 | Expert Review | Full review described in {{&SELF}}, {{full-checks}} |
-| 256-9999 | IETF Review or IESG Approval | |
+| 256-9999 | IETF Review with Expert Review or IESG Approval with Expert Review | Full review described in {{&SELF}}, {{full-checks}} |
 | 10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry) | First Come First Served | The corresponding media type must be registered (or approved for publication) in the "Media Types" registry {{IANA.media-types}} |
 | 10000-64999 (Includes parameters and/or Content Coding and/or media type appears in this registry) | Expert Review | Lightweight review described in {{&SELF}}, {{checks}} |
 | 65000-65535 | Experimental use (no operational use) |
 {: #tbl-new-cf-proc title="Updated CoAP Content-Formats Registration Procedures"}
+
+The 256-9999 range has now registration procedure IETF Review with Expert Review or IESG Approval with Expert Review. In particular:
+
+* All assignments according to "IETF Review with Expert Review" are made on an "IETF Review" basis per {{Section 4.8 of RFC8126@BCP26}} with "Expert Review" additionally required per {{Section 4.5 of RFC8126@BCP26}}.
+
+  The procedure for early IANA allocation of "standards track code points" defined in {{RFC7120}} also applies. When such a procedure is used, IANA will ask the Designated Expert(s) to approve the early allocation before registration. In addition, working group chairs are encouraged to consult the Expert(s) early during the process outlined in {{Section 3.1 of RFC7120}}.
+
+* All assignments according to "IESG Approval with Expert Review" are made on an "IESG Approval" basis per {{Section 4.10 of RFC8126@BCP26}} with "Expert Review" additionally required per {{Section 4.5 of RFC8126@BCP26}}.
 
 The 10000-64999 range now has two separate registration procedures.
 If the registration consists solely of a registered media type name in the "Content Type" field, without any parameter names or "Content Coding", and the media type has not yet been used in this registry, then the policy is FCFS, as before.
@@ -166,9 +181,10 @@ A new column with the title "Note" has been added to the registry, which contain
 
 ## "Full" Expert Review Checks {#full-checks}
 
-For the 0-255 range, the DE is instructed to perform a "Full Review" described in this section, not only the "lightweight" Expert Review that may apply to the 10000-64999 range.
-For this range, in addition to the checks described in {{checks}}, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
-For the 10000-64999 range, this criterion does not apply.
+For the 0-255 range and the 256-9999 range, the DE is instructed to perform a "Full Review" described in this section, not only the "lightweight" Expert Review that may apply to the 10000-64999 range.
+
+For the 0-255 range, in addition to the checks described in {{checks}}, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
+For the 256-9999 range and the 10000-64999 range, this criterion does not apply.
 
 ## "Lightweight" Expert Review Checks {#checks}
 
