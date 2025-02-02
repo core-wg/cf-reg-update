@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-01-30T00:33:09.678458+00:00",
+  "timestamp": "2025-02-02T00:36:23.065391+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -121,15 +121,15 @@
       "id": "I_kwDONM5XRM6fSAy6",
       "title": "notify IANAbis and ask review from IANA",
       "url": "https://github.com/core-wg/cf-reg-update/issues/4",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "Note from @fpalombini:\r\n\r\n* [ ] I think it is worth sending the doc to that wg [IANAbis] when it gets towards the latest stages.\r\n* [x] It is also worth asking for an early review from IANA.\r\n",
       "createdAt": "2024-11-19T14:05:14Z",
-      "updatedAt": "2025-01-20T13:39:20Z",
-      "closedAt": null,
+      "updatedAt": "2025-01-30T10:04:48Z",
+      "closedAt": "2025-01-30T10:04:47Z",
       "comments": [
         {
           "author": "EskoDijk",
@@ -151,6 +151,13 @@
           "body": "I guess this can be closed since WGLC went (also) through IANAbis.\n\n@EskoDijk wdyt?",
           "createdAt": "2025-01-20T13:39:19Z",
           "updatedAt": "2025-01-20T13:39:19Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thomas-fossati Yes ok for me; others in the CoRE interim also agreed to closing.",
+          "createdAt": "2025-01-30T10:04:47Z",
+          "updatedAt": "2025-01-30T10:04:47Z"
         }
       ]
     },
@@ -481,13 +488,15 @@
       "state": "OPEN",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
-      "assignees": [],
+      "assignees": [
+        "EskoDijk"
+      ],
       "labels": [
         "needs WG discussion"
       ],
       "body": "See email thread: https://mailarchive.ietf.org/arch/msg/core/e75H5-2Iaeq1r1RWbBCK3wzFEfo/",
       "createdAt": "2025-01-27T13:09:48Z",
-      "updatedAt": "2025-01-27T13:10:44Z",
+      "updatedAt": "2025-01-30T12:09:03Z",
       "closedAt": null,
       "comments": []
     }
@@ -1283,6 +1292,456 @@
           "createdAt": "2025-01-27T08:04:08Z",
           "updatedAt": "2025-01-27T08:04:08Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 30,
+      "id": "PR_kwDONM5XRM6JeJ9T",
+      "title": "Updated registration procedure for the 256-9999 range (Addresses #28)",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/30",
+      "state": "OPEN",
+      "author": "marco-tiloca-sics",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #28",
+      "createdAt": "2025-01-30T09:14:01Z",
+      "updatedAt": "2025-01-30T14:10:34Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "9fa476561a050b855942ccde9baae248f6d7a544",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "policies-256-9999",
+      "headRefOid": "14371058262153e14edbcf8178d848ca2375b48c",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "NONE",
+          "body": "The commit https://github.com/core-wg/cf-reg-update/pull/30/commits/d9dd12380f7bfcd6e88fd6126be4ebae7e1a7922 also attempts to simplify more, by defining a single set of Expert Review checks and not having a \"lightweight\" review.\r\n\r\nThe only intended addition to that remains the consideration on the limited codepoints for the 1-byte space of 0-255, which remains highlighted.",
+          "createdAt": "2025-01-30T09:30:51Z",
+          "updatedAt": "2025-01-30T09:32:10Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "@cabo do you want to review this PR before we merge it?",
+          "createdAt": "2025-01-30T13:55:46Z",
+          "updatedAt": "2025-01-30T13:55:46Z"
+        },
+        {
+          "author": "cabo",
+          "authorAssociation": "MEMBER",
+          "body": "Yes I think it's going the wrong way. ",
+          "createdAt": "2025-01-30T13:59:23Z",
+          "updatedAt": "2025-01-30T13:59:23Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> Yes I think it's going the wrong way.\r\n\r\nok!  let's not merge it yet then.",
+          "createdAt": "2025-01-30T14:10:16Z",
+          "updatedAt": "2025-01-30T14:10:34Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6Z-qfB",
+          "commit": {
+            "abbreviatedOid": "cfae6b1"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "Thanks, Marco!\r\n\r\nLGTM",
+          "createdAt": "2025-01-30T09:19:24Z",
+          "updatedAt": "2025-01-30T09:26:43Z",
+          "comments": [
+            {
+              "originalPosition": 60,
+              "body": "```suggestion\r\nThe 256-9999 range now has registration procedures requiring IETF Review with Expert Review or IESG Approval with Expert Review. In particular:\r\n```",
+              "createdAt": "2025-01-30T09:19:24Z",
+              "updatedAt": "2025-01-30T09:26:43Z"
+            },
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\r\n  BCP26:\r\n    -: iana-cons\r\n    =: RFC8126\r\n```",
+              "createdAt": "2025-01-30T09:21:20Z",
+              "updatedAt": "2025-01-30T09:26:43Z"
+            },
+            {
+              "originalPosition": 62,
+              "body": "```suggestion\r\n* All assignments according to \"IETF Review with Expert Review\" are made on an \"IETF Review\" basis per {{Section 4.8 of -iana-cons}} with \"Expert Review\" additionally required per {{Section 4.5 of -iana-cons}}.\r\n```",
+              "createdAt": "2025-01-30T09:21:59Z",
+              "updatedAt": "2025-01-30T09:26:43Z"
+            },
+            {
+              "originalPosition": 4,
+              "body": "```suggestion\r\n  RFC7120: iana-early\r\n```",
+              "createdAt": "2025-01-30T09:22:42Z",
+              "updatedAt": "2025-01-30T09:26:43Z"
+            },
+            {
+              "originalPosition": 64,
+              "body": "```suggestion\r\n  The procedure for early IANA allocation of \"standards track code points\" defined in {{-iana-early}} also applies. When such a procedure is used, IANA will ask the Designated Expert(s) to approve the early allocation before registration. In addition, working group chairs are encouraged to consult the Expert(s) early during the process outlined in {{Section 3.1 of -iana-early}}.\r\n```",
+              "createdAt": "2025-01-30T09:23:58Z",
+              "updatedAt": "2025-01-30T09:26:43Z"
+            },
+            {
+              "originalPosition": 66,
+              "body": "```suggestion\r\n* All assignments according to \"IESG Approval with Expert Review\" are made on an \"IESG Approval\" basis per {{Section 4.10 of -iana-cons}} with \"Expert Review\" additionally required per {{Section 4.5 of -iana-cons}}.\r\n```",
+              "createdAt": "2025-01-30T09:24:30Z",
+              "updatedAt": "2025-01-30T09:26:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6Z_ELh",
+          "commit": {
+            "abbreviatedOid": "1437105"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Thanks for contributing!",
+          "createdAt": "2025-01-30T10:03:17Z",
+          "updatedAt": "2025-01-30T10:03:17Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "id": "PR_kwDONM5XRM6Je6KI",
+      "title": "add check for preferred format of Content Type (DON'T MERGE YET)",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/31",
+      "state": "OPEN",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "fix #22\r\n\r\nNote: for clarity this shows the diff w.r.t. Marco's recent PR.\r\nBefore merging, this needs to be updated to go into the main branch!",
+      "createdAt": "2025-01-30T10:56:45Z",
+      "updatedAt": "2025-01-30T15:46:42Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "policies-256-9999",
+      "baseRefOid": "14371058262153e14edbcf8178d848ca2375b48c",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "pr-preferred-format",
+      "headRefOid": "e0a3c4bc86425335c62c6fe19ae1aeccb3470240",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Note: the \"make\" process was not done yet to check the changes - I'm on a laptop without the toolchain now.",
+          "createdAt": "2025-01-30T10:58:04Z",
+          "updatedAt": "2025-01-30T10:58:04Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> Note: the \"make\" process was not done yet to check the changes - I'm on a laptop without the toolchain now.\r\n\r\nI ran `make` locally and it works.\r\nThe CI is also happy.",
+          "createdAt": "2025-01-30T11:16:06Z",
+          "updatedAt": "2025-01-30T11:16:54Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Question: Is it worth addressing #23 in this PR too?",
+          "createdAt": "2025-01-30T11:18:56Z",
+          "updatedAt": "2025-01-30T11:18:56Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> Question: Is it worth addressing #23 in this PR too?\r\n\r\nThe question has been implicitly answered by @EskoDijk's #32 \ud83d\ude04 ",
+          "createdAt": "2025-01-30T13:57:43Z",
+          "updatedAt": "2025-01-30T13:57:43Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6Z_qIG",
+          "commit": {
+            "abbreviatedOid": "a738c24"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "LGTM, thanks Esko!",
+          "createdAt": "2025-01-30T11:11:13Z",
+          "updatedAt": "2025-01-30T11:15:24Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "Maybe\r\n\r\n> _\"During the review process, the Designated Expert(s) or IANA may rewrite a requested Content Type into this preferred string format before approval.\"_",
+              "createdAt": "2025-01-30T11:11:14Z",
+              "updatedAt": "2025-01-30T11:15:24Z"
+            },
+            {
+              "originalPosition": 4,
+              "body": "Suggest aliasing this to `http-sema` and, in the refs,  using that label instead of the raw RFC number.",
+              "createdAt": "2025-01-30T11:15:06Z",
+              "updatedAt": "2025-01-30T11:15:24Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6aCTnR",
+          "commit": {
+            "abbreviatedOid": "a738c24"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-30T15:46:42Z",
+          "updatedAt": "2025-01-30T15:46:42Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "done in [e0a3c4b](https://github.com/core-wg/cf-reg-update/pull/31/commits/e0a3c4bc86425335c62c6fe19ae1aeccb3470240)",
+              "createdAt": "2025-01-30T15:46:42Z",
+              "updatedAt": "2025-01-30T15:46:42Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 32,
+      "id": "PR_kwDONM5XRM6JfGld",
+      "title": "add example of parameter equivalance, using a URN parameter",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/32",
+      "state": "OPEN",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "fix #23 \r\n",
+      "createdAt": "2025-01-30T11:23:31Z",
+      "updatedAt": "2025-01-30T12:12:14Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "9fa476561a050b855942ccde9baae248f6d7a544",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "pr-example-param-equivalence",
+      "headRefOid": "db7104000c6fbafcd576ce747ba4448134658570",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6Z_2O2",
+          "commit": {
+            "abbreviatedOid": "01d6b74"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-30T11:33:52Z",
+          "updatedAt": "2025-01-30T11:39:01Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "split long line\r\n\r\n```suggestion\r\nThe registrant requests an FCFS Content-Format ID for a media type that includes a parameter.\r\nThe value of this parameter appears distinct from that of a previously registered Content-Format that also includes this parameter.\r\n```",
+              "createdAt": "2025-01-30T11:33:52Z",
+              "updatedAt": "2025-01-30T11:39:01Z"
+            },
+            {
+              "originalPosition": 16,
+              "body": "The URN RFC is not (yet) in the references.\r\nWe could:\r\n```suggestion\r\nIn this example, the `eat_profile` parameter value (which can be any URI) is set as a Uniform Resource Name (URN) {{?RFC8141}}.\r\n```\r\nor add it to the informative refs and use it here.",
+              "createdAt": "2025-01-30T11:36:20Z",
+              "updatedAt": "2025-01-30T11:39:01Z"
+            },
+            {
+              "originalPosition": 18,
+              "body": "join short lines :-)\r\n\r\n```suggestion\r\nSince for URNs, the Namespace Identifier (`foo` in the example) is defined as case insensitive, the two registrations are semantically identical.\r\n```",
+              "createdAt": "2025-01-30T11:38:55Z",
+              "updatedAt": "2025-01-30T11:39:01Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6aAIrw",
+          "commit": {
+            "abbreviatedOid": "01d6b74"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-30T12:10:49Z",
+          "updatedAt": "2025-01-30T12:10:49Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "ok!",
+              "createdAt": "2025-01-30T12:10:49Z",
+              "updatedAt": "2025-01-30T12:10:49Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "id": "PR_kwDONM5XRM6JfUPz",
+      "title": "add section on temporary C-F registrations",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/33",
+      "state": "OPEN",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "fix #29 ",
+      "createdAt": "2025-01-30T11:53:34Z",
+      "updatedAt": "2025-01-30T14:49:28Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "9fa476561a050b855942ccde9baae248f6d7a544",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "pr-temporary-allocation",
+      "headRefOid": "aeb2a29eed23012fe7f86e7e6b543175359a296e",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6aA60w",
+          "commit": {
+            "abbreviatedOid": "6e10d40"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "LGTM.\r\n\r\nSome tiny editorial fixes inline.",
+          "createdAt": "2025-01-30T13:37:16Z",
+          "updatedAt": "2025-01-30T13:44:49Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "s/accepts/allows/\r\n\r\n```suggestion\r\nThis section clarifies that the CoAP Content-Formats registry allows temporary registrations within the 0-255 and 256-9999 ranges.\r\n```",
+              "createdAt": "2025-01-30T13:37:16Z",
+              "updatedAt": "2025-01-30T13:44:49Z"
+            },
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\r\nThe range 10000-64999 does not allow temporary registrations.\r\n```",
+              "createdAt": "2025-01-30T13:37:31Z",
+              "updatedAt": "2025-01-30T13:44:49Z"
+            },
+            {
+              "originalPosition": 12,
+              "body": "```suggestion\r\nA temporary registration is marked by an IANA note with the label \"TEMPORARY\" in the corresponding registry entry.\r\n```",
+              "createdAt": "2025-01-30T13:41:32Z",
+              "updatedAt": "2025-01-30T13:44:49Z"
+            },
+            {
+              "originalPosition": 15,
+              "body": "```suggestion\r\nThis may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned, or when the referenced provisional media type is abandoned.\r\n```",
+              "createdAt": "2025-01-30T13:44:11Z",
+              "updatedAt": "2025-01-30T13:44:49Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "id": "PR_kwDONM5XRM6JfbkS",
+      "title": "Adding the Media Type column to registry",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/34",
+      "state": "OPEN",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": " fix #24",
+      "createdAt": "2025-01-30T12:08:43Z",
+      "updatedAt": "2025-01-30T15:32:23Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "9fa476561a050b855942ccde9baae248f6d7a544",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "pr-media-type-column",
+      "headRefOid": "3dedc9b8209b7bdb6a2ce5dc3f4bd177ffefb915",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6aBAqR",
+          "commit": {
+            "abbreviatedOid": "e5e6230"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "LGTM, thanks much!\r\n\r\nA couple of editorial suggestions inline",
+          "createdAt": "2025-01-30T13:46:54Z",
+          "updatedAt": "2025-01-30T13:54:12Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "```suggestion\r\nTo assist users of the CoAP Content-Formats registry in finding detailed information about the media type associated with each CoAP Content-Format, and to ensure that a media type exists before a new entry can be registered, IANA is requested to add a new column \"Media Type\" to the registry.```",
+              "createdAt": "2025-01-30T13:46:54Z",
+              "updatedAt": "2025-01-30T13:54:12Z"
+            },
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\r\nThis new column can be placed directly to the right of the existing \"Content Type\" column.\r\n```",
+              "createdAt": "2025-01-30T13:47:38Z",
+              "updatedAt": "2025-01-30T13:54:12Z"
+            },
+            {
+              "originalPosition": 10,
+              "body": "I can't recall if we already have a ref to the provisional registry.  If so, I suggest adding it here.  I guess it should be something like `IANA.provisional-standard-media-types`\r\n\r\n```suggestion\r\nIf the media type is provisional, the hyperlink points to the IANA Provisional Standard Media Type registry.\r\n```",
+              "createdAt": "2025-01-30T13:52:10Z",
+              "updatedAt": "2025-01-30T13:54:12Z"
+            },
+            {
+              "originalPosition": 12,
+              "body": "```suggestion\r\nNote that the registration request procedure remains unchanged. A requester does not need to fill out the \"Media Type\" field separately, as the necessary information is already provided in the \"Content Type\" field of the request.\r\n```",
+              "createdAt": "2025-01-30T13:53:31Z",
+              "updatedAt": "2025-01-30T13:54:12Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6aCI83",
+          "commit": {
+            "abbreviatedOid": "e5e6230"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-01-30T15:32:23Z",
+          "updatedAt": "2025-01-30T15:32:23Z",
+          "comments": [
+            {
+              "originalPosition": 10,
+              "body": "Done in [3dedc9b](https://github.com/core-wg/cf-reg-update/pull/34/commits/3dedc9b8209b7bdb6a2ce5dc3f4bd177ffefb915)",
+              "createdAt": "2025-01-30T15:32:23Z",
+              "updatedAt": "2025-01-30T15:32:24Z"
+            }
+          ]
         }
       ]
     }
