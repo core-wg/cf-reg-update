@@ -82,7 +82,7 @@ Table of Contents
      3.6.  Duplicate Entry with Default Content Coding
    4.  Security Considerations
    5.  IANA Considerations
-     5.1.  Expert Review Checks
+     5.1.  Expert Review Procedure
      5.2.  Preferred Format for the Content Type Field
      5.3.  Temporary Note Removal
    6.  References
@@ -101,9 +101,10 @@ Table of Contents
    In particular, the text defines the rules for obtaining CoAP Content-
    Format identifiers from the IETF Review or IESG Approval portion of
    the registry (256-9999) as well as from the First Come First Served
-   (FCFS) portion of the registry (10000-64999).  These rules do not
-   involve the Designated Expert (DE) and are managed solely by IANA
-   personnel to finalize the registration.
+   (FCFS) portion of the registry (10000-64999).  For the (FCFS) portion
+   of the registry, these rules do not involve the Designated Expert
+   (DE) and are managed solely by IANA personnel to finalize the
+   registration.
 
    Unfortunately, the instructions do not explicitly require checking
    that the combination of content-type (i.e., media type with optional
@@ -262,12 +263,13 @@ Table of Contents
    | Range                  | Registration   | Note                    |
    |                        | Procedures     |                         |
    +========================+================+=========================+
-   | 0-255                  | Expert Review  | Review checks described |
-   |                        |                | in RFCthis, Section 5.1 |
+   | 0-255                  | Expert Review  | Review procedure        |
+   |                        |                | described in RFCthis,   |
+   |                        |                | Section 5.1             |
    +------------------------+----------------+-------------------------+
-   | 256-9999               | IETF Review    | Review checks described |
-   |                        | with Expert    | in RFCthis, Section 5.1 |
-   |                        | Review or IESG |                         |
+   | 256-9999               | IETF Review    | Review procedure        |
+   |                        | with Expert    | described in RFCthis,   |
+   |                        | Review or IESG | Section 5.1             |
    |                        | Approval with  |                         |
    |                        | Expert Review  |                         |
    +------------------------+----------------+-------------------------+
@@ -278,9 +280,9 @@ Table of Contents
    | used in this           |                | "Media Types" registry  |
    | registry)              |                | [IANA.media-types]      |
    +------------------------+----------------+-------------------------+
-   | 10000-64999            | Expert Review  | Review checks described |
-   | (Includes parameters   |                | in RFCthis, Section 5.1 |
-   | and/or Content         |                |                         |
+   | 10000-64999            | Expert Review  | Review procedure        |
+   | (Includes parameters   |                | described in RFCthis,   |
+   | and/or Content         |                | Section 5.1             |
    | Coding and/or media    |                |                         |
    | type appears in this   |                |                         |
    | registry)              |                |                         |
@@ -322,9 +324,9 @@ Table of Contents
    Section 5.1.
 
    A new column with the title "Note" has been added to the registry,
-   which contains information about expected checks.
+   which contains information about the expected review procedure.
 
-5.1.  Expert Review Checks
+5.1.  Expert Review Procedure
 
    The Designated Expert is instructed to perform the Expert Review, as
    described by the following checklist:
@@ -352,8 +354,9 @@ Table of Contents
    For the 0-255 range, in addition to the checks described above, the
    DE is instructed to also evaluate the requested codepoint concerning
    the limited availability of the 1-byte codepoint space.  For the
-   256-9999 range and the 10000-64999 range, this criterion does not
-   apply.
+   256-9999 range and the 10000-64999 range, a similar criterion may
+   also apply where combinations of media type parameters and content
+   coding choices consume considerable code point space.
 
 5.2.  Preferred Format for the Content Type Field
 
