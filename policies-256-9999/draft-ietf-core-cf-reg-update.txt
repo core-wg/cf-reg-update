@@ -82,7 +82,7 @@ Table of Contents
      3.6.  Duplicate Entry with Default Content Coding
    4.  Security Considerations
    5.  IANA Considerations
-     5.1.  Expert Review Checks
+     5.1.  Expert Review Procedure
      5.2.  Temporary Note Removal
    6.  References
      6.1.  Normative References
@@ -262,12 +262,13 @@ Table of Contents
    | Range                  | Registration   | Note                    |
    |                        | Procedures     |                         |
    +========================+================+=========================+
-   | 0-255                  | Expert Review  | Review checks described |
-   |                        |                | in RFCthis, Section 5.1 |
+   | 0-255                  | Expert Review  | Review procedure        |
+   |                        |                | described in RFCthis,   |
+   |                        |                | Section 5.1             |
    +------------------------+----------------+-------------------------+
-   | 256-9999               | IETF Review    | Review checks described |
-   |                        | with Expert    | in RFCthis, Section 5.1 |
-   |                        | Review or IESG |                         |
+   | 256-9999               | IETF Review    | Review procedure        |
+   |                        | with Expert    | described in RFCthis,   |
+   |                        | Review or IESG | Section 5.1             |
    |                        | Approval with  |                         |
    |                        | Expert Review  |                         |
    +------------------------+----------------+-------------------------+
@@ -278,9 +279,9 @@ Table of Contents
    | used in this           |                | "Media Types" registry  |
    | registry)              |                | [IANA.media-types]      |
    +------------------------+----------------+-------------------------+
-   | 10000-64999            | Expert Review  | Review checks described |
-   | (Includes parameters   |                | in RFCthis, Section 5.1 |
-   | and/or Content         |                |                         |
+   | 10000-64999            | Expert Review  | Review procedure        |
+   | (Includes parameters   |                | described in RFCthis,   |
+   | and/or Content         |                | Section 5.1             |
    | Coding and/or media    |                |                         |
    | type appears in this   |                |                         |
    | registry)              |                |                         |
@@ -322,9 +323,9 @@ Table of Contents
    Section 5.1.
 
    A new column with the title "Note" has been added to the registry,
-   which contains information about expected checks.
+   which contains information about the expected review procedure.
 
-5.1.  Expert Review Checks
+5.1.  Expert Review Procedure
 
    The Designated Expert is instructed to perform the Expert Review, as
    described by the following checklist:
