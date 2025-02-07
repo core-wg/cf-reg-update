@@ -80,6 +80,7 @@ Table of Contents
      3.4.  The Content Coding is Unknown
      3.5.  Duplicate Entry with Default Media Type Parameters
      3.6.  Duplicate Entry with Default Content Coding
+     3.7.  Duplicate Entry with Equivalent Parameter
    4.  Security Considerations
    5.  IANA Considerations
      5.1.  Expert Review Procedure
@@ -241,6 +242,33 @@ Table of Contents
          Equivalent Logical Entry with a
          Different Content-Format ID (2)
 
+3.7.  Duplicate Entry with Equivalent Parameter
+
+   The registrant requests an FCFS Content-Format ID for a media type
+   that includes a parameter.  The value of this parameter appears
+   distinct from that of a previously registered Content-Format that
+   also includes this parameter.  However, the semantics of the
+   parameter value are identical to the existing registration.
+
+   In this example, the eat_profile parameter value (which can be any
+   URI) is set as a Uniform Resource Name (URN) [RFC8141].  Since for
+   URNs, the Namespace Identifier (foo in the example) is defined as
+   case insensitive, the two registrations are semantically identical.
+
+   +=========================+================+=======+
+   | Content Type            | Content Coding | ID    |
+   +=========================+================+=======+
+   | application/eat+cwt;    | -              | 64900 |
+   | eat_profile="urn:foo:1" |                |       |
+   +-------------------------+----------------+-------+
+   | application/eat+cwt;    | -              | 64999 |
+   | eat_profile="urn:FOO:1" |                |       |
+   +-------------------------+----------------+-------+
+
+      Table 7: Attempt at Registering an Equivalent
+     Logical Entry with a Different Content-Format ID
+                           (3)
+
 4.  Security Considerations
 
    This document hardens the registration procedures of CoAP Content-
@@ -257,7 +285,7 @@ Table of Contents
    // number assigned to this document and remove this note.
 
    The CoAP Content-Formats registration procedures defined in
-   Section 12.3 of [RFC7252] are modified as shown in Table 7.
+   Section 12.3 of [RFC7252] are modified as shown in Table 8.
 
    +========================+================+=========================+
    | Range                  | Registration   | Note                    |
@@ -293,7 +321,7 @@ Table of Contents
    |                        | use)           |                         |
    +------------------------+----------------+-------------------------+
 
-       Table 7: Updated CoAP Content-Formats Registration Procedures
+       Table 8: Updated CoAP Content-Formats Registration Procedures
 
    The 256-9999 range now has registration procedures requiring IETF
    Review with Expert Review or IESG Approval with Expert Review.  In
@@ -445,6 +473,10 @@ Table of Contents
    [IANA.media-types]
               IANA, "Media Types",
               <https://www.iana.org/assignments/media-types>.
+
+   [RFC8141]  Saint-Andre, P. and J. Klensin, "Uniform Resource Names
+              (URNs)", RFC 8141, DOI 10.17487/RFC8141, April 2017,
+              <https://www.rfc-editor.org/rfc/rfc8141>.
 
    [RFC9193]  Keränen, A. and C. Bormann, "Sensor Measurement Lists
               (SenML) Fields for Indicating Data Value Content-Format",
