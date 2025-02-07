@@ -16,7 +16,9 @@ Abstract
 
    This document updates RFC7252 regarding the registration procedures
    for the "CoAP Content-Formats" registry, within the "CoRE Parameters"
-   registry group, specifically, those regarding the First Come First
+   registry group.  The affected registration procedures are
+   specifically those regarding the IETF Review or IESG Approval portion
+   of the registry as well as those regarding the First Come First
    Served (FCFS) portion of the registry.
 
 About This Document
@@ -78,12 +80,14 @@ Table of Contents
      3.4.  The Content Coding is Unknown
      3.5.  Duplicate Entry with Default Media Type Parameters
      3.6.  Duplicate Entry with Default Content Coding
+     3.7.  Duplicate Entry with Equivalent Parameter
    4.  Security Considerations
    5.  IANA Considerations
-     5.1.  Adding the Media Type Column to the Registry
-     5.2.  "Full" Expert Review Checks
-     5.3.  "Lightweight" Expert Review Checks
-     5.4.  Temporary Note Removal
+     5.1.  Temporary Content-Format Registrations
+     5.2.  Adding the Media Type Column to the Registry
+     5.3.  Expert Review Procedure
+     5.4.  Preferred Format for the Content Type Field
+     5.5.  Temporary Note Removal
    6.  References
      6.1.  Normative References
      6.2.  Informative References
@@ -95,25 +99,31 @@ Table of Contents
    Section 12.3 of [RFC7252] describes the registration procedures for
    the "CoAP Content-Formats" registry within the "CoRE Parameters"
    registry group [IANA.core-parameters].  (Note that the columns of
-   this registry have been revised according to [Err4954].)  In
-   particular, the text defines the rules for obtaining CoAP Content-
-   Format identifiers from the First Come First Served (FCFS) portion of
-   the registry (10000-64999).  These rules do not involve the
-   Designated Expert (DE) and are managed solely by IANA personnel to
-   finalize the registration.  Unfortunately, the instructions do not
-   explicitly require checking that the combination of content-type
-   (i.e., media type with optional parameters) and content coding
-   associated with the requested CoAP Content-Format is semantically
-   valid.  This task is generally non-trivial, requiring knowledge from
-   multiple documents and technologies, which is not a task to demand
-   solely from the registrar.  This lack of guidance may engender
-   confusion in both the registering party and the registrar, and has
-   already led to erroneous registrations.
+   this registry have been revised according to [Err4954].)
+
+   In particular, the text defines the rules for obtaining CoAP Content-
+   Format identifiers from the IETF Review or IESG Approval portion of
+   the registry (256-9999) as well as from the First Come First Served
+   (FCFS) portion of the registry (10000-64999).  For the (FCFS) portion
+   of the registry, these rules do not involve the Designated Expert
+   (DE) and are managed solely by IANA personnel to finalize the
+   registration.
+
+   Unfortunately, the instructions do not explicitly require checking
+   that the combination of content-type (i.e., media type with optional
+   parameters) and content coding associated with the requested CoAP
+   Content-Format is semantically valid.  This task is generally non-
+   trivial, requiring knowledge from multiple documents and
+   technologies, which is not a task to demand solely from the
+   registrar.  This lack of guidance may engender confusion in both the
+   registering party and the registrar, and has already led to erroneous
+   registrations.
 
    In Section 5, this document updates [RFC7252] by modifying the
    registration procedures for the "CoAP Content-Formats" registry
-   regarding its FCFS portion, to mitigate the risk of unintentional or
-   malicious errors.
+   regarding its IETF Review or IESG Approval portion as well as its
+   FCFS portion, to mitigate the risk of unintentional or malicious
+   errors.
 
 2.  Conventions and Definitions
 
@@ -132,6 +142,12 @@ Table of Contents
    This section contains a few examples of registration requests for a
    CoAP Content-Format with identifier 64999 in the FCFS space that must
    not be allowed to succeed.
+
+   The following considerations also apply to alternative examples
+   where, for the same combination of content type and content coding, a
+   registration was requested for a CoAP Content-Format with identifier
+   in the IETF Review or IESG Approval space.  That is, such
+   registrations must not be allowed to succeed.
 
 3.1.  The Media Type is Unknown
 
@@ -228,6 +244,33 @@ Table of Contents
          Equivalent Logical Entry with a
          Different Content-Format ID (2)
 
+3.7.  Duplicate Entry with Equivalent Parameter
+
+   The registrant requests an FCFS Content-Format ID for a media type
+   that includes a parameter.  The value of this parameter appears
+   distinct from that of a previously registered Content-Format that
+   also includes this parameter.  However, the semantics of the
+   parameter value are identical to the existing registration.
+
+   In this example, the eat_profile parameter value (which can be any
+   URI) is set as a Uniform Resource Name (URN) [RFC8141].  Since for
+   URNs, the Namespace Identifier (foo in the example) is defined as
+   case insensitive, the two registrations are semantically identical.
+
+   +=========================+================+=======+
+   | Content Type            | Content Coding | ID    |
+   +=========================+================+=======+
+   | application/eat+cwt;    | -              | 64900 |
+   | eat_profile="urn:foo:1" |                |       |
+   +-------------------------+----------------+-------+
+   | application/eat+cwt;    | -              | 64999 |
+   | eat_profile="urn:FOO:1" |                |       |
+   +-------------------------+----------------+-------+
+
+      Table 7: Attempt at Registering an Equivalent
+     Logical Entry with a Different Content-Format ID
+                           (3)
+
 4.  Security Considerations
 
    This document hardens the registration procedures of CoAP Content-
@@ -244,39 +287,63 @@ Table of Contents
    // number assigned to this document and remove this note.
 
    The CoAP Content-Formats registration procedures defined in
-   Section 12.3 of [RFC7252] are modified as shown in Table 7.
+   Section 12.3 of [RFC7252] are modified as shown in Table 8.
 
-    +========================+==============+=========================+
-    | Range                  | Registration | Note                    |
-    |                        | Procedures   |                         |
-    +========================+==============+=========================+
-    | 0-255                  | Expert       | Full review described   |
-    |                        | Review       | in RFCthis, Section 5.2 |
-    +------------------------+--------------+-------------------------+
-    | 256-9999               | IETF Review  |                         |
-    |                        | or IESG      |                         |
-    |                        | Approval     |                         |
-    +------------------------+--------------+-------------------------+
-    | 10000-64999 (No        | First Come   | The corresponding media |
-    | parameters and empty   | First Served | type must be registered |
-    | Content Coding and     |              | (or approved for        |
-    | media type not yet     |              | publication) in the     |
-    | used in this registry) |              | "Media Types" registry  |
-    |                        |              | [IANA.media-types]      |
-    +------------------------+--------------+-------------------------+
-    | 10000-64999 (Includes  | Expert       | Lightweight review      |
-    | parameters and/or      | Review       | described in RFCthis,   |
-    | Content Coding and/or  |              | Section 5.3             |
-    | media type appears in  |              |                         |
-    | this registry)         |              |                         |
-    +------------------------+--------------+-------------------------+
-    | 65000-65535            | Experimental |                         |
-    |                        | use (no      |                         |
-    |                        | operational  |                         |
-    |                        | use)         |                         |
-    +------------------------+--------------+-------------------------+
+   +========================+================+=========================+
+   | Range                  | Registration   | Note                    |
+   |                        | Procedures     |                         |
+   +========================+================+=========================+
+   | 0-255                  | Expert Review  | Review procedure        |
+   |                        |                | described in RFCthis,   |
+   |                        |                | Section 5.3             |
+   +------------------------+----------------+-------------------------+
+   | 256-9999               | IETF Review    | Review procedure        |
+   |                        | with Expert    | described in RFCthis,   |
+   |                        | Review or IESG | Section 5.3             |
+   |                        | Approval with  |                         |
+   |                        | Expert Review  |                         |
+   +------------------------+----------------+-------------------------+
+   | 10000-64999 (No        | First Come     | The corresponding media |
+   | parameters and empty   | First Served   | type must be registered |
+   | Content Coding and     |                | (or approved for        |
+   | media type not yet     |                | publication) in the     |
+   | used in this           |                | "Media Types" registry  |
+   | registry)              |                | [IANA.media-types]      |
+   +------------------------+----------------+-------------------------+
+   | 10000-64999            | Expert Review  | Review procedure        |
+   | (Includes parameters   |                | described in RFCthis,   |
+   | and/or Content         |                | Section 5.3             |
+   | Coding and/or media    |                |                         |
+   | type appears in this   |                |                         |
+   | registry)              |                |                         |
+   +------------------------+----------------+-------------------------+
+   | 65000-65535            | Experimental   |                         |
+   |                        | use (no        |                         |
+   |                        | operational    |                         |
+   |                        | use)           |                         |
+   +------------------------+----------------+-------------------------+
 
-       Table 7: Updated CoAP Content-Formats Registration Procedures
+       Table 8: Updated CoAP Content-Formats Registration Procedures
+
+   The 256-9999 range now has registration procedures requiring IETF
+   Review with Expert Review or IESG Approval with Expert Review.  In
+   particular:
+
+   *  All assignments according to "IETF Review with Expert Review" are
+      made on an "IETF Review" basis per Section 4.8 of [BCP26] with
+      "Expert Review" additionally required per Section 4.5 of [BCP26].
+
+      The procedure for early IANA allocation of "standards track code
+      points" defined in [RFC7120] also applies.  When such a procedure
+      is used, IANA will ask the Designated Expert(s) to approve the
+      early allocation before registration.  In addition, working group
+      chairs are encouraged to consult the Expert(s) early during the
+      process outlined in Section 3.1 of [RFC7120].
+
+   *  All assignments according to "IESG Approval with Expert Review"
+      are made on an "IESG Approval" basis per Section 4.10 of [BCP26]
+      with "Expert Review" additionally required per Section 4.5 of
+      [BCP26].
 
    The 10000-64999 range now has two separate registration procedures.
    If the registration consists solely of a registered media type name
@@ -287,9 +354,33 @@ Table of Contents
    Section 5.3.
 
    A new column with the title "Note" has been added to the registry,
-   which contains information about expected checks.
+   which contains information about the expected review procedure.
 
-5.1.  Adding the Media Type Column to the Registry
+5.1.  Temporary Content-Format Registrations
+
+   This section clarifies that the CoAP Content-Formats registry allows
+   temporary registrations within the 0-255 and 256-9999 ranges.  The
+   range 10000-64999 does not allow temporary registrations.
+
+   A temporary registration may be created for example by an IANA early
+   allocation action, requested by the authors of an Internet Draft in
+   the IETF stream.  Or it may be created because the referenced media
+   type is still provisional (that is, included in the IANA Provisional
+   Standard Media Type Registry).
+
+   A temporary registration is marked by an IANA note with the label
+   "TEMPORARY" in the corresponding registry entry.  Once the required
+   review procedure for the temporary ID has successfully completed, and
+   the referenced media type is included in the IANA Media Types
+   registry, IANA must remove the "TEMPORARY" label so that the entry
+   becomes permanent.  If the requested temporary entry does not
+   successfully pass its required review procedure, IANA must remove the
+   entry again and set the Content-Format ID value back to "Unassigned".
+   This may happen for example when an Internet-Draft requesting a
+   Content-Format ID is abandoned, or when the referenced provisional
+   media type is abandoned.
+
+5.2.  Adding the Media Type Column to the Registry
 
    To assist users of the CoAP Content-Formats registry in finding
    detailed information about the media type associated with each CoAP
@@ -309,21 +400,10 @@ Table of Contents
    separately, as the necessary information is already provided in the
    "Content Type" field of the request.
 
-5.2.  "Full" Expert Review Checks
+5.3.  Expert Review Procedure
 
-   For the 0-255 range, the DE is instructed to perform a "Full Review"
-   described in this section, not only the "lightweight" Expert Review
-   that may apply to the 10000-64999 range.  For this range, in addition
-   to the checks described in Section 5.3, the DE is instructed to also
-   evaluate the requested codepoint concerning the limited availability
-   of the 1-byte codepoint space.  For the 10000-64999 range, this
-   criterion does not apply.
-
-5.3.  "Lightweight" Expert Review Checks
-
-   For the 10000-64999 range, the Designated Expert is instructed to
-   perform the "lightweight" Expert review, as described by the
-   following checklist:
+   The Designated Expert is instructed to perform the Expert Review, as
+   described by the following checklist:
 
    1.  The combination of content-type and content coding for which the
        registration is requested must not be already present in the
@@ -337,12 +417,43 @@ Table of Contents
        association with the media type, and any parameter values
        associated with such parameter names must be as permitted;
 
-   4.  If a Content Coding is specified, it must exist (or must have
+   4.  The Content Type is in the preferred format defined in
+       Section 5.4;
+
+   5.  If a Content Coding is specified, it must exist (or must have
        been approved for registration) in the "HTTP Content Coding"
        registry of the "Hypertext Transfer Protocol (HTTP) Parameters"
        [IANA.http-parameters].
 
-5.4.  Temporary Note Removal
+   For the 0-255 range, in addition to the checks described above, the
+   DE is instructed to also evaluate the requested codepoint concerning
+   the limited availability of the 1-byte codepoint space.  For the
+   256-9999 range and the 10000-64999 range, a similar criterion may
+   also apply where combinations of media type parameters and content
+   coding choices consume considerable code point space.
+
+5.4.  Preferred Format for the Content Type Field
+
+   This section defines the preferred string format for including a
+   requested Content Type into the CoAP Content-Formats registry.
+   During the review process, the Designated Expert(s) or IANA may
+   rewrite a requested Content Type into this preferred string format
+   before approval.
+
+   The preferred string format is as follows:
+
+   1.  For any case-insensitive elements, lowercase characters must be
+       used.  See Section 8.3.1 of [RFC9110] for a definition of case-
+       insensitive elements and some examples.
+
+   2.  Parameter values are only quoted if the value is such that it
+       requires use of quoted-string per Section 5.6.6 of [RFC9110].
+       Otherwise, a parameter value is included unquoted.
+
+   3.  A semicolon followed by one space character is used as the
+       separator between media type and parameters.
+
+5.5.  Temporary Note Removal
 
    This section is to be removed before publishing as an RFC.
 
@@ -372,10 +483,24 @@ Table of Contents
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
+   [BCP26]    Cotton, M., Leiba, B., and T. Narten, "Guidelines for
+              Writing an IANA Considerations Section in RFCs", BCP 26,
+              RFC 8126, DOI 10.17487/RFC8126, June 2017,
+              <https://www.rfc-editor.org/rfc/rfc8126>.
+
+   [RFC7120]  Cotton, M., "Early IANA Allocation of Standards Track Code
+              Points", BCP 100, RFC 7120, DOI 10.17487/RFC7120, January
+              2014, <https://www.rfc-editor.org/rfc/rfc7120>.
+
    [RFC7252]  Shelby, Z., Hartke, K., and C. Bormann, "The Constrained
               Application Protocol (CoAP)", RFC 7252,
               DOI 10.17487/RFC7252, June 2014,
               <https://www.rfc-editor.org/rfc/rfc7252>.
+
+   [RFC9110]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP Semantics", STD 97, RFC 9110,
+              DOI 10.17487/RFC9110, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9110>.
 
 6.2.  Informative References
 
@@ -399,6 +524,10 @@ Table of Contents
               IANA, "Provisional Standard Media Type Registry",
               <https://www.iana.org/assignments/provisional-standard-
               media-types>.
+
+   [RFC8141]  Saint-Andre, P. and J. Klensin, "Uniform Resource Names
+              (URNs)", RFC 8141, DOI 10.17487/RFC8141, April 2017,
+              <https://www.rfc-editor.org/rfc/rfc8141>.
 
    [RFC9193]  Keränen, A. and C. Bormann, "Sensor Measurement Lists
               (SenML) Fields for Indicating Data Value Content-Format",
