@@ -64,7 +64,7 @@ specifically those regarding the IETF Review or IESG Approval portion of the reg
 (Note that the columns of this registry have been revised according to {{Err4954}}.)
 
 In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the IETF Review or IESG Approval portion of the registry (256-9999) as well as from the First Come First Served (FCFS) portion of the registry (10000-64999).
-These rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
+For the (FCFS) portion of the registry, these rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
 
 Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
 This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is not a task to demand solely from the registrar.
