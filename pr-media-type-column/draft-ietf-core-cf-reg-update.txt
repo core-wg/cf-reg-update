@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 3 August 2025                                   30 January 2025
+Expires: 11 August 2025                                  7 February 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 August 2025.
+   This Internet-Draft will expire on 11 August 2025.
 
 Copyright Notice
 
@@ -295,8 +295,8 @@ Table of Contents
    detailed information about the media type associated with each CoAP
    Content-Format, and to ensure that a media type exists before a new
    entry can be registered, IANA is requested to add a new column "Media
-   Type" to the registry.``` This new column can be placed directly to
-   the right of the existing "Content Type" column.
+   Type" to the registry.  This new column can be placed directly to the
+   right of the existing "Content Type" column.
 
    The "Media Type" field for each entry lists the (base) media type
    name and provides a hyperlink to registration information for that
