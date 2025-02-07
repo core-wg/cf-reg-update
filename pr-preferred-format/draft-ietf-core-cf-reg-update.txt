@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 3 August 2025                                   30 January 2025
+Expires: 11 August 2025                                  7 February 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 August 2025.
+   This Internet-Draft will expire on 11 August 2025.
 
 Copyright Notice
 
@@ -359,9 +359,9 @@ Table of Contents
 
    This section defines the preferred string format for including a
    requested Content Type into the CoAP Content-Formats registry.
-   During the review procedure, the Designated Expert(s) or IANA may
-   rewrite a requested Content Type to this preferred string format
-   prior to approval.
+   During the review process, the Designated Expert(s) or IANA may
+   rewrite a requested Content Type into this preferred string format
+   before approval.
 
    The preferred string format is as follows:
 
