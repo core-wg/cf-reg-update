@@ -190,7 +190,7 @@ The Designated Expert is instructed to perform the Expert Review, as described b
 4. If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding" registry of the "Hypertext Transfer Protocol (HTTP) Parameters" {{IANA.http-parameters}}.
 
 For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
-For the 256-9999 range and the 10000-64999 range, this criterion does not apply.
+For the 256-9999 range and the 10000-64999 range, a similar criterion may also apply where combinations of media type parameters and content coding choices consume considerable code point space.
 
 <!-- Should these actually use BCP14 MUSTs? -->
 
