@@ -199,7 +199,7 @@ For the 256-9999 range and the 10000-64999 range, this criterion does not apply.
 ## Preferred Format for the Content Type Field {#preferred-format}
 
 This section defines the preferred string format for including a requested Content Type into the CoAP Content-Formats registry.
-During the review procedure, the Designated Expert(s) or IANA may rewrite a requested Content Type to this preferred string format prior to approval.
+During the review process, the Designated Expert(s) or IANA may rewrite a requested Content Type into this preferred string format before approval.
 
 The preferred string format is as follows:
 
