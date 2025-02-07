@@ -350,8 +350,9 @@ Table of Contents
    For the 0-255 range, in addition to the checks described above, the
    DE is instructed to also evaluate the requested codepoint concerning
    the limited availability of the 1-byte codepoint space.  For the
-   256-9999 range and the 10000-64999 range, this criterion does not
-   apply.
+   256-9999 range and the 10000-64999 range, a similar criterion may
+   also apply where combinations of media type parameters and content
+   coding choices consume considerable code point space.
 
 5.2.  Temporary Note Removal
 
