@@ -84,9 +84,10 @@ Table of Contents
    4.  Security Considerations
    5.  IANA Considerations
      5.1.  Temporary Content-Format Registrations
-     5.2.  Expert Review Procedure
-     5.3.  Preferred Format for the Content Type Field
-     5.4.  Temporary Note Removal
+     5.2.  Adding the Media Type Column to the Registry
+     5.3.  Expert Review Procedure
+     5.4.  Preferred Format for the Content Type Field
+     5.5.  Temporary Note Removal
    6.  References
      6.1.  Normative References
      6.2.  Informative References
@@ -294,11 +295,11 @@ Table of Contents
    +========================+================+=========================+
    | 0-255                  | Expert Review  | Review procedure        |
    |                        |                | described in RFCthis,   |
-   |                        |                | Section 5.2             |
+   |                        |                | Section 5.3             |
    +------------------------+----------------+-------------------------+
    | 256-9999               | IETF Review    | Review procedure        |
    |                        | with Expert    | described in RFCthis,   |
-   |                        | Review or IESG | Section 5.2             |
+   |                        | Review or IESG | Section 5.3             |
    |                        | Approval with  |                         |
    |                        | Expert Review  |                         |
    +------------------------+----------------+-------------------------+
@@ -311,7 +312,7 @@ Table of Contents
    +------------------------+----------------+-------------------------+
    | 10000-64999            | Expert Review  | Review procedure        |
    | (Includes parameters   |                | described in RFCthis,   |
-   | and/or Content         |                | Section 5.2             |
+   | and/or Content         |                | Section 5.3             |
    | Coding and/or media    |                |                         |
    | type appears in this   |                |                         |
    | registry)              |                |                         |
@@ -350,7 +351,7 @@ Table of Contents
    Coding", and the media type has not yet been used in this registry,
    then the policy is FCFS, as before.  In all other cases, the policy
    will be Expert Review, following the checklist described in
-   Section 5.2.
+   Section 5.3.
 
    A new column with the title "Note" has been added to the registry,
    which contains information about the expected review procedure.
@@ -379,7 +380,27 @@ Table of Contents
    Content-Format ID is abandoned, or when the referenced provisional
    media type is abandoned.
 
-5.2.  Expert Review Procedure
+5.2.  Adding the Media Type Column to the Registry
+
+   To assist users of the CoAP Content-Formats registry in finding
+   detailed information about the media type associated with each CoAP
+   Content-Format, and to ensure that a media type exists before a new
+   entry can be registered, IANA is requested to add a new column "Media
+   Type" to the registry.  This new column can be placed directly to the
+   right of the existing "Content Type" column.
+
+   The "Media Type" field for each entry lists the (base) media type
+   name and provides a hyperlink to registration information for that
+   media type as recorded by IANA.  If the media type is provisional,
+   the hyperlink points to the IANA "Provisional Standard Media Type"
+   registry [IANA.provisional-standard-media-types].
+
+   Note that the registration request procedure remains unchanged.  A
+   requester does not need to fill out the "Media Type" field
+   separately, as the necessary information is already provided in the
+   "Content Type" field of the request.
+
+5.3.  Expert Review Procedure
 
    The Designated Expert is instructed to perform the Expert Review, as
    described by the following checklist:
@@ -397,7 +418,7 @@ Table of Contents
        associated with such parameter names must be as permitted;
 
    4.  The Content Type is in the preferred format defined in
-       Section 5.3;
+       Section 5.4;
 
    5.  If a Content Coding is specified, it must exist (or must have
        been approved for registration) in the "HTTP Content Coding"
@@ -411,7 +432,7 @@ Table of Contents
    also apply where combinations of media type parameters and content
    coding choices consume considerable code point space.
 
-5.3.  Preferred Format for the Content Type Field
+5.4.  Preferred Format for the Content Type Field
 
    This section defines the preferred string format for including a
    requested Content Type into the CoAP Content-Formats registry.
@@ -432,7 +453,7 @@ Table of Contents
    3.  A semicolon followed by one space character is used as the
        separator between media type and parameters.
 
-5.4.  Temporary Note Removal
+5.5.  Temporary Note Removal
 
    This section is to be removed before publishing as an RFC.
 
@@ -498,6 +519,11 @@ Table of Contents
    [IANA.media-types]
               IANA, "Media Types",
               <https://www.iana.org/assignments/media-types>.
+
+   [IANA.provisional-standard-media-types]
+              IANA, "Provisional Standard Media Type Registry",
+              <https://www.iana.org/assignments/provisional-standard-
+              media-types>.
 
    [RFC8141]  Saint-Andre, P. and J. Klensin, "Uniform Resource Names
               (URNs)", RFC 8141, DOI 10.17487/RFC8141, April 2017,
