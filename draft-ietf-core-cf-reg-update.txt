@@ -83,9 +83,10 @@ Table of Contents
      3.7.  Duplicate Entry with Equivalent Parameter
    4.  Security Considerations
    5.  IANA Considerations
-     5.1.  Expert Review Procedure
-     5.2.  Preferred Format for the Content Type Field
-     5.3.  Temporary Note Removal
+     5.1.  Temporary Content-Format Registrations
+     5.2.  Expert Review Procedure
+     5.3.  Preferred Format for the Content Type Field
+     5.4.  Temporary Note Removal
    6.  References
      6.1.  Normative References
      6.2.  Informative References
@@ -293,11 +294,11 @@ Table of Contents
    +========================+================+=========================+
    | 0-255                  | Expert Review  | Review procedure        |
    |                        |                | described in RFCthis,   |
-   |                        |                | Section 5.1             |
+   |                        |                | Section 5.2             |
    +------------------------+----------------+-------------------------+
    | 256-9999               | IETF Review    | Review procedure        |
    |                        | with Expert    | described in RFCthis,   |
-   |                        | Review or IESG | Section 5.1             |
+   |                        | Review or IESG | Section 5.2             |
    |                        | Approval with  |                         |
    |                        | Expert Review  |                         |
    +------------------------+----------------+-------------------------+
@@ -310,7 +311,7 @@ Table of Contents
    +------------------------+----------------+-------------------------+
    | 10000-64999            | Expert Review  | Review procedure        |
    | (Includes parameters   |                | described in RFCthis,   |
-   | and/or Content         |                | Section 5.1             |
+   | and/or Content         |                | Section 5.2             |
    | Coding and/or media    |                |                         |
    | type appears in this   |                |                         |
    | registry)              |                |                         |
@@ -349,12 +350,36 @@ Table of Contents
    Coding", and the media type has not yet been used in this registry,
    then the policy is FCFS, as before.  In all other cases, the policy
    will be Expert Review, following the checklist described in
-   Section 5.1.
+   Section 5.2.
 
    A new column with the title "Note" has been added to the registry,
    which contains information about the expected review procedure.
 
-5.1.  Expert Review Procedure
+5.1.  Temporary Content-Format Registrations
+
+   This section clarifies that the CoAP Content-Formats registry allows
+   temporary registrations within the 0-255 and 256-9999 ranges.  The
+   range 10000-64999 does not allow temporary registrations.
+
+   A temporary registration may be created for example by an IANA early
+   allocation action, requested by the authors of an Internet Draft in
+   the IETF stream.  Or it may be created because the referenced media
+   type is still provisional (that is, included in the IANA Provisional
+   Standard Media Type Registry).
+
+   A temporary registration is marked by an IANA note with the label
+   "TEMPORARY" in the corresponding registry entry.  Once the required
+   review procedure for the temporary ID has successfully completed, and
+   the referenced media type is included in the IANA Media Types
+   registry, IANA must remove the "TEMPORARY" label so that the entry
+   becomes permanent.  If the requested temporary entry does not
+   successfully pass its required review procedure, IANA must remove the
+   entry again and set the Content-Format ID value back to "Unassigned".
+   This may happen for example when an Internet-Draft requesting a
+   Content-Format ID is abandoned, or when the referenced provisional
+   media type is abandoned.
+
+5.2.  Expert Review Procedure
 
    The Designated Expert is instructed to perform the Expert Review, as
    described by the following checklist:
@@ -372,7 +397,7 @@ Table of Contents
        associated with such parameter names must be as permitted;
 
    4.  The Content Type is in the preferred format defined in
-       Section 5.2;
+       Section 5.3;
 
    5.  If a Content Coding is specified, it must exist (or must have
        been approved for registration) in the "HTTP Content Coding"
@@ -386,7 +411,7 @@ Table of Contents
    also apply where combinations of media type parameters and content
    coding choices consume considerable code point space.
 
-5.2.  Preferred Format for the Content Type Field
+5.3.  Preferred Format for the Content Type Field
 
    This section defines the preferred string format for including a
    requested Content Type into the CoAP Content-Formats registry.
@@ -407,7 +432,7 @@ Table of Contents
    3.  A semicolon followed by one space character is used as the
        separator between media type and parameters.
 
-5.3.  Temporary Note Removal
+5.4.  Temporary Note Removal
 
    This section is to be removed before publishing as an RFC.
 
