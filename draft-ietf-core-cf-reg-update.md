@@ -65,7 +65,7 @@ specifically those regarding the IETF Review or IESG Approval portion of the reg
 (Note that the columns of this registry have been revised according to {{Err4954}}.)
 
 In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the IETF Review or IESG Approval portion of the registry (256-9999) as well as from the First Come First Served (FCFS) portion of the registry (10000-64999).
-These rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
+For the (FCFS) portion of the registry, these rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
 
 Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
 This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is not a task to demand solely from the registrar.
@@ -160,10 +160,10 @@ The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -c
 
 | Range | Registration Procedures | Note |
 |--------|--------|
-| 0-255 | Expert Review | Review checks described in {{&SELF}}, {{checks}} |
-| 256-9999 | IETF Review with Expert Review or IESG Approval with Expert Review | Review checks described in {{&SELF}}, {{checks}} |
+| 0-255 | Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
+| 256-9999 | IETF Review with Expert Review or IESG Approval with Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
 | 10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry) | First Come First Served | The corresponding media type must be registered (or approved for publication) in the "Media Types" registry {{IANA.media-types}} |
-| 10000-64999 (Includes parameters and/or Content Coding and/or media type appears in this registry) | Expert Review | Review checks described in {{&SELF}}, {{checks}} |
+| 10000-64999 (Includes parameters and/or Content Coding and/or media type appears in this registry) | Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
 | 65000-65535 | Experimental use (no operational use) |
 {: #tbl-new-cf-proc title="Updated CoAP Content-Formats Registration Procedures"}
 
@@ -179,9 +179,9 @@ The 10000-64999 range now has two separate registration procedures.
 If the registration consists solely of a registered media type name in the "Content Type" field, without any parameter names or "Content Coding", and the media type has not yet been used in this registry, then the policy is FCFS, as before.
 In all other cases, the policy will be Expert Review, following the checklist described in {{checks}}.
 
-A new column with the title "Note" has been added to the registry, which contains information about expected checks.
+A new column with the title "Note" has been added to the registry, which contains information about the expected review procedure.
 
-## Expert Review Checks {#checks}
+## Expert Review Procedure {#checks}
 
 The Designated Expert is instructed to perform the Expert Review, as described by the following checklist:
 
@@ -192,7 +192,7 @@ The Designated Expert is instructed to perform the Expert Review, as described b
 1. If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding" registry of the "Hypertext Transfer Protocol (HTTP) Parameters" {{IANA.http-parameters}}.
 
 For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
-For the 256-9999 range and the 10000-64999 range, this criterion does not apply.
+For the 256-9999 range and the 10000-64999 range, a similar criterion may also apply where combinations of media type parameters and content coding choices consume considerable code point space.
 
 <!-- Should these actually use BCP14 MUSTs? -->
 
