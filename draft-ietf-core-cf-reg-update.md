@@ -48,6 +48,7 @@ informative:
   IANA.core-parameters:
   IANA.media-types:
   IANA.http-parameters:
+  IANA.provisional-standard-media-types:
 
 entity:
   SELF: "RFCthis"
@@ -208,6 +209,16 @@ A temporary registration is marked by an IANA note with the label "TEMPORARY" in
 Once the required review procedure for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry, IANA must remove the "TEMPORARY" label so that the entry becomes permanent.
 If the requested temporary entry does not successfully pass its required review procedure, IANA must remove the entry again and set the Content-Format ID value back to "Unassigned".
 This may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned, or when the referenced provisional media type is abandoned.
+
+## Adding the Media Type Column to the Registry
+
+To assist users of the CoAP Content-Formats registry in finding detailed information about the media type associated with each CoAP Content-Format, and to ensure that a media type exists before a new entry can be registered, IANA is requested to add a new column "Media Type" to the registry.
+This new column can be placed directly to the right of the existing "Content Type" column.
+
+The "Media Type" field for each entry lists the (base) media type name and provides a hyperlink to registration information for that media type as recorded by IANA.
+If the media type is provisional, the hyperlink points to the IANA "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}.
+
+Note that the registration request procedure remains unchanged. A requester does not need to fill out the "Media Type" field separately, as the necessary information is already provided in the "Content Type" field of the request.
 
 ## Expert Review Procedure {#checks}
 
