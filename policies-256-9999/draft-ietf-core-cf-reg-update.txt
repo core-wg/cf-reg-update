@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 3 August 2025                                   30 January 2025
+Expires: 11 August 2025                                  7 February 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 August 2025.
+   This Internet-Draft will expire on 11 August 2025.
 
 Copyright Notice
 
@@ -100,9 +100,10 @@ Table of Contents
    In particular, the text defines the rules for obtaining CoAP Content-
    Format identifiers from the IETF Review or IESG Approval portion of
    the registry (256-9999) as well as from the First Come First Served
-   (FCFS) portion of the registry (10000-64999).  These rules do not
-   involve the Designated Expert (DE) and are managed solely by IANA
-   personnel to finalize the registration.
+   (FCFS) portion of the registry (10000-64999).  For the (FCFS) portion
+   of the registry, these rules do not involve the Designated Expert
+   (DE) and are managed solely by IANA personnel to finalize the
+   registration.
 
    Unfortunately, the instructions do not explicitly require checking
    that the combination of content-type (i.e., media type with optional
