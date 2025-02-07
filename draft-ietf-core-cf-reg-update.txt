@@ -83,7 +83,8 @@ Table of Contents
    4.  Security Considerations
    5.  IANA Considerations
      5.1.  Expert Review Procedure
-     5.2.  Temporary Note Removal
+     5.2.  Preferred Format for the Content Type Field
+     5.3.  Temporary Note Removal
    6.  References
      6.1.  Normative References
      6.2.  Informative References
@@ -342,7 +343,10 @@ Table of Contents
        association with the media type, and any parameter values
        associated with such parameter names must be as permitted;
 
-   4.  If a Content Coding is specified, it must exist (or must have
+   4.  The Content Type is in the preferred format defined in
+       Section 5.2;
+
+   5.  If a Content Coding is specified, it must exist (or must have
        been approved for registration) in the "HTTP Content Coding"
        registry of the "Hypertext Transfer Protocol (HTTP) Parameters"
        [IANA.http-parameters].
@@ -354,7 +358,28 @@ Table of Contents
    also apply where combinations of media type parameters and content
    coding choices consume considerable code point space.
 
-5.2.  Temporary Note Removal
+5.2.  Preferred Format for the Content Type Field
+
+   This section defines the preferred string format for including a
+   requested Content Type into the CoAP Content-Formats registry.
+   During the review process, the Designated Expert(s) or IANA may
+   rewrite a requested Content Type into this preferred string format
+   before approval.
+
+   The preferred string format is as follows:
+
+   1.  For any case-insensitive elements, lowercase characters must be
+       used.  See Section 8.3.1 of [RFC9110] for a definition of case-
+       insensitive elements and some examples.
+
+   2.  Parameter values are only quoted if the value is such that it
+       requires use of quoted-string per Section 5.6.6 of [RFC9110].
+       Otherwise, a parameter value is included unquoted.
+
+   3.  A semicolon followed by one space character is used as the
+       separator between media type and parameters.
+
+5.3.  Temporary Note Removal
 
    This section is to be removed before publishing as an RFC.
 
@@ -397,6 +422,11 @@ Table of Contents
               Application Protocol (CoAP)", RFC 7252,
               DOI 10.17487/RFC7252, June 2014,
               <https://www.rfc-editor.org/rfc/rfc7252>.
+
+   [RFC9110]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP Semantics", STD 97, RFC 9110,
+              DOI 10.17487/RFC9110, June 2022,
+              <https://www.rfc-editor.org/rfc/rfc9110>.
 
 6.2.  Informative References
 
