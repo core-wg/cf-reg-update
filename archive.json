@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-02-06T00:34:44.422853+00:00",
+  "timestamp": "2025-02-09T00:37:05.959032+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -384,7 +384,7 @@
       "id": "I_kwDONM5XRM6mRuam",
       "title": "Add sentence to explain both quoted/non-quoted parameters can be registered in media type?",
       "url": "https://github.com/core-wg/cf-reg-update/issues/22",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -395,8 +395,8 @@
       ],
       "body": "Example:\r\n\r\napplication/my; param=\"string1\"\r\napplication/my; param=string1\r\n\r\nWe can say the preferred form is unquoted if it is allowed per RFC 9110.\r\nE.g. for absolute URI/URN in parameter values, the quotes would be always needed.",
       "createdAt": "2025-01-15T12:15:07Z",
-      "updatedAt": "2025-01-29T15:14:16Z",
-      "closedAt": null,
+      "updatedAt": "2025-02-07T15:26:54Z",
+      "closedAt": "2025-02-07T15:26:54Z",
       "comments": [
         {
           "author": "EskoDijk",
@@ -412,7 +412,7 @@
       "id": "I_kwDONM5XRM6mRvwG",
       "title": "Update 'erroneous' examples with parameter value equivalence cases (although string differs)",
       "url": "https://github.com/core-wg/cf-reg-update/issues/23",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -423,8 +423,8 @@
       ],
       "body": "Example: \r\n\r\n```\r\napplication/my; uriparam=\"urn:foo:1\"\r\napplication/my;uriparam=\"urn:foo:1\"\r\napplication/my;uriparam=\"urn:FOO:1\"\r\n```",
       "createdAt": "2025-01-15T12:17:04Z",
-      "updatedAt": "2025-01-29T15:18:38Z",
-      "closedAt": null,
+      "updatedAt": "2025-02-07T15:27:30Z",
+      "closedAt": "2025-02-07T15:27:30Z",
       "comments": []
     },
     {
@@ -432,7 +432,7 @@
       "id": "I_kwDONM5XRM6mR8wB",
       "title": "Adding an \"Associated Media Type\" or similar field as registry column",
       "url": "https://github.com/core-wg/cf-reg-update/issues/24",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -443,8 +443,8 @@
       ],
       "body": "(Idea that has been discussed with IANA & AD so far. Also to propose to WG.)\r\n\r\nThe idea is to add a new field/column, that shows the base media type that the C-F registration uses.\r\nThis type can be shown as clickable link to the IANA pages that define the template for each media type, such as e.g. these pages:\r\n\r\nhttps://www.iana.org/assignments/media-types/application/pkcs7-mime\r\nhttps://www.iana.org/assignments/media-types/application/vc+cose\r\n\r\nThe benefit is that having the field automatically ensures that the base media type exists.",
       "createdAt": "2025-01-15T12:35:09Z",
-      "updatedAt": "2025-01-29T15:25:56Z",
-      "closedAt": null,
+      "updatedAt": "2025-02-07T15:55:01Z",
+      "closedAt": "2025-02-07T15:55:01Z",
       "comments": [
         {
           "author": "thomas-fossati",
@@ -467,7 +467,7 @@
       "id": "I_kwDONM5XRM6nqiTg",
       "title": "Address \"loophole\" where DEs are not consulted in IETF stream",
       "url": "https://github.com/core-wg/cf-reg-update/issues/28",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -476,8 +476,8 @@
       "labels": [],
       "body": "In the current draft the \"lightweight\" checks of 5.2 are only applied in the range 0-255 and FCFS range, not in the IETF/IESG stream review.\n\nThe DE is not consulted in the IETF/IESG stream; and there's no mention of anyone (e.g. IANA or DE) doing the 5.2 checks for this stream.\n",
       "createdAt": "2025-01-27T12:51:00Z",
-      "updatedAt": "2025-01-29T15:30:23Z",
-      "closedAt": null,
+      "updatedAt": "2025-02-07T15:13:57Z",
+      "closedAt": "2025-02-07T15:13:57Z",
       "comments": []
     },
     {
@@ -485,7 +485,7 @@
       "id": "I_kwDONM5XRM6nqtGl",
       "title": "Clarify current procedure w.r.t. TEMPORARY allocations in registry",
       "url": "https://github.com/core-wg/cf-reg-update/issues/29",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -496,8 +496,8 @@
       ],
       "body": "See email thread: https://mailarchive.ietf.org/arch/msg/core/e75H5-2Iaeq1r1RWbBCK3wzFEfo/",
       "createdAt": "2025-01-27T13:09:48Z",
-      "updatedAt": "2025-01-30T12:09:03Z",
-      "closedAt": null,
+      "updatedAt": "2025-02-07T15:46:46Z",
+      "closedAt": "2025-02-07T15:46:46Z",
       "comments": []
     }
   ],
@@ -1300,28 +1300,30 @@
       "id": "PR_kwDONM5XRM6JeJ9T",
       "title": "Updated registration procedure for the 256-9999 range (Addresses #28)",
       "url": "https://github.com/core-wg/cf-reg-update/pull/30",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "marco-tiloca-sics",
-      "authorAssociation": "NONE",
+      "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "Fix #28",
       "createdAt": "2025-01-30T09:14:01Z",
-      "updatedAt": "2025-01-30T14:10:34Z",
+      "updatedAt": "2025-02-07T15:14:01Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "9fa476561a050b855942ccde9baae248f6d7a544",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "policies-256-9999",
-      "headRefOid": "14371058262153e14edbcf8178d848ca2375b48c",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "3baf13606a24514b1d41d88ff55dbbfa499602b4",
+      "closedAt": "2025-02-07T15:13:55Z",
+      "mergedAt": "2025-02-07T15:13:55Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "125a25cb8d4a630a238dd48598de6860dd6798ba"
+      },
       "comments": [
         {
           "author": "marco-tiloca-sics",
-          "authorAssociation": "NONE",
+          "authorAssociation": "CONTRIBUTOR",
           "body": "The commit https://github.com/core-wg/cf-reg-update/pull/30/commits/d9dd12380f7bfcd6e88fd6126be4ebae7e1a7922 also attempts to simplify more, by defining a single set of Expert Review checks and not having a \"lightweight\" review.\r\n\r\nThe only intended addition to that remains the consideration on the limited codepoints for the 1-byte space of 0-255, which remains highlighted.",
           "createdAt": "2025-01-30T09:30:51Z",
           "updatedAt": "2025-01-30T09:32:10Z"
@@ -1411,32 +1413,74 @@
           "createdAt": "2025-01-30T10:03:17Z",
           "updatedAt": "2025-01-30T10:03:17Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6bFw8d",
+          "commit": {
+            "abbreviatedOid": "3c545de"
+          },
+          "author": "cabo",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-07T15:02:17Z",
+          "updatedAt": "2025-02-07T15:02:17Z",
+          "comments": [
+            {
+              "originalPosition": 101,
+              "body": "```suggestion\r\nFor the 256-9999 range and the 10000-64999 range, a similar criterion may also apply where combinations of media type parameters and content coding choices consume considerable code point space.\r\n```",
+              "createdAt": "2025-02-07T15:02:17Z",
+              "updatedAt": "2025-02-07T15:02:17Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6bF0Rx",
+          "commit": {
+            "abbreviatedOid": "3baf136"
+          },
+          "author": "cabo",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-02-07T15:07:27Z",
+          "updatedAt": "2025-02-07T15:07:43Z",
+          "comments": [
+            {
+              "originalPosition": 101,
+              "body": "So, with this, I think this can go forward.",
+              "createdAt": "2025-02-07T15:07:28Z",
+              "updatedAt": "2025-02-07T15:07:43Z"
+            }
+          ]
         }
       ]
     },
     {
       "number": 31,
       "id": "PR_kwDONM5XRM6Je6KI",
-      "title": "add check for preferred format of Content Type (DON'T MERGE YET)",
+      "title": "add check for preferred format of Content Type",
       "url": "https://github.com/core-wg/cf-reg-update/pull/31",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "fix #22\r\n\r\nNote: for clarity this shows the diff w.r.t. Marco's recent PR.\r\nBefore merging, this needs to be updated to go into the main branch!",
       "createdAt": "2025-01-30T10:56:45Z",
-      "updatedAt": "2025-01-30T15:46:42Z",
+      "updatedAt": "2025-02-07T15:27:02Z",
       "baseRepository": "core-wg/cf-reg-update",
-      "baseRefName": "policies-256-9999",
-      "baseRefOid": "14371058262153e14edbcf8178d848ca2375b48c",
+      "baseRefName": "main",
+      "baseRefOid": "125a25cb8d4a630a238dd48598de6860dd6798ba",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "pr-preferred-format",
-      "headRefOid": "e0a3c4bc86425335c62c6fe19ae1aeccb3470240",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "a9f9e9da9b40b07f229d7e565633432aa5727779",
+      "closedAt": "2025-02-07T15:26:52Z",
+      "mergedAt": "2025-02-07T15:26:51Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "153427f19d1c1eef7e840f6d31169ee5bc41cc8b"
+      },
       "comments": [
         {
           "author": "EskoDijk",
@@ -1513,6 +1557,26 @@
               "updatedAt": "2025-01-30T15:46:42Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6bF3WT",
+          "commit": {
+            "abbreviatedOid": "e0a3c4b"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-07T15:12:05Z",
+          "updatedAt": "2025-02-07T15:12:05Z",
+          "comments": [
+            {
+              "originalPosition": 23,
+              "body": "```suggestion\r\nDuring the review process, the Designated Expert(s) or IANA may rewrite a requested Content Type into this preferred string format before approval.\r\n```",
+              "createdAt": "2025-02-07T15:12:05Z",
+              "updatedAt": "2025-02-07T15:12:05Z"
+            }
+          ]
         }
       ]
     },
@@ -1521,24 +1585,26 @@
       "id": "PR_kwDONM5XRM6JfGld",
       "title": "add example of parameter equivalance, using a URN parameter",
       "url": "https://github.com/core-wg/cf-reg-update/pull/32",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "fix #23 \r\n",
       "createdAt": "2025-01-30T11:23:31Z",
-      "updatedAt": "2025-01-30T12:12:14Z",
+      "updatedAt": "2025-02-07T15:27:33Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "9fa476561a050b855942ccde9baae248f6d7a544",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "pr-example-param-equivalence",
       "headRefOid": "db7104000c6fbafcd576ce747ba4448134658570",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-02-07T15:27:29Z",
+      "mergedAt": "2025-02-07T15:27:29Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "c8986da922dd27631bb94006d21a9fba24204fef"
+      },
       "comments": [],
       "reviews": [
         {
@@ -1600,24 +1666,26 @@
       "id": "PR_kwDONM5XRM6JfUPz",
       "title": "add section on temporary C-F registrations",
       "url": "https://github.com/core-wg/cf-reg-update/pull/33",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": "fix #29 ",
       "createdAt": "2025-01-30T11:53:34Z",
-      "updatedAt": "2025-01-30T14:49:28Z",
+      "updatedAt": "2025-02-07T15:46:48Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
-      "baseRefOid": "9fa476561a050b855942ccde9baae248f6d7a544",
+      "baseRefOid": "c8986da922dd27631bb94006d21a9fba24204fef",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "pr-temporary-allocation",
-      "headRefOid": "aeb2a29eed23012fe7f86e7e6b543175359a296e",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "07ab32306ea87104bdf271cea15be83386a224ba",
+      "closedAt": "2025-02-07T15:46:45Z",
+      "mergedAt": "2025-02-07T15:46:45Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "4b52eea143dcc4df74ae04d8a2ee7e0a93aa669b"
+      },
       "comments": [],
       "reviews": [
         {
@@ -1665,24 +1733,26 @@
       "id": "PR_kwDONM5XRM6JfbkS",
       "title": "Adding the Media Type column to registry",
       "url": "https://github.com/core-wg/cf-reg-update/pull/34",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
       "labels": [],
       "body": " fix #24",
       "createdAt": "2025-01-30T12:08:43Z",
-      "updatedAt": "2025-01-30T15:32:23Z",
+      "updatedAt": "2025-02-07T15:55:03Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
-      "baseRefOid": "9fa476561a050b855942ccde9baae248f6d7a544",
+      "baseRefOid": "4b52eea143dcc4df74ae04d8a2ee7e0a93aa669b",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "pr-media-type-column",
-      "headRefOid": "3dedc9b8209b7bdb6a2ce5dc3f4bd177ffefb915",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "18f9d51e4095867675c41ac91feaeadd0976f1d4",
+      "closedAt": "2025-02-07T15:55:00Z",
+      "mergedAt": "2025-02-07T15:55:00Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "cabbdcabe7c4f18063d8f9c2f0abf68387c93022"
+      },
       "comments": [],
       "reviews": [
         {
@@ -1740,6 +1810,26 @@
               "body": "Done in [3dedc9b](https://github.com/core-wg/cf-reg-update/pull/34/commits/3dedc9b8209b7bdb6a2ce5dc3f4bd177ffefb915)",
               "createdAt": "2025-01-30T15:32:23Z",
               "updatedAt": "2025-01-30T15:32:24Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6bGO-b",
+          "commit": {
+            "abbreviatedOid": "3dedc9b"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-07T15:47:39Z",
+          "updatedAt": "2025-02-07T15:47:40Z",
+          "comments": [
+            {
+              "originalPosition": 14,
+              "body": "```suggestion\r\nTo assist users of the CoAP Content-Formats registry in finding detailed information about the media type associated with each CoAP Content-Format, and to ensure that a media type exists before a new entry can be registered, IANA is requested to add a new column \"Media Type\" to the registry.\r\n```",
+              "createdAt": "2025-02-07T15:47:40Z",
+              "updatedAt": "2025-02-07T15:47:40Z"
             }
           ]
         }
