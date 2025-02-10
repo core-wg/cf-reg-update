@@ -66,7 +66,7 @@ specifically those regarding the IETF Review or IESG Approval portion of the reg
 (Note that the columns of this registry have been revised according to {{Err4954}}.)
 
 In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the IETF Review or IESG Approval portion of the registry (256-9999) as well as from the First Come First Served (FCFS) portion of the registry (10000-64999).
-For the (FCFS) portion of the registry, these rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
+For the FCFS portion of the registry, these rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
 
 Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
 This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is not a task to demand solely from the registrar.
@@ -149,7 +149,7 @@ Content-Format ID 64900 where the "Content Coding" field is left empty.
 ## Duplicate Entry with Equivalent Parameter
 
 The registrant requests an FCFS Content-Format ID for a media type that includes a parameter.
-The value of this parameter appears distinct from that of a previously registered Content-Format that also includes this parameter.
+The value of this parameter appears distinct from that of a (hypothetical) previously registered Content-Format ID 64900 that also includes this parameter.
 However, the semantics of the parameter value are identical to the existing registration.
 
 In this example, the `eat_profile` parameter value (which can be any URI) is set as a Uniform Resource Name (URN) {{?RFC8141}}.
@@ -174,13 +174,13 @@ Other than that, it does not change the Security Considerations of {{-coap}}.
 
 The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -coap}} are modified as shown in {{tbl-new-cf-proc}}.
 
-| Range | Registration Procedures | Note |
+| Range | Registration Procedures | Notes |
 |--------|--------|
 | 0-255 | Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
 | 256-9999 | IETF Review with Expert Review or IESG Approval with Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
 | 10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry) | First Come First Served | The corresponding media type must be registered (or approved for publication) in the "Media Types" registry {{IANA.media-types}} |
 | 10000-64999 (Includes parameters and/or Content Coding and/or media type appears in this registry) | Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
-| 65000-65535 | Experimental use (no operational use) |
+| 65000-65535 | Experimental Use | No operational use
 {: #tbl-new-cf-proc title="Updated CoAP Content-Formats Registration Procedures"}
 
 The 256-9999 range now has registration procedures requiring IETF Review with Expert Review or IESG Approval with Expert Review. In particular:
@@ -222,7 +222,7 @@ Note that the registration request procedure remains unchanged. A requester does
 
 ## Expert Review Procedure {#checks}
 
-The Designated Expert is instructed to perform the Expert Review, as described by the following checklist:
+The Designated Expert (DE) is instructed to perform the Expert Review, as described by the following checklist:
 
 1. The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;
 1. The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry {{IANA.media-types}};
@@ -231,7 +231,7 @@ The Designated Expert is instructed to perform the Expert Review, as described b
 1. If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding" registry of the "Hypertext Transfer Protocol (HTTP) Parameters" {{IANA.http-parameters}}.
 
 For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
-For the 256-9999 range and the 10000-64999 range, a similar criterion may also apply where combinations of media type parameters and content coding choices consume considerable code point space.
+For the 256-9999 range and the 10000-64999 range, a similar criterion may also apply where combinations of media type parameters and content coding choices consume considerable codepoint space.
 
 <!-- Should these actually use BCP14 MUSTs? -->
 
