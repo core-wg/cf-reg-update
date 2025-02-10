@@ -101,7 +101,7 @@ The registrant requests an FCFS Content-Format ID for an existing media type wit
 
 | Content Type | Content Coding | ID |
 |--|--|--|
-| application/cose; unknown-parameter=1 | - | 64999 |
+| application/cose;unknown-parameter=1 | - | 64999 |
 {: align="left" title="Attempt at Registering Content-Format for Media Type with Unknown Parameter"}
 
 ## The Media Type Parameter Value is Invalid
@@ -110,7 +110,7 @@ The registrant requests an FCFS Content-Format ID for an existing media type wit
 
 | Content Type | Content Coding | ID |
 |--|--|--|
-| application/cose; cose-type=invalid | - | 64999 |
+| application/cose;cose-type=invalid | - | 64999 |
 {: align="left" title="Attempt at Registering Content-Format for Media Type with Invalid Parameter Value"}
 
 ## The Content Coding is Unknown
@@ -131,7 +131,7 @@ As a result, this could lead to the creation of two separate Content-Format IDs 
 | Content Type | Content Coding | ID |
 |--|--|--|
 | application/my | - | 64900 |
-| application/my; parameter=default | - | 64999 |
+| application/my;parameter=default | - | 64999 |
 {: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (1)"}
 
 ## Duplicate Entry with Default Content Coding
@@ -157,8 +157,8 @@ Since for URNs, the Namespace Identifier (`foo` in the example) is defined as ca
 
 | Content Type | Content Coding | ID |
 |--|--|--|
-| application/eat+cwt; eat_profile="urn:foo:1" | - | 64900 |
-| application/eat+cwt; eat_profile="urn:FOO:1" | - | 64999 |
+| application/eat+cwt;eat_profile="urn:foo:1" | - | 64900 |
+| application/eat+cwt;eat_profile="urn:FOO:1" | - | 64999 |
 {: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (3)"}
 
 
@@ -240,13 +240,12 @@ For the 256-9999 range and the 10000-64999 range, a similar criterion may also a
 This section defines the preferred string format for including a requested Content Type into the CoAP Content-Formats registry.
 During the review process, the Designated Expert(s) or IANA may rewrite a requested Content Type into this preferred string format before approval.
 
-The preferred string format is as follows:
+The preferred string format is as defined in {{Section 8.3.1 of -http-sema}} and applies the following rules:
 
-1. For any case-insensitive elements, lowercase characters must be used.
-   See {{Section 8.3.1 of -http-sema}} for a definition of case-insensitive elements and some examples.
+1. For any case-insensitive elements, lowercase characters are used.
 1. Parameter values are only quoted if the value is such that it requires use of `quoted-string` per {{Section 5.6.6 of -http-sema}}.
    Otherwise, a parameter value is included unquoted.
-1. A semicolon followed by one space character is used as the separator between media type and parameters.
+1. A single semicolon character without any adjacent whitespace characters is used as the separator between media type and parameters.
 
 ## Temporary Note Removal
 {:removeinrfc}
