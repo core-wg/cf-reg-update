@@ -439,7 +439,7 @@ Table of Contents
    before approval.
 
    The preferred string format is as defined in Section 8.3.1 of
-   [RFC9110] and applies the following rules:
+   [RFC9110] and follows these rules:
 
    1.  For any case-insensitive elements, lowercase characters are used.
 
