@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 11 August 2025                                  7 February 2025
+Expires: 14 August 2025                                 10 February 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 August 2025.
+   This Internet-Draft will expire on 14 August 2025.
 
 Copyright Notice
 
@@ -104,7 +104,7 @@ Table of Contents
    In particular, the text defines the rules for obtaining CoAP Content-
    Format identifiers from the IETF Review or IESG Approval portion of
    the registry (256-9999) as well as from the First Come First Served
-   (FCFS) portion of the registry (10000-64999).  For the (FCFS) portion
+   (FCFS) portion of the registry (10000-64999).  For the FCFS portion
    of the registry, these rules do not involve the Designated Expert
    (DE) and are managed solely by IANA personnel to finalize the
    registration.
@@ -248,9 +248,10 @@ Table of Contents
 
    The registrant requests an FCFS Content-Format ID for a media type
    that includes a parameter.  The value of this parameter appears
-   distinct from that of a previously registered Content-Format that
-   also includes this parameter.  However, the semantics of the
-   parameter value are identical to the existing registration.
+   distinct from that of a (hypothetical) previously registered Content-
+   Format ID 64900 that also includes this parameter.  However, the
+   semantics of the parameter value are identical to the existing
+   registration.
 
    In this example, the eat_profile parameter value (which can be any
    URI) is set as a Uniform Resource Name (URN) [RFC8141].  Since for
@@ -290,7 +291,7 @@ Table of Contents
    Section 12.3 of [RFC7252] are modified as shown in Table 8.
 
    +========================+================+=========================+
-   | Range                  | Registration   | Note                    |
+   | Range                  | Registration   | Notes                   |
    |                        | Procedures     |                         |
    +========================+================+=========================+
    | 0-255                  | Expert Review  | Review procedure        |
@@ -317,10 +318,8 @@ Table of Contents
    | type appears in this   |                |                         |
    | registry)              |                |                         |
    +------------------------+----------------+-------------------------+
-   | 65000-65535            | Experimental   |                         |
-   |                        | use (no        |                         |
-   |                        | operational    |                         |
-   |                        | use)           |                         |
+   | 65000-65535            | Experimental   | No operational use      |
+   |                        | Use            |                         |
    +------------------------+----------------+-------------------------+
 
        Table 8: Updated CoAP Content-Formats Registration Procedures
@@ -402,8 +401,8 @@ Table of Contents
 
 5.3.  Expert Review Procedure
 
-   The Designated Expert is instructed to perform the Expert Review, as
-   described by the following checklist:
+   The Designated Expert (DE) is instructed to perform the Expert
+   Review, as described by the following checklist:
 
    1.  The combination of content-type and content coding for which the
        registration is requested must not be already present in the
@@ -430,7 +429,7 @@ Table of Contents
    the limited availability of the 1-byte codepoint space.  For the
    256-9999 range and the 10000-64999 range, a similar criterion may
    also apply where combinations of media type parameters and content
-   coding choices consume considerable code point space.
+   coding choices consume considerable codepoint space.
 
 5.4.  Preferred Format for the Content Type Field
 
