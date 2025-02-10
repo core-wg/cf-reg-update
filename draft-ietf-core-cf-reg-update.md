@@ -240,7 +240,7 @@ For the 256-9999 range and the 10000-64999 range, a similar criterion may also a
 This section defines the preferred string format for including a requested Content Type into the CoAP Content-Formats registry.
 During the review process, the Designated Expert(s) or IANA may rewrite a requested Content Type into this preferred string format before approval.
 
-The preferred string format is as defined in {{Section 8.3.1 of -http-sema}} and applies the following rules:
+The preferred string format is as defined in {{Section 8.3.1 of -http-sema}} and follows these rules:
 
 1. For any case-insensitive elements, lowercase characters are used.
 1. Parameter values are only quoted if the value is such that it requires use of `quoted-string` per {{Section 5.6.6 of -http-sema}}.
