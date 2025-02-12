@@ -231,7 +231,7 @@ Note that the registration request procedure remains unchanged. A requester does
 The Designated Expert (DE) is instructed to perform the Expert Review, as described by the following checklist:
 
 1. The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;
-1. The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry {{IANA.media-types}};
+1. The media type associated with the requested Content-Format must either be registered in the "Media Types" registry {{IANA.media-types}} or approved for registration. Alternatively, it may be listed in the "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}. The use of provisional standard media types is only permitted for Content-Format identifiers within the ranges of 0-255 and 256-9999;
 1. The optional parameter names must have been defined in association with the media type, and any parameter values associated with such parameter names must be as permitted;
 1. The Content Type is in the preferred format defined in {{preferred-format}};
 1. If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding" registry of the "Hypertext Transfer Protocol (HTTP) Parameters" {{IANA.http-parameters}}.
