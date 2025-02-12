@@ -324,8 +324,8 @@ Table of Contents
 
        Table 8: Updated CoAP Content-Formats Registration Procedures
 
-   The 256-9999 range now has registration procedures requiring IETF
-   Review with Expert Review or IESG Approval with Expert Review.  In
+   The 256-9999 range now has registration procedures requiring "IETF
+   Review with Expert Review" or "IESG Approval with Expert Review."  In
    particular:
 
    *  All assignments according to "IETF Review with Expert Review" are
@@ -349,8 +349,7 @@ Table of Contents
    in the "Content Type" field, without any parameter names or "Content
    Coding", and the media type has not yet been used in this registry,
    then the policy is FCFS, as before.  In all other cases, the policy
-   will be Expert Review, following the checklist described in
-   Section 5.3.
+   is "Expert Review," following the procedure described in Section 5.3.
 
    A new column with the title "Note" has been added to the registry,
    which contains information about the expected review procedure.
@@ -363,21 +362,23 @@ Table of Contents
 
    A temporary registration may be created for example by an IANA early
    allocation action, requested by the authors of an Internet Draft in
-   the IETF stream.  Or it may be created because the referenced media
-   type is still provisional (that is, included in the IANA Provisional
-   Standard Media Type Registry).
+   the IETF stream.  Alternatively, it may be created because the
+   referenced media type is still provisional (that is, included in the
+   IANA "Provisional Standard Media Type" registry
+   [IANA.provisional-standard-media-types]).
 
    A temporary registration is marked by an IANA note with the label
-   "TEMPORARY" in the corresponding registry entry.  Once the required
-   review procedure for the temporary ID has successfully completed, and
-   the referenced media type is included in the IANA Media Types
-   registry, IANA must remove the "TEMPORARY" label so that the entry
-   becomes permanent.  If the requested temporary entry does not
-   successfully pass its required review procedure, IANA must remove the
-   entry again and set the Content-Format ID value back to "Unassigned".
-   This may happen for example when an Internet-Draft requesting a
-   Content-Format ID is abandoned, or when the referenced provisional
-   media type is abandoned.
+   "TEMPORARY" in the "Content Type" column of the corresponding
+   registry entry.  Once the required review procedure for the temporary
+   ID has successfully completed, and the referenced media type is
+   included in the IANA Media Types registry [IANA.media-types], IANA
+   must remove the "TEMPORARY" label so that the entry becomes
+   permanent.  If the requested temporary entry does not successfully
+   pass its required review procedure, IANA must remove the entry again
+   and set the Content-Format ID value back to "Unassigned".  This may
+   happen for example when an Internet-Draft requesting a Content-Format
+   ID is abandoned, or when the referenced provisional media type is
+   abandoned.
 
 5.2.  Adding the Media Type Column to the Registry
 
@@ -385,14 +386,19 @@ Table of Contents
    detailed information about the media type associated with each CoAP
    Content-Format, and to ensure that a media type exists before a new
    entry can be registered, IANA is requested to add a new column "Media
-   Type" to the registry.  This new column can be placed directly to the
+   Type" to the registry.  This new column is placed directly to the
    right of the existing "Content Type" column.
 
    The "Media Type" field for each entry lists the (base) media type
    name and provides a hyperlink to registration information for that
    media type as recorded by IANA.  If the media type is provisional,
    the hyperlink points to the IANA "Provisional Standard Media Type"
-   registry [IANA.provisional-standard-media-types].
+   registry [IANA.provisional-standard-media-types].  If a provisional
+   media type is later abandoned or becomes a permanent media type, IANA
+   must update the "Media Type" field in the associated entries.  In the
+   case of abandonment, this field should be left empty.  If the media
+   type becomes permanent, the field should include a hyperlink to the
+   registration information for that media type.
 
    Note that the registration request procedure remains unchanged.  A
    requester does not need to fill out the "Media Type" field
