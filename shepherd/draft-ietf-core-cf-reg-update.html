@@ -1611,7 +1611,7 @@ If the media type becomes permanent, the field should include a hyperlink to the
             <p id="section-5.3-2.1.1">The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;<a href="#section-5.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-5.3-2.2">
-            <p id="section-5.3-2.2.1">The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>;<a href="#section-5.3-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-5.3-2.2.1">The media type associated with the requested Content-Format must either be registered in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span> or approved for registration. Alternatively, it may be listed in the "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>. The use of provisional standard media types is only permitted for Content-Format identifiers within the ranges of 0-255 and 256-9999;<a href="#section-5.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-5.3-2.3">
             <p id="section-5.3-2.3.1">The optional parameter names must have been defined in association with the media type, and any parameter values associated with such parameter names must be as permitted;<a href="#section-5.3-2.3.1" class="pilcrow">¶</a></p>

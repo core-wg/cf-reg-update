@@ -415,8 +415,12 @@ Table of Contents
        "CoAP Content-Formats" registry;
 
    2.  The media type associated with the requested Content-Format must
-       exist (or must have been approved for registration) in the "Media
-       Types" registry [IANA.media-types];
+       either be registered in the "Media Types" registry
+       [IANA.media-types] or approved for registration.  Alternatively,
+       it may be listed in the "Provisional Standard Media Type"
+       registry [IANA.provisional-standard-media-types].  The use of
+       provisional standard media types is only permitted for Content-
+       Format identifiers within the ranges of 0-255 and 256-9999;
 
    3.  The optional parameter names must have been defined in
        association with the media type, and any parameter values
