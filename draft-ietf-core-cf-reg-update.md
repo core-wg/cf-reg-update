@@ -80,7 +80,7 @@ This document also introduces a new column, "Media Type", to the registry.
 
 {::boilerplate bcp14-tagged-bcp14}
 
-This document uses the terms "media type", "content coding", "content-type" and "content format" as defined in {{Section 2 of -senml-cf}}.
+This document uses the terms "media type", "content coding", "content-type", and "content format" as defined in {{Section 2 of -senml-cf}}.
 
 # Examples for Erroneous Registrations
 
@@ -205,7 +205,7 @@ A new column with the title "Note" has been added to the registry, which contain
 This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255 and 256-9999 ranges.
 The range 10000-64999 does not allow temporary registrations.
 
-A temporary registration may be created for example by an IANA early allocation action, requested by the authors of an Internet Draft in the IETF stream.
+A temporary registration may be created for example by an IANA early allocation action, as requested by the authors of an Internet-Draft in the IETF stream.
 Alternatively, it may be created because the referenced media type is still provisional (that is, included in the IANA "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}).
 
 A temporary registration is marked by an IANA note with the label "TEMPORARY" in the  "Content Type" column of the corresponding registry entry.
@@ -274,6 +274,6 @@ Carsten Bormann,
 Francesca Palombini,
 and
 Marco Tiloca
-for your reviews, comments, suggestions and fixes.
+for your reviews, comments, suggestions, and fixes.
 
 [^replace-self]: RFC Editor: in this section, please replace {{&SELF}} with the RFC number assigned to this document and remove this note.
