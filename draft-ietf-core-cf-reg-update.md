@@ -55,8 +55,8 @@ entity:
 
 --- abstract
 
-This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group. The affected registration procedures are
-specifically those regarding the IETF Review or IESG Approval portion of the registry as well as those regarding the First Come First Served (FCFS) portion of the registry.
+This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" IANA registry, within the "Constrained RESTful Environments (CoRE) Parameters" registry group.
+This document also introduces a new column, "Media Type", to the registry.
 
 --- middle
 
