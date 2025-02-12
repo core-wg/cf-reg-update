@@ -38,17 +38,17 @@ normative:
   RFC7120: iana-early
   RFC7252: coap
   RFC9110: http-sema
+  RFC9193: senml-cf
   BCP26:
     -: iana-cons
     =: RFC8126
-
-informative:
-  Err4954: 7252
-  RFC9193: senml-cf
   IANA.core-parameters:
   IANA.media-types:
   IANA.http-parameters:
   IANA.provisional-standard-media-types:
+
+informative:
+  Err4954: 7252
 
 entity:
   SELF: "RFCthis"
