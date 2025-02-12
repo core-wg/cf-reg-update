@@ -202,7 +202,7 @@ A new column with the title "Note" has been added to the registry, which contain
 
 ## Temporary Content-Format Registrations
 
-This section clarifies that the CoAP Content-Formats registry allows temporary registrations within the 0-255 and 256-9999 ranges.
+This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255 and 256-9999 ranges.
 The range 10000-64999 does not allow temporary registrations.
 
 A temporary registration may be created for example by an IANA early allocation action, requested by the authors of an Internet Draft in the IETF stream.
@@ -215,7 +215,7 @@ This may happen for example when an Internet-Draft requesting a Content-Format I
 
 ## Adding the Media Type Column to the Registry
 
-To assist users of the CoAP Content-Formats registry in finding detailed information about the media type associated with each CoAP Content-Format, and to ensure that a media type exists before a new entry can be registered, IANA is requested to add a new column "Media Type" to the registry.
+To assist users of the "CoAP Content-Formats" registry in finding detailed information about the media type associated with each CoAP Content-Format, and to ensure that a media type exists before a new entry can be registered, IANA is requested to add a new column "Media Type" to the registry.
 This new column is placed directly to the right of the existing "Content Type" column.
 
 The "Media Type" field for each entry lists the (base) media type name and provides a hyperlink to registration information for that media type as recorded by IANA.
@@ -243,7 +243,7 @@ For the 256-9999 range and the 10000-64999 range, a similar criterion may also a
 
 ## Preferred Format for the Content Type Field {#preferred-format}
 
-This section defines the preferred string format for including a requested Content Type into the CoAP Content-Formats registry.
+This section defines the preferred string format for including a requested Content Type into the "CoAP Content-Formats" registry.
 During the review process, the Designated Expert(s) or IANA may rewrite a requested Content Type into this preferred string format before approval.
 
 The preferred string format is as defined in {{Section 8.3.1 of -http-sema}} and follows these rules:
