@@ -95,9 +95,10 @@ Table of Contents
 1.  Introduction
 
    Section 12.3 of [RFC7252] describes the registration procedures for
-   the "CoAP Content-Formats" registry within the "CoRE Parameters"
-   registry group [IANA.core-parameters].  (Note that the columns of
-   this registry have been revised according to [Err4954].)
+   the "CoAP Content-Formats" IANA registry within the "Constrained
+   RESTful Environments (CoRE) Parameters" registry group
+   [IANA.core-parameters].  (Note that the columns of this registry have
+   been revised according to [Err4954].)
 
    In particular, the text defines the rules for obtaining CoAP Content-
    Format identifiers from the IETF Review or IESG Approval portion of
@@ -111,17 +112,19 @@ Table of Contents
    that the combination of content-type (i.e., media type with optional
    parameters) and content coding associated with the requested CoAP
    Content-Format is semantically valid.  This task is generally non-
-   trivial, requiring knowledge from multiple documents and
-   technologies, which is not a task to demand solely from the
-   registrar.  This lack of guidance may engender confusion in both the
-   registering party and the registrar, and has already led to erroneous
-   registrations.
+   trivial, requires knowledge from multiple documents and technologies,
+   and should not be solely demanded from the registrar.  This lack of
+   guidance may engender confusion in both the registering party and the
+   registrar, and has already led to erroneous registrations.
 
    In Section 5, this document updates [RFC7252] by modifying the
-   registration procedures for the "CoAP Content-Formats" registry
-   regarding its IETF Review or IESG Approval portion as well as its
-   FCFS portion, to mitigate the risk of unintentional or malicious
-   errors.
+   registration procedures for the "CoAP Content-Formats" registry to
+   mitigate the risk of unintentional or malicious errors.  These
+   updates amend the different portions of the registry, introduce a
+   review procedure to be performed for most portions of the registry,
+   and allow the registration of temporary Content-Format identifiers
+   for certain portions of the registry.  This document also introduces
+   a new column, "Media Type", to the registry.
 
 2.  Conventions and Definitions
 
@@ -137,15 +140,15 @@ Table of Contents
 
 3.  Examples for Erroneous Registrations
 
-   This section contains a few examples of registration requests for a
-   CoAP Content-Format with identifier 64999 in the FCFS space that must
-   not be allowed to succeed.
+   This section contains examples of registration requests for a CoAP
+   Content-Format with identifier 64999 in the FCFS portion of the "CoAP
+   Content-Formats" registry, which must not be allowed to succeed.
 
    The following considerations also apply to alternative examples
    where, for the same combination of content type and content coding, a
    registration was requested for a CoAP Content-Format with identifier
-   in the IETF Review or IESG Approval space.  That is, such
-   registrations must not be allowed to succeed.
+   in the IETF Review or IESG Approval portion of the registry.  That
+   is, such registrations must not be allowed to succeed.
 
 3.1.  The Media Type is Unknown
 

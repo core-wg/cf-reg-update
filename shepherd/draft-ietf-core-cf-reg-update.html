@@ -1240,14 +1240,16 @@ This document also introduces a new column, "Media Type", to the registry.<a hre
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1"><span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> describes the registration procedures for the "CoAP Content-Formats" registry within the "CoRE Parameters" registry group <span>[<a href="#IANA.core-parameters" class="cite xref">IANA.core-parameters</a>]</span>.
+<p id="section-1-1"><span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> describes the registration procedures for the "CoAP Content-Formats" IANA registry within the "Constrained RESTful Environments (CoRE) Parameters" registry group <span>[<a href="#IANA.core-parameters" class="cite xref">IANA.core-parameters</a>]</span>.
 (Note that the columns of this registry have been revised according to <span>[<a href="#Err4954" class="cite xref">Err4954</a>]</span>.)<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the IETF Review or IESG Approval portion of the registry (256-9999) as well as from the First Come First Served (FCFS) portion of the registry (10000-64999).
 For the FCFS portion of the registry, these rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
-This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is not a task to demand solely from the registrar.
+This task is generally non-trivial, requires knowledge from multiple documents and technologies, and should not be solely demanded from the registrar.
 This lack of guidance may engender confusion in both the registering party and the registrar, and has already led to erroneous registrations.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">In <a href="#iana" class="auto internal xref">Section 5</a>, this document updates <span>[<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> by modifying the registration procedures for the "CoAP Content-Formats" registry regarding its IETF Review or IESG Approval portion as well as its FCFS portion, to mitigate the risk of unintentional or malicious errors.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-4">In <a href="#iana" class="auto internal xref">Section 5</a>, this document updates <span>[<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> by modifying the registration procedures for the "CoAP Content-Formats" registry to mitigate the risk of unintentional or malicious errors.
+These updates amend the different portions of the registry, introduce a review procedure to be performed for most portions of the registry, and allow the registration of temporary Content-Format identifiers for certain portions of the registry.
+This document also introduces a new column, "Media Type", to the registry.<a href="#section-1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1267,8 +1269,9 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-examples-for-erroneous-regi">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-examples-for-erroneous-regi" class="section-name selfRef">Examples for Erroneous Registrations</a>
       </h2>
-<p id="section-3-1">This section contains a few examples of registration requests for a CoAP Content-Format with identifier 64999 in the FCFS space that must not be allowed to succeed.<a href="#section-3-1" class="pilcrow">¶</a></p>
-<p id="section-3-2">The following considerations also apply to alternative examples where, for the same combination of content type and content coding, a registration was requested for a CoAP Content-Format with identifier in the IETF Review or IESG Approval space. That is, such registrations must not be allowed to succeed.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<p id="section-3-1">This section contains examples of registration requests for a CoAP Content-Format with identifier 64999 in the FCFS portion of the "CoAP Content-Formats" registry, which must not be allowed to succeed.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">The following considerations also apply to alternative examples where, for the same combination of content type and content coding, a registration was requested for a CoAP Content-Format with identifier in the IETF Review or IESG Approval portion of the registry.
+That is, such registrations must not be allowed to succeed.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <div id="ex-unknown-mt">
 <section id="section-3.1">
         <h3 id="name-the-media-type-is-unknown">
