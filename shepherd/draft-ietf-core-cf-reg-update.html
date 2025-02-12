@@ -1261,7 +1261,7 @@ This document also introduces a new column, "Media Type", to the registry.<a hre
 "<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
 described in <span>[<a href="#BCP14" class="cite xref">BCP14</a>]</span> (<a href="#RFC2119" class="auto internal xref">RFC2119</a>) (<a href="#RFC8174" class="auto internal xref">RFC8174</a>) when, and only when, they
 appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">This document uses the terms "media type", "content coding", "content-type" and "content format" as defined in <span><a href="https://rfc-editor.org/rfc/rfc9193#section-2" class="relref">Section 2</a> of [<a href="#RFC9193" class="cite xref">RFC9193</a>]</span>.<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-2">This document uses the terms "media type", "content coding", "content-type", and "content format" as defined in <span><a href="https://rfc-editor.org/rfc/rfc9193#section-2" class="relref">Section 2</a> of [<a href="#RFC9193" class="cite xref">RFC9193</a>]</span>.<a href="#section-2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="examples-for-erroneous-registrations">
@@ -1577,7 +1577,7 @@ In all other cases, the policy is "Expert Review," following the procedure descr
         </h3>
 <p id="section-5.1-1">This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255 and 256-9999 ranges.
 The range 10000-64999 does not allow temporary registrations.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.1-2">A temporary registration may be created for example by an IANA early allocation action, requested by the authors of an Internet Draft in the IETF stream.
+<p id="section-5.1-2">A temporary registration may be created for example by an IANA early allocation action, as requested by the authors of an Internet-Draft in the IETF stream.
 Alternatively, it may be created because the referenced media type is still provisional (that is, included in the IANA "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>).<a href="#section-5.1-2" class="pilcrow">¶</a></p>
 <p id="section-5.1-3">A temporary registration is marked by an IANA note with the label "TEMPORARY" in the  "Content Type" column of the corresponding registry entry.
 Once the required review procedure for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>, IANA must remove the "TEMPORARY" label so that the entry becomes permanent.
@@ -1692,31 +1692,6 @@ RFC-Editor: please remove this section once the note has been removed.<a href="#
         <dd>
 <span class="refAuthor">Cotton, M.</span>, <span class="refAuthor">Leiba, B.</span>, and <span class="refAuthor">T. Narten</span>, <span class="refTitle">"Guidelines for Writing an IANA Considerations Section in RFCs"</span>, <span class="seriesInfo">BCP 26</span>, <span class="seriesInfo">RFC 8126</span>, <span class="seriesInfo">DOI 10.17487/RFC8126</span>, <time datetime="2017-06" class="refDate">June 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8126">https://www.rfc-editor.org/rfc/rfc8126</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="RFC7120">[RFC7120]</dt>
-        <dd>
-<span class="refAuthor">Cotton, M.</span>, <span class="refTitle">"Early IANA Allocation of Standards Track Code Points"</span>, <span class="seriesInfo">BCP 100</span>, <span class="seriesInfo">RFC 7120</span>, <span class="seriesInfo">DOI 10.17487/RFC7120</span>, <time datetime="2014-01" class="refDate">January 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7120">https://www.rfc-editor.org/rfc/rfc7120</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC7252">[RFC7252]</dt>
-        <dd>
-<span class="refAuthor">Shelby, Z.</span>, <span class="refAuthor">Hartke, K.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"The Constrained Application Protocol (CoAP)"</span>, <span class="seriesInfo">RFC 7252</span>, <span class="seriesInfo">DOI 10.17487/RFC7252</span>, <time datetime="2014-06" class="refDate">June 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7252">https://www.rfc-editor.org/rfc/rfc7252</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC9110">[RFC9110]</dt>
-      <dd>
-<span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP Semantics"</span>, <span class="seriesInfo">STD 97</span>, <span class="seriesInfo">RFC 9110</span>, <span class="seriesInfo">DOI 10.17487/RFC9110</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9110">https://www.rfc-editor.org/rfc/rfc9110</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-</dl>
-</section>
-</div>
-<div id="sec-informative-references">
-<section id="section-6.2">
-        <h3 id="name-informative-references">
-<a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
-        </h3>
-<dl class="references">
-<dt id="Err4954">[Err4954]</dt>
-        <dd>
-<span class="refTitle">RFC Errata Report 4954</span>, <span class="seriesInfo">RFC 7252</span>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid4954">https://www.rfc-editor.org/errata/eid4954</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="IANA.core-parameters">[IANA.core-parameters]</dt>
         <dd>
 <span class="refAuthor">IANA</span>, <span class="refTitle">"Constrained RESTful Environments (CoRE) Parameters"</span>, <span>&lt;<a href="https://www.iana.org/assignments/core-parameters">https://www.iana.org/assignments/core-parameters</a>&gt;</span>. </dd>
@@ -1733,13 +1708,38 @@ RFC-Editor: please remove this section once the note has been removed.<a href="#
         <dd>
 <span class="refAuthor">IANA</span>, <span class="refTitle">"Provisional Standard Media Type Registry"</span>, <span>&lt;<a href="https://www.iana.org/assignments/provisional-standard-media-types">https://www.iana.org/assignments/provisional-standard-media-types</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="RFC8141">[RFC8141]</dt>
+<dt id="RFC7120">[RFC7120]</dt>
         <dd>
-<span class="refAuthor">Saint-Andre, P.</span> and <span class="refAuthor">J. Klensin</span>, <span class="refTitle">"Uniform Resource Names (URNs)"</span>, <span class="seriesInfo">RFC 8141</span>, <span class="seriesInfo">DOI 10.17487/RFC8141</span>, <time datetime="2017-04" class="refDate">April 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8141">https://www.rfc-editor.org/rfc/rfc8141</a>&gt;</span>. </dd>
+<span class="refAuthor">Cotton, M.</span>, <span class="refTitle">"Early IANA Allocation of Standards Track Code Points"</span>, <span class="seriesInfo">BCP 100</span>, <span class="seriesInfo">RFC 7120</span>, <span class="seriesInfo">DOI 10.17487/RFC7120</span>, <time datetime="2014-01" class="refDate">January 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7120">https://www.rfc-editor.org/rfc/rfc7120</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7252">[RFC7252]</dt>
+        <dd>
+<span class="refAuthor">Shelby, Z.</span>, <span class="refAuthor">Hartke, K.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"The Constrained Application Protocol (CoAP)"</span>, <span class="seriesInfo">RFC 7252</span>, <span class="seriesInfo">DOI 10.17487/RFC7252</span>, <time datetime="2014-06" class="refDate">June 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7252">https://www.rfc-editor.org/rfc/rfc7252</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9110">[RFC9110]</dt>
+        <dd>
+<span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP Semantics"</span>, <span class="seriesInfo">STD 97</span>, <span class="seriesInfo">RFC 9110</span>, <span class="seriesInfo">DOI 10.17487/RFC9110</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9110">https://www.rfc-editor.org/rfc/rfc9110</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9193">[RFC9193]</dt>
       <dd>
 <span class="refAuthor">Keränen, A.</span> and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"Sensor Measurement Lists (SenML) Fields for Indicating Data Value Content-Format"</span>, <span class="seriesInfo">RFC 9193</span>, <span class="seriesInfo">DOI 10.17487/RFC9193</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9193">https://www.rfc-editor.org/rfc/rfc9193</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
+</div>
+<div id="sec-informative-references">
+<section id="section-6.2">
+        <h3 id="name-informative-references">
+<a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+        </h3>
+<dl class="references">
+<dt id="Err4954">[Err4954]</dt>
+        <dd>
+<span class="refTitle">RFC Errata Report 4954</span>, <span class="seriesInfo">RFC 7252</span>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid4954">https://www.rfc-editor.org/errata/eid4954</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8141">[RFC8141]</dt>
+      <dd>
+<span class="refAuthor">Saint-Andre, P.</span> and <span class="refAuthor">J. Klensin</span>, <span class="refTitle">"Uniform Resource Names (URNs)"</span>, <span class="seriesInfo">RFC 8141</span>, <span class="seriesInfo">DOI 10.17487/RFC8141</span>, <time datetime="2017-04" class="refDate">April 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8141">https://www.rfc-editor.org/rfc/rfc8141</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1757,7 +1757,7 @@ Carsten Bormann,
 Francesca Palombini,
 and
 Marco Tiloca
-for your reviews, comments, suggestions and fixes.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+for your reviews, comments, suggestions, and fixes.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="authors-addresses">
