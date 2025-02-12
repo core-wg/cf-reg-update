@@ -356,9 +356,9 @@ Table of Contents
 
 5.1.  Temporary Content-Format Registrations
 
-   This section clarifies that the CoAP Content-Formats registry allows
-   temporary registrations within the 0-255 and 256-9999 ranges.  The
-   range 10000-64999 does not allow temporary registrations.
+   This section clarifies that the "CoAP Content-Formats" registry
+   allows temporary registrations within the 0-255 and 256-9999 ranges.
+   The range 10000-64999 does not allow temporary registrations.
 
    A temporary registration may be created for example by an IANA early
    allocation action, requested by the authors of an Internet Draft in
@@ -382,7 +382,7 @@ Table of Contents
 
 5.2.  Adding the Media Type Column to the Registry
 
-   To assist users of the CoAP Content-Formats registry in finding
+   To assist users of the "CoAP Content-Formats" registry in finding
    detailed information about the media type associated with each CoAP
    Content-Format, and to ensure that a media type exists before a new
    entry can be registered, IANA is requested to add a new column "Media
@@ -444,7 +444,7 @@ Table of Contents
 5.4.  Preferred Format for the Content Type Field
 
    This section defines the preferred string format for including a
-   requested Content Type into the CoAP Content-Formats registry.
+   requested Content Type into the "CoAP Content-Formats" registry.
    During the review process, the Designated Expert(s) or IANA may
    rewrite a requested Content Type into this preferred string format
    before approval.
