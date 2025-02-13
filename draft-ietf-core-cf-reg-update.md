@@ -38,7 +38,7 @@ normative:
   RFC7120: iana-early
   RFC7252: coap
   RFC9110: http-sema
-  RFC9193: senml-cf
+  RFC9193: senml-ct
   BCP26:
     -: iana-cons
     =: RFC8126
@@ -80,7 +80,7 @@ This document also introduces a new column, "Media Type", to the registry.
 
 {::boilerplate bcp14-tagged-bcp14}
 
-This document uses the terms "media type", "content coding", "content-type", and "content format" as defined in {{Section 2 of -senml-cf}}.
+This document uses the terms "media type", "content coding", "content-type", and "content format" as defined in {{Section 2 of -senml-ct}}.
 
 # Examples for Erroneous Registrations
 
