@@ -65,15 +65,15 @@ This document also introduces a new column, "Media Type", to the registry.
 {{Section 12.3 of -coap}} describes the registration procedures for the "CoAP Content-Formats" IANA registry within the "Constrained RESTful Environments (CoRE) Parameters" registry group {{IANA.core-parameters}}.
 (Note that the columns of this registry have been revised according to {{Err4954}}.)
 
-In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the IETF Review or IESG Approval portion of the registry (256-9999) as well as from the First Come First Served (FCFS) portion of the registry (10000-64999).
-For the FCFS portion of the registry, these rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
+In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the "IETF Review" or "IESG Approval" range of the registry (256-9999) as well as from the First Come First Served (FCFS) range of the registry (10000-64999).
+For the FCFS range, these rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.
 
 Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
 This task is generally non-trivial, requires knowledge from multiple documents and technologies, and should not be solely demanded from the registrar.
 This lack of guidance may engender confusion in both the registering party and the registrar, and has already led to erroneous registrations.
 
 In {{iana}}, this document updates {{-coap}} by modifying the registration procedures for the "CoAP Content-Formats" registry to mitigate the risk of unintentional or malicious errors.
-These updates amend the different portions of the registry, introduce a review procedure to be performed for most portions of the registry, and allow the registration of temporary Content-Format identifiers for certain portions of the registry.
+These updates amend the different ranges of the registry, introduce a review procedure to be performed for most ranges of the registry, and allow the registration of temporary Content-Format identifiers for certain ranges of the registry.
 This document also introduces a new column, "Media Type", to the registry.
 
 # Conventions and Definitions
@@ -84,10 +84,10 @@ This document uses the terms "media type", "content coding", "content-type", and
 
 # Examples for Erroneous Registrations
 
-This section contains examples of registration requests for a CoAP Content-Format with identifier 64999 in the FCFS portion of the "CoAP Content-Formats" registry, which must not be allowed to succeed.
+This section contains examples of registration requests for a CoAP Content-Format with identifier 64999 in the FCFS range of the "CoAP Content-Formats" registry, which must not be allowed to succeed.
 
-The following considerations also apply to alternative examples where, for the same combination of content type and content coding, a registration was requested for a CoAP Content-Format with identifier in the IETF Review or IESG Approval portion of the registry.
-That is, such registrations must not be allowed to succeed.
+For each of the following example registration requests, one can create a similar instance where the requested registration is for a CoAP Content-Format identifier within the "IETF Review" or "IESG Approval" range of the registry.
+Similarly, such registrations must not be allowed to succeed.
 
 ## The Media Type is Unknown {#ex-unknown-mt}
 
@@ -208,7 +208,7 @@ The range 10000-64999 does not allow temporary registrations.
 A temporary registration may be created for example by an IANA early allocation action, as requested by the authors of an Internet-Draft in the IETF stream.
 Alternatively, it may be created because the referenced media type is still provisional (that is, included in the IANA "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}).
 
-A temporary registration is marked by an IANA note with the label "TEMPORARY" in the  "Content Type" column of the corresponding registry entry.
+A temporary registration is marked by IANA with the label "TEMPORARY" in the corresponding registry entry.
 Once the required review procedure for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry {{IANA.media-types}}, IANA must remove the "TEMPORARY" label so that the entry becomes permanent.
 If the requested temporary entry does not successfully pass its required review procedure, IANA must remove the entry again and set the Content-Format ID value back to "Unassigned".
 This may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned, or when the referenced provisional media type is abandoned.
