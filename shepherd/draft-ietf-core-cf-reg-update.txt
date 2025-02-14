@@ -352,8 +352,8 @@ Table of Contents
    then the policy is FCFS, as before.  In all other cases, the policy
    is "Expert Review," following the procedure described in Section 5.3.
 
-   A new column with the title "Note" has been added to the registry,
-   which contains information about the expected review procedure.
+   A new column with the title "Notes" has been added to the CoAP
+   Content-Formats Registration Procedures shown in Table 8.
 
 5.1.  Temporary Content-Format Registrations
 
