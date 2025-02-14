@@ -84,7 +84,7 @@ This document uses the terms "media type", "content coding", "content-type", and
 
 # Examples for Erroneous Registrations
 
-This section contains examples of registration requests for a CoAP Content-Format with identifier 64999 in the FCFS range of the "CoAP Content-Formats" registry, as defined in {{Section 12.3 of -coap}}, which must not be allowed to succeed.
+This section contains examples of registration requests for a CoAP Content-Format with identifier 64999 in the FCFS range of the "CoAP Content-Formats" registry, as defined in {{Section 12.3 of -coap}} and revised according to {{Err4954}}, which must not be allowed to succeed.
 
 For each of the following example registration requests, one can create a similar instance where the requested registration is for a CoAP Content-Format identifier within the "IETF Review" or "IESG Approval" range of the registry.
 Similarly, such registrations must not be allowed to succeed.
