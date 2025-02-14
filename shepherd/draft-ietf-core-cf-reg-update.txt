@@ -308,7 +308,7 @@ Table of Contents
    | 10000-64999 (No        | First Come     | The corresponding media |
    | parameters and empty   | First Served   | type must be registered |
    | Content Coding and     |                | (or approved for        |
-   | media type not yet     |                | publication) in the     |
+   | media type not yet     |                | registration) in the    |
    | used in this           |                | "Media Types" registry  |
    | registry)              |                | [IANA.media-types]      |
    +------------------------+----------------+-------------------------+
