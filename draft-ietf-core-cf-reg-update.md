@@ -198,7 +198,7 @@ The 10000-64999 range now has two separate registration procedures.
 If the registration consists solely of a registered media type name in the "Content Type" field, without any parameter names or "Content Coding", and the media type has not yet been used in this registry, then the policy is FCFS, as before.
 In all other cases, the policy is "Expert Review," following the procedure described in {{checks}}.
 
-A new column with the title "Note" has been added to the registry, which contains information about the expected review procedure.
+A new column with the title "Notes" has been added to the CoAP Content-Formats Registration Procedures shown in {{tbl-new-cf-proc}}.
 
 ## Temporary Content-Format Registrations
 
