@@ -181,7 +181,7 @@ The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -c
 |--------|--------|--------|
 | 0-255 | Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
 | 256-9999 | IETF Review with Expert Review or IESG Approval with Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
-| 10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry) | First Come First Served | The corresponding media type must be registered (or approved for publication) in the "Media Types" registry {{IANA.media-types}} |
+| 10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry) | First Come First Served | The corresponding media type must be registered (or approved for registration) in the "Media Types" registry {{IANA.media-types}} |
 | 10000-64999 (Includes parameters and/or Content Coding and/or media type appears in this registry) | Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
 | 65000-65535 | Experimental Use | No operational use
 {: #tbl-new-cf-proc title="Updated CoAP Content-Formats Registration Procedures"}
