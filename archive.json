@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-02-13T00:34:34.564355+00:00",
+  "timestamp": "2025-02-16T00:38:13.550886+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -2078,15 +2078,15 @@
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
-      "body": "Addresses most of the points in #35\r\n ",
+      "body": "Addresses most of the points in #35\r\n\r\nAddress #41 \r\n ",
       "createdAt": "2025-02-12T16:24:20Z",
-      "updatedAt": "2025-02-12T19:22:58Z",
+      "updatedAt": "2025-02-14T15:16:09Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "d281192db45b421e99859c3ec08bf7ae1f48bf71",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "shepherd",
-      "headRefOid": "c0c3cf07fbdef9bc15ab0fcaa584b58ca6df729b",
+      "headRefOid": "d9c448c0a304cf6ecdf506fb3c9ce8d5d24cef60",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -2098,9 +2098,347 @@
           "body": "cc @marco-tiloca-sics ",
           "createdAt": "2025-02-12T19:22:57Z",
           "updatedAt": "2025-02-12T19:22:57Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks @thomas-fossati and @marco-tiloca-sics for the PR/review!\r\n\r\nI added a few comments. Overall, I also wonder if the terms \"portion\" and \"range\" we use are the same? It looks so. In RFC 7252 it was called \"range\". Is there a reason to keep \"portion\" also?  Maybe just for variation of language or to avoid calling out the numbers of the range each time?\r\n",
+          "createdAt": "2025-02-13T08:57:10Z",
+          "updatedAt": "2025-02-13T08:57:10Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> Overall, I also wonder if the terms \"portion\" and \"range\" we use are the same? It looks so\r\n\r\nYes, they are used interchangeably.\r\n\r\n> In RFC 7252 it was called \"range\". Is there a reason to keep \"portion\" also? Maybe just for variation of language or to avoid calling out the numbers of the range each time?\r\n\r\nIt's just to keep the reader engaged \ud83e\uddcc \ud83d\ude04 \r\n",
+          "createdAt": "2025-02-13T09:30:49Z",
+          "updatedAt": "2025-02-13T09:30:49Z"
+        },
+        {
+          "author": "cabo",
+          "authorAssociation": "MEMBER",
+          "body": "Variation of language is totally unacceptable in a technical specification.",
+          "createdAt": "2025-02-13T10:10:23Z",
+          "updatedAt": "2025-02-13T10:28:04Z"
+        },
+        {
+          "author": "cabo",
+          "authorAssociation": "MEMBER",
+          "body": "> Variation of language is totally unacceptable in a technical specification.\u00a0\r\n\r\nThat said, we do have a problem here:\r\n\"range\" has a clear English meaning that is about numbers.\r\nBut we also differentiate \"portions\" (?) by absence/presence of parameters.\r\nSo maybe we do need a second term, then with a different, defined meaning.\r\n",
+          "createdAt": "2025-02-13T10:20:30Z",
+          "updatedAt": "2025-02-13T10:20:51Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> > Variation of language is totally unacceptable in a technical specification.\r\n> \r\n> That said, we do have a problem here: \"range\" has a clear English meaning that is about numbers. But we also differentiate \"portions\" (?) by absence/presence of parameters. So maybe we do need a second term, then with a different, defined meaning.\r\n\r\nGood point.  I throw \"scope\" in the bucket.  Any better suggestion?  (Surely, there must be \ud83d\ude04)",
+          "createdAt": "2025-02-13T10:29:46Z",
+          "updatedAt": "2025-02-13T10:30:12Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Actually every time we use the word \"portion\", there is always a specific range that can be pointed to.\r\n* FCFS portion -> 10000-64999 range\r\n* IETF Review or IESG Approval portion -> 256-9999 range\r\n\r\nSo it would be clearer just to use \"range\" in that case, since we mean that?\r\n\r\nE.g. we can say in Section 1  \"First Come First Served (FCFS) range of the registry (10000-64999)\" which is correct and doesn't need other words I think.",
+          "createdAt": "2025-02-13T11:09:37Z",
+          "updatedAt": "2025-02-13T11:09:37Z"
+        },
+        {
+          "author": "cabo",
+          "authorAssociation": "MEMBER",
+          "body": "On 2025-02-13, at 12:09, Esko Dijk ***@***.***> wrote:\r\n> \r\n> E.g. we can say in Section 1 \"First Come First Served (FCFS) range of the registry (10000-64999)\" which is correct and doesn't need other words I think.\r\n\r\nIt\u2019s only FCFS if there are no parameters, right?\r\n\r\nGr\u00fc\u00dfe, Carsten\r\n\r\n\r\n",
+          "createdAt": "2025-02-13T12:12:00Z",
+          "updatedAt": "2025-02-13T12:12:00Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "> It\u2019s only FCFS if there are no parameters, right?\r\n\r\nWell in Section 1 it refers to the old situation per RFC 7252: the entire range is FCFS only.\r\nBut indeed in the new situation, there is no \"FCFS range\" anymore. It would be more like \"the range 10000-64999 when the FCFS policy is applied\"   which is rather long as a term. \r\n\r\n\"FCFS scope\"  or  \"FCFS portion\" could also work to refer to this new situation.",
+          "createdAt": "2025-02-13T12:30:48Z",
+          "updatedAt": "2025-02-13T12:30:48Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "In [3d11d2b](https://github.com/core-wg/cf-reg-update/pull/40/commits/3d11d2b7bcd22c3a978a96225772eae8a1544067), every instance of _\"portion\"_ has been replaced by _\"range\"_.\r\n\r\nI have reviewed all the instances of the word _\"range\"_, and they seem correct.\r\n\r\nPlease, have a look.",
+          "createdAt": "2025-02-13T12:46:26Z",
+          "updatedAt": "2025-02-13T12:46:47Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thomas-fossati For me this text is ok as is!  \r\n\r\nIf I try to be very picky then the text before the examples: \"with identifier 64999 in the FCFS range of the \"CoAP Content-Formats\" registry\" might be unclear for a reader because you need to keep in mind this refers to the \"old\" range 10000-64999 per RFC 7252, which is FCFS-only. In that old situation, the wrong registration would succeed and only in the \"new\" situation it cannot succeed anymore because in all examples except the first one it would automatically go into the Expert Review class of the 10000-64999 range. \r\n",
+          "createdAt": "2025-02-13T13:05:55Z",
+          "updatedAt": "2025-02-13T13:05:55Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> @thomas-fossati For me this text is ok as is!\r\n> \r\n> If I try to be very picky then the text before the examples: \"with identifier 64999 in the FCFS range of the \"CoAP Content-Formats\" registry\" might be unclear for a reader because you need to keep in mind this refers to the \"old\" range 10000-64999 per RFC 7252, which is FCFS-only. In that old situation, the wrong registration would succeed and only in the \"new\" situation it cannot succeed anymore because in all examples except the first one it would automatically go into the Expert Review class of the 10000-64999 range.\r\n\r\nYes, I noticed the same thing.  Should we say:\r\n\r\n> _\"[...] with identifier 64999 in the FCFS range of the \"CoAP Content-Formats\" registry, as defined in RFC7252.\"_\r\n\r\ninstead?",
+          "createdAt": "2025-02-13T13:45:43Z",
+          "updatedAt": "2025-02-13T13:52:44Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> > @thomas-fossati For me this text is ok as is!\r\n> > If I try to be very picky then the text before the examples: \"with identifier 64999 in the FCFS range of the \"CoAP Content-Formats\" registry\" might be unclear for a reader because you need to keep in mind this refers to the \"old\" range 10000-64999 per RFC 7252, which is FCFS-only. In that old situation, the wrong registration would succeed and only in the \"new\" situation it cannot succeed anymore because in all examples except the first one it would automatically go into the Expert Review class of the 10000-64999 range.\r\n> \r\n> Yes, I noticed the same thing. Should we say:\r\n> \r\n> > _\"[...] with identifier 64999 in the FCFS range of the \"CoAP Content-Formats\" registry, as defined in RFC7252.\"_\r\n> \r\n> instead?\r\n\r\nAdded in [209280c](https://github.com/core-wg/cf-reg-update/pull/40/commits/209280c9d11b6d78521007888286a580142445b6)\r\n\r\n\r\n\r\n",
+          "createdAt": "2025-02-13T14:06:53Z",
+          "updatedAt": "2025-02-13T14:06:53Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Thanks @EskoDijk.\r\n\r\nI'll wait for @cabo and @marco-tiloca-sics before merging in case they want to add/amend.",
+          "createdAt": "2025-02-13T14:18:07Z",
+          "updatedAt": "2025-02-13T14:18:07Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6b0QBo",
+          "commit": {
+            "abbreviatedOid": "c0c3cf0"
+          },
+          "author": "cabo",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-13T08:09:37Z",
+          "updatedAt": "2025-02-13T08:09:37Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "I know nobody sees this, but s/cf/ct/",
+              "createdAt": "2025-02-13T08:09:37Z",
+              "updatedAt": "2025-02-13T08:09:37Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6b0SPG",
+          "commit": {
+            "abbreviatedOid": "c0c3cf0"
+          },
+          "author": "cabo",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-13T08:13:56Z",
+          "updatedAt": "2025-02-13T08:13:57Z",
+          "comments": [
+            {
+              "originalPosition": 64,
+              "body": "```suggestion\r\nThe following considerations also apply for a registrations requested for a CoAP Content-Format with an identifier in the IETF Review or IESG Approval portion of the registry.\r\n```",
+              "createdAt": "2025-02-13T08:13:56Z",
+              "updatedAt": "2025-02-13T08:13:57Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6b0mMY",
+          "commit": {
+            "abbreviatedOid": "c0c3cf0"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-13T08:44:38Z",
+          "updatedAt": "2025-02-13T08:44:39Z",
+          "comments": [
+            {
+              "originalPosition": 64,
+              "body": "Sorry, what are the \"considerations\" here that the sentence talks about? Shouldn't it be \"...the following examples...\" ?\r\n\r\nOr something like:\r\n\r\n```\r\nFor each of the following example registration requests, a similar example can be constructed where the\r\nrequested registration is for the CoAP Content-Format identifier 9999 in the IETF Review or IESG Approval \r\nportion of the registry.\r\n```\r\n\r\nIsn't that more clear and concrete (with number 9999) ?",
+              "createdAt": "2025-02-13T08:44:38Z",
+              "updatedAt": "2025-02-13T08:45:00Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6b0pB4",
+          "commit": {
+            "abbreviatedOid": "c0c3cf0"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-13T08:48:06Z",
+          "updatedAt": "2025-02-13T08:48:06Z",
+          "comments": [
+            {
+              "originalPosition": 100,
+              "body": "I think here naming the specific column is too detailed. IANA will mark it somewhere on the line, and that might change over time (e.g. do the label in the Reference column if they like that more).",
+              "createdAt": "2025-02-13T08:48:06Z",
+              "updatedAt": "2025-02-13T08:48:06Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6b1Ghk",
+          "commit": {
+            "abbreviatedOid": "c0c3cf0"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-13T09:28:18Z",
+          "updatedAt": "2025-02-13T09:28:18Z",
+          "comments": [
+            {
+              "originalPosition": 64,
+              "body": "Trying to merge @cabo and @EskoDijk suggestions into a mad Frankenstein:\r\n\r\n> _For each of the following example registration requests, one can create a similar instance where the requested registration is for a CoAP Content-Format identifier within the \"IETF Review\" or \"IESG Approval\" portion of the registry._\r\n\r\nWDYT?",
+              "createdAt": "2025-02-13T09:28:18Z",
+              "updatedAt": "2025-02-13T09:28:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6b1Jyc",
+          "commit": {
+            "abbreviatedOid": "c0c3cf0"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-13T09:33:30Z",
+          "updatedAt": "2025-02-13T09:33:30Z",
+          "comments": [
+            {
+              "originalPosition": 100,
+              "body": "@EskoDijk what about:\r\n\r\n> _A temporary registration is marked by IANA with the label \"TEMPORARY\" in the corresponding registry entry._",
+              "createdAt": "2025-02-13T09:33:30Z",
+              "updatedAt": "2025-02-13T09:33:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6b1Ke9",
+          "commit": {
+            "abbreviatedOid": "c0c3cf0"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-13T09:34:01Z",
+          "updatedAt": "2025-02-13T09:34:01Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "done in [182822b](https://github.com/core-wg/cf-reg-update/pull/40/commits/182822b1aed08eb3453d1a76f911649a97b5b5c7)",
+              "createdAt": "2025-02-13T09:34:01Z",
+              "updatedAt": "2025-02-13T09:34:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6b3yr9",
+          "commit": {
+            "abbreviatedOid": "c0c3cf0"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-13T14:03:50Z",
+          "updatedAt": "2025-02-13T14:03:51Z",
+          "comments": [
+            {
+              "originalPosition": 64,
+              "body": "done in [3d11d2b](https://github.com/core-wg/cf-reg-update/pull/40/commits/3d11d2b7bcd22c3a978a96225772eae8a1544067)",
+              "createdAt": "2025-02-13T14:03:50Z",
+              "updatedAt": "2025-02-13T14:03:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6b3y0j",
+          "commit": {
+            "abbreviatedOid": "c0c3cf0"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-13T14:04:02Z",
+          "updatedAt": "2025-02-13T14:04:02Z",
+          "comments": [
+            {
+              "originalPosition": 100,
+              "body": "done in [3d11d2b](https://github.com/core-wg/cf-reg-update/pull/40/commits/3d11d2b7bcd22c3a978a96225772eae8a1544067)",
+              "createdAt": "2025-02-13T14:04:02Z",
+              "updatedAt": "2025-02-13T14:04:02Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6b31qD",
+          "commit": {
+            "abbreviatedOid": "209280c"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Yes, ok for me, thanks.",
+          "createdAt": "2025-02-13T14:08:08Z",
+          "updatedAt": "2025-02-13T14:08:08Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6cC5w5",
+          "commit": {
+            "abbreviatedOid": "d9c448c"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-14T14:48:21Z",
+          "updatedAt": "2025-02-14T14:48:21Z",
+          "comments": [
+            {
+              "originalPosition": 95,
+              "body": "```suggestion\r\nIn all other cases, the policy is \"Expert Review\", following the procedure described in {{checks}}.\r\n```",
+              "createdAt": "2025-02-14T14:48:21Z",
+              "updatedAt": "2025-02-14T14:48:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6cC_FN",
+          "commit": {
+            "abbreviatedOid": "d9c448c"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-02-14T14:56:44Z",
+          "updatedAt": "2025-02-14T14:56:44Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6cDLba",
+          "commit": {
+            "abbreviatedOid": "d9c448c"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-02-14T15:16:09Z",
+          "updatedAt": "2025-02-14T15:16:09Z",
+          "comments": [
+            {
+              "originalPosition": 95,
+              "body": "RC7322 says:\r\n\r\n> _\"RFC Editor generally follows these accepted rules as defined by the Chicago Manual of Style (CMOS)\"_ \r\n\r\nand CMOS says:\r\n\r\n> _\"In Chicago style, periods and commas go inside closing quotation marks, \u201clike this,\u201d whereas Oxford puts them after, \u2018like this\u2019 [...]\"_\r\n\r\nI'll let RFCEd decide on this :-)",
+              "createdAt": "2025-02-14T15:16:09Z",
+              "updatedAt": "2025-02-14T15:16:09Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
