@@ -8,10 +8,10 @@
 <meta content="Thomas Fossati" name="author">
 <meta content="Esko Dijk" name="author">
 <meta content='
-       This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group. The affected registration procedures are
-specifically those regarding the IETF Review or IESG Approval portion of the registry as well as those regarding the First Come First Served (FCFS) portion of the registry. 
+       This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" IANA registry, within the "Constrained RESTful Environments (CoRE) Parameters" registry group.
+This document also introduces a new column, "Media Type", to the registry. 
     ' name="description">
-<meta content="xml2rfc 3.26.0" name="generator">
+<meta content="xml2rfc 3.27.0" name="generator">
 <meta content="IANA" name="keyword">
 <meta content="registration" name="keyword">
 <meta content="update" name="keyword">
@@ -19,8 +19,8 @@ specifically those regarding the IETF Review or IESG Approval portion of the reg
 <meta content="Content-Format" name="keyword">
 <meta content="draft-ietf-core-cf-reg-update-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.26.0
-    Python 3.12.8
+  xml2rfc 3.27.0
+    Python 3.12.9
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
@@ -441,7 +441,7 @@ dl {
     margin-bottom: 0;
   }
 }
-dl > dt {
+dl:not(.dlNewline) > dt {
   float: left;
   margin-right: 2ch;
   min-width: 8ch;
@@ -1054,7 +1054,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 </tr></thead>
 <tfoot><tr>
 <td class="left">Fossati &amp; Dijk</td>
-<td class="center">Expires 14 August 2025</td>
+<td class="center">Expires 22 August 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1070,12 +1070,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc7252" class="eref">7252</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-02-10" class="published">10 February 2025</time>
+<time datetime="2025-02-18" class="published">18 February 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-08-14">14 August 2025</time></dd>
+<dd class="expires"><time datetime="2025-08-22">22 August 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1092,8 +1092,8 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">Update to the IANA CoAP Content-Formats Registration Procedures</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" registry, within the "CoRE Parameters" registry group. The affected registration procedures are
-specifically those regarding the IETF Review or IESG Approval portion of the registry as well as those regarding the First Come First Served (FCFS) portion of the registry.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" IANA registry, within the "Constrained RESTful Environments (CoRE) Parameters" registry group.
+This document also introduces a new column, "Media Type", to the registry.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1130,7 +1130,7 @@ specifically those regarding the IETF Review or IESG Approval portion of the reg
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 14 August 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 22 August 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1240,14 +1240,16 @@ specifically those regarding the IETF Review or IESG Approval portion of the reg
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1"><span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> describes the registration procedures for the "CoAP Content-Formats" registry within the "CoRE Parameters" registry group <span>[<a href="#IANA.core-parameters" class="cite xref">IANA.core-parameters</a>]</span>.
+<p id="section-1-1"><span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> describes the registration procedures for the "CoAP Content-Formats" IANA registry within the "Constrained RESTful Environments (CoRE) Parameters" registry group <span>[<a href="#IANA.core-parameters" class="cite xref">IANA.core-parameters</a>]</span>.
 (Note that the columns of this registry have been revised according to <span>[<a href="#Err4954" class="cite xref">Err4954</a>]</span>.)<a href="#section-1-1" class="pilcrow">¶</a></p>
-<p id="section-1-2">In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the IETF Review or IESG Approval portion of the registry (256-9999) as well as from the First Come First Served (FCFS) portion of the registry (10000-64999).
-For the FCFS portion of the registry, these rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-2">In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the "IETF Review" or "IESG Approval" range of the registry (256-9999) as well as from the First Come First Served (FCFS) range of the registry (10000-64999).
+For the FCFS range, these rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
-This task is generally non-trivial, requiring knowledge from multiple documents and technologies, which is not a task to demand solely from the registrar.
+This task is generally non-trivial, requires knowledge from multiple documents and technologies, and should not be solely demanded from the registrar.
 This lack of guidance may engender confusion in both the registering party and the registrar, and has already led to erroneous registrations.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4">In <a href="#iana" class="auto internal xref">Section 5</a>, this document updates <span>[<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> by modifying the registration procedures for the "CoAP Content-Formats" registry regarding its IETF Review or IESG Approval portion as well as its FCFS portion, to mitigate the risk of unintentional or malicious errors.<a href="#section-1-4" class="pilcrow">¶</a></p>
+<p id="section-1-4">In <a href="#iana" class="auto internal xref">Section 5</a>, this document updates <span>[<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> by modifying the registration procedures for the "CoAP Content-Formats" registry to mitigate the risk of unintentional or malicious errors.
+These updates amend the different ranges of the registry, introduce a review procedure to be performed for most ranges of the registry, and allow the registration of temporary Content-Format identifiers for certain ranges of the registry.
+This document also introduces a new column, "Media Type", to the registry.<a href="#section-1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1259,7 +1261,7 @@ This lack of guidance may engender confusion in both the registering party and t
 "<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
 described in <span>[<a href="#BCP14" class="cite xref">BCP14</a>]</span> (<a href="#RFC2119" class="auto internal xref">RFC2119</a>) (<a href="#RFC8174" class="auto internal xref">RFC8174</a>) when, and only when, they
 appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
-<p id="section-2-2">This document uses the terms "media type", "content coding", "content-type" and "content format" as defined in <span><a href="https://rfc-editor.org/rfc/rfc9193#section-2" class="relref">Section 2</a> of [<a href="#RFC9193" class="cite xref">RFC9193</a>]</span>.<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-2">This document uses the terms "media type", "content coding", "content-type", and "content format" as defined in <span><a href="https://rfc-editor.org/rfc/rfc9193#section-2" class="relref">Section 2</a> of [<a href="#RFC9193" class="cite xref">RFC9193</a>]</span>.<a href="#section-2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="examples-for-erroneous-registrations">
@@ -1267,8 +1269,9 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-examples-for-erroneous-regi">
 <a href="#section-3" class="section-number selfRef">3. </a><a href="#name-examples-for-erroneous-regi" class="section-name selfRef">Examples for Erroneous Registrations</a>
       </h2>
-<p id="section-3-1">This section contains a few examples of registration requests for a CoAP Content-Format with identifier 64999 in the FCFS space that must not be allowed to succeed.<a href="#section-3-1" class="pilcrow">¶</a></p>
-<p id="section-3-2">The following considerations also apply to alternative examples where, for the same combination of content type and content coding, a registration was requested for a CoAP Content-Format with identifier in the IETF Review or IESG Approval space. That is, such registrations must not be allowed to succeed.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<p id="section-3-1">This section contains examples of registration requests for a CoAP Content-Format with identifier 64999 in the FCFS range of the "CoAP Content-Formats" registry, as defined in <span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> and revised according to <span>[<a href="#Err4954" class="cite xref">Err4954</a>]</span>, which must not be allowed to succeed.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">For each of the following example registration requests, one can create a similar instance where the requested registration is for a CoAP Content-Format identifier within the "IETF Review" or "IESG Approval" range of the registry.
+Similarly, such registrations must not be allowed to succeed.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <div id="ex-unknown-mt">
 <section id="section-3.1">
         <h3 id="name-the-media-type-is-unknown">
@@ -1317,7 +1320,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
           </thead>
           <tbody>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">application/cose; unknown-parameter=1</td>
+              <td class="text-left" rowspan="1" colspan="1">application/cose;unknown-parameter=1</td>
               <td class="text-left" rowspan="1" colspan="1">-</td>
               <td class="text-left" rowspan="1" colspan="1">64999</td>
             </tr>
@@ -1345,7 +1348,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
           </thead>
           <tbody>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">application/cose; cose-type=invalid</td>
+              <td class="text-left" rowspan="1" colspan="1">application/cose;cose-type=invalid</td>
               <td class="text-left" rowspan="1" colspan="1">-</td>
               <td class="text-left" rowspan="1" colspan="1">64999</td>
             </tr>
@@ -1408,7 +1411,7 @@ As a result, this could lead to the creation of two separate Content-Format IDs 
               <td class="text-left" rowspan="1" colspan="1">64900</td>
             </tr>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">application/my; parameter=default</td>
+              <td class="text-left" rowspan="1" colspan="1">application/my;parameter=default</td>
               <td class="text-left" rowspan="1" colspan="1">-</td>
               <td class="text-left" rowspan="1" colspan="1">64999</td>
             </tr>
@@ -1475,12 +1478,12 @@ Since for URNs, the Namespace Identifier (<code>foo</code> in the example) is de
           </thead>
           <tbody>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">application/eat+cwt; eat_profile="urn:foo:1"</td>
+              <td class="text-left" rowspan="1" colspan="1">application/eat+cwt;eat_profile="urn:foo:1"</td>
               <td class="text-left" rowspan="1" colspan="1">-</td>
               <td class="text-left" rowspan="1" colspan="1">64900</td>
             </tr>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">application/eat+cwt; eat_profile="urn:FOO:1"</td>
+              <td class="text-left" rowspan="1" colspan="1">application/eat+cwt;eat_profile="urn:FOO:1"</td>
               <td class="text-left" rowspan="1" colspan="1">-</td>
               <td class="text-left" rowspan="1" colspan="1">64999</td>
             </tr>
@@ -1535,7 +1538,7 @@ Since for URNs, the Namespace Identifier (<code>foo</code> in the example) is de
           <tr>
             <td class="text-left" rowspan="1" colspan="1">10000-64999 (No parameters and empty Content Coding and media type not yet used in this registry)</td>
             <td class="text-left" rowspan="1" colspan="1">First Come First Served</td>
-            <td class="text-left" rowspan="1" colspan="1">The corresponding media type must be registered (or approved for publication) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>
+            <td class="text-left" rowspan="1" colspan="1">The corresponding media type must be registered (or approved for registration) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>
 </td>
           </tr>
           <tr>
@@ -1552,7 +1555,7 @@ Since for URNs, the Namespace Identifier (<code>foo</code> in the example) is de
         </tbody>
       </table>
 </div>
-<p id="section-5-4">The 256-9999 range now has registration procedures requiring IETF Review with Expert Review or IESG Approval with Expert Review. In particular:<a href="#section-5-4" class="pilcrow">¶</a></p>
+<p id="section-5-4">The 256-9999 range now has registration procedures requiring "IETF Review with Expert Review" or "IESG Approval with Expert Review." In particular:<a href="#section-5-4" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-5-5.1">
           <p id="section-5-5.1.1">All assignments according to "IETF Review with Expert Review" are made on an "IETF Review" basis per <span><a href="https://rfc-editor.org/rfc/rfc8126#section-4.8" class="relref">Section 4.8</a> of [<a href="#BCP26" class="cite xref">BCP26</a>]</span> with "Expert Review" additionally required per <span><a href="https://rfc-editor.org/rfc/rfc8126#section-4.5" class="relref">Section 4.5</a> of [<a href="#BCP26" class="cite xref">BCP26</a>]</span>.<a href="#section-5-5.1.1" class="pilcrow">¶</a></p>
@@ -1565,19 +1568,19 @@ The procedure for early IANA allocation of "standards track code points" defined
       </ul>
 <p id="section-5-6">The 10000-64999 range now has two separate registration procedures.
 If the registration consists solely of a registered media type name in the "Content Type" field, without any parameter names or "Content Coding", and the media type has not yet been used in this registry, then the policy is FCFS, as before.
-In all other cases, the policy will be Expert Review, following the checklist described in <a href="#checks" class="auto internal xref">Section 5.3</a>.<a href="#section-5-6" class="pilcrow">¶</a></p>
-<p id="section-5-7">A new column with the title "Note" has been added to the registry, which contains information about the expected review procedure.<a href="#section-5-7" class="pilcrow">¶</a></p>
+In all other cases, the policy is "Expert Review," following the procedure described in <a href="#checks" class="auto internal xref">Section 5.3</a>.<a href="#section-5-6" class="pilcrow">¶</a></p>
+<p id="section-5-7">A new column with the title "Notes" has been added to the CoAP Content-Formats Registration Procedures shown in <a href="#tbl-new-cf-proc" class="auto internal xref">Table 8</a>.<a href="#section-5-7" class="pilcrow">¶</a></p>
 <div id="temporary-content-format-registrations">
 <section id="section-5.1">
         <h3 id="name-temporary-content-format-re">
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-temporary-content-format-re" class="section-name selfRef">Temporary Content-Format Registrations</a>
         </h3>
-<p id="section-5.1-1">This section clarifies that the CoAP Content-Formats registry allows temporary registrations within the 0-255 and 256-9999 ranges.
+<p id="section-5.1-1">This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255 and 256-9999 ranges.
 The range 10000-64999 does not allow temporary registrations.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
-<p id="section-5.1-2">A temporary registration may be created for example by an IANA early allocation action, requested by the authors of an Internet Draft in the IETF stream.
-Or it may be created because the referenced media type is still provisional (that is, included in the IANA Provisional Standard Media Type Registry).<a href="#section-5.1-2" class="pilcrow">¶</a></p>
-<p id="section-5.1-3">A temporary registration is marked by an IANA note with the label "TEMPORARY" in the corresponding registry entry.
-Once the required review procedure for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry, IANA must remove the "TEMPORARY" label so that the entry becomes permanent.
+<p id="section-5.1-2">A temporary registration may be created for example by an IANA early allocation action, as requested by the authors of an Internet-Draft in the IETF stream.
+Alternatively, it may be created because the referenced media type is still provisional (that is, included in the IANA "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>).<a href="#section-5.1-2" class="pilcrow">¶</a></p>
+<p id="section-5.1-3">A temporary registration is marked by IANA with the label "TEMPORARY" in the corresponding registry entry.
+Once the required review procedure for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>, IANA must remove the "TEMPORARY" label so that the entry becomes permanent.
 If the requested temporary entry does not successfully pass its required review procedure, IANA must remove the entry again and set the Content-Format ID value back to "Unassigned".
 This may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned, or when the referenced provisional media type is abandoned.<a href="#section-5.1-3" class="pilcrow">¶</a></p>
 </section>
@@ -1587,10 +1590,13 @@ This may happen for example when an Internet-Draft requesting a Content-Format I
         <h3 id="name-adding-the-media-type-colum">
 <a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-adding-the-media-type-colum" class="section-name selfRef">Adding the Media Type Column to the Registry</a>
         </h3>
-<p id="section-5.2-1">To assist users of the CoAP Content-Formats registry in finding detailed information about the media type associated with each CoAP Content-Format, and to ensure that a media type exists before a new entry can be registered, IANA is requested to add a new column "Media Type" to the registry.
-This new column can be placed directly to the right of the existing "Content Type" column.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
+<p id="section-5.2-1">To assist users of the "CoAP Content-Formats" registry in finding detailed information about the media type associated with each CoAP Content-Format, and to ensure that a media type exists before a new entry can be registered, IANA is requested to add a new column "Media Type" to the registry.
+This new column is placed directly to the right of the existing "Content Type" column.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
 <p id="section-5.2-2">The "Media Type" field for each entry lists the (base) media type name and provides a hyperlink to registration information for that media type as recorded by IANA.
-If the media type is provisional, the hyperlink points to the IANA "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>.<a href="#section-5.2-2" class="pilcrow">¶</a></p>
+If the media type is provisional, the hyperlink points to the IANA "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>.
+If a provisional media type is later abandoned or becomes a permanent media type, IANA must update the "Media Type" field in the associated entries.
+In the case of abandonment, this field should be left empty.
+If the media type becomes permanent, the field should include a hyperlink to the registration information for that media type.<a href="#section-5.2-2" class="pilcrow">¶</a></p>
 <p id="section-5.2-3">Note that the registration request procedure remains unchanged. A requester does not need to fill out the "Media Type" field separately, as the necessary information is already provided in the "Content Type" field of the request.<a href="#section-5.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1605,7 +1611,7 @@ If the media type is provisional, the hyperlink points to the IANA "Provisional 
             <p id="section-5.3-2.1.1">The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;<a href="#section-5.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-5.3-2.2">
-            <p id="section-5.3-2.2.1">The media type associated with the requested Content-Format must exist (or must have been approved for registration) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>;<a href="#section-5.3-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-5.3-2.2.1">The media type associated with the requested Content-Format must either be registered in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span> or approved for registration. Alternatively, it may be listed in the "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>. The use of provisional standard media types is only permitted for Content-Format identifiers within the ranges of 0-255 and 256-9999;<a href="#section-5.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-5.3-2.3">
             <p id="section-5.3-2.3.1">The optional parameter names must have been defined in association with the media type, and any parameter values associated with such parameter names must be as permitted;<a href="#section-5.3-2.3.1" class="pilcrow">¶</a></p>
@@ -1626,20 +1632,19 @@ For the 256-9999 range and the 10000-64999 range, a similar criterion may also a
         <h3 id="name-preferred-format-for-the-co">
 <a href="#section-5.4" class="section-number selfRef">5.4. </a><a href="#name-preferred-format-for-the-co" class="section-name selfRef">Preferred Format for the Content Type Field</a>
         </h3>
-<p id="section-5.4-1">This section defines the preferred string format for including a requested Content Type into the CoAP Content-Formats registry.
+<p id="section-5.4-1">This section defines the preferred string format for including a requested Content Type into the "CoAP Content-Formats" registry.
 During the review process, the Designated Expert(s) or IANA may rewrite a requested Content Type into this preferred string format before approval.<a href="#section-5.4-1" class="pilcrow">¶</a></p>
-<p id="section-5.4-2">The preferred string format is as follows:<a href="#section-5.4-2" class="pilcrow">¶</a></p>
+<p id="section-5.4-2">The preferred string format is as defined in <span><a href="https://rfc-editor.org/rfc/rfc9110#section-8.3.1" class="relref">Section 8.3.1</a> of [<a href="#RFC9110" class="cite xref">RFC9110</a>]</span> and follows these rules:<a href="#section-5.4-2" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-5.4-3">
 <li id="section-5.4-3.1">
-            <p id="section-5.4-3.1.1">For any case-insensitive elements, lowercase characters must be used.
-See <span><a href="https://rfc-editor.org/rfc/rfc9110#section-8.3.1" class="relref">Section 8.3.1</a> of [<a href="#RFC9110" class="cite xref">RFC9110</a>]</span> for a definition of case-insensitive elements and some examples.<a href="#section-5.4-3.1.1" class="pilcrow">¶</a></p>
+            <p id="section-5.4-3.1.1">For any case-insensitive elements, lowercase characters are used.<a href="#section-5.4-3.1.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-5.4-3.2">
             <p id="section-5.4-3.2.1">Parameter values are only quoted if the value is such that it requires use of <code>quoted-string</code> per <span><a href="https://rfc-editor.org/rfc/rfc9110#section-5.6.6" class="relref">Section 5.6.6</a> of [<a href="#RFC9110" class="cite xref">RFC9110</a>]</span>.
 Otherwise, a parameter value is included unquoted.<a href="#section-5.4-3.2.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-5.4-3.3">
-            <p id="section-5.4-3.3.1">A semicolon followed by one space character is used as the separator between media type and parameters.<a href="#section-5.4-3.3.1" class="pilcrow">¶</a></p>
+            <p id="section-5.4-3.3.1">A single semicolon character without any adjacent whitespace characters is used as the separator between media type and parameters.<a href="#section-5.4-3.3.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
 </section>
@@ -1687,31 +1692,6 @@ RFC-Editor: please remove this section once the note has been removed.<a href="#
         <dd>
 <span class="refAuthor">Cotton, M.</span>, <span class="refAuthor">Leiba, B.</span>, and <span class="refAuthor">T. Narten</span>, <span class="refTitle">"Guidelines for Writing an IANA Considerations Section in RFCs"</span>, <span class="seriesInfo">BCP 26</span>, <span class="seriesInfo">RFC 8126</span>, <span class="seriesInfo">DOI 10.17487/RFC8126</span>, <time datetime="2017-06" class="refDate">June 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8126">https://www.rfc-editor.org/rfc/rfc8126</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="RFC7120">[RFC7120]</dt>
-        <dd>
-<span class="refAuthor">Cotton, M.</span>, <span class="refTitle">"Early IANA Allocation of Standards Track Code Points"</span>, <span class="seriesInfo">BCP 100</span>, <span class="seriesInfo">RFC 7120</span>, <span class="seriesInfo">DOI 10.17487/RFC7120</span>, <time datetime="2014-01" class="refDate">January 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7120">https://www.rfc-editor.org/rfc/rfc7120</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC7252">[RFC7252]</dt>
-        <dd>
-<span class="refAuthor">Shelby, Z.</span>, <span class="refAuthor">Hartke, K.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"The Constrained Application Protocol (CoAP)"</span>, <span class="seriesInfo">RFC 7252</span>, <span class="seriesInfo">DOI 10.17487/RFC7252</span>, <time datetime="2014-06" class="refDate">June 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7252">https://www.rfc-editor.org/rfc/rfc7252</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC9110">[RFC9110]</dt>
-      <dd>
-<span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP Semantics"</span>, <span class="seriesInfo">STD 97</span>, <span class="seriesInfo">RFC 9110</span>, <span class="seriesInfo">DOI 10.17487/RFC9110</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9110">https://www.rfc-editor.org/rfc/rfc9110</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-</dl>
-</section>
-</div>
-<div id="sec-informative-references">
-<section id="section-6.2">
-        <h3 id="name-informative-references">
-<a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
-        </h3>
-<dl class="references">
-<dt id="Err4954">[Err4954]</dt>
-        <dd>
-<span class="refTitle">RFC Errata Report 4954</span>, <span class="seriesInfo">RFC 7252</span>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid4954">https://www.rfc-editor.org/errata/eid4954</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="IANA.core-parameters">[IANA.core-parameters]</dt>
         <dd>
 <span class="refAuthor">IANA</span>, <span class="refTitle">"Constrained RESTful Environments (CoRE) Parameters"</span>, <span>&lt;<a href="https://www.iana.org/assignments/core-parameters">https://www.iana.org/assignments/core-parameters</a>&gt;</span>. </dd>
@@ -1728,13 +1708,38 @@ RFC-Editor: please remove this section once the note has been removed.<a href="#
         <dd>
 <span class="refAuthor">IANA</span>, <span class="refTitle">"Provisional Standard Media Type Registry"</span>, <span>&lt;<a href="https://www.iana.org/assignments/provisional-standard-media-types">https://www.iana.org/assignments/provisional-standard-media-types</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="RFC8141">[RFC8141]</dt>
+<dt id="RFC7120">[RFC7120]</dt>
         <dd>
-<span class="refAuthor">Saint-Andre, P.</span> and <span class="refAuthor">J. Klensin</span>, <span class="refTitle">"Uniform Resource Names (URNs)"</span>, <span class="seriesInfo">RFC 8141</span>, <span class="seriesInfo">DOI 10.17487/RFC8141</span>, <time datetime="2017-04" class="refDate">April 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8141">https://www.rfc-editor.org/rfc/rfc8141</a>&gt;</span>. </dd>
+<span class="refAuthor">Cotton, M.</span>, <span class="refTitle">"Early IANA Allocation of Standards Track Code Points"</span>, <span class="seriesInfo">BCP 100</span>, <span class="seriesInfo">RFC 7120</span>, <span class="seriesInfo">DOI 10.17487/RFC7120</span>, <time datetime="2014-01" class="refDate">January 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7120">https://www.rfc-editor.org/rfc/rfc7120</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC7252">[RFC7252]</dt>
+        <dd>
+<span class="refAuthor">Shelby, Z.</span>, <span class="refAuthor">Hartke, K.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"The Constrained Application Protocol (CoAP)"</span>, <span class="seriesInfo">RFC 7252</span>, <span class="seriesInfo">DOI 10.17487/RFC7252</span>, <time datetime="2014-06" class="refDate">June 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7252">https://www.rfc-editor.org/rfc/rfc7252</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9110">[RFC9110]</dt>
+        <dd>
+<span class="refAuthor">Fielding, R., Ed.</span>, <span class="refAuthor">Nottingham, M., Ed.</span>, and <span class="refAuthor">J. Reschke, Ed.</span>, <span class="refTitle">"HTTP Semantics"</span>, <span class="seriesInfo">STD 97</span>, <span class="seriesInfo">RFC 9110</span>, <span class="seriesInfo">DOI 10.17487/RFC9110</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9110">https://www.rfc-editor.org/rfc/rfc9110</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9193">[RFC9193]</dt>
       <dd>
 <span class="refAuthor">Keränen, A.</span> and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"Sensor Measurement Lists (SenML) Fields for Indicating Data Value Content-Format"</span>, <span class="seriesInfo">RFC 9193</span>, <span class="seriesInfo">DOI 10.17487/RFC9193</span>, <time datetime="2022-06" class="refDate">June 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9193">https://www.rfc-editor.org/rfc/rfc9193</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+</dl>
+</section>
+</div>
+<div id="sec-informative-references">
+<section id="section-6.2">
+        <h3 id="name-informative-references">
+<a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+        </h3>
+<dl class="references">
+<dt id="Err4954">[Err4954]</dt>
+        <dd>
+<span class="refTitle">RFC Errata Report 4954</span>, <span class="seriesInfo">RFC 7252</span>, <span>&lt;<a href="https://www.rfc-editor.org/errata/eid4954">https://www.rfc-editor.org/errata/eid4954</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8141">[RFC8141]</dt>
+      <dd>
+<span class="refAuthor">Saint-Andre, P.</span> and <span class="refAuthor">J. Klensin</span>, <span class="refTitle">"Uniform Resource Names (URNs)"</span>, <span class="seriesInfo">RFC 8141</span>, <span class="seriesInfo">DOI 10.17487/RFC8141</span>, <time datetime="2017-04" class="refDate">April 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8141">https://www.rfc-editor.org/rfc/rfc8141</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1752,7 +1757,7 @@ Carsten Bormann,
 Francesca Palombini,
 and
 Marco Tiloca
-for your reviews, comments, suggestions and fixes.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+for your reviews, comments, suggestions, and fixes.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="authors-addresses">
