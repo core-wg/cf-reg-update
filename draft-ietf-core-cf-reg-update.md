@@ -237,8 +237,6 @@ The Designated Expert (DE) is instructed to perform the Expert Review, as descri
 For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
 For the 256-9999 range and the 10000-64999 range, a similar criterion may also apply where combinations of media type parameters and content coding choices consume considerable codepoint space.
 
-<!-- Should these actually use BCP14 MUSTs? -->
-
 ## Preferred Format for the Content Type Field {#preferred-format}
 
 This section defines the preferred string format for including a requested Content Type into the "CoAP Content-Formats" registry.
