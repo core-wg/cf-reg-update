@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 22 August 2025                                 18 February 2025
+Expires: 23 August 2025                                 19 February 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 22 August 2025.
+   This Internet-Draft will expire on 23 August 2025.
 
 Copyright Notice
 
@@ -126,12 +126,6 @@ Table of Contents
    column, "Media Type", to the registry.
 
 2.  Conventions and Definitions
-
-   The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-   "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
-   "OPTIONAL" in this document are to be interpreted as described in
-   [BCP14] (RFC2119) (RFC8174) when, and only when, they appear in all
-   capitals, as shown here.
 
    This document uses the terms "media type", "content coding",
    "content-type", and "content format" as defined in Section 2 of
@@ -426,7 +420,7 @@ Table of Contents
        association with the media type, and any parameter values
        associated with such parameter names must be as permitted;
 
-   4.  The Content Type is in the preferred format defined in
+   4.  The Content Type must be in the preferred format defined in
        Section 5.4;
 
    5.  If a Content Coding is specified, it must exist (or must have
@@ -478,19 +472,6 @@ Table of Contents
 6.  References
 
 6.1.  Normative References
-
-   [BCP14]    Best Current Practice 14,
-              <https://www.rfc-editor.org/info/bcp14>.
-              At the time of writing, this BCP comprises the following:
-
-              Bradner, S., "Key words for use in RFCs to Indicate
-              Requirement Levels", BCP 14, RFC 2119,
-              DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/info/rfc2119>.
-
-              Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
    [BCP26]    Cotton, M., Leiba, B., and T. Narten, "Guidelines for
               Writing an IANA Considerations Section in RFCs", BCP 26,
