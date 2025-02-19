@@ -78,8 +78,6 @@ This document also introduces a new column, "Media Type", to the registry.
 
 # Conventions and Definitions
 
-{::boilerplate bcp14-tagged-bcp14}
-
 This document uses the terms "media type", "content coding", "content-type", and "content format" as defined in {{Section 2 of -senml-ct}}.
 
 # Examples for Erroneous Registrations
@@ -233,13 +231,11 @@ The Designated Expert (DE) is instructed to perform the Expert Review, as descri
 1. The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;
 1. The media type associated with the requested Content-Format must either be registered in the "Media Types" registry {{IANA.media-types}} or approved for registration. Alternatively, it may be listed in the "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}. The use of provisional standard media types is only permitted for Content-Format identifiers within the ranges of 0-255 and 256-9999;
 1. The optional parameter names must have been defined in association with the media type, and any parameter values associated with such parameter names must be as permitted;
-1. The Content Type is in the preferred format defined in {{preferred-format}};
+1. The Content Type must be in the preferred format defined in {{preferred-format}};
 1. If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding" registry of the "Hypertext Transfer Protocol (HTTP) Parameters" {{IANA.http-parameters}}.
 
 For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
 For the 256-9999 range and the 10000-64999 range, a similar criterion may also apply where combinations of media type parameters and content coding choices consume considerable codepoint space.
-
-<!-- Should these actually use BCP14 MUSTs? -->
 
 ## Preferred Format for the Content Type Field {#preferred-format}
 
