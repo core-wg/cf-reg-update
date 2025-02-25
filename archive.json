@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-02-23T00:38:05.773484+00:00",
+  "timestamp": "2025-02-25T00:35:50.674262+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -57,6 +57,11 @@
       "name": "needs WG discussion",
       "description": "need discussion with WG",
       "color": "E75F57"
+    },
+    {
+      "name": "AD review",
+      "description": "AD review",
+      "color": "F62083"
     }
   ],
   "issues": [
@@ -625,6 +630,22 @@
       "createdAt": "2025-02-19T03:17:26Z",
       "updatedAt": "2025-02-19T09:33:28Z",
       "closedAt": "2025-02-19T09:33:28Z",
+      "comments": []
+    },
+    {
+      "number": 44,
+      "id": "I_kwDONM5XRM6rYXbF",
+      "title": "Francesca's AD review",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/44",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "I only have one comment, which I\u2019d like to get your attention to, although it is definitely not a show-stopper, so please address it with any other Last Call comments \u2013 I will initiate the LC now.\n \nIn Section 5, you modify the CoAP Content-Formats registration procedure to the following:\n \n```\n   +------------------------+----------------+-------------------------+\n   | 10000-64999 (No        | First Come     | The corresponding media |\n   | parameters and empty   | First Served   | type must be registered |\n   | Content Coding and     |                | (or approved for        |\n   | media type not yet     |                | registration) in the    |\n   | used in this           |                | \"Media Types\" registry  |\n   | registry)              |                | [IANA.media-types]      |\n   +------------------------+----------------+-------------------------+\n   | 10000-64999            | Expert Review  | Review procedure        |\n   | (Includes parameters   |                | described in RFCthis,   |\n   | and/or Content         |                | Section 5.3             |\n   | Coding and/or media    |                |                         |\n   | type appears in this   |                |                         |\n   | registry)              |                |                         |\n   +------------------------+----------------+-------------------------+\n``` \n \nI personally dislike how the same range is split in 2 rows. The name of the first column is \u201crange\u201d, any additional text should go into notes, in my opinion. I understand why you have written it this way, but let me try to propose a modification, that in my opinion keeps it consistent with how the other procedures are written (for example, 256-9999 also contains an OR of two registration policies.\n \n``` \n   +------------------------+----------------+-------------------------+\n   | 10000-64999            | Expert Review  | Review procedure        |\n   |                        | or First Come  | described in RFCthis,   |\n   |                        | First Served   | Section 5.3             |\n   |                        |                |                         |\n   |                        |                | FCFS is allowed if      |\n   |                        |                | the registration has:   |\n   |                        |                | * no parameters  and    |\n   |                        |                | * empty Content Coding  |\n   |                        |                | and                     |\n   |                        |                | * media type not yet    |\n   |                        |                | used in this registry   |\n   |                        |                | and                     |\n   |                        |                | * the corresponding     |\n   |                        |                | media type registered   |\n   |                        |                | (or approved for        |\n   |                        |                | registration) in the    |\n   |                        |                | \"Media Types\" registry  |\n   |                        |                | [IANA.media-types]      |\n   |                        |                |                         |\n   |                        |                | Expert Review is        |\n   |                        |                | required if the         |\n   |                        |                | registration includes:  |\n   |                        |                | * parameters and/or     |\n   |                        |                | * Content Coding and/or |\n   |                        |                | * media type appears    |\n   |                        |                | in this registry        |\n   +------------------------+----------------+-------------------------+\n```\n \nI know the notes becomes longer, but no text is actually added, just all condensed. Also, this is just a proposal, feel free to change as appropriate, but I hope you see my point.\n ",
+      "createdAt": "2025-02-24T15:06:53Z",
+      "updatedAt": "2025-02-24T15:06:53Z",
+      "closedAt": null,
       "comments": []
     }
   ],
