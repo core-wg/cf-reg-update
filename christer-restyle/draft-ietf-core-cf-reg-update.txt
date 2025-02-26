@@ -271,8 +271,8 @@ Table of Contents
 
 4.  Updates to RFC 7252
 
-   This Section updates Section 12.3 of [RFC7252] by adding two
-   "virtual" subsections 12.3.1 and 12.3.2 to that.
+   This Section updates Section 12.3 of [RFC7252] and adds two "virtual"
+   subsections 12.3.1 and 12.3.2 to that.
 
 4.1.  Updates to Section 12.3
 
