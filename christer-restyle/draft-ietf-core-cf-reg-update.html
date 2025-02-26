@@ -1195,21 +1195,19 @@ This document also introduces a new column, "Media Type", to the registry.<a hre
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-updates-to-rfc-7252" class="internal xref">Updates to RFC 7252</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
-                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-updates-to-section-123" class="internal xref">Updates to Section 12.3</a></p>
+                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-updates-to-section-123-coap" class="internal xref">Updates to Section 12.3 "CoAP Content-Formats Registry"</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
                 <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-new-section-1231-temporary-" class="internal xref">New Section 12.3.1 "Temporary Content-Format Registrations"</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.3">
                 <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="auto internal xref">4.3</a>.  <a href="#name-new-section-1232-adding-the" class="internal xref">New Section 12.3.2 "Adding the Media Type Column to the Registry"</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.3.2.1">
-                    <p id="section-toc.1-1.4.2.3.2.1.1"><a href="#section-4.3.1" class="auto internal xref">4.3.1</a>.  <a href="#name-expert-review-procedure" class="internal xref">Expert Review Procedure</a></p>
 </li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.3.2.2">
-                    <p id="section-toc.1-1.4.2.3.2.2.1"><a href="#section-4.3.2" class="auto internal xref">4.3.2</a>.  <a href="#name-preferred-format-for-the-co" class="internal xref">Preferred Format for the Content Type Field</a></p>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4">
+                <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="auto internal xref">4.4</a>.  <a href="#name-new-section-1233-expert-rev" class="internal xref">New Section 12.3.3 "Expert Review Procedure"</a></p>
 </li>
-                </ul>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.5">
+                <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="auto internal xref">4.5</a>.  <a href="#name-new-section-1234-preferred-" class="internal xref">New Section 12.3.4 "Preferred Format for the Content Type Field"</a></p>
 </li>
             </ul>
 </li>
@@ -1504,11 +1502,11 @@ Since for URNs, the Namespace Identifier (<code>foo</code> in the example) is de
       <h2 id="name-updates-to-rfc-7252">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-updates-to-rfc-7252" class="section-name selfRef">Updates to RFC 7252</a>
       </h2>
-<p id="section-4-1">This Section updates <span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> and adds two "virtual" subsections 12.3.1 and 12.3.2 to that.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">This Section updates <span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> and adds four "virtual" subsections 12.3.1-12.3.4 to that.<a href="#section-4-1" class="pilcrow">¶</a></p>
 <div id="iana">
 <section id="section-4.1">
-        <h3 id="name-updates-to-section-123">
-<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-updates-to-section-123" class="section-name selfRef">Updates to Section 12.3</a>
+        <h3 id="name-updates-to-section-123-coap">
+<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-updates-to-section-123-coap" class="section-name selfRef">Updates to Section 12.3 "CoAP Content-Formats Registry"</a>
         </h3>
 <p id="section-4.1-1"><span class="cref" id="replace-self">RFC Editor: in this section, please replace RFCthis with the RFC number assigned to this document and remove this note.</span><a href="#section-4.1-1" class="pilcrow">¶</a></p>
 <p id="section-4.1-2">The CoAP Content-Formats registration procedures defined in <span><a href="https://rfc-editor.org/rfc/rfc7252#section-12.3" class="relref">Section 12.3</a> of [<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> are modified as shown in <a href="#tbl-new-cf-proc" class="auto internal xref">Table 8</a>.<a href="#section-4.1-2" class="pilcrow">¶</a></p>
@@ -1529,13 +1527,13 @@ Since for URNs, the Namespace Identifier (<code>foo</code> in the example) is de
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0-255</td>
               <td class="text-left" rowspan="1" colspan="1">Expert Review</td>
-              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.3.1</a>
+              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.4</a>
 </td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">256-9999</td>
               <td class="text-left" rowspan="1" colspan="1">IETF Review with Expert Review or IESG Approval with Expert Review</td>
-              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.3.1</a>
+              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.4</a>
 </td>
             </tr>
             <tr>
@@ -1547,7 +1545,7 @@ Since for URNs, the Namespace Identifier (<code>foo</code> in the example) is de
             <tr>
               <td class="text-left" rowspan="1" colspan="1">10000-64999 (Includes parameters and/or Content Coding and/or media type appears in this registry)</td>
               <td class="text-left" rowspan="1" colspan="1">Expert Review</td>
-              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.3.1</a>
+              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.4</a>
 </td>
             </tr>
             <tr>
@@ -1571,7 +1569,7 @@ The procedure for early IANA allocation of "standards track code points" defined
         </ul>
 <p id="section-4.1-6">The 10000-64999 range now has two separate registration procedures.
 If the registration consists solely of a registered media type name in the "Content Type" field, without any parameter names or "Content Coding", and the media type has not yet been used in this registry, then the policy is FCFS, as before.
-In all other cases, the policy is "Expert Review," following the procedure described in <a href="#checks" class="auto internal xref">Section 4.3.1</a>.<a href="#section-4.1-6" class="pilcrow">¶</a></p>
+In all other cases, the policy is "Expert Review," following the procedure described in <a href="#checks" class="auto internal xref">Section 4.4</a>.<a href="#section-4.1-6" class="pilcrow">¶</a></p>
 <p id="section-4.1-7">A new column with the title "Notes" has been added to the CoAP Content-Formats Registration Procedures shown in <a href="#tbl-new-cf-proc" class="auto internal xref">Table 8</a>.<a href="#section-4.1-7" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1603,55 +1601,55 @@ If a provisional media type is later abandoned or becomes a permanent media type
 In the case of abandonment, this field should be left empty.
 If the media type becomes permanent, the field should include a hyperlink to the registration information for that media type.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
 <p id="section-4.3-3">Note that the registration request procedure remains unchanged. A requester does not need to fill out the "Media Type" field separately, as the necessary information is already provided in the "Content Type" field of the request.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
+</section>
+</div>
 <div id="checks">
-<section id="section-4.3.1">
-          <h4 id="name-expert-review-procedure">
-<a href="#section-4.3.1" class="section-number selfRef">4.3.1. </a><a href="#name-expert-review-procedure" class="section-name selfRef">Expert Review Procedure</a>
-          </h4>
-<p id="section-4.3.1-1">The Designated Expert (DE) is instructed to perform the Expert Review, as described by the following checklist:<a href="#section-4.3.1-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-4.3.1-2">
-<li id="section-4.3.1-2.1">
-              <p id="section-4.3.1-2.1.1">The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;<a href="#section-4.3.1-2.1.1" class="pilcrow">¶</a></p>
+<section id="section-4.4">
+        <h3 id="name-new-section-1233-expert-rev">
+<a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-new-section-1233-expert-rev" class="section-name selfRef">New Section 12.3.3 "Expert Review Procedure"</a>
+        </h3>
+<p id="section-4.4-1">The Designated Expert (DE) is instructed to perform the Expert Review, as described by the following checklist:<a href="#section-4.4-1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-4.4-2">
+<li id="section-4.4-2.1">
+            <p id="section-4.4-2.1.1">The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;<a href="#section-4.4-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li id="section-4.3.1-2.2">
-              <p id="section-4.3.1-2.2.1">The media type associated with the requested Content-Format must either be registered in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span> or approved for registration. Alternatively, it may be listed in the "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>. The use of provisional standard media types is only permitted for Content-Format identifiers within the ranges of 0-255 and 256-9999;<a href="#section-4.3.1-2.2.1" class="pilcrow">¶</a></p>
+          <li id="section-4.4-2.2">
+            <p id="section-4.4-2.2.1">The media type associated with the requested Content-Format must either be registered in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span> or approved for registration. Alternatively, it may be listed in the "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>. The use of provisional standard media types is only permitted for Content-Format identifiers within the ranges of 0-255 and 256-9999;<a href="#section-4.4-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li id="section-4.3.1-2.3">
-              <p id="section-4.3.1-2.3.1">The optional parameter names must have been defined in association with the media type, and any parameter values associated with such parameter names must be as permitted;<a href="#section-4.3.1-2.3.1" class="pilcrow">¶</a></p>
+          <li id="section-4.4-2.3">
+            <p id="section-4.4-2.3.1">The optional parameter names must have been defined in association with the media type, and any parameter values associated with such parameter names must be as permitted;<a href="#section-4.4-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li id="section-4.3.1-2.4">
-              <p id="section-4.3.1-2.4.1">The Content Type must be in the preferred format defined in <a href="#preferred-format" class="auto internal xref">Section 4.3.2</a>;<a href="#section-4.3.1-2.4.1" class="pilcrow">¶</a></p>
+          <li id="section-4.4-2.4">
+            <p id="section-4.4-2.4.1">The Content Type must be in the preferred format defined in <a href="#preferred-format" class="auto internal xref">Section 4.5</a>;<a href="#section-4.4-2.4.1" class="pilcrow">¶</a></p>
 </li>
-            <li id="section-4.3.1-2.5">
-              <p id="section-4.3.1-2.5.1">If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding" registry of the "Hypertext Transfer Protocol (HTTP) Parameters" <span>[<a href="#IANA.http-parameters" class="cite xref">IANA.http-parameters</a>]</span>.<a href="#section-4.3.1-2.5.1" class="pilcrow">¶</a></p>
+          <li id="section-4.4-2.5">
+            <p id="section-4.4-2.5.1">If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding" registry of the "Hypertext Transfer Protocol (HTTP) Parameters" <span>[<a href="#IANA.http-parameters" class="cite xref">IANA.http-parameters</a>]</span>.<a href="#section-4.4-2.5.1" class="pilcrow">¶</a></p>
 </li>
-          </ol>
-<p id="section-4.3.1-3">For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
-For the 256-9999 range and the 10000-64999 range, a similar criterion may also apply where combinations of media type parameters and content coding choices consume considerable codepoint space.<a href="#section-4.3.1-3" class="pilcrow">¶</a></p>
+        </ol>
+<p id="section-4.4-3">For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
+For the 256-9999 range and the 10000-64999 range, a similar criterion may also apply where combinations of media type parameters and content coding choices consume considerable codepoint space.<a href="#section-4.4-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="preferred-format">
-<section id="section-4.3.2">
-          <h4 id="name-preferred-format-for-the-co">
-<a href="#section-4.3.2" class="section-number selfRef">4.3.2. </a><a href="#name-preferred-format-for-the-co" class="section-name selfRef">Preferred Format for the Content Type Field</a>
-          </h4>
-<p id="section-4.3.2-1">This section defines the preferred string format for including a requested Content Type into the "CoAP Content-Formats" registry.
-During the review process, the Designated Expert(s) or IANA may rewrite a requested Content Type into this preferred string format before approval.<a href="#section-4.3.2-1" class="pilcrow">¶</a></p>
-<p id="section-4.3.2-2">The preferred string format is as defined in <span><a href="https://rfc-editor.org/rfc/rfc9110#section-8.3.1" class="relref">Section 8.3.1</a> of [<a href="#RFC9110" class="cite xref">RFC9110</a>]</span> and follows these rules:<a href="#section-4.3.2-2" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-4.3.2-3">
-<li id="section-4.3.2-3.1">
-              <p id="section-4.3.2-3.1.1">For any case-insensitive elements, lowercase characters are used.<a href="#section-4.3.2-3.1.1" class="pilcrow">¶</a></p>
+<section id="section-4.5">
+        <h3 id="name-new-section-1234-preferred-">
+<a href="#section-4.5" class="section-number selfRef">4.5. </a><a href="#name-new-section-1234-preferred-" class="section-name selfRef">New Section 12.3.4 "Preferred Format for the Content Type Field"</a>
+        </h3>
+<p id="section-4.5-1">This section defines the preferred string format for including a requested Content Type into the "CoAP Content-Formats" registry.
+During the review process, the Designated Expert(s) or IANA may rewrite a requested Content Type into this preferred string format before approval.<a href="#section-4.5-1" class="pilcrow">¶</a></p>
+<p id="section-4.5-2">The preferred string format is as defined in <span><a href="https://rfc-editor.org/rfc/rfc9110#section-8.3.1" class="relref">Section 8.3.1</a> of [<a href="#RFC9110" class="cite xref">RFC9110</a>]</span> and follows these rules:<a href="#section-4.5-2" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-4.5-3">
+<li id="section-4.5-3.1">
+            <p id="section-4.5-3.1.1">For any case-insensitive elements, lowercase characters are used.<a href="#section-4.5-3.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li id="section-4.3.2-3.2">
-              <p id="section-4.3.2-3.2.1">Parameter values are only quoted if the value is such that it requires use of <code>quoted-string</code> per <span><a href="https://rfc-editor.org/rfc/rfc9110#section-5.6.6" class="relref">Section 5.6.6</a> of [<a href="#RFC9110" class="cite xref">RFC9110</a>]</span>.
-Otherwise, a parameter value is included unquoted.<a href="#section-4.3.2-3.2.1" class="pilcrow">¶</a></p>
+          <li id="section-4.5-3.2">
+            <p id="section-4.5-3.2.1">Parameter values are only quoted if the value is such that it requires use of <code>quoted-string</code> per <span><a href="https://rfc-editor.org/rfc/rfc9110#section-5.6.6" class="relref">Section 5.6.6</a> of [<a href="#RFC9110" class="cite xref">RFC9110</a>]</span>.
+Otherwise, a parameter value is included unquoted.<a href="#section-4.5-3.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li id="section-4.3.2-3.3">
-              <p id="section-4.3.2-3.3.1">A single semicolon character without any adjacent whitespace characters is used as the separator between media type and parameters.<a href="#section-4.3.2-3.3.1" class="pilcrow">¶</a></p>
+          <li id="section-4.5-3.3">
+            <p id="section-4.5-3.3.1">A single semicolon character without any adjacent whitespace characters is used as the separator between media type and parameters.<a href="#section-4.5-3.3.1" class="pilcrow">¶</a></p>
 </li>
-          </ol>
-</section>
-</div>
+        </ol>
 </section>
 </div>
 </section>
