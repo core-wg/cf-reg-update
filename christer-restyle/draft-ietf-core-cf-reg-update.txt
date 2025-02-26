@@ -81,8 +81,9 @@ Table of Contents
      3.7.  Duplicate Entry with Equivalent Parameter
    4.  Updates to RFC 7252
      4.1.  Updates to Section 12.3
-     4.2.  New Section 12.3.1
-     4.3.  New Section 12.3.2
+     4.2.  New Section 12.3.1 "Temporary Content-Format Registrations"
+     4.3.  New Section 12.3.2 "Adding the Media Type Column to the
+           Registry"
        4.3.1.  Expert Review Procedure
        4.3.2.  Preferred Format for the Content Type Field
    5.  Security Considerations
@@ -348,7 +349,7 @@ Table of Contents
    A new column with the title "Notes" has been added to the CoAP
    Content-Formats Registration Procedures shown in Table 8.
 
-4.2.  New Section 12.3.1
+4.2.  New Section 12.3.1 "Temporary Content-Format Registrations"
 
    This section clarifies that the "CoAP Content-Formats" registry
    allows temporary registrations within the 0-255 and 256-9999 ranges.
@@ -373,7 +374,7 @@ Table of Contents
    requesting a Content-Format ID is abandoned, or when the referenced
    provisional media type is abandoned.
 
-4.3.  New Section 12.3.2
+4.3.  New Section 12.3.2 "Adding the Media Type Column to the Registry"
 
    To assist users of the "CoAP Content-Formats" registry in finding
    detailed information about the media type associated with each CoAP
