@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-02-25T00:35:50.674262+00:00",
+  "timestamp": "2025-02-27T00:35:29.340847+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -2551,6 +2551,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 45,
+      "id": "PR_kwDONM5XRM6MtaX3",
+      "title": "Christer H's restyling",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/45",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-02-26T21:14:23Z",
+      "updatedAt": "2025-02-26T21:30:00Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "90ccfb640c8e150356a6771efee40c049cf91676",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "christer-restyle",
+      "headRefOid": "4de8056b41602413b6b253125f0cc8e7d834d441",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
