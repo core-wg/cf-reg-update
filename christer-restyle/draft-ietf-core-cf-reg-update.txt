@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 30 August 2025                                 26 February 2025
+Expires: 31 August 2025                                 27 February 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 August 2025.
+   This Internet-Draft will expire on 31 August 2025.
 
 Copyright Notice
 
@@ -468,7 +468,7 @@ Table of Contents
 6.  IANA Considerations
 
    This document updates the IANA procedures defined in [RFC7252] for
-   registering CoAP Content-Formats.
+   registering CoAP Content-Formats as described in Section 4.
 
 6.1.  Temporary Note Removal
 
