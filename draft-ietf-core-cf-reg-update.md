@@ -274,6 +274,7 @@ RFC-Editor: please remove this section once the note has been removed.
 Thank you
 Amanda Baber,
 Carsten Bormann,
+Christer Holmberg,
 Francesca Palombini,
 and
 Marco Tiloca
