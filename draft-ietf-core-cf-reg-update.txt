@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 23 August 2025                                 19 February 2025
+Expires: 4 September 2025                                   3 March 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 23 August 2025.
+   This Internet-Draft will expire on 4 September 2025.
 
 Copyright Notice
 
@@ -285,37 +285,45 @@ Table of Contents
    The CoAP Content-Formats registration procedures defined in
    Section 12.3 of [RFC7252] are modified as shown in Table 8.
 
-   +========================+================+=========================+
-   | Range                  | Registration   | Notes                   |
-   |                        | Procedures     |                         |
-   +========================+================+=========================+
-   | 0-255                  | Expert Review  | Review procedure        |
-   |                        |                | described in RFCthis,   |
-   |                        |                | Section 5.3             |
-   +------------------------+----------------+-------------------------+
-   | 256-9999               | IETF Review    | Review procedure        |
-   |                        | with Expert    | described in RFCthis,   |
-   |                        | Review or IESG | Section 5.3             |
-   |                        | Approval with  |                         |
-   |                        | Expert Review  |                         |
-   +------------------------+----------------+-------------------------+
-   | 10000-64999 (No        | First Come     | The corresponding media |
-   | parameters and empty   | First Served   | type must be registered |
-   | Content Coding and     |                | (or approved for        |
-   | media type not yet     |                | registration) in the    |
-   | used in this           |                | "Media Types" registry  |
-   | registry)              |                | [IANA.media-types]      |
-   +------------------------+----------------+-------------------------+
-   | 10000-64999            | Expert Review  | Review procedure        |
-   | (Includes parameters   |                | described in RFCthis,   |
-   | and/or Content         |                | Section 5.3             |
-   | Coding and/or media    |                |                         |
-   | type appears in this   |                |                         |
-   | registry)              |                |                         |
-   +------------------------+----------------+-------------------------+
-   | 65000-65535            | Experimental   | No operational use      |
-   |                        | Use            |                         |
-   +------------------------+----------------+-------------------------+
+   +=============+==============+======================================+
+   | Range       | Registration | Notes                                |
+   |             | Procedures   |                                      |
+   +=============+==============+======================================+
+   | 0-255       | Expert       | Review procedure described in        |
+   |             | Review       | RFCthis, Section 5.3                 |
+   +-------------+--------------+--------------------------------------+
+   | 256-9999    | IETF Review  | Review procedure described in        |
+   |             | with Expert  | RFCthis, Section 5.3                 |
+   |             | Review or    |                                      |
+   |             | IESG         |                                      |
+   |             | Approval     |                                      |
+   |             | with Expert  |                                      |
+   |             | Review       |                                      |
+   +-------------+--------------+--------------------------------------+
+   | 10000-64999 | Expert       | Review procedure described in        |
+   |             | Review or    | RFCthis, Section 5.3.                |
+   |             | First Come   |                                      |
+   |             | First Served | FCFS is allowed if the               |
+   |             |              | registration:                        |
+   |             |              | * has no parameters, and             |
+   |             |              | * has an empty Content Coding, and   |
+   |             |              | * the media type is not yet used in  |
+   |             |              | this registry, and                   |
+   |             |              | * the media type is registered (or   |
+   |             |              | approved for registration) in the    |
+   |             |              | "Media Types" registry               |
+   |             |              | [IANA.media-types].                  |
+   |             |              |                                      |
+   |             |              | Expert Review is required if the     |
+   |             |              | registration:                        |
+   |             |              | * includes parameters, and/or        |
+   |             |              | * includes a Content Coding, and/or  |
+   |             |              | * the media type appears in this     |
+   |             |              | registry.                            |
+   +-------------+--------------+--------------------------------------+
+   | 65000-65535 | Experimental | No operational use                   |
+   |             | Use          |                                      |
+   +-------------+--------------+--------------------------------------+
 
        Table 8: Updated CoAP Content-Formats Registration Procedures
 
