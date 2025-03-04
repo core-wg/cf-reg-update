@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-02T00:38:36.611946+00:00",
+  "timestamp": "2025-03-04T00:36:21.839813+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -647,7 +647,7 @@
       "id": "I_kwDONM5XRM6rYXbF",
       "title": "Francesca's AD review",
       "url": "https://github.com/core-wg/cf-reg-update/issues/44",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -657,8 +657,8 @@
       ],
       "body": "I only have one comment, which I\u2019d like to get your attention to, although it is definitely not a show-stopper, so please address it with any other Last Call comments \u2013 I will initiate the LC now.\n \nIn Section 5, you modify the CoAP Content-Formats registration procedure to the following:\n \n```\n   +------------------------+----------------+-------------------------+\n   | 10000-64999 (No        | First Come     | The corresponding media |\n   | parameters and empty   | First Served   | type must be registered |\n   | Content Coding and     |                | (or approved for        |\n   | media type not yet     |                | registration) in the    |\n   | used in this           |                | \"Media Types\" registry  |\n   | registry)              |                | [IANA.media-types]      |\n   +------------------------+----------------+-------------------------+\n   | 10000-64999            | Expert Review  | Review procedure        |\n   | (Includes parameters   |                | described in RFCthis,   |\n   | and/or Content         |                | Section 5.3             |\n   | Coding and/or media    |                |                         |\n   | type appears in this   |                |                         |\n   | registry)              |                |                         |\n   +------------------------+----------------+-------------------------+\n``` \n \nI personally dislike how the same range is split in 2 rows. The name of the first column is \u201crange\u201d, any additional text should go into notes, in my opinion. I understand why you have written it this way, but let me try to propose a modification, that in my opinion keeps it consistent with how the other procedures are written (for example, 256-9999 also contains an OR of two registration policies.\n \n``` \n   +------------------------+----------------+-------------------------+\n   | 10000-64999            | Expert Review  | Review procedure        |\n   |                        | or First Come  | described in RFCthis,   |\n   |                        | First Served   | Section 5.3             |\n   |                        |                |                         |\n   |                        |                | FCFS is allowed if      |\n   |                        |                | the registration has:   |\n   |                        |                | * no parameters  and    |\n   |                        |                | * empty Content Coding  |\n   |                        |                | and                     |\n   |                        |                | * media type not yet    |\n   |                        |                | used in this registry   |\n   |                        |                | and                     |\n   |                        |                | * the corresponding     |\n   |                        |                | media type registered   |\n   |                        |                | (or approved for        |\n   |                        |                | registration) in the    |\n   |                        |                | \"Media Types\" registry  |\n   |                        |                | [IANA.media-types]      |\n   |                        |                |                         |\n   |                        |                | Expert Review is        |\n   |                        |                | required if the         |\n   |                        |                | registration includes:  |\n   |                        |                | * parameters and/or     |\n   |                        |                | * Content Coding and/or |\n   |                        |                | * media type appears    |\n   |                        |                | in this registry        |\n   +------------------------+----------------+-------------------------+\n```\n \nI know the notes becomes longer, but no text is actually added, just all condensed. Also, this is just a proposal, feel free to change as appropriate, but I hope you see my point.\n ",
       "createdAt": "2025-02-24T15:06:53Z",
-      "updatedAt": "2025-02-27T15:15:39Z",
-      "closedAt": null,
+      "updatedAt": "2025-03-03T11:22:07Z",
+      "closedAt": "2025-03-03T11:22:07Z",
       "comments": []
     },
     {
@@ -666,7 +666,7 @@
       "id": "I_kwDONM5XRM6r4yHg",
       "title": "Christer's Gen-ART review",
       "url": "https://github.com/core-wg/cf-reg-update/issues/46",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -675,8 +675,8 @@
       ],
       "body": "Archived-At: https://mailarchive.ietf.org/arch/msg/gen-art/VigOb1ZmMOENftHki83-v7hYwc4/\n\n```\nNits/editorial comments:\n\nIt is a little confusing when the updates to RFC 7252 are in the IANA\nConsiderations section of the document. In addition, new procedures are added\nin Sections 5.1 and 5.2, but those should be new 12.3 subsections in RFC 7252.\n\nI suggest to have a dedicated \"Updates to RFC 7252\" section, where the text in\nSections 5.1 and Sections 5.2 are also added as new Sections 12.3.1 and\nSections 12.3.2 to RFC 7252.\n\nFor example:\n\n----\n\n4. Updates to RFC 7252\n\nThis Section updates Section 12.3, and adds the new Sections 12.3.1 and 12.3.2,\nto [RFC7252].\n\n4.1. Updates to Section 12.3\n\n// The text in Section 5\n\n4.2. New Section 12.3.1\n\n// The text in Section 5.1\n\n4.2. New Section 12.3.2\n\n// The text in Section 5.2\n\n----\n\nThe Security Considerations then become Section 5. The IANA Considerations\nbecome Section 6, and there you only need to state something like:\n\n\"This document updates the IANA procedures of [RFC7252] for registering CoAP\nContent-Formats.\"\n```",
       "createdAt": "2025-02-27T08:26:09Z",
-      "updatedAt": "2025-02-27T15:17:29Z",
-      "closedAt": null,
+      "updatedAt": "2025-03-03T11:25:58Z",
+      "closedAt": "2025-03-03T11:25:58Z",
       "comments": []
     }
   ],
@@ -2588,52 +2588,84 @@
       "id": "PR_kwDONM5XRM6MtaX3",
       "title": "Christer H's restyling",
       "url": "https://github.com/core-wg/cf-reg-update/pull/45",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "Fix #46 ",
       "createdAt": "2025-02-26T21:14:23Z",
-      "updatedAt": "2025-02-27T08:26:24Z",
+      "updatedAt": "2025-03-03T11:25:57Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "90ccfb640c8e150356a6771efee40c049cf91676",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "christer-restyle",
-      "headRefOid": "dd670458343aed381e65b5e22b740a92f178d345",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "5a4f564224eb9c23972b853fde06dbe2b8aa40e5",
+      "closedAt": "2025-03-03T11:25:57Z",
+      "mergedAt": "2025-03-03T11:25:57Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "628247d3088eeb2460bc3da3f2d7b4f35bcb5f74"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6eLKkj",
+          "commit": {
+            "abbreviatedOid": "dd67045"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-03T10:34:33Z",
+          "updatedAt": "2025-03-03T10:34:33Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 47,
       "id": "PR_kwDONM5XRM6Mwvsh",
       "title": "merge rows",
       "url": "https://github.com/core-wg/cf-reg-update/pull/47",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "Fix #44 ",
       "createdAt": "2025-02-27T08:44:32Z",
-      "updatedAt": "2025-02-27T08:44:32Z",
+      "updatedAt": "2025-03-03T11:22:10Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "90ccfb640c8e150356a6771efee40c049cf91676",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "francesca",
       "headRefOid": "1e21f2cc3c9e3a83b1a434803649de531966c13a",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-03-03T11:22:06Z",
+      "mergedAt": "2025-03-03T11:22:06Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "f56411f258833f42e3cb3c6d0a52781bb70027ef"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6eLKLH",
+          "commit": {
+            "abbreviatedOid": "1e21f2c"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-03T10:33:55Z",
+          "updatedAt": "2025-03-03T10:33:55Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
