@@ -215,7 +215,7 @@ This new column is placed directly to the right of the existing "Content Type" c
 The "Media Type" field for each entry lists the (base) media type name and provides a hyperlink to registration information for that media type as recorded by IANA.
 If the media type is provisional, the hyperlink points to the IANA "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}.
 If a provisional media type is later abandoned or becomes a permanent media type, IANA must update the "Media Type" field in the associated entries.
-In the case of abandonment, this field should be left empty.
+In the case of abandonment, the associated Content-Format entry must be removed from the registry.
 If the media type becomes permanent, the field should include a hyperlink to the registration information for that media type.
 
 Note that the registration request procedure remains unchanged. A requester does not need to fill out the "Media Type" field separately, as the necessary information is already provided in the "Content Type" field of the request.
