@@ -278,8 +278,9 @@ Amanda Baber,
 Carsten Bormann,
 Christer Holmberg,
 Francesca Palombini,
+Marco Tiloca,
 and
-Marco Tiloca
+Rich Salz
 for your reviews, comments, suggestions, and fixes.
 
 [^replace-self]: RFC Editor: in this section, please replace {{&SELF}} with the RFC number assigned to this document and remove this note.
