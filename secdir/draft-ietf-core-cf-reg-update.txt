@@ -553,8 +553,8 @@ Table of Contents
 Acknowledgments
 
    Thank you Amanda Baber, Carsten Bormann, Christer Holmberg, Francesca
-   Palombini, and Marco Tiloca for your reviews, comments, suggestions,
-   and fixes.
+   Palombini, Marco Tiloca, and Rich Salz for your reviews, comments,
+   suggestions, and fixes.
 
 Authors' Addresses
 
