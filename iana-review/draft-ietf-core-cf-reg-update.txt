@@ -374,7 +374,7 @@ Table of Contents
    corresponding registry entry.  Once the required review procedure for
    the temporary ID has successfully completed, and the referenced media
    type is included in the IANA Media Types registry [IANA.media-types],
-   IANA must remove the any indication about the temporary nature of the
+   IANA must remove any indication about the temporary nature of the
    registration so that the entry becomes permanent.  If the requested
    temporary entry does not successfully pass its required review
    procedure, IANA must remove the entry again and set the Content-
