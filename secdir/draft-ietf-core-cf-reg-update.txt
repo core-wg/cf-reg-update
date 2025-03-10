@@ -143,8 +143,8 @@ Table of Contents
    checklist defined in Section 4.4 should prevent any of these attempts
    from succeeding.
 
-   All the example registration requests will use a CoAP Content-Format
-   with identifier 64999 in the FCFS range of the "CoAP Content-Formats"
+   All the example registration requests use a CoAP Content-Format with
+   identifier 64999 in the FCFS range of the "CoAP Content-Formats"
    registry.
 
    For each of the following example registration requests, one can
