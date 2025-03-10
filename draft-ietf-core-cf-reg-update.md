@@ -203,7 +203,7 @@ A temporary registration may be created for example by an IANA early allocation 
 Alternatively, it may be created because the referenced media type is still provisional (that is, included in the IANA "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}).
 
 A temporary registration is marked as such by IANA in the corresponding registry entry.
-Once the required review procedure for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry {{IANA.media-types}}, IANA must remove the any indication about the temporary nature of the registration so that the entry becomes permanent.
+Once the required review procedure for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry {{IANA.media-types}}, IANA must remove any indication about the temporary nature of the registration so that the entry becomes permanent.
 If the requested temporary entry does not successfully pass its required review procedure, IANA must remove the entry again and set the Content-Format ID value back to "Unassigned".
 This may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned, or when the referenced provisional media type is abandoned.
 
