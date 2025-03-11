@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-09T00:31:50.301144+00:00",
+  "timestamp": "2025-03-11T00:36:21.633350+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -72,6 +72,11 @@
       "name": "Directorate review",
       "description": "Review coming from one of the directorates",
       "color": "bfdadc"
+    },
+    {
+      "name": "IANA review",
+      "description": "",
+      "color": "498BEC"
     }
   ],
   "issues": [
@@ -677,6 +682,104 @@
       "createdAt": "2025-02-27T08:26:09Z",
       "updatedAt": "2025-03-03T11:25:58Z",
       "closedAt": "2025-03-03T11:25:58Z",
+      "comments": []
+    },
+    {
+      "number": 48,
+      "id": "I_kwDONM5XRM6tPlfa",
+      "title": "problematic `TEMPORARY` label",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/48",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IANA review"
+      ],
+      "body": "> _\"[...] in Section 4.2, the authors make this request: \"A temporary registration is marked by IANA with the label \"TEMPORARY\" in the corresponding registry entry.\" This is currently problematic for IANA.\n> \n> _IANA Question --> Could this be changed to \"A temporary registration is marked as such by IANA in the corresponding registry entry\"? Changing \"TEMPORARY\" to lower case gives IANA the flexibility in how it visually designates and signifies temporary allocations.\"_",
+      "createdAt": "2025-03-10T09:03:06Z",
+      "updatedAt": "2025-03-10T09:41:37Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Right, it should be updated to say IANA can mark a registration temporary without saying how it does this visually. \"Lower case\" should not matter then.",
+          "createdAt": "2025-03-10T09:41:36Z",
+          "updatedAt": "2025-03-10T09:41:36Z"
+        }
+      ]
+    },
+    {
+      "number": 49,
+      "id": "I_kwDONM5XRM6tPm-o",
+      "title": "fix actions to perform on abandonment",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/49",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IANA review"
+      ],
+      "body": "> _\"In the second paragraph of Section 4.3, the authors request that, \"If a provisional media type is later abandoned or becomes a permanent media type, IANA must update the 'Media Type' field in the associated entries. In the case of abandonment, this field should be left empty.\u201d_\n> \n> _IANA Question --> In this specific case, wouldn't IANA be required to remove the Content-Format from the registry if there's no longer an associated media type?\"_",
+      "createdAt": "2025-03-10T09:05:37Z",
+      "updatedAt": "2025-03-10T14:29:57Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "The removal of an entry (e.g. because the provisional media type gets abandoned) would imply that the entry was temporary, because the media type wasn't permanent yet.  Is that right?\n\nIf so, this contradicts with our statement that we can't have temporary entries in the range 10000-64999.\n\nThis rule was (I think) added by me because of the following reason:\n* if a registration is made in 10000-64999 pointing to a draft-v01 as the reference, and then the draft expires and is eventually abandoned, we still want the registration entry to stay.  Since the media type that the CF I-D is pointing to is still equally valid and the draft-v01 reference will still exist \"forever\" in the database.\n* this is similar to making a registration by email or so.\n\nThe above first bullet can have a clash / confusion w.r.t. the text in our draft at end of 4.2:\n\n> This may happen for example **when an Internet-Draft requesting a Content-Format ID is abandoned**, or when the referenced provisional media type is abandoned.\n\nThe first part in **bold** is only applicable in the Expert/IETF ranges, but not in 10000-64999.\nTo avoid potential confusion around this, it was simply said that temporary doesn't exist in 10000-64999. If we do allow it there, there could be a mistake by IANA that it removes entries in this range based on expired drafts.",
+          "createdAt": "2025-03-10T10:00:53Z",
+          "updatedAt": "2025-03-10T10:00:53Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "@EskoDijk thanks for the added context.\n\nIIUC, we need to distinguish two \u201cabandonement\u201d situations:\n\n| Condition | Action |\n|----|----|\n| A Content-Format becomes \u201cunanchored\u201d (i.e., the associated media type is abandoned) | Remove the entry |\n| The I-D that requests registration in the 10000-64999 range has expired (but the underlying media type is alive and kicking) | Do not touch the entry |\n\n\n",
+          "createdAt": "2025-03-10T11:13:50Z",
+          "updatedAt": "2025-03-10T13:38:06Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "However, in the context of this issue and the associated PR (#50), the \u201cabandonment\u201d we are talking about is the media type\u2019s.  In such a case, it makes no sense to retain _any_ associated registration, whatever the range.  So the proposed change seems correct to me, at least in the context of that paragraph.",
+          "createdAt": "2025-03-10T13:43:13Z",
+          "updatedAt": "2025-03-10T13:43:23Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thomas-fossati Agree, that change seems correct.  I do think we need to combine that change with allowing \"temporary\" registrations also in the 10000-64999 range. \nIn this case, an entry is not temporary because a registering document is still draft (or so), but it's temporary only if the Media Type itself is provisional.",
+          "createdAt": "2025-03-10T13:52:34Z",
+          "updatedAt": "2025-03-10T13:52:34Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "OK. Do you want to do this as part of #50 or separately?\nAlso, can you provide surgical prose?",
+          "createdAt": "2025-03-10T14:29:56Z",
+          "updatedAt": "2025-03-10T14:29:56Z"
+        }
+      ]
+    },
+    {
+      "number": 51,
+      "id": "I_kwDONM5XRM6tQey9",
+      "title": "Clarify intent of S3",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/51",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "LC"
+      ],
+      "body": "From @richsalz\u2019s security directorate review:\n\n> _\u201dI was confused by Section 3. At first I thought it was real examples of erroneous registrations, but it is rather samples of things that this draft would no prevent. Perhaps the introduction and/or title can be made more clear.\u201d_",
+      "createdAt": "2025-03-10T10:24:33Z",
+      "updatedAt": "2025-03-10T10:24:33Z",
+      "closedAt": null,
       "comments": []
     }
   ],
@@ -2664,6 +2767,154 @@
           "createdAt": "2025-03-03T10:33:55Z",
           "updatedAt": "2025-03-03T10:33:55Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 50,
+      "id": "PR_kwDONM5XRM6N9nUz",
+      "title": "IANA review",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/50",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "cc @daviddong-iana",
+      "createdAt": "2025-03-10T09:48:44Z",
+      "updatedAt": "2025-03-10T10:27:42Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "628247d3088eeb2460bc3da3f2d7b4f35bcb5f74",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "iana-review",
+      "headRefOid": "3f863faaa670ef654d05bd3cc4f723cba456b7dc",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Thanks Thomas, see the comments I made on the open issues. Current text seems to resolve #49 but I'd still like to check this in detail later.",
+          "createdAt": "2025-03-10T10:04:48Z",
+          "updatedAt": "2025-03-10T10:04:48Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6fK1h3",
+          "commit": {
+            "abbreviatedOid": "7b77d23"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-10T10:10:24Z",
+          "updatedAt": "2025-03-10T10:10:24Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "s/remove the any/remove any",
+              "createdAt": "2025-03-10T10:10:24Z",
+              "updatedAt": "2025-03-10T10:10:24Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fK1mh",
+          "commit": {
+            "abbreviatedOid": "7b77d23"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-10T10:10:31Z",
+          "updatedAt": "2025-03-10T10:10:31Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 52,
+      "id": "PR_kwDONM5XRM6N-AQE",
+      "title": "Clarify intent of \u00a73",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/52",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #51",
+      "createdAt": "2025-03-10T10:26:51Z",
+      "updatedAt": "2025-03-10T15:25:42Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "628247d3088eeb2460bc3da3f2d7b4f35bcb5f74",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "secdir",
+      "headRefOid": "7ff8e4e44260a58dbc37286b35b281b395b65f11",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6fLFjO",
+          "commit": {
+            "abbreviatedOid": "9c656bd"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-10T10:34:25Z",
+          "updatedAt": "2025-03-10T10:34:25Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fLNAX",
+          "commit": {
+            "abbreviatedOid": "9c656bd"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-10T10:46:22Z",
+          "updatedAt": "2025-03-10T10:46:23Z",
+          "comments": [
+            {
+              "originalPosition": 8,
+              "body": "```suggestion\r\nAll the example registration requests use a CoAP Content-Format with identifier 64999 in the FCFS range of the \"CoAP Content-Formats\" registry.\r\n```",
+              "createdAt": "2025-03-10T10:46:23Z",
+              "updatedAt": "2025-03-10T10:46:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fOPG8",
+          "commit": {
+            "abbreviatedOid": "c9750f7"
+          },
+          "author": "richsalz",
+          "authorAssociation": "NONE",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-10T15:02:27Z",
+          "updatedAt": "2025-03-10T15:02:28Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "maybe 'must'->'would' ?  But fine either way.",
+              "createdAt": "2025-03-10T15:02:27Z",
+              "updatedAt": "2025-03-10T15:02:28Z"
+            }
+          ]
         }
       ]
     }
