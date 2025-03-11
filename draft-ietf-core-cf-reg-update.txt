@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 4 September 2025                                   3 March 2025
+Expires: 12 September 2025                                 11 March 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 September 2025.
+   This Internet-Draft will expire on 12 September 2025.
 
 Copyright Notice
 
@@ -137,11 +137,15 @@ Table of Contents
 
 3.  Examples for Erroneous Registrations
 
-   This section contains examples of registration requests for a CoAP
-   Content-Format with identifier 64999 in the FCFS range of the "CoAP
-   Content-Formats" registry, as defined in Section 12.3 of [RFC7252]
-   and revised according to [Err4954], which must not be allowed to
-   succeed.
+   This section provides examples of registration requests for the "CoAP
+   Content-Formats" Registry (as defined in Section 12.3 of [RFC7252]
+   and revised according to [Err4954]) that are invalid but would be
+   approved under the current procedure.  The checklist defined in
+   Section 4.4 should prevent any of these attempts from succeeding.
+
+   All the example registration requests use a CoAP Content-Format with
+   identifier 64999 in the FCFS range of the "CoAP Content-Formats"
+   registry.
 
    For each of the following example registration requests, one can
    create a similar instance where the requested registration is for a
@@ -549,8 +553,8 @@ Table of Contents
 Acknowledgments
 
    Thank you Amanda Baber, Carsten Bormann, Christer Holmberg, Francesca
-   Palombini, and Marco Tiloca for your reviews, comments, suggestions,
-   and fixes.
+   Palombini, Marco Tiloca, and Rich Salz for your reviews, comments,
+   suggestions, and fixes.
 
 Authors' Addresses
 
