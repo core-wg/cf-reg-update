@@ -82,7 +82,7 @@ This document uses the terms "media type", "content coding", "content-type", and
 
 # Examples for Erroneous Registrations
 
-This section provides examples of registration requests for the "CoAP Content-Formats" Registry (as defined in {{Section 12.3 of -coap}} and revised according to {{Err4954}}) that must be denied.
+This section provides examples of registration requests for the "CoAP Content-Formats" Registry (as defined in {{Section 12.3 of -coap}} and revised according to {{Err4954}}) that are invalid but would be approved under the current procedure.
 The checklist defined in {{checks}} should prevent any of these attempts from succeeding.
 
 All the example registration requests use a CoAP Content-Format with identifier 64999 in the FCFS range of the "CoAP Content-Formats" registry.
