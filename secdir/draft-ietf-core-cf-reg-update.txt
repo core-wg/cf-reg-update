@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 11 September 2025                                 10 March 2025
+Expires: 12 September 2025                                 11 March 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 11 September 2025.
+   This Internet-Draft will expire on 12 September 2025.
 
 Copyright Notice
 
@@ -139,9 +139,9 @@ Table of Contents
 
    This section provides examples of registration requests for the "CoAP
    Content-Formats" Registry (as defined in Section 12.3 of [RFC7252]
-   and revised according to [Err4954]) that must be denied.  The
-   checklist defined in Section 4.4 should prevent any of these attempts
-   from succeeding.
+   and revised according to [Err4954]) that are invalid but would be
+   approved under the current procedure.  The checklist defined in
+   Section 4.4 should prevent any of these attempts from succeeding.
 
    All the example registration requests use a CoAP Content-Format with
    identifier 64999 in the FCFS range of the "CoAP Content-Formats"
