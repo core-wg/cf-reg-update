@@ -198,7 +198,7 @@ A new column with the title "Notes" has been added to the CoAP Content-Formats R
 
 This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255, 256-9999, and 10000-64999 ranges.
 
-A temporary registration may be created for example by an IANA early allocation action, as requested by the authors of an Internet-Draft in the IETF stream.
+A temporary registration may be created for example by an IANA early allocation action {{-iana-early}}.
 If the referenced media type is provisional (that is, included in the IANA "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}) then a created registration is always temporary.
 
 A temporary registration is marked as such by IANA in the corresponding registry entry.
@@ -208,7 +208,7 @@ If a temporary registration does not successfully complete the registration proc
 This may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned.
 If a temporary registration (in any range) refers to a provisional media type that is abandoned, IANA must remove the entry and set the Content-Format ID value back to "Unassigned".
 
-Note that in the 10000-64999 range the abandonment of a document requesting a Content-Format ID does not impact the decision whether or not to remove the entry.
+Note that in the 10000-64999 range the abandonment of a document requesting a Content-Format ID does not cause an entry to be removed.
 That is because the required registration procedure for this range does not require completion of any standards process, nor does it require a registering document.
 
 ## New Section 12.3.2 "Adding the Media Type Column to the Registry"
