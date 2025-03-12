@@ -1571,14 +1571,16 @@ In all other cases, the policy is "Expert Review," following the procedure descr
         <h3 id="name-new-section-1231-temporary-">
 <a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-new-section-1231-temporary-" class="section-name selfRef">New Section 12.3.1 "Temporary Content-Format Registrations"</a>
         </h3>
-<p id="section-4.2-1">This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255, 256-9999 and 10000-64999 ranges.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<p id="section-4.2-1">This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255, 256-9999, and 10000-64999 ranges.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 <p id="section-4.2-2">A temporary registration may be created for example by an IANA early allocation action, as requested by the authors of an Internet-Draft in the IETF stream.
-If the referenced media type is provisional (that is, included in the IANA "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>) then a temporary registration is always created.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
+If the referenced media type is provisional (that is, included in the IANA "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>) then a created registration is always temporary.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
 <p id="section-4.2-3">A temporary registration is marked as such by IANA in the corresponding registry entry.
-Once the required review procedure for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>, IANA must remove any indication about the temporary nature of the registration so that the entry becomes permanent.<a href="#section-4.2-3" class="pilcrow">¶</a></p>
-<p id="section-4.2-4">If a temporary registration in the range 0-9999 does not successfully pass its required review procedure, IANA must remove the entry again and set the Content-Format ID value back to "Unassigned".
-This may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned.<a href="#section-4.2-4" class="pilcrow">¶</a></p>
-<p id="section-4.2-5">If a temporary registration (in any range) refers to a provisional media type that is abandoned, IANA must remove the entry and set the Content-Format ID value back to "Unassigned".<a href="#section-4.2-5" class="pilcrow">¶</a></p>
+Once the required registration procedure (defined in <a href="#tbl-new-cf-proc" class="auto internal xref">Table 8</a>) for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>, IANA must remove any indication about the temporary nature of the registration so that the entry becomes permanent.<a href="#section-4.2-3" class="pilcrow">¶</a></p>
+<p id="section-4.2-4">If a temporary registration does not successfully complete the registration procedure, IANA must remove the entry again and set the Content-Format ID value back to "Unassigned".
+This may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned.
+If a temporary registration (in any range) refers to a provisional media type that is abandoned, IANA must remove the entry and set the Content-Format ID value back to "Unassigned".<a href="#section-4.2-4" class="pilcrow">¶</a></p>
+<p id="section-4.2-5">Note that in the 10000-64999 range the abandonment of a document requesting a Content-Format ID does not impact the decision whether or not to remove the entry.
+That is because the required registration procedure for this range does not require completion of any standards process, nor does it require a registering document.<a href="#section-4.2-5" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="new-section-1232-adding-the-media-type-column-to-the-registry">
