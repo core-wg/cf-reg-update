@@ -307,22 +307,18 @@ Table of Contents
    |             | Review or    | RFCthis, Section 4.4.                |
    |             | First Come   |                                      |
    |             | First Served | FCFS is allowed if the               |
-   |             |              | registration:                        |
+   |             | (FCFS)       | registration:                        |
    |             |              | * has no parameters, and             |
    |             |              | * has an empty Content Coding, and   |
-   |             |              | * the media type is not yet used in  |
-   |             |              | this registry, and                   |
+   |             |              | * the media type is not yet used     |
+   |             |              | in this registry, and                |
    |             |              | * the media type is registered (or   |
    |             |              | approved for registration) in the    |
    |             |              | "Media Types" registry               |
    |             |              | [IANA.media-types].                  |
    |             |              |                                      |
-   |             |              | Expert Review is required if the     |
-   |             |              | registration:                        |
-   |             |              | * includes parameters, and/or        |
-   |             |              | * includes a Content Coding, and/or  |
-   |             |              | * the media type appears in this     |
-   |             |              | registry.                            |
+   |             |              | Expert Review is required in all     |
+   |             |              | other cases.                         |
    +-------------+--------------+--------------------------------------+
    | 65000-65535 | Experimental | No operational use                   |
    |             | Use          |                                      |
