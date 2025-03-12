@@ -363,11 +363,10 @@ Table of Contents
    10000-64999 ranges.
 
    A temporary registration may be created for example by an IANA early
-   allocation action, as requested by the authors of an Internet-Draft
-   in the IETF stream.  If the referenced media type is provisional
-   (that is, included in the IANA "Provisional Standard Media Type"
-   registry [IANA.provisional-standard-media-types]) then a created
-   registration is always temporary.
+   allocation action [RFC7120].  If the referenced media type is
+   provisional (that is, included in the IANA "Provisional Standard
+   Media Type" registry [IANA.provisional-standard-media-types]) then a
+   created registration is always temporary.
 
    A temporary registration is marked as such by IANA in the
    corresponding registry entry.  Once the required registration
@@ -386,10 +385,10 @@ Table of Contents
    and set the Content-Format ID value back to "Unassigned".
 
    Note that in the 10000-64999 range the abandonment of a document
-   requesting a Content-Format ID does not impact the decision whether
-   or not to remove the entry.  That is because the required
-   registration procedure for this range does not require completion of
-   any standards process, nor does it require a registering document.
+   requesting a Content-Format ID does not cause an entry to be removed.
+   That is because the required registration procedure for this range
+   does not require completion of any standards process, nor does it
+   require a registering document.
 
 4.3.  New Section 12.3.2 "Adding the Media Type Column to the Registry"
 
