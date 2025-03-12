@@ -204,7 +204,7 @@ If the referenced media type is provisional (that is, included in the IANA "Prov
 A temporary registration is marked as such by IANA in the corresponding registry entry.
 Once the required registration procedure (defined in {{tbl-new-cf-proc}}) for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry {{IANA.media-types}}, IANA must remove any indication about the temporary nature of the registration so that the entry becomes permanent.
 
-If a temporary registration does not successfully complete the registration procedure, IANA must remove the entry again and set the Content-Format ID value back to "Unassigned".
+If a temporary registration does not successfully complete the registration procedure, IANA must remove the entry and set the Content-Format ID value back to "Unassigned".
 This may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned.
 If a temporary registration (in any range) refers to a provisional media type that is abandoned, IANA must remove the entry and set the Content-Format ID value back to "Unassigned".
 
