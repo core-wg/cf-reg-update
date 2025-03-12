@@ -307,7 +307,7 @@ Table of Contents
    |             | Review or    | RFCthis, Section 4.4.                |
    |             | First Come   |                                      |
    |             | First Served | FCFS is allowed if the               |
-   |             |              | registration:                        |
+   |             | (FCFS)       | registration:                        |
    |             |              | * has no parameters, and             |
    |             |              | * has an empty Content Coding, and   |
    |             |              | * the media type is not yet used     |
