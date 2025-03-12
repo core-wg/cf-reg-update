@@ -73,7 +73,7 @@ This task is generally non-trivial, requires knowledge from multiple documents a
 This lack of guidance may engender confusion in both the registering party and the registrar, and has already led to erroneous registrations.
 
 In {{iana}}, this document updates {{-coap}} by modifying the registration procedures for the "CoAP Content-Formats" registry to mitigate the risk of unintentional or malicious errors.
-These updates amend the different ranges of the registry, introduce a review procedure to be performed for most ranges of the registry, and allow the registration of temporary Content-Format identifiers for certain ranges of the registry.
+These updates amend the different ranges of the registry, introduce a review procedure to be performed for most ranges of the registry, and allow the registration of temporary Content-Format identifiers.
 This document also introduces a new column, "Media Type", to the registry.
 
 # Conventions and Definitions
@@ -199,16 +199,20 @@ A new column with the title "Notes" has been added to the CoAP Content-Formats R
 
 ## New Section 12.3.1 "Temporary Content-Format Registrations"
 
-This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255 and 256-9999 ranges.
-The range 10000-64999 does not allow temporary registrations.
+This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255, 256-9999, and 10000-64999 ranges.
 
-A temporary registration may be created for example by an IANA early allocation action, as requested by the authors of an Internet-Draft in the IETF stream.
-Alternatively, it may be created because the referenced media type is still provisional (that is, included in the IANA "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}).
+A temporary registration may be created for example by an IANA early allocation action {{-iana-early}}.
+If the referenced media type is provisional (that is, included in the IANA "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}) then a created registration is always temporary.
 
-A temporary registration is marked by IANA with the label "TEMPORARY" in the corresponding registry entry.
-Once the required review procedure for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry {{IANA.media-types}}, IANA must remove the "TEMPORARY" label so that the entry becomes permanent.
-If the requested temporary entry does not successfully pass its required review procedure, IANA must remove the entry again and set the Content-Format ID value back to "Unassigned".
-This may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned, or when the referenced provisional media type is abandoned.
+A temporary registration is marked as such by IANA in the corresponding registry entry.
+Once the required registration procedure (defined in {{tbl-new-cf-proc}}) for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry {{IANA.media-types}}, IANA must remove any indication about the temporary nature of the registration so that the entry becomes permanent.
+
+If a temporary registration does not successfully complete the registration procedure, IANA must remove the entry and set the Content-Format ID value back to "Unassigned".
+This may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned.
+If a temporary registration (in any range) refers to a provisional media type that is abandoned, IANA must remove the entry and set the Content-Format ID value back to "Unassigned".
+
+Note that in the 10000-64999 range the abandonment of a document requesting a Content-Format ID does not cause an entry to be removed.
+That is because the required registration procedure for this range does not require completion of any standards process, nor does it require a registering document.
 
 ## New Section 12.3.2 "Adding the Media Type Column to the Registry"
 
@@ -217,9 +221,7 @@ This new column is placed directly to the right of the existing "Content Type" c
 
 The "Media Type" field for each entry lists the (base) media type name and provides a hyperlink to registration information for that media type as recorded by IANA.
 If the media type is provisional, the hyperlink points to the IANA "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}.
-If a provisional media type is later abandoned or becomes a permanent media type, IANA must update the "Media Type" field in the associated entries.
-In the case of abandonment, this field should be left empty.
-If the media type becomes permanent, the field should include a hyperlink to the registration information for that media type.
+If a provisional media type becomes a permanent media type, IANA must update the "Media Type" field in the associated registry entries to ensure the hyperlink directs to the registration information for that media type.
 
 Note that the registration request procedure remains unchanged. A requester does not need to fill out the "Media Type" field separately, as the necessary information is already provided in the "Content Type" field of the request.
 
