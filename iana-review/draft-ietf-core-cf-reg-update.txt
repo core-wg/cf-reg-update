@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 12 September 2025                                 11 March 2025
+Expires: 13 September 2025                                 12 March 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 September 2025.
+   This Internet-Draft will expire on 13 September 2025.
 
 Copyright Notice
 
@@ -401,8 +401,9 @@ Table of Contents
    the hyperlink points to the IANA "Provisional Standard Media Type"
    registry [IANA.provisional-standard-media-types].  If a provisional
    media type becomes a permanent media type, IANA must update the
-   "Media Type" field in the associated registry entries, to let the
-   hyperlink point to the registration information for that media type.
+   "Media Type" field in the associated registry entries to ensure the
+   hyperlink directs to the registration information for that media
+   type.
 
    Note that the registration request procedure remains unchanged.  A
    requester does not need to fill out the "Media Type" field
