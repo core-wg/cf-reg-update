@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-11T00:36:21.633350+00:00",
+  "timestamp": "2025-03-13T00:36:44.094193+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -689,7 +689,7 @@
       "id": "I_kwDONM5XRM6tPlfa",
       "title": "problematic `TEMPORARY` label",
       "url": "https://github.com/core-wg/cf-reg-update/issues/48",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -698,8 +698,8 @@
       ],
       "body": "> _\"[...] in Section 4.2, the authors make this request: \"A temporary registration is marked by IANA with the label \"TEMPORARY\" in the corresponding registry entry.\" This is currently problematic for IANA.\n> \n> _IANA Question --> Could this be changed to \"A temporary registration is marked as such by IANA in the corresponding registry entry\"? Changing \"TEMPORARY\" to lower case gives IANA the flexibility in how it visually designates and signifies temporary allocations.\"_",
       "createdAt": "2025-03-10T09:03:06Z",
-      "updatedAt": "2025-03-10T09:41:37Z",
-      "closedAt": null,
+      "updatedAt": "2025-03-12T13:21:12Z",
+      "closedAt": "2025-03-12T13:21:12Z",
       "comments": [
         {
           "author": "EskoDijk",
@@ -715,7 +715,7 @@
       "id": "I_kwDONM5XRM6tPm-o",
       "title": "fix actions to perform on abandonment",
       "url": "https://github.com/core-wg/cf-reg-update/issues/49",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -724,8 +724,8 @@
       ],
       "body": "> _\"In the second paragraph of Section 4.3, the authors request that, \"If a provisional media type is later abandoned or becomes a permanent media type, IANA must update the 'Media Type' field in the associated entries. In the case of abandonment, this field should be left empty.\u201d_\n> \n> _IANA Question --> In this specific case, wouldn't IANA be required to remove the Content-Format from the registry if there's no longer an associated media type?\"_",
       "createdAt": "2025-03-10T09:05:37Z",
-      "updatedAt": "2025-03-10T14:29:57Z",
-      "closedAt": null,
+      "updatedAt": "2025-03-12T13:21:13Z",
+      "closedAt": "2025-03-12T13:21:12Z",
       "comments": [
         {
           "author": "EskoDijk",
@@ -761,6 +761,20 @@
           "body": "OK. Do you want to do this as part of #50 or separately?\nAlso, can you provide surgical prose?",
           "createdAt": "2025-03-10T14:29:56Z",
           "updatedAt": "2025-03-10T14:29:56Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thomas-fossati  I can add a commit to #50 ! Since changes would need to edit some lines of text that are edited by #50. ",
+          "createdAt": "2025-03-11T09:21:41Z",
+          "updatedAt": "2025-03-11T09:21:41Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> [@thomas-fossati](https://github.com/thomas-fossati) I can add a commit to [#50](https://github.com/core-wg/cf-reg-update/pull/50) ! Since changes would need to edit some lines of text that are edited by [#50](https://github.com/core-wg/cf-reg-update/pull/50).\n\nYes, please!",
+          "createdAt": "2025-03-11T10:13:31Z",
+          "updatedAt": "2025-03-11T10:13:31Z"
         }
       ]
     },
@@ -769,7 +783,7 @@
       "id": "I_kwDONM5XRM6tQey9",
       "title": "Clarify intent of S3",
       "url": "https://github.com/core-wg/cf-reg-update/issues/51",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -778,9 +792,77 @@
       ],
       "body": "From @richsalz\u2019s security directorate review:\n\n> _\u201dI was confused by Section 3. At first I thought it was real examples of erroneous registrations, but it is rather samples of things that this draft would no prevent. Perhaps the introduction and/or title can be made more clear.\u201d_",
       "createdAt": "2025-03-10T10:24:33Z",
-      "updatedAt": "2025-03-10T10:24:33Z",
-      "closedAt": null,
+      "updatedAt": "2025-03-11T11:56:46Z",
+      "closedAt": "2025-03-11T11:56:46Z",
       "comments": []
+    },
+    {
+      "number": 53,
+      "id": "I_kwDONM5XRM6tbstK",
+      "title": "Use of \"FCFS\" acronym in Table in 4.1",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/53",
+      "state": "CLOSED",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "thomas-fossati"
+      ],
+      "labels": [],
+      "body": "The table in 4.1 (Table 8) uses the acronym \"FCFS\", however, this may not be clear to a reader.\n\nBecause the table shown there is intended to exactly replace the table on this page:\nhttps://www.iana.org/assignments/core-parameters/core-parameters.xhtml#content-formats\n\n```\nRange \t\tRegistration Procedures \n0-255\t\tExpert Review\n256-9999\t\tIETF Review or IESG Approval\n10000-64999\tFirst Come First Served\n65000-65535\tExperimental use (no operational use)\n```\n\nIt adds the \"Notes\" column so the Notes text should be self-explanatory without needing to look up acronyms.\n\nProposal: write out the name FCFS in full.\n\nAlso, as another idea, could we simplify this text by just saying \"Expert Review is required in all other cases\" ??",
+      "createdAt": "2025-03-11T09:06:40Z",
+      "updatedAt": "2025-03-12T14:31:55Z",
+      "closedAt": "2025-03-12T14:31:55Z",
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Wouldn\u2019t it be sufficient to do something like:\n\n| Range | Registration Procedures | Notes |\n|--------|--------|--------|\n| \u2026 | \u2026 | \u2026 |\n| 10000-64999 | Expert Review or First Come First Served **(FCFS)** | Review procedure described in {{&SELF}}, {{checks}}. <br><br>FCFS ... |",
+          "createdAt": "2025-03-12T13:27:11Z",
+          "updatedAt": "2025-03-12T13:27:11Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thomas-fossati Yes, that seems fine!\n\nWhat do you think about \"Expert Review is required in all other cases\" - that would save quite some text.\n",
+          "createdAt": "2025-03-12T13:28:52Z",
+          "updatedAt": "2025-03-12T13:28:52Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> [@thomas-fossati](https://github.com/thomas-fossati) Yes, that seems fine!\n> \n> What do you think about \"Expert Review is required in all other cases\" - that would save quite some text.\n\nSeems like excellent \"factoring-out\u201d to me.  Where would you put it?",
+          "createdAt": "2025-03-12T13:33:02Z",
+          "updatedAt": "2025-03-12T13:33:02Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thomas-fossati I can make a separate PR with this, then we can also check on the lists / with IANA if ok.",
+          "createdAt": "2025-03-12T13:44:53Z",
+          "updatedAt": "2025-03-12T13:44:53Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> @thomas-fossati I can make a separate PR with this, then we can also check on the lists / with IANA if ok.\n\nplease, go ahead!",
+          "createdAt": "2025-03-12T13:48:24Z",
+          "updatedAt": "2025-03-12T13:48:24Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "See https://github.com/core-wg/cf-reg-update/pull/54",
+          "createdAt": "2025-03-12T14:00:23Z",
+          "updatedAt": "2025-03-12T14:00:23Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> [\u2026] we can also check on the lists / with IANA if ok.\n\nThe change in #54 seems rather uncontroversial to me.  Do you think it really needs extra WG/IANA eyes?\n\n",
+          "createdAt": "2025-03-12T14:15:48Z",
+          "updatedAt": "2025-03-12T14:15:48Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -2775,24 +2857,26 @@
       "id": "PR_kwDONM5XRM6N9nUz",
       "title": "IANA review",
       "url": "https://github.com/core-wg/cf-reg-update/pull/50",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "cc @daviddong-iana",
       "createdAt": "2025-03-10T09:48:44Z",
-      "updatedAt": "2025-03-10T10:27:42Z",
+      "updatedAt": "2025-03-12T13:37:07Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "628247d3088eeb2460bc3da3f2d7b4f35bcb5f74",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "iana-review",
-      "headRefOid": "3f863faaa670ef654d05bd3cc4f723cba456b7dc",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "a4b8840ca881f0d99a582acbc367335b4bc7ac98",
+      "closedAt": "2025-03-12T13:21:11Z",
+      "mergedAt": "2025-03-12T13:21:11Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "f1ea47fbfa27c5dd447456a786055fdccf4d04bc"
+      },
       "comments": [
         {
           "author": "EskoDijk",
@@ -2800,6 +2884,20 @@
           "body": "Thanks Thomas, see the comments I made on the open issues. Current text seems to resolve #49 but I'd still like to check this in detail later.",
           "createdAt": "2025-03-10T10:04:48Z",
           "updatedAt": "2025-03-10T10:04:48Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Sorry, unapproved again - I see that the changes for #49 would be best to add in here by a commit. I'll add that.",
+          "createdAt": "2025-03-11T09:21:23Z",
+          "updatedAt": "2025-03-11T09:21:23Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thomas-fossati New commit added. This should be checked with IANA also.\r\n\r\nI belief that any procedure for \"entry removal\" for temporary entries should be in 4.2.\r\nOnly procedures for updating the \"Media Type\" hyperlink field should be in 4.3. Therefore, I've removed the removal process from 4.3 and included it in 4.2.",
+          "createdAt": "2025-03-11T10:31:35Z",
+          "updatedAt": "2025-03-11T10:31:35Z"
         }
       ],
       "reviews": [
@@ -2835,6 +2933,678 @@
           "createdAt": "2025-03-10T10:10:31Z",
           "updatedAt": "2025-03-10T10:10:31Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fWc4T",
+          "commit": {
+            "abbreviatedOid": "3f863fa"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-11T08:56:30Z",
+          "updatedAt": "2025-03-11T08:56:30Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fdA6R",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T15:53:30Z",
+          "updatedAt": "2025-03-11T15:53:30Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "s/256-9999 and/256-9999, and",
+              "createdAt": "2025-03-11T15:53:30Z",
+              "updatedAt": "2025-03-11T15:53:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fdBd-",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T15:53:55Z",
+          "updatedAt": "2025-03-11T15:53:56Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "OLD\r\n> then a temporary registration is always created.\r\n\r\nNEW\r\n> then a created registration is always temporary.\r\n\r\nThe new phrasing avoids the impression that the existence of a provisional media type triggers the creation of a temporary registration. In fact, a registration is considered in the first place due to a need for a Content-Format identifier; if the corresponding media type is provisional, then the Content-Format registration has to be temporary.",
+              "createdAt": "2025-03-11T15:53:56Z",
+              "updatedAt": "2025-03-11T15:53:56Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fdCYd",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T15:54:37Z",
+          "updatedAt": "2025-03-11T15:54:37Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "OLD\r\n> If a temporary registration in the range 0-9999 does not\r\n\r\nNEW\r\n> If a temporary registration (in any range) does not\r\n\r\nThe changes above are admitting temporary registrations also for identifiers in the range 10000-64999, i.e., in all ranges, right?",
+              "createdAt": "2025-03-11T15:54:37Z",
+              "updatedAt": "2025-03-11T15:54:37Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fdQAP",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T16:07:47Z",
+          "updatedAt": "2025-03-11T16:07:47Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "ok with the change!",
+              "createdAt": "2025-03-11T16:07:47Z",
+              "updatedAt": "2025-03-11T16:07:47Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fdT24",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T16:12:03Z",
+          "updatedAt": "2025-03-11T16:12:03Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "This rule is only intended for 0-9999!  E.g. if a draft registers ID 25000 and then the draft gets abandoned, but the media type is still alive, then the entry stays forever.  ",
+              "createdAt": "2025-03-11T16:12:03Z",
+              "updatedAt": "2025-03-11T16:12:04Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fdWKT",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T16:14:34Z",
+          "updatedAt": "2025-03-11T16:14:35Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "It's similar to a registration via email for example: it gets added, and maybe no-one will ever use it anymore, but still the ID remains forever as long as the media type exists.",
+              "createdAt": "2025-03-11T16:14:35Z",
+              "updatedAt": "2025-03-11T16:14:35Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fd7Oh",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T16:56:40Z",
+          "updatedAt": "2025-03-11T16:56:40Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "I see, thanks! Then two things:\r\n\r\n* \"in the range 0-9999 does not\" can instead be \"in the 0-255 and 256-9999 ranges does not\", since the registry shows those two as independent \"ranges\".\r\n\r\n* Maybe it's better to include this explanation in a follow-up sentence, as a note that entries in the 10000-64999 range are going to stay (unless, as explained right below, they correspond to a provisional media type and this gets abandoned, at which point they are also removed).",
+              "createdAt": "2025-03-11T16:56:40Z",
+              "updatedAt": "2025-03-11T17:01:17Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6feHeR",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T17:13:21Z",
+          "updatedAt": "2025-03-11T17:13:21Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "We should clarify what we mean by _\"pass its required review procedure\u201d_",
+              "createdAt": "2025-03-11T17:13:21Z",
+              "updatedAt": "2025-03-11T17:13:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6feJXU",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T17:15:59Z",
+          "updatedAt": "2025-03-11T17:16:00Z",
+          "comments": [
+            {
+              "originalPosition": 40,
+              "body": "```suggestion\r\nIf a provisional media type becomes a permanent media type, IANA must update the \"Media Type\" field in the associated registry entries to ensure the hyperlink directs to the registration information for that media type.\r\n```",
+              "createdAt": "2025-03-11T17:15:59Z",
+              "updatedAt": "2025-03-11T17:16:00Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fmAtD",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T08:32:49Z",
+          "updatedAt": "2025-03-12T08:32:49Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "Ok I can try an update for this!",
+              "createdAt": "2025-03-12T08:32:49Z",
+              "updatedAt": "2025-03-12T08:32:49Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fmElG",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T08:39:25Z",
+          "updatedAt": "2025-03-12T08:39:26Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "I can try to clarify! We didn't define this before in the latest published draft.\r\nIt's basically the items listed under the column \"Registration Procedures\" so we could call it \"registration procedure\" and refer to section {{iana}}.",
+              "createdAt": "2025-03-12T08:39:25Z",
+              "updatedAt": "2025-03-12T08:39:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fmOFo",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T08:52:40Z",
+          "updatedAt": "2025-03-12T08:52:40Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "OK, we could say:\r\n\r\n```suggestion\r\nIf a temporary registration in the range 0-9999 fails the registration procedure described in {{iana}}, IANA must remove the entry and set the Content-Format ID value back to \"Unassigned\".\r\n```",
+              "createdAt": "2025-03-12T08:52:40Z",
+              "updatedAt": "2025-03-12T08:53:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fmeRH",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T09:16:15Z",
+          "updatedAt": "2025-03-12T09:16:15Z",
+          "comments": [
+            {
+              "originalPosition": 15,
+              "body": "done in last commit",
+              "createdAt": "2025-03-12T09:16:15Z",
+              "updatedAt": "2025-03-12T09:16:15Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fmeas",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T09:16:28Z",
+          "updatedAt": "2025-03-12T09:16:28Z",
+          "comments": [
+            {
+              "originalPosition": 19,
+              "body": "done in last commit",
+              "createdAt": "2025-03-12T09:16:28Z",
+              "updatedAt": "2025-03-12T09:16:28Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fmfWT",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T09:17:48Z",
+          "updatedAt": "2025-03-12T09:17:48Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "done in last commit: it uses a note for the 10000-64999 range. This is just an explanatory note, since the reworded text that refers to \"Registration procedure\" already implicitly defines the normative part.",
+              "createdAt": "2025-03-12T09:17:48Z",
+              "updatedAt": "2025-03-12T09:17:48Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fmgM4",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T09:19:03Z",
+          "updatedAt": "2025-03-12T09:19:03Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "oops, missed your comment now - see the last commit for another text suggestion.",
+              "createdAt": "2025-03-12T09:19:03Z",
+              "updatedAt": "2025-03-12T09:19:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fmhsZ",
+          "commit": {
+            "abbreviatedOid": "23598c3"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T09:21:12Z",
+          "updatedAt": "2025-03-12T09:21:12Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "spurious \u201cagain\u201d ?\r\n\r\n```suggestion\r\nIf a temporary registration does not successfully complete the registration procedure, IANA must remove the entry and set the Content-Format ID value back to \"Unassigned\".\r\n```",
+              "createdAt": "2025-03-12T09:21:12Z",
+              "updatedAt": "2025-03-12T09:21:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fmiJb",
+          "commit": {
+            "abbreviatedOid": "c4a0863"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T09:21:54Z",
+          "updatedAt": "2025-03-12T09:21:54Z",
+          "comments": [
+            {
+              "originalPosition": 26,
+              "body": "np! Yours looks good to me.",
+              "createdAt": "2025-03-12T09:21:54Z",
+              "updatedAt": "2025-03-12T09:21:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fm_Bn",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-12T10:00:44Z",
+          "updatedAt": "2025-03-12T10:00:44Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fnEX3",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T10:07:40Z",
+          "updatedAt": "2025-03-12T10:07:40Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "AFAIU, it\u2019s a bit more intricate than that: early allocations are requested by WG chairs after the AD has approved the request made by the editors.\r\n\r\nThe easy way out is to put a full stop at \u201c[\u2026] action.\u201d and drop the rest of the sentence.",
+              "createdAt": "2025-03-12T10:07:40Z",
+              "updatedAt": "2025-03-12T10:08:32Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fnGlX",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T10:10:54Z",
+          "updatedAt": "2025-03-12T10:10:55Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "Right; so maybe s/as requested by the authors of an Internet-Draft/as requested for an Internet-Draft",
+              "createdAt": "2025-03-12T10:10:55Z",
+              "updatedAt": "2025-03-12T10:10:55Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fnM10",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T10:19:31Z",
+          "updatedAt": "2025-03-12T10:19:31Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "tiny grammar tweaks\r\n\r\n```suggestion\r\nNote that in the 10000-64999 range, the abandonment of a document requesting a Content-Format ID does not impact the decision to remove the entry or retain it.\r\nThat is because the required registration procedure for this range does not require the completion of any standards process or a registering document.\r\n```",
+              "createdAt": "2025-03-12T10:19:31Z",
+              "updatedAt": "2025-03-12T12:26:30Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fnOTS",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "LGMT, modulo a couple of small editorial tweaks that I have inlined.",
+          "createdAt": "2025-03-12T10:20:45Z",
+          "updatedAt": "2025-03-12T10:20:45Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fnTiY",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T10:27:18Z",
+          "updatedAt": "2025-03-12T10:27:19Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "@thomas-fossati I think removing the \"whether or not\" just changed the semantics of the sentence! Now it sounds like the decision is always to remove the entry or that such decision is already being considered.\r\n\r\nActually, it is so that the abandonment of a document is not an event that triggers a removal decision. Nor does it trigger a \"keep it\" decision.",
+              "createdAt": "2025-03-12T10:27:19Z",
+              "updatedAt": "2025-03-12T10:27:19Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fnYCL",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T10:31:42Z",
+          "updatedAt": "2025-03-12T10:31:42Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "What about: \"A temporary registration may be created for example by an IANA early allocation action, based on an Internet-Draft in the IETF stream.\"\r\n\r\nThis is just an example; so we don't exclude possible other ways or other types of documents.",
+              "createdAt": "2025-03-12T10:31:42Z",
+              "updatedAt": "2025-03-12T10:31:42Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fndPP",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T10:39:03Z",
+          "updatedAt": "2025-03-12T10:39:03Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "YAP (yet another proposal):\r\n\r\n> _\"A temporary registration may be created for example by an IANA early allocation action {{-iana-early}}.\u201d_",
+              "createdAt": "2025-03-12T10:39:03Z",
+              "updatedAt": "2025-03-12T10:42:14Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fnfDa",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T10:41:17Z",
+          "updatedAt": "2025-03-12T10:41:17Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "I don\u2019t see the semantic change.\r\n\r\nTo my non-native English speaker ear _\"whether or not\u201d_ covers all the possibilities, therefore, is semantically redundant.",
+              "createdAt": "2025-03-12T10:41:17Z",
+              "updatedAt": "2025-03-12T10:41:27Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6foLe-",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T11:41:35Z",
+          "updatedAt": "2025-03-12T11:41:36Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "Well, there's multiple decisions that could be taking place:\r\n\r\n1. decision to make to either remove an entry or leave the entry (not yet made)\r\n2. decision to not remove an entry (already made)\r\n3. decision to remove an entry (already made)\r\n\r\nThe original text indicates 1., which could after making the decision result in 2. or 3. While the removal of \"whether or not\" does immediately narrow the choices down to 3. only especially with the word \"the\" in front.\r\nAs in \"the decision to remove the entry\" -> decision is there, has been made already. Entry will be removed. As in \"the decision to go on holiday in France\".\r\n\r\nAbout use of the / a :   just FYI, we should avoid deriving our semantics from such a small difference :) \r\nIf you say \"a decision to remove the entry\" -> less certain; it's a decision in general that may come or may not come. Entry is only removed when such a decision does come.\r\n",
+              "createdAt": "2025-03-12T11:41:36Z",
+              "updatedAt": "2025-03-12T11:41:36Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fo0RL",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T12:25:12Z",
+          "updatedAt": "2025-03-12T12:25:13Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "Sorry for the (unnecessary) churn.\r\nIt has to do with the likely peculiar way I read this bizarre and foreign language :-)\r\nTo me \u201cthe decision to remove an entry\u201d already contains all potential outcomes (remove it or leave it).\r\nIf it makes it clearer I am happy to leave the \u201cwhether or not\u201d in.\r\n\r\n(I will correct my inline suggestion.)",
+              "createdAt": "2025-03-12T12:25:12Z",
+              "updatedAt": "2025-03-12T12:25:36Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fpI2h",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T12:48:18Z",
+          "updatedAt": "2025-03-12T12:48:18Z",
+          "comments": [
+            {
+              "originalPosition": 17,
+              "body": "Ok, used this in the latest commit.",
+              "createdAt": "2025-03-12T12:48:18Z",
+              "updatedAt": "2025-03-12T12:48:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fpJsV",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T12:49:21Z",
+          "updatedAt": "2025-03-12T12:49:21Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "I found a formulation to work around this: see latest commit.\r\n`Note that in the 10000-64999 range the abandonment of a document requesting a Content-Format ID does not cause an entry to be removed.`",
+              "createdAt": "2025-03-12T12:49:21Z",
+              "updatedAt": "2025-03-12T12:49:21Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fphw0",
+          "commit": {
+            "abbreviatedOid": "a4b8840"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "\ud83d\udea2 it\r\n\r\nThanks!",
+          "createdAt": "2025-03-12T13:20:52Z",
+          "updatedAt": "2025-03-12T13:20:52Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fpmtk",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T13:26:40Z",
+          "updatedAt": "2025-03-12T13:26:41Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "@thomas-fossati Yep that language can be intricate: here's a similar case https://forum.wordreference.com/threads/decision-to-on.3202602/\r\n\r\nSo \"decision on\" is better if the outcome isn't known yet.\r\n\r\nAnd here's the typical use of \"decision to remove\" : https://ludwig.guru/s/decision+to+remove \r\nwhen the outcome is known.\r\n",
+              "createdAt": "2025-03-12T13:26:41Z",
+              "updatedAt": "2025-03-12T13:26:41Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fpu9L",
+          "commit": {
+            "abbreviatedOid": "1a0410a"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T13:37:07Z",
+          "updatedAt": "2025-03-12T13:37:07Z",
+          "comments": [
+            {
+              "originalPosition": 33,
+              "body": "Fantastic references, thanks!\r\n",
+              "createdAt": "2025-03-12T13:37:07Z",
+              "updatedAt": "2025-03-12T13:37:07Z"
+            }
+          ]
         }
       ]
     },
@@ -2843,24 +3613,26 @@
       "id": "PR_kwDONM5XRM6N-AQE",
       "title": "Clarify intent of \u00a73",
       "url": "https://github.com/core-wg/cf-reg-update/pull/52",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "Fix #51",
       "createdAt": "2025-03-10T10:26:51Z",
-      "updatedAt": "2025-03-10T15:25:42Z",
+      "updatedAt": "2025-03-11T11:56:49Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "628247d3088eeb2460bc3da3f2d7b4f35bcb5f74",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "secdir",
-      "headRefOid": "7ff8e4e44260a58dbc37286b35b281b395b65f11",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "88a918446f252aa204ebd5254662245333bad95f",
+      "closedAt": "2025-03-11T11:56:45Z",
+      "mergedAt": "2025-03-11T11:56:45Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "c5ca4d0a0cf4bbe5aad04ee4b092ac207ed562b2"
+      },
       "comments": [],
       "reviews": [
         {
@@ -2915,6 +3687,141 @@
               "updatedAt": "2025-03-10T15:02:28Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fWsex",
+          "commit": {
+            "abbreviatedOid": "7ff8e4e"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T09:13:33Z",
+          "updatedAt": "2025-03-11T09:13:33Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "\"would be denied\" is what would not happen with the current (existing) rules; it would be accepted.\r\n\"must be denied\" is what we would like to happen with the fixed procedure.\r\n\r\nMaybe it's more clear if we write \"that need to be denied, but would be approved by the present procedure\" ?\r\n\r\nOr the short version \"that would need to be denied\".  3 verbs in 6 words is maybe stretching the limit :)",
+              "createdAt": "2025-03-11T09:13:33Z",
+              "updatedAt": "2025-03-11T09:13:33Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fXcg9",
+          "commit": {
+            "abbreviatedOid": "c9750f7"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T10:01:13Z",
+          "updatedAt": "2025-03-11T10:01:13Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "My two cents:\r\n\r\n> _\u201d[...] that are invalid but would be approved under the current procedure.\u201d_\r\n",
+              "createdAt": "2025-03-11T10:01:13Z",
+              "updatedAt": "2025-03-11T10:01:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fX9FR",
+          "commit": {
+            "abbreviatedOid": "c9750f7"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-11T10:37:25Z",
+          "updatedAt": "2025-03-11T10:37:25Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "@thomas-fossati That sounds good - I'll let you pick what to add!",
+              "createdAt": "2025-03-11T10:37:25Z",
+              "updatedAt": "2025-03-11T10:37:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fY-2p",
+          "commit": {
+            "abbreviatedOid": "88a9184"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-11T11:50:58Z",
+          "updatedAt": "2025-03-11T11:50:58Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 54,
+      "id": "PR_kwDONM5XRM6OWbEB",
+      "title": "Text simplification for procedures Table, adding a catch-all case",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/54",
+      "state": "MERGED",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Aim is to shorten text (simplify) and also cover any remaining corner cases (if they exist).\r\n\r\nFix #53 ",
+      "createdAt": "2025-03-12T13:52:31Z",
+      "updatedAt": "2025-03-12T14:31:58Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "f1ea47fbfa27c5dd447456a786055fdccf4d04bc",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "pr-simplify-procedure",
+      "headRefOid": "f82c7b6c6b5d40b37bd7716edbbdbe05e20fb8cb",
+      "closedAt": "2025-03-12T14:31:54Z",
+      "mergedAt": "2025-03-12T14:31:54Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "0db9020ca23a9f7fd64ae3d9a68286ec026f7fc6"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6fqUhi",
+          "commit": {
+            "abbreviatedOid": "968c1cd"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-12T14:12:49Z",
+          "updatedAt": "2025-03-12T14:12:49Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\n| 10000-64999 | Expert Review or First Come First Served (FCFS) | Review procedure described in {{&SELF}}, {{checks}}. <br><br>FCFS is allowed if the registration: <br> * has no parameters, and <br> * has an empty Content Coding, and <br> * the media type is not yet used in this registry, and <br> * the media type is registered (or approved for registration) in the \"Media Types\" registry {{IANA.media-types}}. <br><br>Expert Review is required in all other cases. |\r\n```",
+              "createdAt": "2025-03-12T14:12:49Z",
+              "updatedAt": "2025-03-12T14:12:49Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6fqVQA",
+          "commit": {
+            "abbreviatedOid": "968c1cd"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "APPROVED",
+          "body": "LGTM.  (I have added the FCFS acronym in an inline suggestion.)",
+          "createdAt": "2025-03-12T14:13:33Z",
+          "updatedAt": "2025-03-12T14:13:33Z",
+          "comments": []
         }
       ]
     }
