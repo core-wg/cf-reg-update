@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-20T00:36:11.536403+00:00",
+  "timestamp": "2025-03-23T00:40:13.782103+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -861,6 +861,33 @@
           "body": "> [\u2026] we can also check on the lists / with IANA if ok.\n\nThe change in #54 seems rather uncontroversial to me.  Do you think it really needs extra WG/IANA eyes?\n\n",
           "createdAt": "2025-03-12T14:15:48Z",
           "updatedAt": "2025-03-12T14:15:48Z"
+        }
+      ]
+    },
+    {
+      "number": 55,
+      "id": "I_kwDONM5XRM6u98_e",
+      "title": "IANA feedback 2025-03-20: additional instructions for 0-255 Expert Review",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/55",
+      "state": "OPEN",
+      "author": "EskoDijk",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [
+        "thomas-fossati",
+        "EskoDijk"
+      ],
+      "labels": [],
+      "body": "From IANA feedback 2025-03-20:\n\n> I think that the document needs to explicitly state that IANA won't track whether temporary Content-Format registrations in the Expert Review \n> range need to be removed, and that the experts will instruct us to do so instead. \n> \n> As long as this is being done, it would actually be useful to tell us to add a note to the registry that says, \"In accordance with RFC XXXX, designated > experts can approve temporary registrations in the Expert Review range that are not subject to the formal RFC 7120 renewal process.\"\n\nBoth these seem useful to add.",
+      "createdAt": "2025-03-20T13:19:10Z",
+      "updatedAt": "2025-03-20T13:25:04Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Thanks Esko.\nDo you have time to prepare the PR?\nUnfortunately I am a bit swamped at the moment, I could tackle this next Monday though if you are busy too.",
+          "createdAt": "2025-03-20T13:25:03Z",
+          "updatedAt": "2025-03-20T13:25:03Z"
         }
       ]
     }
