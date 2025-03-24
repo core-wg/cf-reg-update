@@ -90,6 +90,7 @@ Table of Contents
    5.  Security Considerations
    6.  IANA Considerations
      6.1.  Temporary Note Removal
+     6.2.  New Note Addition
    7.  References
      7.1.  Normative References
      7.2.  Informative References
@@ -356,12 +357,6 @@ Table of Contents
    A new column with the title "Notes" has been added to the CoAP
    Content-Formats Registration Procedures shown in Table 8.
 
-   The following note is added to the registry:
-
-      "Note: As per RFCthis, Designated Experts can approve temporary
-      registrations in the Expert Review range that are not subject to
-      the formal [RFC7120] renewal process."
-
    For the handling of temporary allocations within the 0-255 range see
    also Section 4.2, Paragraph 6.
 
@@ -511,6 +506,15 @@ Table of Contents
    IANA is instructed to remove this note from the registry when this
    document is approved for publication.  RFC-Editor: please remove this
    section once the note has been removed.
+
+6.2.  New Note Addition
+
+   IANA is instructed to add the following note to the registry:
+
+      "Note: As per RFCthis, temporary registrations in the Expert
+      Review range are approved by Designated Experts.  These
+      registrations are not subject to the formal [RFC7120] renewal
+      process."
 
 7.  References
 
