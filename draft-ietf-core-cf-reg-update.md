@@ -197,10 +197,6 @@ In all other cases, the policy is "Expert Review," following the procedure descr
 
 A new column with the title "Notes" has been added to the CoAP Content-Formats Registration Procedures shown in {{tbl-new-cf-proc}}.
 
-The following note is added to the registry:
-
-> "Note: As per {{&SELF}}, Designated Experts can approve temporary registrations in the Expert Review range that are not subject to the formal {{-iana-early}} renewal process."
-
 For the handling of temporary allocations within the 0-255 range see also {{expert-review-7120-exemptions}}.
 
 ## New Section 12.3.1 "Temporary Content-Format Registrations"
@@ -280,6 +276,13 @@ The following note has been added to the registry as a temporary fix:
 
 IANA is instructed to remove this note from the registry when this document is approved for publication.
 RFC-Editor: please remove this section once the note has been removed.
+
+## New Note Addition
+
+IANA is instructed to add the following note to the registry:
+
+> "Note: As per {{&SELF}}, temporary registrations in the Expert Review range are approved by Designated Experts.
+> These registrations are not subject to the formal {{-iana-early}} renewal process."
 
 --- back
 
