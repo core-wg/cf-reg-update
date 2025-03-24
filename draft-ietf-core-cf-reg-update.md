@@ -219,7 +219,7 @@ That is because the required registration procedure for this range does not requ
 {:#expert-review-7120-exemptions}
 Temporary registrations within the 0-255 range are exempt from the formal renewal process outlined in {{-iana-early}}.
 Specifically, IANA will not monitor the removal of registrations in this range.
-Instead, the Designated Expert directs IANA to carry out this task.
+Instead, the Designated Experts direct IANA to carry out this task.
 
 ## New Section 12.3.2 "Adding the Media Type Column to the Registry"
 
