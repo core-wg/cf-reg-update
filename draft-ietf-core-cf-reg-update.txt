@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 13 September 2025                                 12 March 2025
+Expires: 26 September 2025                                 25 March 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 13 September 2025.
+   This Internet-Draft will expire on 26 September 2025.
 
 Copyright Notice
 
@@ -90,6 +90,7 @@ Table of Contents
    5.  Security Considerations
    6.  IANA Considerations
      6.1.  Temporary Note Removal
+     6.2.  New Note Addition
    7.  References
      7.1.  Normative References
      7.2.  Informative References
@@ -356,6 +357,9 @@ Table of Contents
    A new column with the title "Notes" has been added to the CoAP
    Content-Formats Registration Procedures shown in Table 8.
 
+   For the handling of temporary allocations within the 0-255 range see
+   also Section 4.2, Paragraph 6.
+
 4.2.  New Section 12.3.1 "Temporary Content-Format Registrations"
 
    This section clarifies that the "CoAP Content-Formats" registry
@@ -389,6 +393,11 @@ Table of Contents
    That is because the required registration procedure for this range
    does not require completion of any standards process, nor does it
    require a registering document.
+
+   Temporary registrations within the 0-255 range are exempt from the
+   formal renewal process outlined in [RFC7120].  Specifically, IANA
+   will not monitor the removal of registrations in this range.
+   Instead, the Designated Experts direct IANA to carry out this task.
 
 4.3.  New Section 12.3.2 "Adding the Media Type Column to the Registry"
 
@@ -497,6 +506,14 @@ Table of Contents
    IANA is instructed to remove this note from the registry when this
    document is approved for publication.  RFC-Editor: please remove this
    section once the note has been removed.
+
+6.2.  New Note Addition
+
+   IANA is instructed to add the following note to the registry:
+
+      "Note: As per RFCthis, temporary registrations within the 0-255
+      range are approved by Designated Experts.  These registrations are
+      not subject to the formal [RFC7120] renewal process."
 
 7.  References
 
