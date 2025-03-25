@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-23T00:40:13.782103+00:00",
+  "timestamp": "2025-03-25T00:37:27.475516+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -879,7 +879,7 @@
       "labels": [],
       "body": "From IANA feedback 2025-03-20:\n\n> I think that the document needs to explicitly state that IANA won't track whether temporary Content-Format registrations in the Expert Review \n> range need to be removed, and that the experts will instruct us to do so instead. \n> \n> As long as this is being done, it would actually be useful to tell us to add a note to the registry that says, \"In accordance with RFC XXXX, designated > experts can approve temporary registrations in the Expert Review range that are not subject to the formal RFC 7120 renewal process.\"\n\nBoth these seem useful to add.",
       "createdAt": "2025-03-20T13:19:10Z",
-      "updatedAt": "2025-03-20T13:25:04Z",
+      "updatedAt": "2025-03-24T09:13:51Z",
       "closedAt": null,
       "comments": [
         {
@@ -888,6 +888,13 @@
           "body": "Thanks Esko.\nDo you have time to prepare the PR?\nUnfortunately I am a bit swamped at the moment, I could tackle this next Monday though if you are busy too.",
           "createdAt": "2025-03-20T13:25:03Z",
           "updatedAt": "2025-03-20T13:25:03Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Feel free to go ahead :)  otherwise I can do a PR today (evening time CET)",
+          "createdAt": "2025-03-24T09:13:50Z",
+          "updatedAt": "2025-03-24T09:13:50Z"
         }
       ]
     }
@@ -3849,6 +3856,186 @@
           "createdAt": "2025-03-12T14:13:33Z",
           "updatedAt": "2025-03-12T14:13:33Z",
           "comments": []
+        }
+      ]
+    },
+    {
+      "number": 56,
+      "id": "PR_kwDONM5XRM6P18Yu",
+      "title": "Explicit instructions for temp entry handling within the 0-255 range",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/56",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #55",
+      "createdAt": "2025-03-24T10:17:44Z",
+      "updatedAt": "2025-03-24T20:53:41Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "0db9020ca23a9f7fd64ae3d9a68286ec026f7fc6",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "iana-fixes",
+      "headRefOid": "6508e240aada1da058930b3a2b04d1b57f0eaf80",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6hhu95",
+          "commit": {
+            "abbreviatedOid": "1ce339d"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-24T10:58:52Z",
+          "updatedAt": "2025-03-24T10:58:52Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "Maybe change to singular \"a Designated Expert can approve ...\" ?\r\nThis makes it clear that a single expert can do so. Singular form is also used in the other changes below.",
+              "createdAt": "2025-03-24T10:58:52Z",
+              "updatedAt": "2025-03-24T10:58:52Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6hinZf",
+          "commit": {
+            "abbreviatedOid": "1ce339d"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-24T12:25:54Z",
+          "updatedAt": "2025-03-24T12:25:54Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "I think using the plural here is more correct.\r\nIt doesn\u2019t designate a quorum of DEs, so there\u2019s no risk of misinterpreting it for a requirement in such sense.\r\nIt just says that someone with the DE role has the power to approve temp registrations that are exempt from 7120-defined process.\r\nChanging it to the singular would read like we allow a DE to exceptionally do that, which is not what we mean.\r\n\r\n\r\nMaybe:\r\n\r\n> _\u201dAs per {{&SELF}}, temporary registrations in the Expert Review range are approved by Designated Experts. These registrations are not subject to the formal {{-iana-early}} renewal process.\"_",
+              "createdAt": "2025-03-24T12:25:54Z",
+              "updatedAt": "2025-03-24T12:25:54Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6hjikI",
+          "commit": {
+            "abbreviatedOid": "1ce339d"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-24T13:46:24Z",
+          "updatedAt": "2025-03-24T13:46:25Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "I moved the note to the IANA considerations ([7de1743](https://github.com/core-wg/cf-reg-update/pull/56/commits/7de1743d10028a2ff6155846cdcf318d350ef727)), which is seems more fit.",
+              "createdAt": "2025-03-24T13:46:24Z",
+              "updatedAt": "2025-03-24T13:46:25Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6hl-PZ",
+          "commit": {
+            "abbreviatedOid": "7de1743"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-24T16:55:50Z",
+          "updatedAt": "2025-03-24T16:55:51Z",
+          "comments": [
+            {
+              "originalPosition": 16,
+              "body": "If here too the intent is to refer to \"someone with the DE role\", then it should be:\r\n\r\n> Instead, Designated Experts direct IANA to carry out this task.",
+              "createdAt": "2025-03-24T16:55:51Z",
+              "updatedAt": "2025-03-24T16:55:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6hmBw7",
+          "commit": {
+            "abbreviatedOid": "1ce339d"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-24T16:59:59Z",
+          "updatedAt": "2025-03-24T16:59:59Z",
+          "comments": [
+            {
+              "originalPosition": 6,
+              "body": "Ok, if we use the same (plural) form on both cases it should be clear. (In the meaning of \"any DE\")",
+              "createdAt": "2025-03-24T16:59:59Z",
+              "updatedAt": "2025-03-24T16:59:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6hmEn-",
+          "commit": {
+            "abbreviatedOid": "6508e24"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-24T17:03:42Z",
+          "updatedAt": "2025-03-24T17:03:42Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6hoJGz",
+          "commit": {
+            "abbreviatedOid": "6508e24"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-24T20:52:51Z",
+          "updatedAt": "2025-03-24T20:52:51Z",
+          "comments": [
+            {
+              "originalPosition": 29,
+              "body": "```suggestion\r\n> \"Note: As per {{&SELF}}, temporary registrations in the 0-255 range are approved by Designated Experts.\r\n```",
+              "createdAt": "2025-03-24T20:52:51Z",
+              "updatedAt": "2025-03-24T20:52:51Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6hoJeu",
+          "commit": {
+            "abbreviatedOid": "6508e24"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-03-24T20:53:41Z",
+          "updatedAt": "2025-03-24T20:53:41Z",
+          "comments": [
+            {
+              "originalPosition": 29,
+              "body": "Would this be better? Since we have multiple ranges now with expert review.",
+              "createdAt": "2025-03-24T20:53:41Z",
+              "updatedAt": "2025-03-24T20:53:41Z"
+            }
+          ]
         }
       ]
     }
