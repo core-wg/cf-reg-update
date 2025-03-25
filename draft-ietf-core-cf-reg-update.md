@@ -281,7 +281,7 @@ RFC-Editor: please remove this section once the note has been removed.
 
 IANA is instructed to add the following note to the registry:
 
-> "Note: As per {{&SELF}}, temporary registrations in the Expert Review range are approved by Designated Experts.
+> "Note: As per {{&SELF}}, temporary registrations within the 0-255 range are approved by Designated Experts.
 > These registrations are not subject to the formal {{-iana-early}} renewal process."
 
 --- back
