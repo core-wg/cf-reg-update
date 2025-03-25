@@ -197,6 +197,8 @@ In all other cases, the policy is "Expert Review," following the procedure descr
 
 A new column with the title "Notes" has been added to the CoAP Content-Formats Registration Procedures shown in {{tbl-new-cf-proc}}.
 
+For the handling of temporary allocations within the 0-255 range see also {{expert-review-7120-exemptions}}.
+
 ## New Section 12.3.1 "Temporary Content-Format Registrations"
 
 This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255, 256-9999, and 10000-64999 ranges.
@@ -213,6 +215,11 @@ If a temporary registration (in any range) refers to a provisional media type th
 
 Note that in the 10000-64999 range the abandonment of a document requesting a Content-Format ID does not cause an entry to be removed.
 That is because the required registration procedure for this range does not require completion of any standards process, nor does it require a registering document.
+
+{:#expert-review-7120-exemptions}
+Temporary registrations within the 0-255 range are exempt from the formal renewal process outlined in {{-iana-early}}.
+Specifically, IANA will not monitor the removal of registrations in this range.
+Instead, the Designated Experts direct IANA to carry out this task.
 
 ## New Section 12.3.2 "Adding the Media Type Column to the Registry"
 
@@ -269,6 +276,13 @@ The following note has been added to the registry as a temporary fix:
 
 IANA is instructed to remove this note from the registry when this document is approved for publication.
 RFC-Editor: please remove this section once the note has been removed.
+
+## New Note Addition
+
+IANA is instructed to add the following note to the registry:
+
+> "Note: As per {{&SELF}}, temporary registrations within the 0-255 range are approved by Designated Experts.
+> These registrations are not subject to the formal {{-iana-early}} renewal process."
 
 --- back
 
