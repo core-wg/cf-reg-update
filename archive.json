@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-25T00:37:27.475516+00:00",
+  "timestamp": "2025-03-27T00:37:10.143627+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -869,7 +869,7 @@
       "id": "I_kwDONM5XRM6u98_e",
       "title": "IANA feedback 2025-03-20: additional instructions for 0-255 Expert Review",
       "url": "https://github.com/core-wg/cf-reg-update/issues/55",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "EskoDijk",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -879,8 +879,8 @@
       "labels": [],
       "body": "From IANA feedback 2025-03-20:\n\n> I think that the document needs to explicitly state that IANA won't track whether temporary Content-Format registrations in the Expert Review \n> range need to be removed, and that the experts will instruct us to do so instead. \n> \n> As long as this is being done, it would actually be useful to tell us to add a note to the registry that says, \"In accordance with RFC XXXX, designated > experts can approve temporary registrations in the Expert Review range that are not subject to the formal RFC 7120 renewal process.\"\n\nBoth these seem useful to add.",
       "createdAt": "2025-03-20T13:19:10Z",
-      "updatedAt": "2025-03-24T09:13:51Z",
-      "closedAt": null,
+      "updatedAt": "2025-03-25T20:43:54Z",
+      "closedAt": "2025-03-25T20:43:54Z",
       "comments": [
         {
           "author": "thomas-fossati",
@@ -3864,25 +3864,42 @@
       "id": "PR_kwDONM5XRM6P18Yu",
       "title": "Explicit instructions for temp entry handling within the 0-255 range",
       "url": "https://github.com/core-wg/cf-reg-update/pull/56",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "Fix #55",
       "createdAt": "2025-03-24T10:17:44Z",
-      "updatedAt": "2025-03-24T20:53:41Z",
+      "updatedAt": "2025-03-25T20:44:00Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "0db9020ca23a9f7fd64ae3d9a68286ec026f7fc6",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "iana-fixes",
-      "headRefOid": "6508e240aada1da058930b3a2b04d1b57f0eaf80",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
-      "comments": [],
+      "headRefOid": "699eb311888f45acb7616746d8da292157b7b7f7",
+      "closedAt": "2025-03-25T20:43:53Z",
+      "mergedAt": "2025-03-25T20:43:53Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "a6459e31d65aeae0567b0466e07c8262b7fc56c8"
+      },
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "@EskoDijk, are all your comments addressed? Can we merge and re-publish?",
+          "createdAt": "2025-03-25T16:48:41Z",
+          "updatedAt": "2025-03-25T16:48:41Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thomas-fossati Thanks, look ok to me!",
+          "createdAt": "2025-03-25T20:32:05Z",
+          "updatedAt": "2025-03-25T20:32:05Z"
+        }
+      ],
       "reviews": [
         {
           "id": "PRR_kwDONM5XRM6hhu95",
@@ -4011,9 +4028,9 @@
           "comments": [
             {
               "originalPosition": 29,
-              "body": "```suggestion\r\n> \"Note: As per {{&SELF}}, temporary registrations in the 0-255 range are approved by Designated Experts.\r\n```",
+              "body": "```suggestion\r\n> \"Note: As per {{&SELF}}, temporary registrations within the 0-255 range are approved by Designated Experts.\r\n```",
               "createdAt": "2025-03-24T20:52:51Z",
-              "updatedAt": "2025-03-24T20:52:51Z"
+              "updatedAt": "2025-03-25T03:59:57Z"
             }
           ]
         },
@@ -4036,6 +4053,19 @@
               "updatedAt": "2025-03-24T20:53:41Z"
             }
           ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6h1TOU",
+          "commit": {
+            "abbreviatedOid": "699eb31"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-25T20:31:46Z",
+          "updatedAt": "2025-03-25T20:31:46Z",
+          "comments": []
         }
       ]
     }
