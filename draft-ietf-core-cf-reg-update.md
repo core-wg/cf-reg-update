@@ -279,6 +279,8 @@ RFC-Editor: please remove this section once the note has been removed.
 
 ## New Note Addition
 
+[^replace-self]
+
 IANA is instructed to add the following note to the registry:
 
 > "Note: As per {{&SELF}}, temporary registrations within the 0-255 range are approved by Designated Experts.
