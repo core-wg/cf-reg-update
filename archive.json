@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-27T00:37:10.143627+00:00",
+  "timestamp": "2025-03-30T00:40:53.798962+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -4065,6 +4065,48 @@
           "body": "",
           "createdAt": "2025-03-25T20:31:46Z",
           "updatedAt": "2025-03-25T20:31:46Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 57,
+      "id": "PR_kwDONM5XRM6QTFYT",
+      "title": "add rfc-ed note to replace RFCthis",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/57",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-03-27T02:09:16Z",
+      "updatedAt": "2025-03-27T10:16:50Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "a6459e31d65aeae0567b0466e07c8262b7fc56c8",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "rfc-ed-note",
+      "headRefOid": "bf028cc256a2908a4ec687f2d3155c19d0248d2f",
+      "closedAt": "2025-03-27T10:16:46Z",
+      "mergedAt": "2025-03-27T10:16:46Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "d4d1e11d8f1a8135a58263d41308a19ccbcc5fbf"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6iJTat",
+          "commit": {
+            "abbreviatedOid": "bf028cc"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-03-27T08:45:06Z",
+          "updatedAt": "2025-03-27T08:45:06Z",
           "comments": []
         }
       ]
