@@ -156,12 +156,12 @@ The value of this parameter appears distinct from that of a (hypothetical) previ
 However, the semantics of the parameter value are identical to the existing registration.
 
 In this example, the `eat_profile` parameter value (which can be any URI) is set as a Uniform Resource Name (URN) {{?RFC8141}}.
-Since for URNs, the Namespace Identifier (`foo` in the example) is defined as case insensitive, the two registrations are semantically identical.
+Since for URNs, the Namespace Identifier (`example` in this example) is defined as case insensitive, the two registrations are semantically identical.
 
 | Content Type | Content Coding | ID |
 |--|--|--|
-| application/eat+cwt;eat_profile="urn:foo:1" | - | 64900 |
-| application/eat+cwt;eat_profile="urn:FOO:1" | - | 64999 |
+| application/eat+cwt;eat_profile="urn:example:1" | - | 64900 |
+| application/eat+cwt;eat_profile="urn:EXAMPLE:1" | - | 64999 |
 {: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (3)"}
 
 # Updates to RFC 7252 {#updates}
