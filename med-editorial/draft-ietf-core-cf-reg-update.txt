@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 12 September 2025                                 11 March 2025
+Expires: 26 October 2025                                   24 April 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 September 2025.
+   This Internet-Draft will expire on 26 October 2025.
 
 Copyright Notice
 
@@ -90,6 +90,7 @@ Table of Contents
    5.  Security Considerations
    6.  IANA Considerations
      6.1.  Temporary Note Removal
+     6.2.  New Note Addition
    7.  References
      7.1.  Normative References
      7.2.  Informative References
@@ -102,17 +103,16 @@ Table of Contents
    the "CoAP Content-Formats" IANA registry within the "Constrained
    RESTful Environments (CoRE) Parameters" registry group
    [IANA.core-parameters].  (Note that the columns of this registry have
-   been revised according to [Err4954].)
+   been revised according to [Err4954].)  In particular, it defines the
+   rules for obtaining CoAP Content-Format identifiers from the "IETF
+   Review" or "IESG Approval" range of the registry (256-9999) as well
+   as from the First Come First Served (FCFS) range of the registry
+   (10000-64999).  For the FCFS range, these rules do not involve the
+   Designated Expert (DE) and are managed solely by IANA personnel to
+   finalize the registration.
 
-   In particular, the text defines the rules for obtaining CoAP Content-
-   Format identifiers from the "IETF Review" or "IESG Approval" range of
-   the registry (256-9999) as well as from the First Come First Served
-   (FCFS) range of the registry (10000-64999).  For the FCFS range,
-   these rules do not involve the Designated Expert (DE) and are managed
-   solely by IANA personnel to finalize the registration.
-
-   Unfortunately, the instructions do not explicitly require checking
-   that the combination of content-type (i.e., media type with optional
+   Unfortunately, the rules do not explicitly require checking that the
+   combination of content-type (i.e., media type with optional
    parameters) and content coding associated with the requested CoAP
    Content-Format is semantically valid.  This task is generally non-
    trivial, requires knowledge from multiple documents and technologies,
@@ -125,9 +125,8 @@ Table of Contents
    mitigate the risk of unintentional or malicious errors.  These
    updates amend the different ranges of the registry, introduce a
    review procedure to be performed for most ranges of the registry, and
-   allow the registration of temporary Content-Format identifiers for
-   certain ranges of the registry.  This document also introduces a new
-   column, "Media Type", to the registry.
+   allow the registration of temporary Content-Format identifiers.  This
+   document also introduces a new column, "Media Type", to the registry.
 
 2.  Conventions and Definitions
 
@@ -138,10 +137,10 @@ Table of Contents
 3.  Examples for Erroneous Registrations
 
    This section provides examples of registration requests for the "CoAP
-   Content-Formats" Registry (as defined in Section 12.3 of [RFC7252]
-   and revised according to [Err4954]) that are invalid but would be
-   approved under the current procedure.  The checklist defined in
-   Section 4.4 should prevent any of these attempts from succeeding.
+   Content-Formats" Registry that are invalid but would be approved
+   under the procedure defined in Section 12.3 of [RFC7252].  The
+   checklist defined in Section 4.4 should prevent any of these attempts
+   from succeeding.
 
    All the example registration requests use a CoAP Content-Format with
    identifier 64999 in the FCFS range of the "CoAP Content-Formats"
@@ -150,8 +149,8 @@ Table of Contents
    For each of the following example registration requests, one can
    create a similar instance where the requested registration is for a
    CoAP Content-Format identifier within the "IETF Review" or "IESG
-   Approval" range of the registry.  Similarly, such registrations must
-   not be allowed to succeed.
+   Approval" ranges.  Likewise, such registrations must not be allowed
+   to succeed.
 
 3.1.  The Media Type is Unknown
 
@@ -259,21 +258,22 @@ Table of Contents
 
    In this example, the eat_profile parameter value (which can be any
    URI) is set as a Uniform Resource Name (URN) [RFC8141].  Since for
-   URNs, the Namespace Identifier (foo in the example) is defined as
-   case insensitive, the two registrations are semantically identical.
+   URNs, the Namespace Identifier (example in this example) is defined
+   as case insensitive, the two registrations are semantically
+   identical.
 
-   +=================================+================+=======+
-   | Content Type                    | Content Coding | ID    |
-   +=================================+================+=======+
-   | application/                    | -              | 64900 |
-   | eat+cwt;eat_profile="urn:foo:1" |                |       |
-   +---------------------------------+----------------+-------+
-   | application/                    | -              | 64999 |
-   | eat+cwt;eat_profile="urn:FOO:1" |                |       |
-   +---------------------------------+----------------+-------+
+   +=====================================+================+=======+
+   | Content Type                        | Content Coding | ID    |
+   +=====================================+================+=======+
+   | application/                        | -              | 64900 |
+   | eat+cwt;eat_profile="urn:example:1" |                |       |
+   +-------------------------------------+----------------+-------+
+   | application/                        | -              | 64999 |
+   | eat+cwt;eat_profile="urn:EXAMPLE:1" |                |       |
+   +-------------------------------------+----------------+-------+
 
-      Table 7: Attempt at Registering an Equivalent Logical
-           Entry with a Different Content-Format ID (3)
+     Table 7: Attempt at Registering an Equivalent Logical Entry
+                with a Different Content-Format ID (3)
 
 4.  Updates to RFC 7252
 
@@ -308,22 +308,18 @@ Table of Contents
    |             | Review or    | RFCthis, Section 4.4.                |
    |             | First Come   |                                      |
    |             | First Served | FCFS is allowed if the               |
-   |             |              | registration:                        |
+   |             | (FCFS)       | registration:                        |
    |             |              | * has no parameters, and             |
    |             |              | * has an empty Content Coding, and   |
-   |             |              | * the media type is not yet used in  |
-   |             |              | this registry, and                   |
+   |             |              | * the media type is not yet used     |
+   |             |              | in this registry, and                |
    |             |              | * the media type is registered (or   |
    |             |              | approved for registration) in the    |
    |             |              | "Media Types" registry               |
    |             |              | [IANA.media-types].                  |
    |             |              |                                      |
-   |             |              | Expert Review is required if the     |
-   |             |              | registration:                        |
-   |             |              | * includes parameters, and/or        |
-   |             |              | * includes a Content Coding, and/or  |
-   |             |              | * the media type appears in this     |
-   |             |              | registry.                            |
+   |             |              | Expert Review is required in all     |
+   |             |              | other cases.                         |
    +-------------+--------------+--------------------------------------+
    | 65000-65535 | Experimental | No operational use                   |
    |             | Use          |                                      |
@@ -361,30 +357,47 @@ Table of Contents
    A new column with the title "Notes" has been added to the CoAP
    Content-Formats Registration Procedures shown in Table 8.
 
+   For the handling of temporary allocations within the 0-255 range see
+   also Section 4.2, Paragraph 6.
+
 4.2.  New Section 12.3.1 "Temporary Content-Format Registrations"
 
    This section clarifies that the "CoAP Content-Formats" registry
-   allows temporary registrations within the 0-255 and 256-9999 ranges.
-   The range 10000-64999 does not allow temporary registrations.
+   allows temporary registrations within the 0-255, 256-9999, and
+   10000-64999 ranges.
 
    A temporary registration may be created for example by an IANA early
-   allocation action, as requested by the authors of an Internet-Draft
-   in the IETF stream.  Alternatively, it may be created because the
-   referenced media type is still provisional (that is, included in the
-   IANA "Provisional Standard Media Type" registry
-   [IANA.provisional-standard-media-types]).
+   allocation action [RFC7120].  If the referenced media type is
+   provisional (that is, included in the IANA "Provisional Standard
+   Media Type" registry [IANA.provisional-standard-media-types]) then a
+   created registration is always temporary.
 
-   A temporary registration is marked by IANA with the label "TEMPORARY"
-   in the corresponding registry entry.  Once the required review
-   procedure for the temporary ID has successfully completed, and the
-   referenced media type is included in the IANA Media Types registry
-   [IANA.media-types], IANA must remove the "TEMPORARY" label so that
-   the entry becomes permanent.  If the requested temporary entry does
-   not successfully pass its required review procedure, IANA must remove
-   the entry again and set the Content-Format ID value back to
-   "Unassigned".  This may happen for example when an Internet-Draft
-   requesting a Content-Format ID is abandoned, or when the referenced
-   provisional media type is abandoned.
+   A temporary registration is marked as such by IANA in the
+   corresponding registry entry.  Once the required registration
+   procedure (defined in Table 8) for the temporary ID has successfully
+   completed, and the referenced media type is included in the IANA
+   Media Types registry [IANA.media-types], IANA must remove any
+   indication about the temporary nature of the registration so that the
+   entry becomes permanent.
+
+   If a temporary registration does not successfully complete the
+   registration procedure, IANA must remove the entry and set the
+   Content-Format ID value back to "Unassigned".  This may happen for
+   example when an Internet-Draft requesting a Content-Format ID is
+   abandoned.  If a temporary registration (in any range) refers to a
+   provisional media type that is abandoned, IANA must remove the entry
+   and set the Content-Format ID value back to "Unassigned".
+
+   Note that in the 10000-64999 range the abandonment of a document
+   requesting a Content-Format ID does not cause an entry to be removed.
+   That is because the required registration procedure for this range
+   does not require completion of any standards process, nor does it
+   require a registering document.
+
+   Temporary registrations within the 0-255 range are exempt from the
+   formal renewal process outlined in [RFC7120].  Specifically, IANA
+   will not monitor the removal of registrations in this range.
+   Instead, the Designated Experts direct IANA to carry out this task.
 
 4.3.  New Section 12.3.2 "Adding the Media Type Column to the Registry"
 
@@ -400,11 +413,10 @@ Table of Contents
    media type as recorded by IANA.  If the media type is provisional,
    the hyperlink points to the IANA "Provisional Standard Media Type"
    registry [IANA.provisional-standard-media-types].  If a provisional
-   media type is later abandoned or becomes a permanent media type, IANA
-   must update the "Media Type" field in the associated entries.  In the
-   case of abandonment, this field should be left empty.  If the media
-   type becomes permanent, the field should include a hyperlink to the
-   registration information for that media type.
+   media type becomes a permanent media type, IANA must update the
+   "Media Type" field in the associated registry entries to ensure the
+   hyperlink directs to the registration information for that media
+   type.
 
    Note that the registration request procedure remains unchanged.  A
    requester does not need to fill out the "Media Type" field
@@ -494,6 +506,18 @@ Table of Contents
    IANA is instructed to remove this note from the registry when this
    document is approved for publication.  RFC-Editor: please remove this
    section once the note has been removed.
+
+6.2.  New Note Addition
+
+
+   // RFC Editor: in this section, please replace RFCthis with the RFC
+   // number assigned to this document and remove this note.
+
+   IANA is instructed to add the following note to the registry:
+
+      "Note: As per RFCthis, temporary registrations within the 0-255
+      range are approved by Designated Experts.  These registrations are
+      not subject to the formal [RFC7120] renewal process."
 
 7.  References
 
