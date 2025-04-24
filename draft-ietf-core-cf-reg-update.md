@@ -86,8 +86,8 @@ The checklist defined in {{checks}} should prevent any of these attempts from su
 
 All the example registration requests use a CoAP Content-Format with identifier 64999 in the FCFS range of the "CoAP Content-Formats" registry.
 
-For each of the following example registration requests, one can create a similar instance where the requested registration is for a CoAP Content-Format identifier within the "IETF Review" or "IESG Approval" range of the registry.
-Similarly, such registrations must not be allowed to succeed.
+For each of the following example registration requests, one can create a similar instance where the requested registration is for a CoAP Content-Format identifier within the "IETF Review" or "IESG Approval" ranges.
+Likewise, such registrations must not be allowed to succeed.
 
 ## The Media Type is Unknown {#ex-unknown-mt}
 
