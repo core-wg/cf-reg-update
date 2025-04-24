@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-01T00:43:10.431399+00:00",
+  "timestamp": "2025-04-24T00:38:18.083534+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -77,6 +77,21 @@
       "name": "IANA review",
       "description": "",
       "color": "498BEC"
+    },
+    {
+      "name": "IESG review",
+      "description": "IESG processing",
+      "color": "d93f0b"
+    },
+    {
+      "name": "DISCUSS",
+      "description": "IESG review DISCUSS position",
+      "color": "bfdadc"
+    },
+    {
+      "name": "COMMENT",
+      "description": "IESG review COMMENT",
+      "color": "97F2FB"
     }
   ],
   "issues": [
@@ -897,6 +912,362 @@
           "updatedAt": "2025-03-24T09:13:50Z"
         }
       ]
+    },
+    {
+      "number": 58,
+      "id": "I_kwDONM5XRM6zp5-A",
+      "title": "Should we formally mark 64999 as reserved for documentation?",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/58",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "DISCUSS"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nCURRENT:\n   All the example registration requests use a CoAP Content-Format with\n   identifier 64999 in the FCFS range of the \"CoAP Content-Formats\"\n   registry.\n```\n",
+      "createdAt": "2025-04-23T13:52:28Z",
+      "updatedAt": "2025-04-23T14:58:49Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 59,
+      "id": "I_kwDONM5XRM6zp-wx",
+      "title": "\"One Range, one Policy\" instead of \"One Range, Two conditional Policies\"",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/59",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "DISCUSS"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n> CURRENT:\n>    The 10000-64999 range now has two separate registration procedures.\n>    If the registration consists solely of a registered media type name\n>    in the \"Content Type\" field, without any parameter names or \u201cContent\n>    Coding\", and the media type has not yet been used in this registry,\n>    then the policy is FCFS, as before.  In all other cases, the policy\n>    is \"Expert Review,\" following the procedure described in Section 4.4.\n> \n> Given the size of the range, wouldn\u2019t be simple for IANA to dedicate a range\n> for \u201csimple registrations\u201d and another one for more complex ones?\n",
+      "createdAt": "2025-04-23T13:57:50Z",
+      "updatedAt": "2025-04-23T13:57:50Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 60,
+      "id": "I_kwDONM5XRM6zqAa6",
+      "title": "There are many Updates",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/60",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nPlease update the title accordingly:\n\nOLD: Update to the IANA CoAP Content-Formats Registration Procedures\nNEW: Updates to the IANA Constrained Application Protocol (CoAP)\nContent-Formats Registration Procedures\n\nNote that this is consistent with this part from the introduction:\n\nCURRENT:\n   These\n   updates amend the different ranges of the registry, introduce a\n   review procedure to be performed for most ranges of the registry,\n```",
+      "createdAt": "2025-04-23T13:59:26Z",
+      "updatedAt": "2025-04-23T14:01:13Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 61,
+      "id": "I_kwDONM5XRM6zqBNQ",
+      "title": "Abstract should be self-contained",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/61",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   This document updates RFC 7252 regarding the registration procedures\n   for the \"CoAP Content-Formats\" IANA registry, within the \"Constrained\n   RESTful Environments (CoRE) Parameters\" registry group.  This\n   document also introduces a new column, \"Media Type\", to the registry.\n\nNEW:\n   This document updates RFC 7252 (The Constrained Application Protocol (CoAP))\n   regarding the registration procedures^\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n   for the \"CoAP Content-Formats\" IANA registry, within the \"Constrained\n   RESTful Environments (CoRE) Parameters\" registry group.  This\n   document also introduces a new column, \"Media Type\", to that registry.\n                                                           ^^^^\n```",
+      "createdAt": "2025-04-23T14:00:16Z",
+      "updatedAt": "2025-04-23T14:00:16Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 62,
+      "id": "I_kwDONM5XRM6zqSgZ",
+      "title": "Format as a plain sentence",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/62",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   (Note that the columns of this registry have\n   been revised according to [Err4954].)\n\nNEW:\n   Note that the columns of this registry have\n   been revised according to [Err4954].\n```",
+      "createdAt": "2025-04-23T14:17:44Z",
+      "updatedAt": "2025-04-23T14:17:44Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 63,
+      "id": "I_kwDONM5XRM6zqTZQ",
+      "title": "Which text?",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/63",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD: In particular, the text defines\nNEW: In particular, Section 12.3 of [RFC7252] defines\n```",
+      "createdAt": "2025-04-23T14:18:41Z",
+      "updatedAt": "2025-04-23T14:18:41Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 64,
+      "id": "I_kwDONM5XRM6zqT_c",
+      "title": "Maybe better to cite rfc8126#section-4.4 rather than re-defining the policy",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/64",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nI would delete the following:\n\nCURRENT:\n   For the FCFS range,\n   these rules do not involve the Designated Expert (DE) and are managed\n   solely by IANA personnel to finalize the registration.\n```",
+      "createdAt": "2025-04-23T14:19:30Z",
+      "updatedAt": "2025-04-23T14:19:30Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 65,
+      "id": "I_kwDONM5XRM6zqU4I",
+      "title": "Which instructions are we referring to here?",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/65",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nCURRENT:\n   Unfortunately, the instructions do not explicitly require checking\n   that the combination of content-type (i.e., media type with optional\n```",
+      "createdAt": "2025-04-23T14:20:36Z",
+      "updatedAt": "2025-04-23T14:20:36Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 66,
+      "id": "I_kwDONM5XRM6zqVhQ",
+      "title": "Add a pointer to the section where to look for examples",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/66",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   and should not be solely demanded from the registrar.  This lack of\n   guidance may engender confusion in both the registering party and the\n   registrar, and has already led to erroneous registrations.\n\nNEW:\n   and should not be solely demanded from the registrar.  This lack of\n   guidance may engender confusion in both the registering party and the\n   registrar, and has already led to erroneous registrations (Section 3).\n```",
+      "createdAt": "2025-04-23T14:21:32Z",
+      "updatedAt": "2025-04-23T14:21:40Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 67,
+      "id": "I_kwDONM5XRM6zqWQg",
+      "title": "\u201cCurrent\u201d will be stale",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/67",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   This section provides examples of registration requests for the \"CoAP\n   Content-Formats\" Registry (as defined in Section 12.3 of [RFC7252]\n   and revised according to [Err4954]) that are invalid but would be\n   approved under the current procedure.\n\nNEW:\n   This section provides examples of registration requests for the \"CoAP\n   Content-Formats\" Registry (as defined in Section 12.3 of [RFC7252]\n   and revised according to [Err4954]) that are invalid but would be\n   approved under the old procedure.\n\nOr\n\nNEW:\n   This section provides examples of registration requests for the \"CoAP\n   Content-Formats\" Registry (as defined in Section 12.3 of [RFC7252]\n   and revised according to [Err4954]) that are invalid but would be\n   approved under the procedure in [RFC7252].\n```",
+      "createdAt": "2025-04-23T14:22:38Z",
+      "updatedAt": "2025-04-23T14:22:58Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 68,
+      "id": "I_kwDONM5XRM6zqXI0",
+      "title": "Better clarity",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/68",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   For each of the following example registration requests, one can\n   create a similar instance where the requested registration is for a\n   CoAP Content-Format identifier within the \"IETF Review\" or \"IESG\n   Approval\" range of the registry.  Similarly, such registrations must\n   not be granted.\n\nNEW:\n   For each of the following example registration requests, one can\n   create a similar instance where the requested registration is for a\n   CoAP Content-Format identifier within the \"IETF Review\" or \"IESG\n   Approval\" range.  Such registrations must not be granted.\n```",
+      "createdAt": "2025-04-23T14:23:56Z",
+      "updatedAt": "2025-04-23T14:23:56Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 69,
+      "id": "I_kwDONM5XRM6zqXkF",
+      "title": "Example URI",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/69",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nCURRENT:\n   In this example, the eat_profile parameter value (which can be any\n   URI) is set as a Uniform Resource Name (URN) [RFC8141].  Since for\n   URNs, the Namespace Identifier (foo in the example) is defined as\n   case insensitive, the two registrations are semantically identical.\n\nFor consistency with other specs (rfc8407bis, for example), consider using\n\u201cexample\u201d instead of \u201cfoo\u201d.\n```",
+      "createdAt": "2025-04-23T14:24:32Z",
+      "updatedAt": "2025-04-23T14:24:32Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 70,
+      "id": "I_kwDONM5XRM6zqc5v",
+      "title": "Virtual?",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/70",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nCURRENT:\n   This section updates Section 12.3 of [RFC7252] and introduces four\n   new \u201cvirtual\u201d subsections, 12.3.1 to 12.3.4.\n\nThese are not virtual but concrete additions to 7252. I suggest we delete that\nmention.\n```",
+      "createdAt": "2025-04-23T14:31:57Z",
+      "updatedAt": "2025-04-23T14:31:57Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 71,
+      "id": "I_kwDONM5XRM6zqdXA",
+      "title": "More than one DE",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/71",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   The Designated Expert (DE) is instructed to perform the Expert\n   Review, as described by the following checklist:\n\nNEW:\n   A Designated Expert (DE) is instructed to perform the Expert\n   Review, as described by the following checklist:\n\nMore than one DE is usually appointed, while the OLD seems to assume that there\nis one single DE.\n```\n",
+      "createdAt": "2025-04-23T14:32:37Z",
+      "updatedAt": "2025-04-23T14:32:37Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 72,
+      "id": "I_kwDONM5XRM6zqejU",
+      "title": "Section 2",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/72",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "Directorate review"
+      ],
+      "body": "From [Renzo\u2019s review](https://mailarchive.ietf.org/arch/msg/core/OX_G33Zs_1b5WaMiTWORNn3sul0/)\n```\nLowercase terms seem ok (also used this way in RFC9193), except for\nthe \u201ccontent-type\u201d term that is defined and used as \u201cContent-Type\u201d in RFC9193.\nDo we want all lowercase terms ? (This term in particular is used only once\nlater in the document). In any case, the passage\n\u201cterm->term_rfc9193->definition\u201d can be done unambiguously so not a problem.\n```",
+      "createdAt": "2025-04-23T14:34:27Z",
+      "updatedAt": "2025-04-23T14:34:27Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 73,
+      "id": "I_kwDONM5XRM6zqgU5",
+      "title": "Section 3.3",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/73",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "Directorate review"
+      ],
+      "body": "From [Renzo\u2019s review](https://mailarchive.ietf.org/arch/msg/core/OX_G33Zs_1b5WaMiTWORNn3sul0/)\n\n```\nHow do we determine if a parameter\u2019s value is valid ? (given an\nexisting media type parameter)? (We have to track the values on the \u201cReference\u201d\ncolumn on the Media Type register? E.g., for \u201ccose;cose-type=\u201d, I could not\nfind it on IANA https://www.iana.org/assignments/media-types/application/cose ,\nbut have to read RFC9052). OK after reading the document, all these cases\n(invalid or unknown stuff) will need an \u201cExpert Review\u201d . SUGGESTION: maybe put\na small disclaimer at the beginning of the section? For example: \"Unknown or\nInvalid values will be detected by a Expert Review\".\n```",
+      "createdAt": "2025-04-23T14:36:53Z",
+      "updatedAt": "2025-04-23T14:36:53Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 74,
+      "id": "I_kwDONM5XRM6zqiLk",
+      "title": "Section 4",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/74",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "Directorate review"
+      ],
+      "body": "From [Renzo\u2019s review](https://mailarchive.ietf.org/arch/msg/core/OX_G33Zs_1b5WaMiTWORNn3sul0/)\n\n```\nI think we should erase the word \"virtual\" (unless it has a specific\nmeaning, which in that case is not clear what that meaning is).\n```",
+      "createdAt": "2025-04-23T14:39:42Z",
+      "updatedAt": "2025-04-23T14:39:42Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 75,
+      "id": "I_kwDONM5XRM6zqj5s",
+      "title": "Section 4.4.",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/75",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "Directorate review"
+      ],
+      "body": "From [Renzo\u2019s review](https://mailarchive.ietf.org/arch/msg/core/OX_G33Zs_1b5WaMiTWORNn3sul0/)\n\n```\nIn item 1 the term \u201ccontent coding\u201d is used , but on item 5 the\nterm \u201cContent Coding\u201d is used, are those different terms or the same? As\ndefined in Section 2 those terms were all lowercase... if this is the same term\n(thus, same meaning) I suggest you should be consistent throughout the document\nwith the capitalization. If this is a different term.. Well, that is a bit\nconfusing, and these other terms will need another definition. You can also say\nthat you are case insensitive in Section 2 (but in any case, I suggest being\nconsistent with capitalization to avoid all this).\n```",
+      "createdAt": "2025-04-23T14:42:14Z",
+      "updatedAt": "2025-04-23T14:42:14Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 76,
+      "id": "I_kwDONM5XRM6zqk03",
+      "title": "Section 4.4, item 5",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/76",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "Directorate review"
+      ],
+      "body": "From [Renzo\u2019s review](https://mailarchive.ietf.org/arch/msg/core/OX_G33Zs_1b5WaMiTWORNn3sul0/)\n\n```\nAfter carefully reading things, I think the term in item 5 is referring to the\n\u201cContent Coding\u201d Column in the CoAP Content-Formats IANA Registry, so maybe\nexplicitly say \"If a Content Coding registry value\"... I left my initial\ncomments/doubts about terms with/without capitalization just to make the point\nthat maybe where there is that subtlety, the text can help the reader with a\nbit of signposting (e.g., add \"registry value\" in the case I mentioned). (Also,\nwe are not case insensitive, because in this excerpt the term upper/lower-case\nmade a difference; so explicitly say the terms are case sensitive in Section\n2?).\n```",
+      "createdAt": "2025-04-23T14:43:37Z",
+      "updatedAt": "2025-04-23T14:43:37Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
