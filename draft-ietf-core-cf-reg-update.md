@@ -168,7 +168,7 @@ Since for URNs, the Namespace Identifier (`foo` in the example) is defined as ca
 
 # Updates to RFC 7252 {#updates}
 
-This section updates {{Section 12.3 of -coap}} and introduces four new “virtual” subsections, 12.3.1 to 12.3.4.
+This section updates {{Section 12.3 of -coap}} and introduces four new subsections, 12.3.1 to 12.3.4.
 
 ## Updates to Section 12.3 "CoAP Content-Formats Registry" {#iana}
 
