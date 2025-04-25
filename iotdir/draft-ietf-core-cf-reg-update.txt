@@ -278,7 +278,7 @@ Table of Contents
 4.  Updates to RFC 7252
 
    This section updates Section 12.3 of [RFC7252] and introduces four
-   new “virtual” subsections, 12.3.1 to 12.3.4.
+   new subsections, 12.3.1 to 12.3.4.
 
 4.1.  Updates to Section 12.3 "CoAP Content-Formats Registry"
 
