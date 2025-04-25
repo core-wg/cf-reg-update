@@ -11,7 +11,7 @@
        This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" IANA registry, within the "Constrained RESTful Environments (CoRE) Parameters" registry group.
 This document also introduces a new column, "Media Type", to the registry. 
     ' name="description">
-<meta content="xml2rfc 3.28.0" name="generator">
+<meta content="xml2rfc 3.28.1" name="generator">
 <meta content="IANA" name="keyword">
 <meta content="registration" name="keyword">
 <meta content="update" name="keyword">
@@ -19,14 +19,14 @@ This document also introduces a new column, "Media Type", to the registry.
 <meta content="Content-Format" name="keyword">
 <meta content="draft-ietf-core-cf-reg-update-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.28.0
-    Python 3.12.9
+  xml2rfc 3.28.1
+    Python 3.12.10
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
     Jinja2 3.1.6
     lxml 5.3.0
-    platformdirs 4.3.6
+    platformdirs 4.3.7
     pycountry 24.6.1
     PyYAML 6.0.2
     requests 2.32.3
@@ -1050,11 +1050,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CoAP Content-Format Registrations Update</td>
-<td class="right">March 2025</td>
+<td class="right">April 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Fossati &amp; Dijk</td>
-<td class="center">Expires 26 September 2025</td>
+<td class="center">Expires 27 October 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1070,12 +1070,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="https://www.rfc-editor.org/rfc/rfc7252" class="eref">7252</a> (if approved)</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-03-25" class="published">25 March 2025</time>
+<time datetime="2025-04-25" class="published">25 April 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-09-26">26 September 2025</time></dd>
+<dd class="expires"><time datetime="2025-10-27">27 October 2025</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1130,7 +1130,7 @@ This document also introduces a new column, "Media Type", to the registry.<a hre
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 26 September 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 27 October 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1255,7 +1255,7 @@ This document also introduces a new column, "Media Type", to the registry.<a hre
 (Note that the columns of this registry have been revised according to <span>[<a href="#Err4954" class="cite xref">Err4954</a>]</span>.)<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">In particular, the text defines the rules for obtaining CoAP Content-Format identifiers from the "IETF Review" or "IESG Approval" range of the registry (256-9999) as well as from the First Come First Served (FCFS) range of the registry (10000-64999).
 For the FCFS range, these rules do not involve the Designated Expert (DE) and are managed solely by IANA personnel to finalize the registration.<a href="#section-1-2" class="pilcrow">¶</a></p>
-<p id="section-1-3">Unfortunately, the instructions do not explicitly require checking that the combination of content-type (i.e., media type with optional parameters) and content coding associated with the requested CoAP Content-Format is semantically valid.
+<p id="section-1-3">Unfortunately, the instructions do not explicitly require checking that the combination of Content-Type (i.e., Media Type with optional parameters) and Content Coding associated with the requested CoAP Content-Format is semantically valid.
 This task is generally non-trivial, requires knowledge from multiple documents and technologies, and should not be solely demanded from the registrar.
 This lack of guidance may engender confusion in both the registering party and the registrar, and has already led to erroneous registrations.<a href="#section-1-3" class="pilcrow">¶</a></p>
 <p id="section-1-4">In <a href="#iana" class="auto internal xref">Section 4.1</a>, this document updates <span>[<a href="#RFC7252" class="cite xref">RFC7252</a>]</span> by modifying the registration procedures for the "CoAP Content-Formats" registry to mitigate the risk of unintentional or malicious errors.
@@ -1268,7 +1268,8 @@ This document also introduces a new column, "Media Type", to the registry.<a hre
       <h2 id="name-conventions-and-definitions">
 <a href="#section-2" class="section-number selfRef">2. </a><a href="#name-conventions-and-definitions" class="section-name selfRef">Conventions and Definitions</a>
       </h2>
-<p id="section-2-1">This document uses the terms "media type", "content coding", "content-type", and "content format" as defined in <span><a href="https://rfc-editor.org/rfc/rfc9193#section-2" class="relref">Section 2</a> of [<a href="#RFC9193" class="cite xref">RFC9193</a>]</span>.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">This document uses the terms "Media Type", "Content Coding", "Content-Type", and "Content Format" as defined in <span><a href="https://rfc-editor.org/rfc/rfc9193#section-2" class="relref">Section 2</a> of [<a href="#RFC9193" class="cite xref">RFC9193</a>]</span>.
+In this document, those terms are fully capitalized.<a href="#section-2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="examples-for-erroneous-registrations">
@@ -1286,7 +1287,7 @@ Similarly, such registrations must not be allowed to succeed.<a href="#section-3
         <h3 id="name-the-media-type-is-unknown">
 <a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-the-media-type-is-unknown" class="section-name selfRef">The Media Type is Unknown</a>
         </h3>
-<p id="section-3.1-1">The registrant requests an FCFS Content-Format ID for an unknown media type:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<p id="section-3.1-1">The registrant requests an FCFS Content-Format ID for an unknown Media Type:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-cont"></span><table class="left" id="table-1">
           <caption>
 <a href="#table-1" class="selfRef">Table 1</a>:
@@ -1314,7 +1315,7 @@ Similarly, such registrations must not be allowed to succeed.<a href="#section-3
         <h3 id="name-the-media-type-parameter-is">
 <a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-the-media-type-parameter-is" class="section-name selfRef">The Media Type Parameter is Unknown</a>
         </h3>
-<p id="section-3.2-1">The registrant requests an FCFS Content-Format ID for an existing media type with an unknown parameter:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<p id="section-3.2-1">The registrant requests an FCFS Content-Format ID for an existing Media Type with an unknown parameter:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-conte"></span><table class="left" id="table-2">
           <caption>
 <a href="#table-2" class="selfRef">Table 2</a>:
@@ -1342,7 +1343,7 @@ Similarly, such registrations must not be allowed to succeed.<a href="#section-3
         <h3 id="name-the-media-type-parameter-va">
 <a href="#section-3.3" class="section-number selfRef">3.3. </a><a href="#name-the-media-type-parameter-va" class="section-name selfRef">The Media Type Parameter Value is Invalid</a>
         </h3>
-<p id="section-3.3-1">The registrant requests an FCFS Content-Format ID for an existing media type with an invalid parameter value:<a href="#section-3.3-1" class="pilcrow">¶</a></p>
+<p id="section-3.3-1">The registrant requests an FCFS Content-Format ID for an existing Media Type with an invalid parameter value:<a href="#section-3.3-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-conten"></span><table class="left" id="table-3">
           <caption>
 <a href="#table-3" class="selfRef">Table 3</a>:
@@ -1370,7 +1371,7 @@ Similarly, such registrations must not be allowed to succeed.<a href="#section-3
         <h3 id="name-the-content-coding-is-unkno">
 <a href="#section-3.4" class="section-number selfRef">3.4. </a><a href="#name-the-content-coding-is-unkno" class="section-name selfRef">The Content Coding is Unknown</a>
         </h3>
-<p id="section-3.4-1">The registrant requests an FCFS Content-Format ID for an existing media type with an unknown content coding:<a href="#section-3.4-1" class="pilcrow">¶</a></p>
+<p id="section-3.4-1">The registrant requests an FCFS Content-Format ID for an existing Media Type with an unknown Content Coding:<a href="#section-3.4-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-content"></span><table class="left" id="table-4">
           <caption>
 <a href="#table-4" class="selfRef">Table 4</a>:
@@ -1398,8 +1399,8 @@ Similarly, such registrations must not be allowed to succeed.<a href="#section-3
         <h3 id="name-duplicate-entry-with-defaul">
 <a href="#section-3.5" class="section-number selfRef">3.5. </a><a href="#name-duplicate-entry-with-defaul" class="section-name selfRef">Duplicate Entry with Default Media Type Parameters</a>
         </h3>
-<p id="section-3.5-1">The registrant requests an FCFS Content-Format ID for a media type that includes a parameter set to its default value, while
-a (hypothetical) Content-Format ID 64900 is already registered for this media type without that parameter.
+<p id="section-3.5-1">The registrant requests an FCFS Content-Format ID for a Media Type that includes a parameter set to its default value, while
+a (hypothetical) Content-Format ID 64900 is already registered for this Media Type without that parameter.
 As a result, this could lead to the creation of two separate Content-Format IDs for the same "logical" entry.<a href="#section-3.5-1" class="pilcrow">¶</a></p>
 <span id="name-attempt-at-registering-an-e"></span><table class="left" id="table-5">
           <caption>
@@ -1468,7 +1469,7 @@ Content-Format ID 64900 where the "Content Coding" field is left empty.<a href="
         <h3 id="name-duplicate-entry-with-equiva">
 <a href="#section-3.7" class="section-number selfRef">3.7. </a><a href="#name-duplicate-entry-with-equiva" class="section-name selfRef">Duplicate Entry with Equivalent Parameter</a>
         </h3>
-<p id="section-3.7-1">The registrant requests an FCFS Content-Format ID for a media type that includes a parameter.
+<p id="section-3.7-1">The registrant requests an FCFS Content-Format ID for a Media Type that includes a parameter.
 The value of this parameter appears distinct from that of a (hypothetical) previously registered Content-Format ID 64900 that also includes this parameter.
 However, the semantics of the parameter value are identical to the existing registration.<a href="#section-3.7-1" class="pilcrow">¶</a></p>
 <p id="section-3.7-2">In this example, the <code>eat_profile</code> parameter value (which can be any URI) is set as a Uniform Resource Name (URN) <span>[<a href="#RFC8141" class="cite xref">RFC8141</a>]</span>.
@@ -1544,7 +1545,7 @@ Since for URNs, the Namespace Identifier (<code>foo</code> in the example) is de
             <tr>
               <td class="text-left" rowspan="1" colspan="1">10000-64999</td>
               <td class="text-left" rowspan="1" colspan="1">Expert Review or First Come First Served (FCFS)</td>
-              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.4</a>. <br><br>FCFS is allowed if the registration: <br> * has no parameters, and <br> * has an empty Content Coding, and <br> * the media type is not yet used in this registry, and <br> * the media type is registered (or approved for registration) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>. <br><br>Expert Review is required in all other cases.</td>
+              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.4</a>. <br><br>FCFS is allowed if the registration: <br> * has no parameters, and <br> * has an empty Content Coding, and <br> * the Media Type is not yet used in this registry, and <br> * the Media Type is registered (or approved for registration) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>. <br><br>Expert Review is required in all other cases.</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">65000-65535</td>
@@ -1566,7 +1567,7 @@ The procedure for early IANA allocation of "standards track code points" defined
 </li>
         </ul>
 <p id="section-4.1-6">The 10000-64999 range now has two separate registration procedures.
-If the registration consists solely of a registered media type name in the "Content Type" field, without any parameter names or "Content Coding", and the media type has not yet been used in this registry, then the policy is FCFS, as before.
+If the registration consists solely of a registered Media Type name in the "Content Type" field, without any parameter names or "Content Coding", and the Media Type has not yet been used in this registry, then the policy is FCFS, as before.
 In all other cases, the policy is "Expert Review," following the procedure described in <a href="#checks" class="auto internal xref">Section 4.4</a>.<a href="#section-4.1-6" class="pilcrow">¶</a></p>
 <p id="section-4.1-7">A new column with the title "Notes" has been added to the CoAP Content-Formats Registration Procedures shown in <a href="#tbl-new-cf-proc" class="auto internal xref">Table 8</a>.<a href="#section-4.1-7" class="pilcrow">¶</a></p>
 <p id="section-4.1-8">For the handling of temporary allocations within the 0-255 range see also <a href="#expert-review-7120-exemptions" class="auto internal xref">Section 4.2, Paragraph 6</a>.<a href="#section-4.1-8" class="pilcrow">¶</a></p>
@@ -1579,12 +1580,12 @@ In all other cases, the policy is "Expert Review," following the procedure descr
         </h3>
 <p id="section-4.2-1">This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255, 256-9999, and 10000-64999 ranges.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 <p id="section-4.2-2">A temporary registration may be created for example by an IANA early allocation action <span>[<a href="#RFC7120" class="cite xref">RFC7120</a>]</span>.
-If the referenced media type is provisional (that is, included in the IANA "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>) then a created registration is always temporary.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
+If the referenced Media Type is provisional (that is, included in the IANA "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>) then a created registration is always temporary.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
 <p id="section-4.2-3">A temporary registration is marked as such by IANA in the corresponding registry entry.
-Once the required registration procedure (defined in <a href="#tbl-new-cf-proc" class="auto internal xref">Table 8</a>) for the temporary ID has successfully completed, and the referenced media type is included in the IANA Media Types registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>, IANA must remove any indication about the temporary nature of the registration so that the entry becomes permanent.<a href="#section-4.2-3" class="pilcrow">¶</a></p>
+Once the required registration procedure (defined in <a href="#tbl-new-cf-proc" class="auto internal xref">Table 8</a>) for the temporary ID has successfully completed, and the referenced Media Type is included in the IANA Media Types registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>, IANA must remove any indication about the temporary nature of the registration so that the entry becomes permanent.<a href="#section-4.2-3" class="pilcrow">¶</a></p>
 <p id="section-4.2-4">If a temporary registration does not successfully complete the registration procedure, IANA must remove the entry and set the Content-Format ID value back to "Unassigned".
 This may happen for example when an Internet-Draft requesting a Content-Format ID is abandoned.
-If a temporary registration (in any range) refers to a provisional media type that is abandoned, IANA must remove the entry and set the Content-Format ID value back to "Unassigned".<a href="#section-4.2-4" class="pilcrow">¶</a></p>
+If a temporary registration (in any range) refers to a provisional Media Type that is abandoned, IANA must remove the entry and set the Content-Format ID value back to "Unassigned".<a href="#section-4.2-4" class="pilcrow">¶</a></p>
 <p id="section-4.2-5">Note that in the 10000-64999 range the abandonment of a document requesting a Content-Format ID does not cause an entry to be removed.
 That is because the required registration procedure for this range does not require completion of any standards process, nor does it require a registering document.<a href="#section-4.2-5" class="pilcrow">¶</a></p>
 <div id="expert-review-7120-exemptions">
@@ -1599,11 +1600,11 @@ Instead, the Designated Experts direct IANA to carry out this task.<a href="#sec
         <h3 id="name-new-section-1232-adding-the">
 <a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-new-section-1232-adding-the" class="section-name selfRef">New Section 12.3.2 "Adding the Media Type Column to the Registry"</a>
         </h3>
-<p id="section-4.3-1">To assist users of the "CoAP Content-Formats" registry in finding detailed information about the media type associated with each CoAP Content-Format, and to ensure that a media type exists before a new entry can be registered, IANA is requested to add a new column "Media Type" to the registry.
+<p id="section-4.3-1">To assist users of the "CoAP Content-Formats" registry in finding detailed information about the Media Type associated with each CoAP Content-Format, and to ensure that a Media Type exists before a new entry can be registered, IANA is requested to add a new column "Media Type" to the registry.
 This new column is placed directly to the right of the existing "Content Type" column.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
-<p id="section-4.3-2">The "Media Type" field for each entry lists the (base) media type name and provides a hyperlink to registration information for that media type as recorded by IANA.
-If the media type is provisional, the hyperlink points to the IANA "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>.
-If a provisional media type becomes a permanent media type, IANA must update the "Media Type" field in the associated registry entries to ensure the hyperlink directs to the registration information for that media type.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
+<p id="section-4.3-2">The "Media Type" field for each entry lists the (base) Media Type name and provides a hyperlink to registration information for that Media Type as recorded by IANA.
+If the Media Type is provisional, the hyperlink points to the IANA "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>.
+If a provisional Media Type becomes a permanent Media Type, IANA must update the "Media Type" field in the associated registry entries to ensure the hyperlink directs to the registration information for that Media Type.<a href="#section-4.3-2" class="pilcrow">¶</a></p>
 <p id="section-4.3-3">Note that the registration request procedure remains unchanged. A requester does not need to fill out the "Media Type" field separately, as the necessary information is already provided in the "Content Type" field of the request.<a href="#section-4.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1615,13 +1616,13 @@ If a provisional media type becomes a permanent media type, IANA must update the
 <p id="section-4.4-1">The Designated Expert (DE) is instructed to perform the Expert Review, as described by the following checklist:<a href="#section-4.4-1" class="pilcrow">¶</a></p>
 <ol start="1" type="1" class="normal type-1" id="section-4.4-2">
 <li id="section-4.4-2.1">
-            <p id="section-4.4-2.1.1">The combination of content-type and content coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;<a href="#section-4.4-2.1.1" class="pilcrow">¶</a></p>
+            <p id="section-4.4-2.1.1">The combination of Content-Type and Content Coding for which the registration is requested must not be already present in the "CoAP Content-Formats" registry;<a href="#section-4.4-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-4.4-2.2">
-            <p id="section-4.4-2.2.1">The media type associated with the requested Content-Format must either be registered in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span> or approved for registration. Alternatively, it may be listed in the "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>. The use of provisional standard media types is only permitted for Content-Format identifiers within the ranges of 0-255 and 256-9999;<a href="#section-4.4-2.2.1" class="pilcrow">¶</a></p>
+            <p id="section-4.4-2.2.1">The Media Type associated with the requested Content-Format must either be registered in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span> or approved for registration. Alternatively, it may be listed in the "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>. The use of provisional standard Media Types is only permitted for Content-Format identifiers within the ranges of 0-255 and 256-9999;<a href="#section-4.4-2.2.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-4.4-2.3">
-            <p id="section-4.4-2.3.1">The optional parameter names must have been defined in association with the media type, and any parameter values associated with such parameter names must be as permitted;<a href="#section-4.4-2.3.1" class="pilcrow">¶</a></p>
+            <p id="section-4.4-2.3.1">The optional parameter names must have been defined in association with the Media Type, and any parameter values associated with such parameter names must be as permitted;<a href="#section-4.4-2.3.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-4.4-2.4">
             <p id="section-4.4-2.4.1">The Content Type must be in the preferred format defined in <a href="#preferred-format" class="auto internal xref">Section 4.5</a>;<a href="#section-4.4-2.4.1" class="pilcrow">¶</a></p>
@@ -1631,7 +1632,7 @@ If a provisional media type becomes a permanent media type, IANA must update the
 </li>
         </ol>
 <p id="section-4.4-3">For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
-For the 256-9999 range and the 10000-64999 range, a similar criterion may also apply where combinations of media type parameters and content coding choices consume considerable codepoint space.<a href="#section-4.4-3" class="pilcrow">¶</a></p>
+For the 256-9999 range and the 10000-64999 range, a similar criterion may also apply where combinations of Media Type parameters and Content Coding choices consume considerable codepoint space.<a href="#section-4.4-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="preferred-format">
@@ -1651,7 +1652,7 @@ During the review process, the Designated Expert(s) or IANA may rewrite a reques
 Otherwise, a parameter value is included unquoted.<a href="#section-4.5-3.2.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-4.5-3.3">
-            <p id="section-4.5-3.3.1">A single semicolon character without any adjacent whitespace characters is used as the separator between media type and parameters.<a href="#section-4.5-3.3.1" class="pilcrow">¶</a></p>
+            <p id="section-4.5-3.3.1">A single semicolon character without any adjacent whitespace characters is used as the separator between Media Type and parameters.<a href="#section-4.5-3.3.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
 </section>
@@ -1694,11 +1695,12 @@ RFC-Editor: please remove this section once the note has been removed.<a href="#
         <h3 id="name-new-note-addition">
 <a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-new-note-addition" class="section-name selfRef">New Note Addition</a>
         </h3>
-<p id="section-6.2-1">IANA is instructed to add the following note to the registry:<a href="#section-6.2-1" class="pilcrow">¶</a></p>
+<p id="section-6.2-1"><span class="cref" id="replace-self_1">RFC Editor: in this section, please replace RFCthis with the RFC number assigned to this document and remove this note.</span><a href="#section-6.2-1" class="pilcrow">¶</a></p>
+<p id="section-6.2-2">IANA is instructed to add the following note to the registry:<a href="#section-6.2-2" class="pilcrow">¶</a></p>
 <ul class="normal ulEmpty">
-<li class="normal ulEmpty" id="section-6.2-2.1">
-            <p id="section-6.2-2.1.1">"Note: As per RFCthis, temporary registrations within the 0-255 range are approved by Designated Experts.
-These registrations are not subject to the formal <span>[<a href="#RFC7120" class="cite xref">RFC7120</a>]</span> renewal process."<a href="#section-6.2-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal ulEmpty" id="section-6.2-3.1">
+            <p id="section-6.2-3.1.1">"Note: As per RFCthis, temporary registrations within the 0-255 range are approved by Designated Experts.
+These registrations are not subject to the formal <span>[<a href="#RFC7120" class="cite xref">RFC7120</a>]</span> renewal process."<a href="#section-6.2-3.1.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
