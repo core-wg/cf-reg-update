@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-24T00:38:18.083534+00:00",
+  "timestamp": "2025-04-27T00:41:48.635510+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -928,9 +928,24 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nCURRENT:\n   All the example registration requests use a CoAP Content-Format with\n   identifier 64999 in the FCFS range of the \"CoAP Content-Formats\"\n   registry.\n```\n",
       "createdAt": "2025-04-23T13:52:28Z",
-      "updatedAt": "2025-04-23T14:58:49Z",
+      "updatedAt": "2025-04-24T10:08:27Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Sounds like a good idea to me: a very small sacrifice for a good cause.",
+          "createdAt": "2025-04-24T09:23:52Z",
+          "updatedAt": "2025-04-24T09:23:52Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Agreed! Let's do this. ",
+          "createdAt": "2025-04-24T10:08:26Z",
+          "updatedAt": "2025-04-24T10:08:26Z"
+        }
+      ]
     },
     {
       "number": 59,
@@ -947,9 +962,31 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n> CURRENT:\n>    The 10000-64999 range now has two separate registration procedures.\n>    If the registration consists solely of a registered media type name\n>    in the \"Content Type\" field, without any parameter names or \u201cContent\n>    Coding\", and the media type has not yet been used in this registry,\n>    then the policy is FCFS, as before.  In all other cases, the policy\n>    is \"Expert Review,\" following the procedure described in Section 4.4.\n> \n> Given the size of the range, wouldn\u2019t be simple for IANA to dedicate a range\n> for \u201csimple registrations\u201d and another one for more complex ones?\n",
       "createdAt": "2025-04-23T13:57:50Z",
-      "updatedAt": "2025-04-23T13:57:50Z",
+      "updatedAt": "2025-04-24T10:59:50Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Splitting the range might be trickier than one might imagine:\n1. At this time, defining a boundary would be arbitrary guesswork;\n2. There are pre-existing allocations that are adjacent and fall in different policies (e.g., 10003 is Expert Review, 10002 is FCFS).",
+          "createdAt": "2025-04-24T09:31:58Z",
+          "updatedAt": "2025-04-24T09:31:58Z"
+        },
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thomas-fossati I would actually be supportive of this idea of a separate range for \"FCFS\". This makes it clear where new entries purely handled by IANA would land -- currently they can land all over the range (see e.g. 20000 and 30000 allocations!) and I'd like to constrain that more.\n\nPractically, the size of the range should not give problems because it may take many years or decades for the range to fill up. If we allocate the range 20001-29999 for example for FCFS. Today we have about 2188 media types in total so it provides space for all of them potentially, and more.\n\nNr 1.: guesswork it is, but based on current numbers and expectation. And I don't see problems ahead with that.\nNr 2.: this should not matter - it's only about review policy and not about the \"structure\" or \"looks\" of a Content Format registration. A user of any of the Content Formats typically doesn't care about what review it got.\nNr 3.: another argument in favor of splitting the ranges; we use currently number offsets in the following way: JSON is 50, JSON with deflate is 11050, JSON with zstd is 12050.  This would be possible in a better way with this proposal.",
+          "createdAt": "2025-04-24T10:04:36Z",
+          "updatedAt": "2025-04-24T10:04:36Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "If we don\u2019t care about backward consistency, my main objection drops.\n\nRe: sizing.  A 1:5 ratio (FCFS vs ExpertReview) may be a reasonable split.",
+          "createdAt": "2025-04-24T10:43:02Z",
+          "updatedAt": "2025-04-24T10:59:49Z"
+        }
+      ]
     },
     {
       "number": 60,
@@ -966,9 +1003,17 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nPlease update the title accordingly:\n\nOLD: Update to the IANA CoAP Content-Formats Registration Procedures\nNEW: Updates to the IANA Constrained Application Protocol (CoAP)\nContent-Formats Registration Procedures\n\nNote that this is consistent with this part from the introduction:\n\nCURRENT:\n   These\n   updates amend the different ranges of the registry, introduce a\n   review procedure to be performed for most ranges of the registry,\n```",
       "createdAt": "2025-04-23T13:59:26Z",
-      "updatedAt": "2025-04-23T14:01:13Z",
+      "updatedAt": "2025-04-24T11:02:02Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "I don\u2019t see a problem with the current wording.\n\nTo my non-native ear, the title says the document is about \"updating the (plural) procedures\u201d, which accurately reflects the content.",
+          "createdAt": "2025-04-24T11:02:01Z",
+          "updatedAt": "2025-04-24T11:02:01Z"
+        }
+      ]
     },
     {
       "number": 61,
@@ -985,9 +1030,17 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   This document updates RFC 7252 regarding the registration procedures\n   for the \"CoAP Content-Formats\" IANA registry, within the \"Constrained\n   RESTful Environments (CoRE) Parameters\" registry group.  This\n   document also introduces a new column, \"Media Type\", to the registry.\n\nNEW:\n   This document updates RFC 7252 (The Constrained Application Protocol (CoAP))\n   regarding the registration procedures^\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n   for the \"CoAP Content-Formats\" IANA registry, within the \"Constrained\n   RESTful Environments (CoRE) Parameters\" registry group.  This\n   document also introduces a new column, \"Media Type\", to that registry.\n                                                           ^^^^\n```",
       "createdAt": "2025-04-23T14:00:16Z",
-      "updatedAt": "2025-04-23T14:00:16Z",
+      "updatedAt": "2025-04-24T12:45:05Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "This doesn\u2019t seem an established practice, at least in the CoRE working group.\n\nI\u2019ve had a look at all of 7252\u2019s updates:\n\n* https://www.rfc-editor.org/rfc/rfc7959\n* https://www.rfc-editor.org/rfc/rfc8613\n* https://www.rfc-editor.org/rfc/rfc8974\n* https://www.rfc-editor.org/rfc/rfc9175\n\nThey all just mention the RFC number.\n\n\n",
+          "createdAt": "2025-04-24T12:45:04Z",
+          "updatedAt": "2025-04-24T12:45:04Z"
+        }
+      ]
     },
     {
       "number": 62,
@@ -1004,9 +1057,17 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   (Note that the columns of this registry have\n   been revised according to [Err4954].)\n\nNEW:\n   Note that the columns of this registry have\n   been revised according to [Err4954].\n```",
       "createdAt": "2025-04-23T14:17:44Z",
-      "updatedAt": "2025-04-23T14:17:44Z",
+      "updatedAt": "2025-04-24T12:46:39Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "IMO, this is effectively a parenthetical.\n\nI believe we can leave this to the Editor\u2019s judgment.",
+          "createdAt": "2025-04-24T12:46:38Z",
+          "updatedAt": "2025-04-24T12:46:38Z"
+        }
+      ]
     },
     {
       "number": 63,
@@ -1016,14 +1077,16 @@
       "state": "OPEN",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
-      "assignees": [],
+      "assignees": [
+        "thomas-fossati"
+      ],
       "labels": [
         "IESG review",
         "COMMENT"
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD: In particular, the text defines\nNEW: In particular, Section 12.3 of [RFC7252] defines\n```",
       "createdAt": "2025-04-23T14:18:41Z",
-      "updatedAt": "2025-04-23T14:18:41Z",
+      "updatedAt": "2025-04-24T12:57:21Z",
       "closedAt": null,
       "comments": []
     },
@@ -1042,9 +1105,17 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nI would delete the following:\n\nCURRENT:\n   For the FCFS range,\n   these rules do not involve the Designated Expert (DE) and are managed\n   solely by IANA personnel to finalize the registration.\n```",
       "createdAt": "2025-04-23T14:19:30Z",
-      "updatedAt": "2025-04-23T14:19:30Z",
+      "updatedAt": "2025-04-24T13:03:57Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "The sentence serves as a hook, highlighting the significant responsibility IANA faces, which may not always align with their expertise.\n\nI\u2019d rather keep it.",
+          "createdAt": "2025-04-24T13:03:55Z",
+          "updatedAt": "2025-04-24T13:03:55Z"
+        }
+      ]
     },
     {
       "number": 65,
@@ -1054,16 +1125,26 @@
       "state": "OPEN",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
-      "assignees": [],
+      "assignees": [
+        "thomas-fossati"
+      ],
       "labels": [
         "IESG review",
         "COMMENT"
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nCURRENT:\n   Unfortunately, the instructions do not explicitly require checking\n   that the combination of content-type (i.e., media type with optional\n```",
       "createdAt": "2025-04-23T14:20:36Z",
-      "updatedAt": "2025-04-23T14:20:36Z",
+      "updatedAt": "2025-04-24T13:06:52Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "In the preceding paragraph(s), we have called them \u201cprocedures\u201d and \u201crules\u201d.\n\nIntroducing a third synonym creates confusion.",
+          "createdAt": "2025-04-24T13:06:49Z",
+          "updatedAt": "2025-04-24T13:06:49Z"
+        }
+      ]
     },
     {
       "number": 66,
@@ -1080,9 +1161,17 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   and should not be solely demanded from the registrar.  This lack of\n   guidance may engender confusion in both the registering party and the\n   registrar, and has already led to erroneous registrations.\n\nNEW:\n   and should not be solely demanded from the registrar.  This lack of\n   guidance may engender confusion in both the registering party and the\n   registrar, and has already led to erroneous registrations (Section 3).\n```",
       "createdAt": "2025-04-23T14:21:32Z",
-      "updatedAt": "2025-04-23T14:21:40Z",
+      "updatedAt": "2025-04-24T13:16:53Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "The erroneous registrations in Section 3 are exemplary, they aren\u2019t real.  Adding a forward pointer would be misleading.\n\n(The real erroneous registrations have been fixed in the registry.)",
+          "createdAt": "2025-04-24T13:16:02Z",
+          "updatedAt": "2025-04-24T13:16:52Z"
+        }
+      ]
     },
     {
       "number": 67,
@@ -1092,14 +1181,16 @@
       "state": "OPEN",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
-      "assignees": [],
+      "assignees": [
+        "thomas-fossati"
+      ],
       "labels": [
         "IESG review",
         "COMMENT"
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   This section provides examples of registration requests for the \"CoAP\n   Content-Formats\" Registry (as defined in Section 12.3 of [RFC7252]\n   and revised according to [Err4954]) that are invalid but would be\n   approved under the current procedure.\n\nNEW:\n   This section provides examples of registration requests for the \"CoAP\n   Content-Formats\" Registry (as defined in Section 12.3 of [RFC7252]\n   and revised according to [Err4954]) that are invalid but would be\n   approved under the old procedure.\n\nOr\n\nNEW:\n   This section provides examples of registration requests for the \"CoAP\n   Content-Formats\" Registry (as defined in Section 12.3 of [RFC7252]\n   and revised according to [Err4954]) that are invalid but would be\n   approved under the procedure in [RFC7252].\n```",
       "createdAt": "2025-04-23T14:22:38Z",
-      "updatedAt": "2025-04-23T14:22:58Z",
+      "updatedAt": "2025-04-24T13:34:40Z",
       "closedAt": null,
       "comments": []
     },
@@ -1111,14 +1202,16 @@
       "state": "OPEN",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
-      "assignees": [],
+      "assignees": [
+        "thomas-fossati"
+      ],
       "labels": [
         "IESG review",
         "COMMENT"
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   For each of the following example registration requests, one can\n   create a similar instance where the requested registration is for a\n   CoAP Content-Format identifier within the \"IETF Review\" or \"IESG\n   Approval\" range of the registry.  Similarly, such registrations must\n   not be granted.\n\nNEW:\n   For each of the following example registration requests, one can\n   create a similar instance where the requested registration is for a\n   CoAP Content-Format identifier within the \"IETF Review\" or \"IESG\n   Approval\" range.  Such registrations must not be granted.\n```",
       "createdAt": "2025-04-23T14:23:56Z",
-      "updatedAt": "2025-04-23T14:23:56Z",
+      "updatedAt": "2025-04-24T13:40:11Z",
       "closedAt": null,
       "comments": []
     },
@@ -1130,16 +1223,26 @@
       "state": "OPEN",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
-      "assignees": [],
+      "assignees": [
+        "thomas-fossati"
+      ],
       "labels": [
         "IESG review",
         "COMMENT"
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nCURRENT:\n   In this example, the eat_profile parameter value (which can be any\n   URI) is set as a Uniform Resource Name (URN) [RFC8141].  Since for\n   URNs, the Namespace Identifier (foo in the example) is defined as\n   case insensitive, the two registrations are semantically identical.\n\nFor consistency with other specs (rfc8407bis, for example), consider using\n\u201cexample\u201d instead of \u201cfoo\u201d.\n```",
       "createdAt": "2025-04-23T14:24:32Z",
-      "updatedAt": "2025-04-23T14:24:32Z",
+      "updatedAt": "2025-04-24T14:05:08Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Good suggestion.  [RFC 6963](https://datatracker.ietf.org/doc/html/rfc6963) defines `example` as a URN namespace that can be used in examples.\n\nI wonder if rfc8407bis is not doing it right though \u2014 they use `example.com` rather than `example`.",
+          "createdAt": "2025-04-24T14:05:06Z",
+          "updatedAt": "2025-04-24T14:05:06Z"
+        }
+      ]
     },
     {
       "number": 70,
@@ -1156,9 +1259,31 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nCURRENT:\n   This section updates Section 12.3 of [RFC7252] and introduces four\n   new \u201cvirtual\u201d subsections, 12.3.1 to 12.3.4.\n\nThese are not virtual but concrete additions to 7252. I suggest we delete that\nmention.\n```",
       "createdAt": "2025-04-23T14:31:57Z",
-      "updatedAt": "2025-04-23T14:31:57Z",
+      "updatedAt": "2025-04-25T16:59:52Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "The reasoning is that an existing RFC is read-only.  Therefore, the \"actual\" ToC of RFC7252 doesn't change as a result of this update.  However, its \"virtual\" ToC does.\n",
+          "createdAt": "2025-04-24T14:07:32Z",
+          "updatedAt": "2025-04-24T14:07:32Z"
+        },
+        {
+          "author": "renzoe",
+          "authorAssociation": "NONE",
+          "body": "Hi, joining the conversation here from my other comment on Issue #74 . Thanks for the reply Thomas. I still believe that the \"virtual\" word confuses more than clarifies. (This is for the sake of constructive argument, Thomas/Authors do not read any harm in my words:) If the RFC7252 is read-only, how is it that we are updating it? \"This section updates Section 12.3 of [RFC7252]\" , so having said that we are indeed updating that section, we can add and remove things, and we are effectively adding text and subsections (subsections are part of the section, or you consider the subsection and its title as metadata? maybe that is why all this). In other words, I would not be shocked to say that we introduce new subsections within the Section 12.3 modifications. To be honest, before your comment I had not thought about the ToC (or a virtual ToC) of RFC7252. We could eventually say that our modifications also \u00a0update the ToC of RFC7252. What would happen if the section we are modifying had other subsections that now we are not including? For me it is a non-issue to think about the ToC of the original document. For the sake of openness, I think that even with the word \"virtual\" the reader understands \u00a0that we have new content for the Section 12.3 of RFC7252 (the title remains the same) and within the new content we have new subsections. So in the end the message passes, but to be honest I had no Idea why the new subsections were \"virtual\" (however, the content of the subsections is not virtual but \"real\"?) when I first read the document.  Anyway I think too much ink was spent for just one word. I can live on even if you decide to keep the phrase as it as it is , you can close the issue/s no problem from my side.",
+          "createdAt": "2025-04-25T16:53:21Z",
+          "updatedAt": "2025-04-25T16:53:21Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Already three reviewers - Christer, Med and you - have stumbled on _virtual_.\n\nEven if I am happy with it (and the CoRE WG too), and I think it captures an interesting nuance of the RFC update process, I am happy to drop it if it becomes a source of confusion.",
+          "createdAt": "2025-04-25T16:59:51Z",
+          "updatedAt": "2025-04-25T16:59:51Z"
+        }
+      ]
     },
     {
       "number": 71,
@@ -1175,9 +1300,17 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   The Designated Expert (DE) is instructed to perform the Expert\n   Review, as described by the following checklist:\n\nNEW:\n   A Designated Expert (DE) is instructed to perform the Expert\n   Review, as described by the following checklist:\n\nMore than one DE is usually appointed, while the OLD seems to assume that there\nis one single DE.\n```\n",
       "createdAt": "2025-04-23T14:32:37Z",
-      "updatedAt": "2025-04-23T14:32:37Z",
+      "updatedAt": "2025-04-24T14:12:30Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Not sure.\n\nI read \u201cdesignated expert\u201d as \u201cthe expert selected for handling the registration request at hand.\u201d  In this respect, I don\u2019t think there\u2019s more than one at a time.\n\nBesides, using the indefinite article \u201c_A_ Designated Expert\u201d makes the choice unclear.",
+          "createdAt": "2025-04-24T14:12:28Z",
+          "updatedAt": "2025-04-24T14:12:28Z"
+        }
+      ]
     },
     {
       "number": 72,
@@ -1187,15 +1320,25 @@
       "state": "OPEN",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
-      "assignees": [],
+      "assignees": [
+        "thomas-fossati"
+      ],
       "labels": [
         "Directorate review"
       ],
       "body": "From [Renzo\u2019s review](https://mailarchive.ietf.org/arch/msg/core/OX_G33Zs_1b5WaMiTWORNn3sul0/)\n```\nLowercase terms seem ok (also used this way in RFC9193), except for\nthe \u201ccontent-type\u201d term that is defined and used as \u201cContent-Type\u201d in RFC9193.\nDo we want all lowercase terms ? (This term in particular is used only once\nlater in the document). In any case, the passage\n\u201cterm->term_rfc9193->definition\u201d can be done unambiguously so not a problem.\n```",
       "createdAt": "2025-04-23T14:34:27Z",
-      "updatedAt": "2025-04-23T14:34:27Z",
+      "updatedAt": "2025-04-25T09:43:31Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Happy to capitalise content-format as in RFC9193.  The hyphenation lowers the risk of ambiguity, but still.",
+          "createdAt": "2025-04-24T14:19:43Z",
+          "updatedAt": "2025-04-24T14:19:43Z"
+        }
+      ]
     },
     {
       "number": 73,
@@ -1211,9 +1354,31 @@
       ],
       "body": "From [Renzo\u2019s review](https://mailarchive.ietf.org/arch/msg/core/OX_G33Zs_1b5WaMiTWORNn3sul0/)\n\n```\nHow do we determine if a parameter\u2019s value is valid ? (given an\nexisting media type parameter)? (We have to track the values on the \u201cReference\u201d\ncolumn on the Media Type register? E.g., for \u201ccose;cose-type=\u201d, I could not\nfind it on IANA https://www.iana.org/assignments/media-types/application/cose ,\nbut have to read RFC9052). OK after reading the document, all these cases\n(invalid or unknown stuff) will need an \u201cExpert Review\u201d . SUGGESTION: maybe put\na small disclaimer at the beginning of the section? For example: \"Unknown or\nInvalid values will be detected by a Expert Review\".\n```",
       "createdAt": "2025-04-23T14:36:53Z",
-      "updatedAt": "2025-04-23T14:36:53Z",
+      "updatedAt": "2025-04-25T16:53:48Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "I am not sure I get the point Renzo is trying to make here.\n\n\u00a73.3 illustrates the difficulty in discerning whether a parameter is acceptable, which may require digging into some RFC, or worse.  IANA personnel's job description doesn\u2019t include that - I think - which justifies moving to Expert Review.",
+          "createdAt": "2025-04-24T14:26:55Z",
+          "updatedAt": "2025-04-24T14:26:55Z"
+        },
+        {
+          "author": "renzoe",
+          "authorAssociation": "NONE",
+          "body": "Hi, my suggestion was to make explicitly clear to the reader that to determine if a given request is invalid in those cases (either because foo is \"invalid\" or \"unknown\") already requieres an Expert Review. Or better, what is the definition of an \"invalid request\"? (In theory we do not have a definition, is ehe Expert Review that will determine if its invalid or not) In particular, 3.1 to 3.4, all are examples of something \"invalid\" or \"unknown\"... but how do you know that something is \"invalid\" or \"unknown\"? This is not hinted in the text.  My whole comment was to simply clarify to the reader that the only way to know if foo is unvalid or unknown is to dig into other RFCs (that may or may not be linked in the Registry). My whole comment because I was asking myself.. \"how do you check if foo is invalid/unknown?\" then I started digging. But maybe it is only me , and if its clear for all the people that already read this. No problem!",
+          "createdAt": "2025-04-25T16:25:39Z",
+          "updatedAt": "2025-04-25T16:25:39Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "There are three possible readers and three possible paths/outcomes:\n1. The person requesting the C-F:\n  * They request what they need and let the process inform them if their request is acceptable\n \n2. IANA personnel who need to decide whether to summon the expert:\n  * They need to understand whether a request is to be forwarded to the expert, which is decided based on the established criteria (in case of parameters, they must summon the expert) \n\n3. The expert providing the expertise:\n  * They are the experts and, by definition, they will magically know all the answers :-)",
+          "createdAt": "2025-04-25T16:53:47Z",
+          "updatedAt": "2025-04-25T16:53:47Z"
+        }
+      ]
     },
     {
       "number": 74,
@@ -1229,9 +1394,17 @@
       ],
       "body": "From [Renzo\u2019s review](https://mailarchive.ietf.org/arch/msg/core/OX_G33Zs_1b5WaMiTWORNn3sul0/)\n\n```\nI think we should erase the word \"virtual\" (unless it has a specific\nmeaning, which in that case is not clear what that meaning is).\n```",
       "createdAt": "2025-04-23T14:39:42Z",
-      "updatedAt": "2025-04-23T14:39:42Z",
+      "updatedAt": "2025-04-24T14:28:24Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "See rationale in https://github.com/core-wg/cf-reg-update/issues/70#issuecomment-2827759797\n",
+          "createdAt": "2025-04-24T14:28:23Z",
+          "updatedAt": "2025-04-24T14:28:23Z"
+        }
+      ]
     },
     {
       "number": 75,
@@ -1241,15 +1414,25 @@
       "state": "OPEN",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
-      "assignees": [],
+      "assignees": [
+        "thomas-fossati"
+      ],
       "labels": [
         "Directorate review"
       ],
       "body": "From [Renzo\u2019s review](https://mailarchive.ietf.org/arch/msg/core/OX_G33Zs_1b5WaMiTWORNn3sul0/)\n\n```\nIn item 1 the term \u201ccontent coding\u201d is used , but on item 5 the\nterm \u201cContent Coding\u201d is used, are those different terms or the same? As\ndefined in Section 2 those terms were all lowercase... if this is the same term\n(thus, same meaning) I suggest you should be consistent throughout the document\nwith the capitalization. If this is a different term.. Well, that is a bit\nconfusing, and these other terms will need another definition. You can also say\nthat you are case insensitive in Section 2 (but in any case, I suggest being\nconsistent with capitalization to avoid all this).\n```",
       "createdAt": "2025-04-23T14:42:14Z",
-      "updatedAt": "2025-04-23T14:42:14Z",
+      "updatedAt": "2025-04-25T09:43:31Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Agree.  We need to do a \u201ccapitalisation consistency\u201d pass over the whole document.\n\nSee also #72 ",
+          "createdAt": "2025-04-24T14:48:18Z",
+          "updatedAt": "2025-04-24T14:48:18Z"
+        }
+      ]
     },
     {
       "number": 76,
@@ -1259,15 +1442,32 @@
       "state": "OPEN",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
-      "assignees": [],
+      "assignees": [
+        "thomas-fossati"
+      ],
       "labels": [
         "Directorate review"
       ],
       "body": "From [Renzo\u2019s review](https://mailarchive.ietf.org/arch/msg/core/OX_G33Zs_1b5WaMiTWORNn3sul0/)\n\n```\nAfter carefully reading things, I think the term in item 5 is referring to the\n\u201cContent Coding\u201d Column in the CoAP Content-Formats IANA Registry, so maybe\nexplicitly say \"If a Content Coding registry value\"... I left my initial\ncomments/doubts about terms with/without capitalization just to make the point\nthat maybe where there is that subtlety, the text can help the reader with a\nbit of signposting (e.g., add \"registry value\" in the case I mentioned). (Also,\nwe are not case insensitive, because in this excerpt the term upper/lower-case\nmade a difference; so explicitly say the terms are case sensitive in Section\n2?).\n```",
       "createdAt": "2025-04-23T14:43:37Z",
-      "updatedAt": "2025-04-23T14:43:37Z",
+      "updatedAt": "2025-04-25T09:43:32Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "See #75 and #72 ",
+          "createdAt": "2025-04-24T14:49:14Z",
+          "updatedAt": "2025-04-24T14:49:14Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "I propose addressing Renzo\u2019s comment(s) by applying consistent capitalisation of RFC 9193 terms.  See #78 ",
+          "createdAt": "2025-04-25T09:41:12Z",
+          "updatedAt": "2025-04-25T09:41:12Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -4481,6 +4681,58 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 77,
+      "id": "PR_kwDONM5XRM6Txtvk",
+      "title": "Med's editorial suggestions",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/77",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Specifically:\r\n\r\nFix #63\r\nFix #65\r\nFix #67\r\nFix #68\r\nFix #69 ",
+      "createdAt": "2025-04-24T14:14:14Z",
+      "updatedAt": "2025-04-24T14:14:15Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "d4d1e11d8f1a8135a58263d41308a19ccbcc5fbf",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "med-editorial",
+      "headRefOid": "b603a72500539ddb680429cca86a7ad02ae0e78d",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 78,
+      "id": "PR_kwDONM5XRM6T4vW7",
+      "title": "Consistent capitalisation of RFC 9193 terms",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/78",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #76\r\nFix #75\r\nFix #72\r\n\r\nAlso, remove \u201cvirtual\u201d:\r\n\r\nFix #70\r\nFix #74 ",
+      "createdAt": "2025-04-25T09:39:35Z",
+      "updatedAt": "2025-04-25T17:44:20Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "d4d1e11d8f1a8135a58263d41308a19ccbcc5fbf",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "iotdir",
+      "headRefOid": "c8132ea8b44f308efad59ef838be7d5f7c936eb5",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
