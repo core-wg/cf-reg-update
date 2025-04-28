@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 26 October 2025                                   24 April 2025
+Expires: 30 October 2025                                   28 April 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 26 October 2025.
+   This Internet-Draft will expire on 30 October 2025.
 
 Copyright Notice
 
@@ -148,9 +148,9 @@ Table of Contents
 
    For each of the following example registration requests, one can
    create a similar instance where the requested registration is for a
-   CoAP Content-Format identifier within the "IETF Review" or "IESG
-   Approval" ranges.  Likewise, such registrations must not be allowed
-   to succeed.
+   CoAP Content-Format identifier within the "IETF Review or IESG
+   Approval" range.  Likewise, such registrations must not be allowed to
+   succeed.
 
 3.1.  The Media Type is Unknown
 
