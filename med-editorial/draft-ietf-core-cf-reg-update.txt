@@ -105,8 +105,8 @@ Table of Contents
    [IANA.core-parameters].  (Note that the columns of this registry have
    been revised according to [Err4954].)  In particular, it defines the
    rules for obtaining CoAP Content-Format identifiers from the "IETF
-   Review" or "IESG Approval" range of the registry (256-9999) as well
-   as from the First Come First Served (FCFS) range of the registry
+   Review or IESG Approval" range of the registry (256-9999) as well as
+   from the First Come First Served (FCFS) range of the registry
    (10000-64999).  For the FCFS range, these rules do not involve the
    Designated Expert (DE) and are managed solely by IANA personnel to
    finalize the registration.
