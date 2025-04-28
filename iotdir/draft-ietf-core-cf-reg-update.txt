@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 27 October 2025                                   25 April 2025
+Expires: 30 October 2025                                   28 April 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -51,7 +51,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 October 2025.
+   This Internet-Draft will expire on 30 October 2025.
 
 Copyright Notice
 
@@ -103,17 +103,16 @@ Table of Contents
    the "CoAP Content-Formats" IANA registry within the "Constrained
    RESTful Environments (CoRE) Parameters" registry group
    [IANA.core-parameters].  (Note that the columns of this registry have
-   been revised according to [Err4954].)
+   been revised according to [Err4954].)  In particular, it defines the
+   rules for obtaining CoAP Content-Format identifiers from the "IETF
+   Review or IESG Approval" range of the registry (256-9999) as well as
+   from the First Come First Served (FCFS) range of the registry
+   (10000-64999).  For the FCFS range, these rules do not involve the
+   Designated Expert (DE) and are managed solely by IANA personnel to
+   finalize the registration.
 
-   In particular, the text defines the rules for obtaining CoAP Content-
-   Format identifiers from the "IETF Review" or "IESG Approval" range of
-   the registry (256-9999) as well as from the First Come First Served
-   (FCFS) range of the registry (10000-64999).  For the FCFS range,
-   these rules do not involve the Designated Expert (DE) and are managed
-   solely by IANA personnel to finalize the registration.
-
-   Unfortunately, the instructions do not explicitly require checking
-   that the combination of Content-Type (i.e., Media Type with optional
+   Unfortunately, the rules do not explicitly require checking that the
+   combination of Content-Type (i.e., Media Type with optional
    parameters) and Content Coding associated with the requested CoAP
    Content-Format is semantically valid.  This task is generally non-
    trivial, requires knowledge from multiple documents and technologies,
@@ -138,10 +137,10 @@ Table of Contents
 3.  Examples for Erroneous Registrations
 
    This section provides examples of registration requests for the "CoAP
-   Content-Formats" Registry (as defined in Section 12.3 of [RFC7252]
-   and revised according to [Err4954]) that are invalid but would be
-   approved under the current procedure.  The checklist defined in
-   Section 4.4 should prevent any of these attempts from succeeding.
+   Content-Formats" Registry that are invalid but would be approved
+   under the procedure defined in Section 12.3 of [RFC7252].  The
+   checklist defined in Section 4.4 should prevent any of these attempts
+   from succeeding.
 
    All the example registration requests use a CoAP Content-Format with
    identifier 64999 in the FCFS range of the "CoAP Content-Formats"
@@ -149,9 +148,9 @@ Table of Contents
 
    For each of the following example registration requests, one can
    create a similar instance where the requested registration is for a
-   CoAP Content-Format identifier within the "IETF Review" or "IESG
-   Approval" range of the registry.  Similarly, such registrations must
-   not be allowed to succeed.
+   CoAP Content-Format identifier within the "IETF Review or IESG
+   Approval" range.  Likewise, such registrations must not be allowed to
+   succeed.
 
 3.1.  The Media Type is Unknown
 
@@ -259,21 +258,22 @@ Table of Contents
 
    In this example, the eat_profile parameter value (which can be any
    URI) is set as a Uniform Resource Name (URN) [RFC8141].  Since for
-   URNs, the Namespace Identifier (foo in the example) is defined as
-   case insensitive, the two registrations are semantically identical.
+   URNs, the Namespace Identifier (example in this example) is defined
+   as case insensitive, the two registrations are semantically
+   identical.
 
-   +=================================+================+=======+
-   | Content Type                    | Content Coding | ID    |
-   +=================================+================+=======+
-   | application/                    | -              | 64900 |
-   | eat+cwt;eat_profile="urn:foo:1" |                |       |
-   +---------------------------------+----------------+-------+
-   | application/                    | -              | 64999 |
-   | eat+cwt;eat_profile="urn:FOO:1" |                |       |
-   +---------------------------------+----------------+-------+
+   +=====================================+================+=======+
+   | Content Type                        | Content Coding | ID    |
+   +=====================================+================+=======+
+   | application/                        | -              | 64900 |
+   | eat+cwt;eat_profile="urn:example:1" |                |       |
+   +-------------------------------------+----------------+-------+
+   | application/                        | -              | 64999 |
+   | eat+cwt;eat_profile="urn:EXAMPLE:1" |                |       |
+   +-------------------------------------+----------------+-------+
 
-      Table 7: Attempt at Registering an Equivalent Logical
-           Entry with a Different Content-Format ID (3)
+     Table 7: Attempt at Registering an Equivalent Logical Entry
+                with a Different Content-Format ID (3)
 
 4.  Updates to RFC 7252
 
