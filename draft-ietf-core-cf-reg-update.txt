@@ -112,8 +112,8 @@ Table of Contents
    finalize the registration.
 
    Unfortunately, the rules do not explicitly require checking that the
-   combination of content-type (i.e., media type with optional
-   parameters) and content coding associated with the requested CoAP
+   combination of Content-Type (i.e., Media Type with optional
+   parameters) and Content Coding associated with the requested CoAP
    Content-Format is semantically valid.  This task is generally non-
    trivial, requires knowledge from multiple documents and technologies,
    and should not be solely demanded from the registrar.  This lack of
@@ -130,9 +130,9 @@ Table of Contents
 
 2.  Conventions and Definitions
 
-   This document uses the terms "media type", "content coding",
-   "content-type", and "content format" as defined in Section 2 of
-   [RFC9193].
+   This document uses the terms "Media Type", "Content Coding",
+   "Content-Type", and "Content Format" as defined in Section 2 of
+   [RFC9193].  In this document, those terms are fully capitalized.
 
 3.  Examples for Erroneous Registrations
 
@@ -155,7 +155,7 @@ Table of Contents
 3.1.  The Media Type is Unknown
 
    The registrant requests an FCFS Content-Format ID for an unknown
-   media type:
+   Media Type:
 
    +==========================+================+=======+
    | Content Type             | Content Coding | ID    |
@@ -169,7 +169,7 @@ Table of Contents
 3.2.  The Media Type Parameter is Unknown
 
    The registrant requests an FCFS Content-Format ID for an existing
-   media type with an unknown parameter:
+   Media Type with an unknown parameter:
 
    +======================================+================+=======+
    | Content Type                         | Content Coding | ID    |
@@ -183,7 +183,7 @@ Table of Contents
 3.3.  The Media Type Parameter Value is Invalid
 
    The registrant requests an FCFS Content-Format ID for an existing
-   media type with an invalid parameter value:
+   Media Type with an invalid parameter value:
 
    +====================================+================+=======+
    | Content Type                       | Content Coding | ID    |
@@ -197,7 +197,7 @@ Table of Contents
 3.4.  The Content Coding is Unknown
 
    The registrant requests an FCFS Content-Format ID for an existing
-   media type with an unknown content coding:
+   Media Type with an unknown Content Coding:
 
    +========================+================+=======+
    | Content Type           | Content Coding | ID    |
@@ -210,10 +210,10 @@ Table of Contents
 
 3.5.  Duplicate Entry with Default Media Type Parameters
 
-   The registrant requests an FCFS Content-Format ID for a media type
+   The registrant requests an FCFS Content-Format ID for a Media Type
    that includes a parameter set to its default value, while a
    (hypothetical) Content-Format ID 64900 is already registered for this
-   media type without that parameter.  As a result, this could lead to
+   Media Type without that parameter.  As a result, this could lead to
    the creation of two separate Content-Format IDs for the same
    "logical" entry.
 
@@ -249,7 +249,7 @@ Table of Contents
 
 3.7.  Duplicate Entry with Equivalent Parameter
 
-   The registrant requests an FCFS Content-Format ID for a media type
+   The registrant requests an FCFS Content-Format ID for a Media Type
    that includes a parameter.  The value of this parameter appears
    distinct from that of a (hypothetical) previously registered Content-
    Format ID 64900 that also includes this parameter.  However, the
@@ -278,7 +278,7 @@ Table of Contents
 4.  Updates to RFC 7252
 
    This section updates Section 12.3 of [RFC7252] and introduces four
-   new “virtual” subsections, 12.3.1 to 12.3.4.
+   new subsections, 12.3.1 to 12.3.4.
 
 4.1.  Updates to Section 12.3 "CoAP Content-Formats Registry"
 
@@ -311,9 +311,9 @@ Table of Contents
    |             | (FCFS)       | registration:                        |
    |             |              | * has no parameters, and             |
    |             |              | * has an empty Content Coding, and   |
-   |             |              | * the media type is not yet used     |
+   |             |              | * the Media Type is not yet used     |
    |             |              | in this registry, and                |
-   |             |              | * the media type is registered (or   |
+   |             |              | * the Media Type is registered (or   |
    |             |              | approved for registration) in the    |
    |             |              | "Media Types" registry               |
    |             |              | [IANA.media-types].                  |
@@ -348,9 +348,9 @@ Table of Contents
       [BCP26].
 
    The 10000-64999 range now has two separate registration procedures.
-   If the registration consists solely of a registered media type name
+   If the registration consists solely of a registered Media Type name
    in the "Content Type" field, without any parameter names or "Content
-   Coding", and the media type has not yet been used in this registry,
+   Coding", and the Media Type has not yet been used in this registry,
    then the policy is FCFS, as before.  In all other cases, the policy
    is "Expert Review," following the procedure described in Section 4.4.
 
@@ -367,7 +367,7 @@ Table of Contents
    10000-64999 ranges.
 
    A temporary registration may be created for example by an IANA early
-   allocation action [RFC7120].  If the referenced media type is
+   allocation action [RFC7120].  If the referenced Media Type is
    provisional (that is, included in the IANA "Provisional Standard
    Media Type" registry [IANA.provisional-standard-media-types]) then a
    created registration is always temporary.
@@ -375,7 +375,7 @@ Table of Contents
    A temporary registration is marked as such by IANA in the
    corresponding registry entry.  Once the required registration
    procedure (defined in Table 8) for the temporary ID has successfully
-   completed, and the referenced media type is included in the IANA
+   completed, and the referenced Media Type is included in the IANA
    Media Types registry [IANA.media-types], IANA must remove any
    indication about the temporary nature of the registration so that the
    entry becomes permanent.
@@ -385,7 +385,7 @@ Table of Contents
    Content-Format ID value back to "Unassigned".  This may happen for
    example when an Internet-Draft requesting a Content-Format ID is
    abandoned.  If a temporary registration (in any range) refers to a
-   provisional media type that is abandoned, IANA must remove the entry
+   provisional Media Type that is abandoned, IANA must remove the entry
    and set the Content-Format ID value back to "Unassigned".
 
    Note that in the 10000-64999 range the abandonment of a document
@@ -402,21 +402,21 @@ Table of Contents
 4.3.  New Section 12.3.2 "Adding the Media Type Column to the Registry"
 
    To assist users of the "CoAP Content-Formats" registry in finding
-   detailed information about the media type associated with each CoAP
-   Content-Format, and to ensure that a media type exists before a new
+   detailed information about the Media Type associated with each CoAP
+   Content-Format, and to ensure that a Media Type exists before a new
    entry can be registered, IANA is requested to add a new column "Media
    Type" to the registry.  This new column is placed directly to the
    right of the existing "Content Type" column.
 
-   The "Media Type" field for each entry lists the (base) media type
+   The "Media Type" field for each entry lists the (base) Media Type
    name and provides a hyperlink to registration information for that
-   media type as recorded by IANA.  If the media type is provisional,
+   Media Type as recorded by IANA.  If the Media Type is provisional,
    the hyperlink points to the IANA "Provisional Standard Media Type"
    registry [IANA.provisional-standard-media-types].  If a provisional
-   media type becomes a permanent media type, IANA must update the
+   Media Type becomes a permanent Media Type, IANA must update the
    "Media Type" field in the associated registry entries to ensure the
-   hyperlink directs to the registration information for that media
-   type.
+   hyperlink directs to the registration information for that Media
+   Type.
 
    Note that the registration request procedure remains unchanged.  A
    requester does not need to fill out the "Media Type" field
@@ -428,20 +428,20 @@ Table of Contents
    The Designated Expert (DE) is instructed to perform the Expert
    Review, as described by the following checklist:
 
-   1.  The combination of content-type and content coding for which the
+   1.  The combination of Content-Type and Content Coding for which the
        registration is requested must not be already present in the
        "CoAP Content-Formats" registry;
 
-   2.  The media type associated with the requested Content-Format must
+   2.  The Media Type associated with the requested Content-Format must
        either be registered in the "Media Types" registry
        [IANA.media-types] or approved for registration.  Alternatively,
        it may be listed in the "Provisional Standard Media Type"
        registry [IANA.provisional-standard-media-types].  The use of
-       provisional standard media types is only permitted for Content-
+       provisional standard Media Types is only permitted for Content-
        Format identifiers within the ranges of 0-255 and 256-9999;
 
    3.  The optional parameter names must have been defined in
-       association with the media type, and any parameter values
+       association with the Media Type, and any parameter values
        associated with such parameter names must be as permitted;
 
    4.  The Content Type must be in the preferred format defined in
@@ -456,8 +456,8 @@ Table of Contents
    DE is instructed to also evaluate the requested codepoint concerning
    the limited availability of the 1-byte codepoint space.  For the
    256-9999 range and the 10000-64999 range, a similar criterion may
-   also apply where combinations of media type parameters and content
-   coding choices consume considerable codepoint space.
+   also apply where combinations of Media Type parameters and Content
+   Coding choices consume considerable codepoint space.
 
 4.5.  New Section 12.3.4 "Preferred Format for the Content Type Field"
 
@@ -477,7 +477,7 @@ Table of Contents
        Otherwise, a parameter value is included unquoted.
 
    3.  A single semicolon character without any adjacent whitespace
-       characters is used as the separator between media type and
+       characters is used as the separator between Media Type and
        parameters.
 
 5.  Security Considerations
