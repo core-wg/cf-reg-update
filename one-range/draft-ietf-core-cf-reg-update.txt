@@ -309,8 +309,7 @@ Table of Contents
    |             | Review       |                                      |
    +-------------+--------------+--------------------------------------+
    | 10000-19999 | Expert       | Review procedure described in        |
-   | and         | Review       | RFCthis, Section 4.4                 |
-   | 33000-64998 |              |                                      |
+   |             | Review       | RFCthis, Section 4.4.                |
    +-------------+--------------+--------------------------------------+
    | 20000-32999 | First Come   | FCFS is allowed if the               |
    |             | First Served | registration:                        |
@@ -322,6 +321,9 @@ Table of Contents
    |             |              | approved for registration) in the    |
    |             |              | "Media Types" registry               |
    |             |              | [IANA.media-types].                  |
+   +-------------+--------------+--------------------------------------+
+   | 33000-64998 | Expert       | Review procedure described in        |
+   |             | Review       | RFCthis, Section 4.4.                |
    +-------------+--------------+--------------------------------------+
    | 64999       | -            | Reserved for Documentation           |
    +-------------+--------------+--------------------------------------+
