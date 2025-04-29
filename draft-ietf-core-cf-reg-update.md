@@ -57,7 +57,7 @@ entity:
 
 This document updates RFC7252 regarding the registration procedures for the "CoAP Content-Formats" IANA registry, within the "Constrained RESTful Environments (CoRE) Parameters" registry group.
 This document also introduces a new column, "Media Type", to the registry.
-Furthermore, this document retires 64999 from the allocatable Content-Format identifiers and reserves its use for documentation.
+Furthermore, this document reserves Content-Format identifier 64999 for use in documentation.
 
 --- middle
 
