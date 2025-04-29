@@ -353,7 +353,7 @@ Table of Contents
       with "Expert Review" additionally required per Section 4.5 of
       [BCP26].
 
-   The registration policy for the 1000-19999 and 33000-64998 ranges is
+   The registration policy for the 10000-19999 and 33000-64998 ranges is
    "Expert Review", following the procedure described in Section 4.4.
 
    The registration policy for the 20000-32999 range is FCFS, as before.
