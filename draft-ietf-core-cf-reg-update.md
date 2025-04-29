@@ -290,7 +290,7 @@ IANA is instructed to add the following note to the registry:
 
 ## Reserving Content-Format Identifier 64999 for Documentation
 
-IANA is instructed to retire Content-Format identifier 64999 and mark it as reserved for use in documentation.
+IANA is instructed to reserve Content-Format identifier 64999 for use in documentation.
 
 --- back
 
