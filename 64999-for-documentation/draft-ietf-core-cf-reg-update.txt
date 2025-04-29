@@ -525,8 +525,8 @@ Table of Contents
 
 6.3.  Reserving Content-Format Identifier 64999 for Documentation
 
-   IANA is instructed to retire Content-Format identifier 64999 and mark
-   it as reserved for use in documentation.
+   IANA is instructed to reserve Content-Format identifier 64999 for use
+   in documentation.
 
 7.  References
 
