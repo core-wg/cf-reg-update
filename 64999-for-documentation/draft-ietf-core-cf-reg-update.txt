@@ -130,8 +130,8 @@ Table of Contents
    review procedure to be performed for most ranges of the registry, and
    allow the registration of temporary Content-Format identifiers.  This
    document also introduces a new column, "Media Type", to the registry.
-   Furthermore, this document retires 64999 from the allocatable
-   Content-Format identifiers and reserves its use for documentation.
+   Furthermore, this document reserves Content-Format identifier 64999
+   for use in documentation.
 
 2.  Conventions and Definitions
 
