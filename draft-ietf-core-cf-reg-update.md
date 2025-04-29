@@ -181,8 +181,9 @@ The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -c
 |--------|--------|--------|
 | 0-255 | Expert Review | Review procedure described in {{&SELF}}, {{checks}}. |
 | 256-9999 | IETF Review with Expert Review or IESG Approval with Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
-| 10000-19999 and 33000-64998 | Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
+| 10000-19999 | Expert Review | Review procedure described in {{&SELF}}, {{checks}}. |
 | 20000-32999 | First Come First Served (FCFS) | FCFS is allowed if the registration: <br> * has no parameters, and <br> * has an empty Content Coding, and <br> * the Media Type is not yet used in this registry, and <br> * the Media Type is registered (or approved for registration) in the "Media Types" registry {{IANA.media-types}}. |
+| 33000-64998 | Expert Review | Review procedure described in {{&SELF}}, {{checks}}. |
 | 64999 | - | Reserved for Documentation |
 | 65000-65535 | Experimental Use | No operational use |
 {: #tbl-new-cf-proc title="Updated CoAP Content-Formats Registration Procedures"}
