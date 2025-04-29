@@ -199,7 +199,8 @@ The 256-9999 range now has registration procedures requiring "IETF Review with E
 The registration policy for the 10000-19999 and 33000-64998 ranges is "Expert Review", following the procedure described in {{checks}}.
 
 The registration policy for the 20000-32999 range is FCFS, as before.
-A registration request for this range must consist solely of a registered Media Type name in the "Content Type" field, without any parameter names or "Content Coding", and the Media Type must have not been used in this registry yet.
+A registration request for this range must consist solely of a registered Media Type name in the "Content Type" field, without any parameter names or "Content Coding", and the Media Type must not have been used in this registry yet.
+If the criteria do not apply, a registration for a different range (which requires Expert Review) can be requested.
 
 A new column with the title "Notes" has been added to the CoAP Content-Formats Registration Procedures shown in {{tbl-new-cf-proc}}.
 
