@@ -196,7 +196,7 @@ The 256-9999 range now has registration procedures requiring "IETF Review with E
 
 * All assignments according to "IESG Approval with Expert Review" are made on an "IESG Approval" basis per {{Section 4.10 of -iana-cons}} with "Expert Review" additionally required per {{Section 4.5 of -iana-cons}}.
 
-The registration policy for the 1000-19999 and 33000-64998 ranges is "Expert Review", following the procedure described in {{checks}}.
+The registration policy for the 10000-19999 and 33000-64998 ranges is "Expert Review", following the procedure described in {{checks}}.
 
 The registration policy for the 20000-32999 range is FCFS, as before.
 A registration request for this range must consist solely of a registered Media Type name in the "Content Type" field, without any parameter names or "Content Coding", and the Media Type must have not been used in this registry yet.
