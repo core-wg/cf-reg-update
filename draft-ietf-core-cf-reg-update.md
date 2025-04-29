@@ -75,7 +75,7 @@ This lack of guidance may engender confusion in both the registering party and t
 In {{iana}}, this document updates {{-coap}} by modifying the registration procedures for the "CoAP Content-Formats" registry to mitigate the risk of unintentional or malicious errors.
 These updates amend the different ranges of the registry, introduce a review procedure to be performed for most ranges of the registry, and allow the registration of temporary Content-Format identifiers.
 This document also introduces a new column, "Media Type", to the registry.
-Furthermore, this document retires 64999 from the allocatable Content-Format identifiers and reserves its use for documentation.
+Furthermore, this document reserves Content-Format identifier 64999 for use in documentation.
 
 # Conventions and Definitions
 
