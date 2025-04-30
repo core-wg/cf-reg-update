@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 31 October 2025                                   29 April 2025
+Expires: 1 November 2025                                   30 April 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -18,8 +18,8 @@ Abstract
    for the "CoAP Content-Formats" IANA registry, within the "Constrained
    RESTful Environments (CoRE) Parameters" registry group.  This
    document also introduces a new column, "Media Type", to the registry.
-   Furthermore, this document retires 64999 from the allocatable
-   Content-Format identifiers and reserves its use for documentation.
+   Furthermore, this document reserves Content-Format identifier 64999
+   for use in documentation.
 
 About This Document
 
@@ -53,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 31 October 2025.
+   This Internet-Draft will expire on 1 November 2025.
 
 Copyright Notice
 
@@ -130,8 +130,8 @@ Table of Contents
    review procedure to be performed for most ranges of the registry, and
    allow the registration of temporary Content-Format identifiers.  This
    document also introduces a new column, "Media Type", to the registry.
-   Furthermore, this document retires 64999 from the allocatable
-   Content-Format identifiers and reserves its use for documentation.
+   Furthermore, this document reserves Content-Format identifier 64999
+   for use in documentation.
 
 2.  Conventions and Definitions
 
@@ -530,8 +530,8 @@ Table of Contents
 
 6.3.  Reserving Content-Format Identifier 64999 for Documentation
 
-   IANA is instructed to retire Content-Format identifier 64999 and mark
-   it as reserved for use in documentation.
+   IANA is instructed to reserve Content-Format identifier 64999 for use
+   in documentation.
 
 7.  References
 
