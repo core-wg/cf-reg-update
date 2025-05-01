@@ -6,7 +6,7 @@ Constrained RESTful Environments                              T. Fossati
 Internet-Draft                                                    Linaro
 Updates: 7252 (if approved)                                      E. Dijk
 Intended status: Standards Track                       IoTconsultancy.nl
-Expires: 30 October 2025                                   28 April 2025
+Expires: 2 November 2025                                      1 May 2025
 
 
     Update to the IANA CoAP Content-Formats Registration Procedures
@@ -18,6 +18,8 @@ Abstract
    for the "CoAP Content-Formats" IANA registry, within the "Constrained
    RESTful Environments (CoRE) Parameters" registry group.  This
    document also introduces a new column, "Media Type", to the registry.
+   Furthermore, this document reserves Content-Format identifier 64999
+   for use in documentation.
 
 About This Document
 
@@ -51,7 +53,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 30 October 2025.
+   This Internet-Draft will expire on 2 November 2025.
 
 Copyright Notice
 
@@ -91,6 +93,7 @@ Table of Contents
    6.  IANA Considerations
      6.1.  Temporary Note Removal
      6.2.  New Note Addition
+     6.3.  Reserving Content-Format Identifier 64999 for Documentation
    7.  References
      7.1.  Normative References
      7.2.  Informative References
@@ -127,6 +130,8 @@ Table of Contents
    review procedure to be performed for most ranges of the registry, and
    allow the registration of temporary Content-Format identifiers.  This
    document also introduces a new column, "Media Type", to the registry.
+   Furthermore, this document reserves Content-Format identifier 64999
+   for use in documentation.
 
 2.  Conventions and Definitions
 
@@ -143,8 +148,7 @@ Table of Contents
    from succeeding.
 
    All the example registration requests use a CoAP Content-Format with
-   identifier 64999 in the FCFS range of the "CoAP Content-Formats"
-   registry.
+   identifier 64999.
 
    For each of the following example registration requests, one can
    create a similar instance where the requested registration is for a
@@ -304,7 +308,7 @@ Table of Contents
    |             | with Expert  |                                      |
    |             | Review       |                                      |
    +-------------+--------------+--------------------------------------+
-   | 10000-64999 | Expert       | Review procedure described in        |
+   | 10000-64998 | Expert       | Review procedure described in        |
    |             | Review or    | RFCthis, Section 4.4.                |
    |             | First Come   |                                      |
    |             | First Served | FCFS is allowed if the               |
@@ -347,7 +351,7 @@ Table of Contents
       with "Expert Review" additionally required per Section 4.5 of
       [BCP26].
 
-   The 10000-64999 range now has two separate registration procedures.
+   The 10000-64998 range now has two separate registration procedures.
    If the registration consists solely of a registered Media Type name
    in the "Content Type" field, without any parameter names or "Content
    Coding", and the Media Type has not yet been used in this registry,
@@ -364,7 +368,7 @@ Table of Contents
 
    This section clarifies that the "CoAP Content-Formats" registry
    allows temporary registrations within the 0-255, 256-9999, and
-   10000-64999 ranges.
+   10000-64998 ranges.
 
    A temporary registration may be created for example by an IANA early
    allocation action [RFC7120].  If the referenced Media Type is
@@ -388,7 +392,7 @@ Table of Contents
    provisional Media Type that is abandoned, IANA must remove the entry
    and set the Content-Format ID value back to "Unassigned".
 
-   Note that in the 10000-64999 range the abandonment of a document
+   Note that in the 10000-64998 range the abandonment of a document
    requesting a Content-Format ID does not cause an entry to be removed.
    That is because the required registration procedure for this range
    does not require completion of any standards process, nor does it
@@ -455,7 +459,7 @@ Table of Contents
    For the 0-255 range, in addition to the checks described above, the
    DE is instructed to also evaluate the requested codepoint concerning
    the limited availability of the 1-byte codepoint space.  For the
-   256-9999 range and the 10000-64999 range, a similar criterion may
+   256-9999 range and the 10000-64998 range, a similar criterion may
    also apply where combinations of Media Type parameters and Content
    Coding choices consume considerable codepoint space.
 
@@ -518,6 +522,11 @@ Table of Contents
       "Note: As per RFCthis, temporary registrations within the 0-255
       range are approved by Designated Experts.  These registrations are
       not subject to the formal [RFC7120] renewal process."
+
+6.3.  Reserving Content-Format Identifier 64999 for Documentation
+
+   IANA is instructed to reserve Content-Format identifier 64999 for use
+   in documentation.
 
 7.  References
 
