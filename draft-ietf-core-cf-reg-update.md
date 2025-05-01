@@ -179,10 +179,13 @@ The CoAP Content-Formats registration procedures defined in {{Section 12.3 of -c
 
 | Range | Registration Procedures | Notes |
 |--------|--------|--------|
-| 0-255 | Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
+| 0-255 | Expert Review | Review procedure described in {{&SELF}}, {{checks}}. |
 | 256-9999 | IETF Review with Expert Review or IESG Approval with Expert Review | Review procedure described in {{&SELF}}, {{checks}} |
-| 10000-64998 | Expert Review or First Come First Served (FCFS) | Review procedure described in {{&SELF}}, {{checks}}. <br><br>FCFS is allowed if the registration: <br> * has no parameters, and <br> * has an empty Content Coding, and <br> * the Media Type is not yet used in this registry, and <br> * the Media Type is registered (or approved for registration) in the "Media Types" registry {{IANA.media-types}}. <br><br>Expert Review is required in all other cases. |
-| 65000-65535 | Experimental Use | No operational use
+| 10000-19999 | Expert Review | Review procedure described in {{&SELF}}, {{checks}}. |
+| 20000-32999 | First Come First Served (FCFS) | FCFS is allowed if the registration: <br> * has no parameters, and <br> * has an empty Content Coding, and <br> * the Media Type is not yet used in this registry, and <br> * the Media Type is registered (or approved for registration) in the "Media Types" registry {{IANA.media-types}}. |
+| 33000-64998 | Expert Review | Review procedure described in {{&SELF}}, {{checks}}. |
+| 64999 | - | Reserved for Documentation |
+| 65000-65535 | Experimental Use | No operational use |
 {: #tbl-new-cf-proc title="Updated CoAP Content-Formats Registration Procedures"}
 
 The 256-9999 range now has registration procedures requiring "IETF Review with Expert Review" or "IESG Approval with Expert Review." In particular:
@@ -193,9 +196,11 @@ The 256-9999 range now has registration procedures requiring "IETF Review with E
 
 * All assignments according to "IESG Approval with Expert Review" are made on an "IESG Approval" basis per {{Section 4.10 of -iana-cons}} with "Expert Review" additionally required per {{Section 4.5 of -iana-cons}}.
 
-The 10000-64998 range now has two separate registration procedures.
-If the registration consists solely of a registered Media Type name in the "Content Type" field, without any parameter names or "Content Coding", and the Media Type has not yet been used in this registry, then the policy is FCFS, as before.
-In all other cases, the policy is "Expert Review," following the procedure described in {{checks}}.
+The registration policy for the 10000-19999 and 33000-64998 ranges is "Expert Review", following the procedure described in {{checks}}.
+
+The registration policy for the 20000-32999 range is FCFS, as before.
+A registration request for this range must consist solely of a registered Media Type name in the "Content Type" field, without any parameter names or "Content Coding", and the Media Type must not have been used in this registry yet.
+If the criteria do not apply, a registration for a different range (which requires Expert Review) can be requested.
 
 A new column with the title "Notes" has been added to the CoAP Content-Formats Registration Procedures shown in {{tbl-new-cf-proc}}.
 
@@ -203,7 +208,7 @@ For the handling of temporary allocations within the 0-255 range see also {{expe
 
 ## New Section 12.3.1 "Temporary Content-Format Registrations"
 
-This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255, 256-9999, and 10000-64998 ranges.
+This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-64998 range.
 
 A temporary registration may be created for example by an IANA early allocation action {{-iana-early}}.
 If the referenced Media Type is provisional (that is, included in the IANA "Provisional Standard Media Type" registry {{IANA.provisional-standard-media-types}}) then a created registration is always temporary.
@@ -245,7 +250,7 @@ The Designated Expert (DE) is instructed to perform the Expert Review, as descri
 1. If a Content Coding is specified, it must exist (or must have been approved for registration) in the "HTTP Content Coding" registry of the "Hypertext Transfer Protocol (HTTP) Parameters" {{IANA.http-parameters}}.
 
 For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
-For the 256-9999 range and the 10000-64998 range, a similar criterion may also apply where combinations of Media Type parameters and Content Coding choices consume considerable codepoint space.
+For the 256-64998 range, a similar criterion may also apply where combinations of Media Type parameters and Content Coding choices consume considerable codepoint space.
 
 ## New Section 12.3.4 "Preferred Format for the Content Type Field" {#preferred-format}
 
