@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-29T00:38:45.565017+00:00",
+  "timestamp": "2025-05-01T00:43:56.721718+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -4866,6 +4866,487 @@
           "body": "",
           "createdAt": "2025-04-28T16:10:48Z",
           "updatedAt": "2025-04-28T16:10:48Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 79,
+      "id": "PR_kwDONM5XRM6UVpDc",
+      "title": "Reserve 64999 for documentation",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/79",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #58",
+      "createdAt": "2025-04-29T12:29:53Z",
+      "updatedAt": "2025-04-30T15:45:35Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "8c5c69bd2c13b66c97886c9165d22b9f1d275a97",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "64999-for-documentation",
+      "headRefOid": "b72f1036d8cbda09655afee4b8dc3bb53c753d1b",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6nJKZ_",
+          "commit": {
+            "abbreviatedOid": "e11d3d5"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T15:49:55Z",
+          "updatedAt": "2025-04-29T15:49:56Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "Can we say this simpler and shorter? If 64999 is reserved for documentation, we don't have to say that it's retired. It's anyway not usable for allocation if it already is reserved for something. E.g.:\r\n\r\n```suggestion\r\nFurthermore, this document reserves Content-Format identifier 64999 for use in documentation.\r\n```",
+              "createdAt": "2025-04-29T15:49:55Z",
+              "updatedAt": "2025-04-29T18:14:20Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nJKrM",
+          "commit": {
+            "abbreviatedOid": "e11d3d5"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T15:50:18Z",
+          "updatedAt": "2025-04-29T15:50:18Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "See prev comment about \"retires\": seems not needed also here.",
+              "createdAt": "2025-04-29T15:50:18Z",
+              "updatedAt": "2025-04-29T15:50:18Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nJMGc",
+          "commit": {
+            "abbreviatedOid": "e11d3d5"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T15:52:13Z",
+          "updatedAt": "2025-04-29T15:52:13Z",
+          "comments": [
+            {
+              "originalPosition": 76,
+              "body": "Same comment as before: better not use \"retire\" here? We can \"allocate\" it or \"reserve\" it.",
+              "createdAt": "2025-04-29T15:52:13Z",
+              "updatedAt": "2025-04-29T15:52:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nJM7j",
+          "commit": {
+            "abbreviatedOid": "e11d3d5"
+          },
+          "author": "cabo",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T15:53:24Z",
+          "updatedAt": "2025-04-29T15:53:24Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "What was the reason we are not using 65000?",
+              "createdAt": "2025-04-29T15:53:24Z",
+              "updatedAt": "2025-04-29T15:53:24Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nJ3o6",
+          "commit": {
+            "abbreviatedOid": "e11d3d5"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T17:00:50Z",
+          "updatedAt": "2025-04-29T17:00:50Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "@cabo We use the number in examples of a person requesting a registration within the \"FCFS range\" of the registry. To make the example convincing, it has to lie within this range. (I.e. in the \"old\" situation prior to the changes by this document.)\r\nAlso the experimental value 65000 might be in actual use in experiments, while 64999 is not supposed to be in use anywhere.",
+              "createdAt": "2025-04-29T17:00:50Z",
+              "updatedAt": "2025-04-29T17:00:50Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nKQ_N",
+          "commit": {
+            "abbreviatedOid": "e11d3d5"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-04-29T17:41:57Z",
+          "updatedAt": "2025-04-29T17:41:57Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nKXOZ",
+          "commit": {
+            "abbreviatedOid": "e11d3d5"
+          },
+          "author": "cabo",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T17:53:09Z",
+          "updatedAt": "2025-04-29T17:53:09Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "Using a code point just for demonstrating how to use a code point causes cognitive dissonance.\r\nSo why don't we use 20000?  That also is allocated and FCFS.\r\n",
+              "createdAt": "2025-04-29T17:53:09Z",
+              "updatedAt": "2025-04-29T17:53:09Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nKkuu",
+          "commit": {
+            "abbreviatedOid": "379f258"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T18:15:29Z",
+          "updatedAt": "2025-04-29T18:15:29Z",
+          "comments": [
+            {
+              "originalPosition": 12,
+              "body": "```suggestion\r\nFurthermore, this document reserves Content-Format identifier 64999 for use in documentation.\r\n```",
+              "createdAt": "2025-04-29T18:15:29Z",
+              "updatedAt": "2025-04-29T18:15:29Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nKlfy",
+          "commit": {
+            "abbreviatedOid": "23b1928"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T18:16:16Z",
+          "updatedAt": "2025-04-29T18:16:16Z",
+          "comments": [
+            {
+              "originalPosition": 76,
+              "body": "```suggestion\r\nIANA is instructed to reserve Content-Format identifier 64999 for use in documentation.\r\n```",
+              "createdAt": "2025-04-29T18:16:16Z",
+              "updatedAt": "2025-04-29T18:16:17Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nV9-3",
+          "commit": {
+            "abbreviatedOid": "b72f103"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Ok to merge now! (Minor changes may come after the next PR #80 gets merged.)",
+          "createdAt": "2025-04-30T15:45:35Z",
+          "updatedAt": "2025-04-30T15:45:35Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 80,
+      "id": "PR_kwDONM5XRM6UWSuu",
+      "title": "Split 10000-64999 into two separate spaces",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/80",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #59 ",
+      "createdAt": "2025-04-29T13:23:05Z",
+      "updatedAt": "2025-04-30T20:15:54Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "8c5c69bd2c13b66c97886c9165d22b9f1d275a97",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "one-range",
+      "headRefOid": "5ec5b6c57b016ab85380aad8abcb5939d546bf66",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "cabo",
+          "authorAssociation": "MEMBER",
+          "body": "On 2025-04-30, at 17:14, Esko Dijk ***@***.***> wrote:\r\n> \r\n> I'm seeing the old formulation with \"retires\" from the other PR (#79) also here in the changes: e.g. line 60. Not sure why; maybe a rebase is needed here?\r\n\r\nI enabled:\r\n\r\nAlways suggest updating pull request branches\r\n\t\u2022 Whenever there are new changes available in the base branch, present an \u201cupdate branch\u201d option in the pull request.\r\n\r\n\u2026in the settings.\r\nBut the other PR (#79) is not merged to main either, yet, so this has no effect at the moment.\r\nWith one approval, can it maybe merged?\r\n(I don\u2019t agree with it, but I\u2019m trying not to get in the way.)\r\n\r\nGr\u00fc\u00dfe, Carsten\r\n\r\n",
+          "createdAt": "2025-04-30T15:41:27Z",
+          "updatedAt": "2025-04-30T15:41:27Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> I'm seeing the old formulation with \"retires\" from the other PR (#79) also here in the changes: e.g. line 60. Not sure why; maybe a rebase is needed here?\r\n\r\nI have rebased now.",
+          "createdAt": "2025-04-30T15:57:39Z",
+          "updatedAt": "2025-04-30T15:57:39Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> On 2025-04-30, at 17:14, Esko Dijk ***@***.***> wrote: I'm seeing the old formulation with \"retires\" from the other PR (#79) also here in the changes: e.g. line 60. Not sure why; maybe a rebase is needed here?\r\n> I enabled: Always suggest updating pull request branches \u2022 Whenever there are new changes available in the base branch, present an \u201cupdate branch\u201d option in the pull request. \u2026in the settings. But the other PR (#79) is not merged to main either, yet, so this has no effect at the moment. With one approval, can it maybe merged? (I don\u2019t agree with it, but I\u2019m trying not to get in the way.) Gr\u00fc\u00dfe, Carsten\r\n\r\nI have rebased, which should hopefully have the same effect, except it doesn\u2019t touch main.",
+          "createdAt": "2025-04-30T16:00:44Z",
+          "updatedAt": "2025-04-30T16:00:44Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6nJGSi",
+          "commit": {
+            "abbreviatedOid": "d2f767e"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T15:44:23Z",
+          "updatedAt": "2025-04-29T15:44:23Z",
+          "comments": [
+            {
+              "originalPosition": 34,
+              "body": "```suggestion\r\n| 10000-19999 and 33000-64998 | Expert Review | Review procedure described in {{&SELF}}, {{checks}}. |\r\n```",
+              "createdAt": "2025-04-29T15:44:23Z",
+              "updatedAt": "2025-04-29T15:44:23Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nJHkG",
+          "commit": {
+            "abbreviatedOid": "d2f767e"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T15:46:15Z",
+          "updatedAt": "2025-04-29T15:46:15Z",
+          "comments": [
+            {
+              "originalPosition": 34,
+              "body": "Actually I would prefer if we split these dual ranges in two parts, such that the list of \"Range\" values goes up monotonically.  That would seem more clear to me.",
+              "createdAt": "2025-04-29T15:46:15Z",
+              "updatedAt": "2025-04-29T15:46:15Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nJRHu",
+          "commit": {
+            "abbreviatedOid": "d2f767e"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T15:59:03Z",
+          "updatedAt": "2025-04-29T15:59:03Z",
+          "comments": [
+            {
+              "originalPosition": 34,
+              "body": "I had started like that and then decided that grouping by policy was a better option.  I don\u2019t hold strong opinions, though, so I\u2019m happy to revert.",
+              "createdAt": "2025-04-29T15:59:03Z",
+              "updatedAt": "2025-04-29T15:59:03Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nJvD6",
+          "commit": {
+            "abbreviatedOid": "d2f767e"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T16:45:58Z",
+          "updatedAt": "2025-04-29T16:45:59Z",
+          "comments": [
+            {
+              "originalPosition": 34,
+              "body": "Done in [4458dd3](https://github.com/core-wg/cf-reg-update/pull/80/commits/4458dd31fb3abe7889badb969bd593b51bf08531)",
+              "createdAt": "2025-04-29T16:45:58Z",
+              "updatedAt": "2025-04-29T16:45:59Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nKLT0",
+          "commit": {
+            "abbreviatedOid": "4458dd3"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T17:31:30Z",
+          "updatedAt": "2025-04-29T17:31:31Z",
+          "comments": [
+            {
+              "originalPosition": 49,
+              "body": "```suggestion\r\nThe registration policy for the 10000-19999 and 33000-64998 ranges is \"Expert Review\", following the procedure described in {{checks}}.\r\n```",
+              "createdAt": "2025-04-29T17:31:31Z",
+              "updatedAt": "2025-04-29T17:31:31Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nKNaO",
+          "commit": {
+            "abbreviatedOid": "b57307d"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-29T17:35:26Z",
+          "updatedAt": "2025-04-29T17:35:26Z",
+          "comments": [
+            {
+              "originalPosition": 52,
+              "body": "```suggestion\r\nA registration request for this range must consist solely of a registered Media Type name in the \"Content Type\" field, without any parameter names or \"Content Coding\", and the Media Type must not have been used in this registry yet.\r\nIf the criteria do not apply, a registration for a different range (which requires Expert Review) can be requested.\r\n```",
+              "createdAt": "2025-04-29T17:35:26Z",
+              "updatedAt": "2025-04-29T17:35:26Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nKQiK",
+          "commit": {
+            "abbreviatedOid": "08f62ed"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-04-29T17:41:05Z",
+          "updatedAt": "2025-04-29T17:41:05Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nVi8T",
+          "commit": {
+            "abbreviatedOid": "08f62ed"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "I'm seeing the old formulation with \"retires\" from the other PR (#79) also here in the changes: e.g. line 60. Not sure why; maybe a rebase is needed here?",
+          "createdAt": "2025-04-30T15:13:45Z",
+          "updatedAt": "2025-04-30T15:13:45Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nWU8Z",
+          "commit": {
+            "abbreviatedOid": "5ec5b6c"
+          },
+          "author": "cabo",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-30T16:16:19Z",
+          "updatedAt": "2025-04-30T16:16:20Z",
+          "comments": [
+            {
+              "originalPosition": 37,
+              "body": "The funny thing about marking 64999 as reserved is that it no longer is an example for the space this example is supposed to be about.  That would have worked with 65000 as well...",
+              "createdAt": "2025-04-30T16:16:20Z",
+              "updatedAt": "2025-04-30T16:16:20Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nWe6p",
+          "commit": {
+            "abbreviatedOid": "5ec5b6c"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-30T16:26:06Z",
+          "updatedAt": "2025-04-30T16:26:06Z",
+          "comments": [
+            {
+              "originalPosition": 37,
+              "body": "Yeah, the document is bizarrely split among two separate timelines: Section 3 is locked in the past, the rest of the prose is in the future.",
+              "createdAt": "2025-04-30T16:26:06Z",
+              "updatedAt": "2025-04-30T16:26:06Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nY9Zd",
+          "commit": {
+            "abbreviatedOid": "5ec5b6c"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-04-30T20:14:05Z",
+          "updatedAt": "2025-04-30T20:14:05Z",
+          "comments": [
+            {
+              "originalPosition": 37,
+              "body": "PS  A way out of this Catch-22 is to keep the range running up to 64999 (and including). In this viewpoint, 64999 is just an allocated entry in the wider range. And it happens to be an allocation for example usage. And it has been assigned by special Expert Review (where the experts are the DEs that have all reviewed and approved this document). But the existing solution is also okay for me.",
+              "createdAt": "2025-04-30T20:14:05Z",
+              "updatedAt": "2025-04-30T20:14:06Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6nY-Xy",
+          "commit": {
+            "abbreviatedOid": "5ec5b6c"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-04-30T20:15:54Z",
+          "updatedAt": "2025-04-30T20:15:54Z",
           "comments": []
         }
       ]
