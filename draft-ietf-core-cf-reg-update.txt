@@ -298,7 +298,7 @@ Table of Contents
    |             | Procedures   |                                      |
    +=============+==============+======================================+
    | 0-255       | Expert       | Review procedure described in        |
-   |             | Review       | RFCthis, Section 4.4                 |
+   |             | Review       | RFCthis, Section 4.4.                |
    +-------------+--------------+--------------------------------------+
    | 256-9999    | IETF Review  | Review procedure described in        |
    |             | with Expert  | RFCthis, Section 4.4                 |
@@ -308,12 +308,12 @@ Table of Contents
    |             | with Expert  |                                      |
    |             | Review       |                                      |
    +-------------+--------------+--------------------------------------+
-   | 10000-64998 | Expert       | Review procedure described in        |
-   |             | Review or    | RFCthis, Section 4.4.                |
-   |             | First Come   |                                      |
-   |             | First Served | FCFS is allowed if the               |
-   |             | (FCFS)       | registration:                        |
-   |             |              | * has no parameters, and             |
+   | 10000-19999 | Expert       | Review procedure described in        |
+   |             | Review       | RFCthis, Section 4.4.                |
+   +-------------+--------------+--------------------------------------+
+   | 20000-32999 | First Come   | FCFS is allowed if the               |
+   |             | First Served | registration:                        |
+   |             | (FCFS)       | * has no parameters, and             |
    |             |              | * has an empty Content Coding, and   |
    |             |              | * the Media Type is not yet used     |
    |             |              | in this registry, and                |
@@ -321,9 +321,11 @@ Table of Contents
    |             |              | approved for registration) in the    |
    |             |              | "Media Types" registry               |
    |             |              | [IANA.media-types].                  |
-   |             |              |                                      |
-   |             |              | Expert Review is required in all     |
-   |             |              | other cases.                         |
+   +-------------+--------------+--------------------------------------+
+   | 33000-64998 | Expert       | Review procedure described in        |
+   |             | Review       | RFCthis, Section 4.4.                |
+   +-------------+--------------+--------------------------------------+
+   | 64999       | -            | Reserved for Documentation           |
    +-------------+--------------+--------------------------------------+
    | 65000-65535 | Experimental | No operational use                   |
    |             | Use          |                                      |
@@ -351,12 +353,16 @@ Table of Contents
       with "Expert Review" additionally required per Section 4.5 of
       [BCP26].
 
-   The 10000-64998 range now has two separate registration procedures.
-   If the registration consists solely of a registered Media Type name
-   in the "Content Type" field, without any parameter names or "Content
-   Coding", and the Media Type has not yet been used in this registry,
-   then the policy is FCFS, as before.  In all other cases, the policy
-   is "Expert Review," following the procedure described in Section 4.4.
+   The registration policy for the 10000-19999 and 33000-64998 ranges is
+   "Expert Review", following the procedure described in Section 4.4.
+
+   The registration policy for the 20000-32999 range is FCFS, as before.
+   A registration request for this range must consist solely of a
+   registered Media Type name in the "Content Type" field, without any
+   parameter names or "Content Coding", and the Media Type must not have
+   been used in this registry yet.  If the criteria do not apply, a
+   registration for a different range (which requires Expert Review) can
+   be requested.
 
    A new column with the title "Notes" has been added to the CoAP
    Content-Formats Registration Procedures shown in Table 8.
@@ -367,8 +373,7 @@ Table of Contents
 4.2.  New Section 12.3.1 "Temporary Content-Format Registrations"
 
    This section clarifies that the "CoAP Content-Formats" registry
-   allows temporary registrations within the 0-255, 256-9999, and
-   10000-64998 ranges.
+   allows temporary registrations within the 0-64998 range.
 
    A temporary registration may be created for example by an IANA early
    allocation action [RFC7120].  If the referenced Media Type is
@@ -459,9 +464,9 @@ Table of Contents
    For the 0-255 range, in addition to the checks described above, the
    DE is instructed to also evaluate the requested codepoint concerning
    the limited availability of the 1-byte codepoint space.  For the
-   256-9999 range and the 10000-64998 range, a similar criterion may
-   also apply where combinations of Media Type parameters and Content
-   Coding choices consume considerable codepoint space.
+   256-64998 range, a similar criterion may also apply where
+   combinations of Media Type parameters and Content Coding choices
+   consume considerable codepoint space.
 
 4.5.  New Section 12.3.4 "Preferred Format for the Content Type Field"
 

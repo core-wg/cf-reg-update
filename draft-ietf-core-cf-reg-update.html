@@ -1539,8 +1539,7 @@ Since for URNs, the Namespace Identifier (<code>example</code> in this example) 
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0-255</td>
               <td class="text-left" rowspan="1" colspan="1">Expert Review</td>
-              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.4</a>
-</td>
+              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.4</a>.</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">256-9999</td>
@@ -1549,9 +1548,24 @@ Since for URNs, the Namespace Identifier (<code>example</code> in this example) 
 </td>
             </tr>
             <tr>
-              <td class="text-left" rowspan="1" colspan="1">10000-64998</td>
-              <td class="text-left" rowspan="1" colspan="1">Expert Review or First Come First Served (FCFS)</td>
-              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.4</a>. <br><br>FCFS is allowed if the registration: <br> * has no parameters, and <br> * has an empty Content Coding, and <br> * the Media Type is not yet used in this registry, and <br> * the Media Type is registered (or approved for registration) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>. <br><br>Expert Review is required in all other cases.</td>
+              <td class="text-left" rowspan="1" colspan="1">10000-19999</td>
+              <td class="text-left" rowspan="1" colspan="1">Expert Review</td>
+              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.4</a>.</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">20000-32999</td>
+              <td class="text-left" rowspan="1" colspan="1">First Come First Served (FCFS)</td>
+              <td class="text-left" rowspan="1" colspan="1">FCFS is allowed if the registration: <br> * has no parameters, and <br> * has an empty Content Coding, and <br> * the Media Type is not yet used in this registry, and <br> * the Media Type is registered (or approved for registration) in the "Media Types" registry <span>[<a href="#IANA.media-types" class="cite xref">IANA.media-types</a>]</span>.</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">33000-64998</td>
+              <td class="text-left" rowspan="1" colspan="1">Expert Review</td>
+              <td class="text-left" rowspan="1" colspan="1">Review procedure described in RFCthis, <a href="#checks" class="auto internal xref">Section 4.4</a>.</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">64999</td>
+              <td class="text-left" rowspan="1" colspan="1">-</td>
+              <td class="text-left" rowspan="1" colspan="1">Reserved for Documentation</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">65000-65535</td>
@@ -1572,11 +1586,12 @@ The procedure for early IANA allocation of "standards track code points" defined
             <p id="section-4.1-5.2.1">All assignments according to "IESG Approval with Expert Review" are made on an "IESG Approval" basis per <span><a href="https://rfc-editor.org/rfc/rfc8126#section-4.10" class="relref">Section 4.10</a> of [<a href="#BCP26" class="cite xref">BCP26</a>]</span> with "Expert Review" additionally required per <span><a href="https://rfc-editor.org/rfc/rfc8126#section-4.5" class="relref">Section 4.5</a> of [<a href="#BCP26" class="cite xref">BCP26</a>]</span>.<a href="#section-4.1-5.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-4.1-6">The 10000-64998 range now has two separate registration procedures.
-If the registration consists solely of a registered Media Type name in the "Content Type" field, without any parameter names or "Content Coding", and the Media Type has not yet been used in this registry, then the policy is FCFS, as before.
-In all other cases, the policy is "Expert Review," following the procedure described in <a href="#checks" class="auto internal xref">Section 4.4</a>.<a href="#section-4.1-6" class="pilcrow">¶</a></p>
-<p id="section-4.1-7">A new column with the title "Notes" has been added to the CoAP Content-Formats Registration Procedures shown in <a href="#tbl-new-cf-proc" class="auto internal xref">Table 8</a>.<a href="#section-4.1-7" class="pilcrow">¶</a></p>
-<p id="section-4.1-8">For the handling of temporary allocations within the 0-255 range see also <a href="#expert-review-7120-exemptions" class="auto internal xref">Section 4.2, Paragraph 6</a>.<a href="#section-4.1-8" class="pilcrow">¶</a></p>
+<p id="section-4.1-6">The registration policy for the 10000-19999 and 33000-64998 ranges is "Expert Review", following the procedure described in <a href="#checks" class="auto internal xref">Section 4.4</a>.<a href="#section-4.1-6" class="pilcrow">¶</a></p>
+<p id="section-4.1-7">The registration policy for the 20000-32999 range is FCFS, as before.
+A registration request for this range must consist solely of a registered Media Type name in the "Content Type" field, without any parameter names or "Content Coding", and the Media Type must not have been used in this registry yet.
+If the criteria do not apply, a registration for a different range (which requires Expert Review) can be requested.<a href="#section-4.1-7" class="pilcrow">¶</a></p>
+<p id="section-4.1-8">A new column with the title "Notes" has been added to the CoAP Content-Formats Registration Procedures shown in <a href="#tbl-new-cf-proc" class="auto internal xref">Table 8</a>.<a href="#section-4.1-8" class="pilcrow">¶</a></p>
+<p id="section-4.1-9">For the handling of temporary allocations within the 0-255 range see also <a href="#expert-review-7120-exemptions" class="auto internal xref">Section 4.2, Paragraph 6</a>.<a href="#section-4.1-9" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="new-section-1231-temporary-content-format-registrations">
@@ -1584,7 +1599,7 @@ In all other cases, the policy is "Expert Review," following the procedure descr
         <h3 id="name-new-section-1231-temporary-">
 <a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-new-section-1231-temporary-" class="section-name selfRef">New Section 12.3.1 "Temporary Content-Format Registrations"</a>
         </h3>
-<p id="section-4.2-1">This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-255, 256-9999, and 10000-64998 ranges.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<p id="section-4.2-1">This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-64998 range.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
 <p id="section-4.2-2">A temporary registration may be created for example by an IANA early allocation action <span>[<a href="#RFC7120" class="cite xref">RFC7120</a>]</span>.
 If the referenced Media Type is provisional (that is, included in the IANA "Provisional Standard Media Type" registry <span>[<a href="#IANA.provisional-standard-media-types" class="cite xref">IANA.provisional-standard-media-types</a>]</span>) then a created registration is always temporary.<a href="#section-4.2-2" class="pilcrow">¶</a></p>
 <p id="section-4.2-3">A temporary registration is marked as such by IANA in the corresponding registry entry.
@@ -1638,7 +1653,7 @@ If a provisional Media Type becomes a permanent Media Type, IANA must update the
 </li>
         </ol>
 <p id="section-4.4-3">For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
-For the 256-9999 range and the 10000-64998 range, a similar criterion may also apply where combinations of Media Type parameters and Content Coding choices consume considerable codepoint space.<a href="#section-4.4-3" class="pilcrow">¶</a></p>
+For the 256-64998 range, a similar criterion may also apply where combinations of Media Type parameters and Content Coding choices consume considerable codepoint space.<a href="#section-4.4-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="preferred-format">
