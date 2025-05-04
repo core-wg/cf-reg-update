@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-01T00:43:56.721718+00:00",
+  "timestamp": "2025-05-04T00:43:40.554555+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -918,7 +918,7 @@
       "id": "I_kwDONM5XRM6zp5-A",
       "title": "Should we formally mark 64999 as reserved for documentation?",
       "url": "https://github.com/core-wg/cf-reg-update/issues/58",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -928,8 +928,8 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nCURRENT:\n   All the example registration requests use a CoAP Content-Format with\n   identifier 64999 in the FCFS range of the \"CoAP Content-Formats\"\n   registry.\n```\n",
       "createdAt": "2025-04-23T13:52:28Z",
-      "updatedAt": "2025-04-24T10:08:27Z",
-      "closedAt": null,
+      "updatedAt": "2025-05-01T19:01:08Z",
+      "closedAt": "2025-05-01T19:01:08Z",
       "comments": [
         {
           "author": "thomas-fossati",
@@ -952,7 +952,7 @@
       "id": "I_kwDONM5XRM6zp-wx",
       "title": "\"One Range, one Policy\" instead of \"One Range, Two conditional Policies\"",
       "url": "https://github.com/core-wg/cf-reg-update/issues/59",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -962,8 +962,8 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n> CURRENT:\n>    The 10000-64999 range now has two separate registration procedures.\n>    If the registration consists solely of a registered media type name\n>    in the \"Content Type\" field, without any parameter names or \u201cContent\n>    Coding\", and the media type has not yet been used in this registry,\n>    then the policy is FCFS, as before.  In all other cases, the policy\n>    is \"Expert Review,\" following the procedure described in Section 4.4.\n> \n> Given the size of the range, wouldn\u2019t be simple for IANA to dedicate a range\n> for \u201csimple registrations\u201d and another one for more complex ones?\n",
       "createdAt": "2025-04-23T13:57:50Z",
-      "updatedAt": "2025-04-28T16:51:05Z",
-      "closedAt": null,
+      "updatedAt": "2025-05-01T19:01:32Z",
+      "closedAt": "2025-05-01T19:01:32Z",
       "comments": [
         {
           "author": "thomas-fossati",
@@ -1524,6 +1524,22 @@
           "updatedAt": "2025-04-25T09:41:12Z"
         }
       ]
+    },
+    {
+      "number": 81,
+      "id": "I_kwDONM5XRM603q3P",
+      "title": "ACK Renzo and Med Reviews",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/81",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "$title",
+      "createdAt": "2025-05-01T19:02:33Z",
+      "updatedAt": "2025-05-01T19:02:33Z",
+      "closedAt": null,
+      "comments": []
     }
   ],
   "pulls": [
@@ -4875,24 +4891,26 @@
       "id": "PR_kwDONM5XRM6UVpDc",
       "title": "Reserve 64999 for documentation",
       "url": "https://github.com/core-wg/cf-reg-update/pull/79",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "Fix #58",
       "createdAt": "2025-04-29T12:29:53Z",
-      "updatedAt": "2025-04-30T15:45:35Z",
+      "updatedAt": "2025-05-01T19:01:11Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "8c5c69bd2c13b66c97886c9165d22b9f1d275a97",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "64999-for-documentation",
       "headRefOid": "b72f1036d8cbda09655afee4b8dc3bb53c753d1b",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-05-01T19:01:07Z",
+      "mergedAt": "2025-05-01T19:01:07Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "e02682c8eb636ecd0095b7b2dd6d204ff7ddb20b"
+      },
       "comments": [],
       "reviews": [
         {
@@ -5088,24 +5106,26 @@
       "id": "PR_kwDONM5XRM6UWSuu",
       "title": "Split 10000-64999 into two separate spaces",
       "url": "https://github.com/core-wg/cf-reg-update/pull/80",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "Fix #59 ",
       "createdAt": "2025-04-29T13:23:05Z",
-      "updatedAt": "2025-04-30T20:15:54Z",
+      "updatedAt": "2025-05-01T19:01:35Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "8c5c69bd2c13b66c97886c9165d22b9f1d275a97",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "one-range",
       "headRefOid": "5ec5b6c57b016ab85380aad8abcb5939d546bf66",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-05-01T19:01:31Z",
+      "mergedAt": "2025-05-01T19:01:31Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "32cb517de3e7926dee3220c74d1ad86ea5aa3c2e"
+      },
       "comments": [
         {
           "author": "cabo",
