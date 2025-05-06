@@ -167,11 +167,22 @@ Since for URNs, the Namespace Identifier (`example` in this example) is defined 
 | application/eat+cwt;eat_profile="urn:EXAMPLE:1" | - | 64999 |
 {: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (3)"}
 
-# Updates to RFC 7252 {#updates}
+# Security Considerations
+
+This document hardens the registration procedures of CoAP Content-Formats in ways that reduce the chances of malicious manipulation of the associated registry.
+
+Other than that, it does not change the Security Considerations of {{-coap}}.
+
+# IANA Considerations
+
+This document updates the IANA procedures defined in {{-coap}} for registering CoAP Content-Formats as described in {{updates}}.
+It also removes a note that was added to the registry as a temporary patch ({{temp-note-removal}}), adds a new note concerning temporary registrations ({{new-note-add}}) and reserves Content-Format ID 64999 for documentation ({{reserve-64999}}).
+
+## Updates to RFC 7252 {#updates}
 
 This section updates {{Section 12.3 of -coap}} and introduces four new subsections, 12.3.1 to 12.3.4.
 
-## Updates to Section 12.3 "CoAP Content-Formats Registry" {#iana}
+### Updates to Section 12.3 "CoAP Content-Formats Registry" {#iana}
 
 [^replace-self]
 
@@ -206,7 +217,7 @@ A new column with the title "Notes" has been added to the CoAP Content-Formats R
 
 For the handling of temporary allocations within the 0-255 range see also {{expert-review-7120-exemptions}}.
 
-## New Section 12.3.1 "Temporary Content-Format Registrations"
+### New Section 12.3.1 "Temporary Content-Format Registrations"
 
 This section clarifies that the "CoAP Content-Formats" registry allows temporary registrations within the 0-64998 range.
 
@@ -228,7 +239,7 @@ Temporary registrations within the 0-255 range are exempt from the formal renewa
 Specifically, IANA will not monitor the removal of registrations in this range.
 Instead, the Designated Experts direct IANA to carry out this task.
 
-## New Section 12.3.2 "Adding the Media Type Column to the Registry"
+### New Section 12.3.2 "Adding the Media Type Column to the Registry"
 
 To assist users of the "CoAP Content-Formats" registry in finding detailed information about the Media Type associated with each CoAP Content-Format, and to ensure that a Media Type exists before a new entry can be registered, IANA is requested to add a new column "Media Type" to the registry.
 This new column is placed directly to the right of the existing "Content Type" column.
@@ -239,7 +250,7 @@ If a provisional Media Type becomes a permanent Media Type, IANA must update the
 
 Note that the registration request procedure remains unchanged. A requester does not need to fill out the "Media Type" field separately, as the necessary information is already provided in the "Content Type" field of the request.
 
-## New Section 12.3.3 "Expert Review Procedure" {#checks}
+### New Section 12.3.3 "Expert Review Procedure" {#checks}
 
 The Designated Expert (DE) is instructed to perform the Expert Review, as described by the following checklist:
 
@@ -252,7 +263,7 @@ The Designated Expert (DE) is instructed to perform the Expert Review, as descri
 For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
 For the 256-64998 range, a similar criterion may also apply where combinations of Media Type parameters and Content Coding choices consume considerable codepoint space.
 
-## New Section 12.3.4 "Preferred Format for the Content Type Field" {#preferred-format}
+### New Section 12.3.4 "Preferred Format for the Content Type Field" {#preferred-format}
 
 This section defines the preferred string format for including a requested Content Type into the "CoAP Content-Formats" registry.
 During the review process, the Designated Expert(s) or IANA may rewrite a requested Content Type into this preferred string format before approval.
@@ -264,17 +275,7 @@ The preferred string format is as defined in {{Section 8.3.1 of -http-sema}} and
    Otherwise, a parameter value is included unquoted.
 1. A single semicolon character without any adjacent whitespace characters is used as the separator between Media Type and parameters.
 
-# Security Considerations
-
-This document hardens the registration procedures of CoAP Content-Formats in ways that reduce the chances of malicious manipulation of the associated registry.
-
-Other than that, it does not change the Security Considerations of {{-coap}}.
-
-# IANA Considerations
-
-This document updates the IANA procedures defined in {{-coap}} for registering CoAP Content-Formats as described in {{updates}}.
-
-## Temporary Note Removal
+## Temporary Note Removal {#temp-note-removal}
 {:removeinrfc}
 
 The following note has been added to the registry as a temporary fix:
@@ -284,7 +285,7 @@ The following note has been added to the registry as a temporary fix:
 IANA is instructed to remove this note from the registry when this document is approved for publication.
 RFC-Editor: please remove this section once the note has been removed.
 
-## New Note Addition
+## New Note Addition {#new-note-add}
 
 [^replace-self]
 
@@ -293,7 +294,7 @@ IANA is instructed to add the following note to the registry:
 > "Note: As per {{&SELF}}, temporary registrations within the 0-255 range are approved by Designated Experts.
 > These registrations are not subject to the formal {{-iana-early}} renewal process."
 
-## Reserving Content-Format Identifier 64999 for Documentation
+## Reserving Content-Format Identifier 64999 for Documentation {#reserve-64999}
 
 IANA is instructed to reserve Content-Format identifier 64999 for use in documentation.
 
