@@ -302,12 +302,13 @@ Table of Contents
    // RFC Editor: in this section, please replace RFCthis with the RFC
    // number assigned to this document and remove this note.
 
-   In order to minimize the overhead of using Media Types to indicate
-   the format of payloads, [RFC7252] has defined a registry for a subset
-   of Internet Media Types to be used in CoAP and assigned each, in
-   combination with a Content Coding, a numeric identifier.  The name of
-   the registry is "CoAP Content-Formats", within the "CoRE Parameters"
-   registry group.
+   Internet media types are identified by a string, such as
+   "application/xml" [RFC2046].  In order to minimize the overhead of
+   using Media Types to indicate the format of payloads, [RFC7252] has
+   defined a registry for a subset of Internet Media Types to be used in
+   CoAP and assigned each, in combination with a Content Coding, a
+   numeric identifier.  The name of the registry is "CoAP Content-
+   Formats", within the "CoRE Parameters" registry group.
 
    Each entry in the registry must include the Media Type registered
    with IANA, the numeric identifier in the range 0-65535 to be used for
@@ -364,11 +365,13 @@ Table of Contents
    |             | Use          |                                      |
    +-------------+--------------+--------------------------------------+
 
-       Table 8: Updated CoAP Content-Formats Registration Procedures
+           Table 8: CoAP Content-Formats: Registration Procedures
 
    Because the namespace of single-byte identifiers is so small, the
    IANA policy for additions in the range 0-255 inclusive to the
    registry is "Expert Review" as described in Section 4.5 of [BCP26].
+   For the handling of temporary allocations within the 0-255 range see
+   also Section 5.1.1, Paragraph 6.
 
    The 256-9999 range has registration procedures requiring "IETF Review
    with Expert Review" or "IESG Approval with Expert Review."  In
@@ -405,11 +408,14 @@ Table of Contents
    experiments.  They are not meant for vendor-specific use of any kind
    and MUST NOT be used in operational deployments.
 
-   A new column with the title "Notes" has been added to the CoAP
-   Content-Formats Registration Procedures shown in Table 8.
-
-   For the handling of temporary allocations within the 0-255 range see
-   also Section 5.1.1, Paragraph 6.
+   In machine-to-machine applications, it is not expected that generic
+   Internet media types such as text/plain, application/xml or
+   application/octet-stream are useful for real applications in the long
+   term.  It is recommended that M2M applications making use of CoAP
+   request new Internet media types from IANA indicating semantic
+   information about how to create or parse a payload.  For example, a
+   Smart Energy application payload carried as CBOR might request a more
+   specific type like application/se+cbor.
 
 5.1.1.  Temporary Content-Format Registrations
 
@@ -610,6 +616,11 @@ Table of Contents
 
    [Err4954]  RFC Errata Report 4954, RFC 7252,
               <https://www.rfc-editor.org/errata/eid4954>.
+
+   [RFC2046]  Freed, N. and N. Borenstein, "Multipurpose Internet Mail
+              Extensions (MIME) Part Two: Media Types", RFC 2046,
+              DOI 10.17487/RFC2046, November 1996,
+              <https://www.rfc-editor.org/rfc/rfc2046>.
 
    [RFC8141]  Saint-Andre, P. and J. Klensin, "Uniform Resource Names
               (URNs)", RFC 8141, DOI 10.17487/RFC8141, April 2017,
