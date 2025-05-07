@@ -184,6 +184,7 @@ This section and its subsections replace {{Section 12.3 of -coap}}.
 
 [^replace-self]
 
+Internet media types are identified by a string, such as "application/xml" {{?RFC2046}}.
 In order to minimize the overhead of using Media Types to indicate the format of payloads, {{-coap}} has defined a registry for a subset of Internet Media Types to be used in CoAP and assigned each, in combination with a Content Coding, a numeric identifier.
 The name of the registry is "CoAP Content-Formats", within the "CoRE Parameters" registry group.
 
@@ -204,9 +205,10 @@ The registration procedures for CoAP Content-Formats are described in {{tbl-new-
 | 33000-64998 | Expert Review | Review procedure described in {{&SELF}}, {{checks}}. |
 | 64999 | - | Reserved for Documentation |
 | 65000-65535 | Experimental Use | No operational use |
-{: #tbl-new-cf-proc title="Updated CoAP Content-Formats Registration Procedures"}
+{: #tbl-new-cf-proc title="CoAP Content-Formats: Registration Procedures"}
 
 Because the namespace of single-byte identifiers is so small, the IANA policy for additions in the range 0-255 inclusive to the registry is "Expert Review" as described in {{Section 4.5 of -iana-cons}}.
+For the handling of temporary allocations within the 0-255 range see also {{expert-review-7120-exemptions}}.
 
 The 256-9999 range has registration procedures requiring "IETF Review with Expert Review" or "IESG Approval with Expert Review." In particular:
 
@@ -225,9 +227,9 @@ If the criteria do not apply, a registration for a different range (which requir
 The identifiers between 65000 and 65535 inclusive are reserved for experiments.
 They are not meant for vendor-specific use of any kind and MUST NOT be used in operational deployments.
 
-A new column with the title "Notes" has been added to the CoAP Content-Formats Registration Procedures shown in {{tbl-new-cf-proc}}.
-
-For the handling of temporary allocations within the 0-255 range see also {{expert-review-7120-exemptions}}.
+In machine-to-machine applications, it is not expected that generic Internet media types such as text/plain, application/xml or application/octet-stream are useful for real applications in the long term.
+It is recommended that M2M applications making use of CoAP request new Internet media types from IANA indicating semantic information about how to create or parse a payload.
+For example, a Smart Energy application payload carried as CBOR might request a more specific type like application/se+cbor.
 
 ### Temporary Content-Format Registrations
 
