@@ -82,91 +82,6 @@ Furthermore, this document reserves Content-Format identifier 64999 for use in d
 This document uses the terms "Media Type", "Content Coding", "Content-Type", and "Content Format" as defined in {{Section 2 of -senml-ct}}.
 In this document, those terms are fully capitalized.
 
-# Examples for Erroneous Registrations
-
-This section provides examples of registration requests for the "CoAP Content-Formats" Registry that are invalid but would be approved under the procedure defined in {{Section 12.3 of -coap}}.
-The checklist defined in {{checks}} should prevent any of these attempts from succeeding.
-
-All the example registration requests use a CoAP Content-Format with identifier 64999.
-
-For each of the following example registration requests, one can create a similar instance where the requested registration is for a CoAP Content-Format identifier within the "IETF Review or IESG Approval" range.
-Likewise, such registrations must not be allowed to succeed.
-
-## The Media Type is Unknown {#ex-unknown-mt}
-
-The registrant requests an FCFS Content-Format ID for an unknown Media Type:
-
-| Content Type | Content Coding | ID |
-|--|--|--|
-| application/unknown+cbor | - | 64999 |
-{: align="left" title="Attempt at Registering Content-Format for an Unknown Media Type"}
-
-## The Media Type Parameter is Unknown
-
-The registrant requests an FCFS Content-Format ID for an existing Media Type with an unknown parameter:
-
-| Content Type | Content Coding | ID |
-|--|--|--|
-| application/cose;unknown-parameter=1 | - | 64999 |
-{: align="left" title="Attempt at Registering Content-Format for Media Type with Unknown Parameter"}
-
-## The Media Type Parameter Value is Invalid
-
-The registrant requests an FCFS Content-Format ID for an existing Media Type with an invalid parameter value:
-
-| Content Type | Content Coding | ID |
-|--|--|--|
-| application/cose;cose-type=invalid | - | 64999 |
-{: align="left" title="Attempt at Registering Content-Format for Media Type with Invalid Parameter Value"}
-
-## The Content Coding is Unknown
-
-The registrant requests an FCFS Content-Format ID for an existing Media Type with an unknown Content Coding:
-
-| Content Type | Content Coding | ID |
-|--|--|--|
-| application/senml+cbor | inflate | 64999 |
-{: align="left" title="Attempt at Registering Content-Format with Unknown Content Coding"}
-
-## Duplicate Entry with Default Media Type Parameters
-
-The registrant requests an FCFS Content-Format ID for a Media Type that includes a parameter set to its default value, while
-a (hypothetical) Content-Format ID 64900 is already registered for this Media Type without that parameter.
-As a result, this could lead to the creation of two separate Content-Format IDs for the same "logical" entry.
-
-| Content Type | Content Coding | ID |
-|--|--|--|
-| application/my | - | 64900 |
-| application/my;parameter=default | - | 64999 |
-{: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (1)"}
-
-## Duplicate Entry with Default Content Coding
-
-The registrant requests an FCFS Content-Format ID for the "identity" Content Coding, which is the default coding.
-If accepted, this request would duplicate an entry with (hypothetical)
-Content-Format ID 64900 where the "Content Coding" field is left empty.
-
-| Content Type | Content Coding | ID |
-|--|--|--|
-| application/my | - | 64900 |
-| application/my | identity | 64999 |
-{: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (2)"}
-
-## Duplicate Entry with Equivalent Parameter
-
-The registrant requests an FCFS Content-Format ID for a Media Type that includes a parameter.
-The value of this parameter appears distinct from that of a (hypothetical) previously registered Content-Format ID 64900 that also includes this parameter.
-However, the semantics of the parameter value are identical to the existing registration.
-
-In this example, the `eat_profile` parameter value (which can be any URI) is set as a Uniform Resource Name (URN) {{?RFC8141}}.
-Since for URNs, the Namespace Identifier (`example` in this example) is defined as case insensitive, the two registrations are semantically identical.
-
-| Content Type | Content Coding | ID |
-|--|--|--|
-| application/eat+cwt;eat_profile="urn:example:1" | - | 64900 |
-| application/eat+cwt;eat_profile="urn:EXAMPLE:1" | - | 64999 |
-{: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (3)"}
-
 # Security Considerations
 
 This document hardens the registration procedures of CoAP Content-Formats in ways that reduce the chances of malicious manipulation of the associated registry.
@@ -276,6 +191,92 @@ The Designated Expert (DE) is instructed to perform the Expert Review, as descri
 
 For the 0-255 range, in addition to the checks described above, the DE is instructed to also evaluate the requested codepoint concerning the limited availability of the 1-byte codepoint space.
 For the 256-64998 range, a similar criterion may also apply where combinations of Media Type parameters and Content Coding choices consume considerable codepoint space.
+
+### Examples for Invalid Registration Requests
+
+This section provides examples of registration requests for the "CoAP Content-Formats" Registry that are invalid but would be approved under the procedure defined in {{Section 12.3 of -coap}}.
+The checklist defined in {{checks}} should prevent any of these attempts from succeeding.
+These examples serve as a representative, but not exhaustive, sample to train the DE's eye on invalid registration attempts.
+
+All the example registration requests use a CoAP Content-Format with identifier 64999.
+
+For each of the following example registration requests, one can create a similar instance where the requested registration is for a CoAP Content-Format identifier within the "IETF Review or IESG Approval" range.
+Likewise, such registrations must not be allowed to succeed.
+
+#### The Media Type is Unknown {#ex-unknown-mt}
+
+The registrant requests an FCFS Content-Format ID for an unknown Media Type:
+
+| Content Type | Content Coding | ID |
+|--|--|--|
+| application/unknown+cbor | - | 64999 |
+{: align="left" title="Attempt at Registering Content-Format for an Unknown Media Type"}
+
+#### The Media Type Parameter is Unknown
+
+The registrant requests an FCFS Content-Format ID for an existing Media Type with an unknown parameter:
+
+| Content Type | Content Coding | ID |
+|--|--|--|
+| application/cose;unknown-parameter=1 | - | 64999 |
+{: align="left" title="Attempt at Registering Content-Format for Media Type with Unknown Parameter"}
+
+#### The Media Type Parameter Value is Invalid
+
+The registrant requests an FCFS Content-Format ID for an existing Media Type with an invalid parameter value:
+
+| Content Type | Content Coding | ID |
+|--|--|--|
+| application/cose;cose-type=invalid | - | 64999 |
+{: align="left" title="Attempt at Registering Content-Format for Media Type with Invalid Parameter Value"}
+
+#### The Content Coding is Unknown
+
+The registrant requests an FCFS Content-Format ID for an existing Media Type with an unknown Content Coding:
+
+| Content Type | Content Coding | ID |
+|--|--|--|
+| application/senml+cbor | inflate | 64999 |
+{: align="left" title="Attempt at Registering Content-Format with Unknown Content Coding"}
+
+#### Duplicate Entry with Default Media Type Parameters
+
+The registrant requests an FCFS Content-Format ID for a Media Type that includes a parameter set to its default value, while
+a (hypothetical) Content-Format ID 64900 is already registered for this Media Type without that parameter.
+As a result, this could lead to the creation of two separate Content-Format IDs for the same "logical" entry.
+
+| Content Type | Content Coding | ID |
+|--|--|--|
+| application/my | - | 64900 |
+| application/my;parameter=default | - | 64999 |
+{: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (1)"}
+
+#### Duplicate Entry with Default Content Coding
+
+The registrant requests an FCFS Content-Format ID for the "identity" Content Coding, which is the default coding.
+If accepted, this request would duplicate an entry with (hypothetical)
+Content-Format ID 64900 where the "Content Coding" field is left empty.
+
+| Content Type | Content Coding | ID |
+|--|--|--|
+| application/my | - | 64900 |
+| application/my | identity | 64999 |
+{: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (2)"}
+
+#### Duplicate Entry with Equivalent Parameter
+
+The registrant requests an FCFS Content-Format ID for a Media Type that includes a parameter.
+The value of this parameter appears distinct from that of a (hypothetical) previously registered Content-Format ID 64900 that also includes this parameter.
+However, the semantics of the parameter value are identical to the existing registration.
+
+In this example, the `eat_profile` parameter value (which can be any URI) is set as a Uniform Resource Name (URN) {{?RFC8141}}.
+Since for URNs, the Namespace Identifier (`example` in this example) is defined as case insensitive, the two registrations are semantically identical.
+
+| Content Type | Content Coding | ID |
+|--|--|--|
+| application/eat+cwt;eat_profile="urn:example:1" | - | 64900 |
+| application/eat+cwt;eat_profile="urn:EXAMPLE:1" | - | 64999 |
+{: align="left" title="Attempt at Registering an Equivalent Logical Entry with a Different Content-Format ID (3)"}
 
 ### Preferred Format for the Content Type Field {#preferred-format}
 
