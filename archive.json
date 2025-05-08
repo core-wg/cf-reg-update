@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-04T00:43:40.554555+00:00",
+  "timestamp": "2025-05-08T00:39:56.742073+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -1540,6 +1540,35 @@
       "updatedAt": "2025-05-01T19:02:33Z",
       "closedAt": null,
       "comments": []
+    },
+    {
+      "number": 82,
+      "id": "I_kwDONM5XRM61apRv",
+      "title": "Give back to IANA what is IANA\u2019s",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/82",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "thomas-fossati"
+      ],
+      "labels": [
+        "IESG review",
+        "DISCUSS"
+      ],
+      "body": "[Ketan\u2019s review](https://mailarchive.ietf.org/arch/msg/core/nHJ81aT1kpXWMmuV2jYuIq0F-ZA/):\n\n```\nI have one uber comment about the structure of this document that IMHO\nraises to the level of a DISCUSS but should be easy to resolve. Much of\nthe sum and substance of this document (which is section 4) should have\nbeen under the IANA Considerations section since they are really ...\nIANA considerations.\n\nAdditionally, the style of referencing section numbers (and introducing\nsub-sections) in RFC7252 is very confusing. Why not say that the IANA\nConsiderations in this section replace the entire Section 12.3 of\nRFC7252 and rewrite the considerations as new?\n\n\"4.2. New Section 12.3.1 \"Temporary Content-Format Registrations\"\" ...\nseems very odd.\n\nIOW request the authors/WG to please simplify this patch.\n```",
+      "createdAt": "2025-05-06T18:26:01Z",
+      "updatedAt": "2025-05-06T20:21:48Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@thomas-fossati Thanks - the PR still has the \"New Section ... \" headings that are part of the DISCUSS. Was the intention to rename the headers also, to clear the DISCUSS?",
+          "createdAt": "2025-05-06T20:21:47Z",
+          "updatedAt": "2025-05-06T20:21:47Z"
+        }
+      ]
     }
   ],
   "pulls": [
@@ -5370,6 +5399,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 83,
+      "id": "PR_kwDONM5XRM6VJvdN",
+      "title": "attempt at addressing Ketan's DISCUSS",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/83",
+      "state": "OPEN",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #82 ",
+      "createdAt": "2025-05-06T18:26:22Z",
+      "updatedAt": "2025-05-07T16:24:44Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "32cb517de3e7926dee3220c74d1ad86ea5aa3c2e",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "ketan-discuss",
+      "headRefOid": "17bf585c30c9f072cd647e8a497d37a91680e0a2",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
