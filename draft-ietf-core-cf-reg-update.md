@@ -324,8 +324,13 @@ Thank you
 Amanda Baber,
 Carsten Bormann,
 Christer Holmberg,
+Éric Vyncke,
 Francesca Palombini,
+Ketan Talaulikar,
 Marco Tiloca,
+Mohamed Boucadair,
+Paul Wouters,
+Renzo Navas,
 and
 Rich Salz
 for your reviews, comments, suggestions, and fixes.
