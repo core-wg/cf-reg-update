@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-08T00:39:56.742073+00:00",
+  "timestamp": "2025-05-11T00:42:41.834902+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -1530,23 +1530,31 @@
       "id": "I_kwDONM5XRM603q3P",
       "title": "ACK Renzo and Med Reviews",
       "url": "https://github.com/core-wg/cf-reg-update/issues/81",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "$title",
       "createdAt": "2025-05-01T19:02:33Z",
-      "updatedAt": "2025-05-01T19:02:33Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2025-05-09T17:32:02Z",
+      "closedAt": "2025-05-09T17:32:02Z",
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Also, \u00c9ric, Ketan and Paul.",
+          "createdAt": "2025-05-08T07:38:44Z",
+          "updatedAt": "2025-05-08T07:38:44Z"
+        }
+      ]
     },
     {
       "number": 82,
       "id": "I_kwDONM5XRM61apRv",
       "title": "Give back to IANA what is IANA\u2019s",
       "url": "https://github.com/core-wg/cf-reg-update/issues/82",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [
@@ -1558,8 +1566,8 @@
       ],
       "body": "[Ketan\u2019s review](https://mailarchive.ietf.org/arch/msg/core/nHJ81aT1kpXWMmuV2jYuIq0F-ZA/):\n\n```\nI have one uber comment about the structure of this document that IMHO\nraises to the level of a DISCUSS but should be easy to resolve. Much of\nthe sum and substance of this document (which is section 4) should have\nbeen under the IANA Considerations section since they are really ...\nIANA considerations.\n\nAdditionally, the style of referencing section numbers (and introducing\nsub-sections) in RFC7252 is very confusing. Why not say that the IANA\nConsiderations in this section replace the entire Section 12.3 of\nRFC7252 and rewrite the considerations as new?\n\n\"4.2. New Section 12.3.1 \"Temporary Content-Format Registrations\"\" ...\nseems very odd.\n\nIOW request the authors/WG to please simplify this patch.\n```",
       "createdAt": "2025-05-06T18:26:01Z",
-      "updatedAt": "2025-05-06T20:21:48Z",
-      "closedAt": null,
+      "updatedAt": "2025-05-09T16:54:56Z",
+      "closedAt": "2025-05-09T16:54:56Z",
       "comments": [
         {
           "author": "EskoDijk",
@@ -1567,8 +1575,117 @@
           "body": "@thomas-fossati Thanks - the PR still has the \"New Section ... \" headings that are part of the DISCUSS. Was the intention to rename the headers also, to clear the DISCUSS?",
           "createdAt": "2025-05-06T20:21:47Z",
           "updatedAt": "2025-05-06T20:21:47Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> [@thomas-fossati](https://github.com/thomas-fossati) Thanks - the PR still has the \"New Section ... \" headings that are part of the DISCUSS. Was the intention to rename the headers also, to clear the DISCUSS?\n\nHi @EskoDijk, yes you are right.  I should\u2019ve now fully aligned with Ketan\u2019s request.",
+          "createdAt": "2025-05-08T08:02:46Z",
+          "updatedAt": "2025-05-08T08:02:46Z"
         }
       ]
+    },
+    {
+      "number": 84,
+      "id": "I_kwDONM5XRM61rplD",
+      "title": "\u201cBad examples\u201d should be an integral part of the DE\u2019s instructions",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/84",
+      "state": "CLOSED",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [
+        "thomas-fossati"
+      ],
+      "labels": [
+        "IESG review",
+        "DISCUSS"
+      ],
+      "body": "[Paul\u2019s DISCUSS position](https://mailarchive.ietf.org/arch/msg/core/aazA17rkKfPDF_3y6XahDekqKU8/)\n\n```\nI also feel the structure of this document is very strange. It updates another\nRFC's IANA Considerations section, outside its own IANA Considerations Section.\nAnd then does not repeat the actual IANA changes in the document's IANA\nConsideration's section.\n```\n\n* This is handled together with Ketan\u2019s #82 \n\n```\nIt also seems all the \"bad examples\" are really instructions for the Designated\nExperts, which we usually also place in the IANA Considerations Section.\n```\n\n* This is the bit that needs to be addressed.\n\n```\nI think we should at least have a discussion with IANA.\n```\n\n* No need to follow-up on this: it has been clarified in the email thread.",
+      "createdAt": "2025-05-08T07:43:23Z",
+      "updatedAt": "2025-05-09T16:55:14Z",
+      "closedAt": "2025-05-09T16:55:14Z",
+      "comments": []
+    },
+    {
+      "number": 86,
+      "id": "I_kwDONM5XRM61r6dJ",
+      "title": "Removing the note does not imply removing the section",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/86",
+      "state": "CLOSED",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "[\u00c9ric\u2019s review](https://mailarchive.ietf.org/arch/msg/core/LigNwGxNBLdeHLXt_KfKYu5cZE4/)\n\n```\n### Section 6.1\n\nI strongly think that this section should not be removed, if only to leave an\naudit trail on the note removal.\n```\n\nCC @evyncke",
+      "createdAt": "2025-05-08T08:13:14Z",
+      "updatedAt": "2025-05-10T06:05:07Z",
+      "closedAt": "2025-05-10T06:05:07Z",
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Hi @evyncke - I just wanted to double-check with you what you think the purpose of keeping the historical record / audit trail would be.\n\nJust FYI, to give you a little more context:\n\nWhen we discovered that there had been invalid registrations in the FCFS range, we had several interactions with IANA to discuss the issue and determine the best way to proceed.\nSince the requested procedural change required an RFC to be enacted, and as you know, it can take some time to finalise an I-D, we decided it was worthwhile to implement a quick, interim patch directly in the registry to make it somewhat visible to the registrar and the registrants.  (This is the \u201cnote\u201d in question.)\nThe idea was that once the document was completed, the makeshift solution would no longer be necessary, hence the removal instructions in the I-D.\n\nWhile I think memory is a fundamental part of a functioning society, in *this specific case* I don\u2019t see a strong reason for enshrining the patch in RFC history.",
+          "createdAt": "2025-05-08T15:50:09Z",
+          "updatedAt": "2025-05-08T15:50:09Z"
+        },
+        {
+          "author": "evyncke",
+          "authorAssociation": "NONE",
+          "body": "@thomas-fossati  if IANA keeps an audit trail of all their actions, then this section could be removed.\n\nHonestly, no hard feeling, just a strong one (i.e., one level down) as I see only benefits of keeping the section. ",
+          "createdAt": "2025-05-09T09:03:13Z",
+          "updatedAt": "2025-05-09T09:03:13Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> [@thomas-fossati](https://github.com/thomas-fossati) if IANA keeps an audit trail of all their actions, then this section could be removed.\n\nI don\u2019t know if they do, we can ask Amanda.\n\n> Honestly, no hard feeling, just a strong one (i.e., one level down) [\u2026]\n\n:-)\n",
+          "createdAt": "2025-05-09T09:12:37Z",
+          "updatedAt": "2025-05-09T09:12:37Z"
+        },
+        {
+          "author": "ababer",
+          "authorAssociation": "NONE",
+          "body": "Hi @evyncke @thomas-fossati - IANA's been using Git since 2013 (and used Subversion to an extent for a few years before that). We also include the relevant RT ticket number in our commit messages, so it's pretty easy to track down the source of a change. ",
+          "createdAt": "2025-05-09T17:47:56Z",
+          "updatedAt": "2025-05-09T17:47:56Z"
+        },
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "Thanks for the quick feedback, @ababer!\n\n@evyncke: can we close the issue?\n\n",
+          "createdAt": "2025-05-09T18:04:31Z",
+          "updatedAt": "2025-05-09T18:04:31Z"
+        },
+        {
+          "author": "evyncke",
+          "authorAssociation": "NONE",
+          "body": "Yes, please",
+          "createdAt": "2025-05-10T04:55:15Z",
+          "updatedAt": "2025-05-10T04:55:15Z"
+        }
+      ]
+    },
+    {
+      "number": 87,
+      "id": "I_kwDONM5XRM61r6ux",
+      "title": "64900 is also used in examples \ud83e\udd26",
+      "url": "https://github.com/core-wg/cf-reg-update/issues/87",
+      "state": "CLOSED",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [
+        "IESG review",
+        "COMMENT"
+      ],
+      "body": "[\u00c9ric\u2019s review](https://mailarchive.ietf.org/arch/msg/core/LigNwGxNBLdeHLXt_KfKYu5cZE4/)\n\n```\n### Sections 3, 3.5, and 3.7\n\nProbably worth explaining that 64999 is now reserved by this document for\ndocumentation/example. A nice idea.\n\n_BUT_, section 3.5 also uses 64900 in an example => please request *two*\ndocumentation values for ID.\n```\n\nCC @evyncke",
+      "createdAt": "2025-05-08T08:13:43Z",
+      "updatedAt": "2025-05-09T16:55:14Z",
+      "closedAt": "2025-05-09T16:55:14Z",
+      "comments": []
     }
   ],
   "pulls": [
@@ -5405,26 +5522,200 @@
       "id": "PR_kwDONM5XRM6VJvdN",
       "title": "attempt at addressing Ketan's DISCUSS",
       "url": "https://github.com/core-wg/cf-reg-update/pull/83",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
       "labels": [],
       "body": "Fix #82 ",
       "createdAt": "2025-05-06T18:26:22Z",
-      "updatedAt": "2025-05-07T16:24:44Z",
+      "updatedAt": "2025-05-09T16:54:58Z",
       "baseRepository": "core-wg/cf-reg-update",
       "baseRefName": "main",
       "baseRefOid": "32cb517de3e7926dee3220c74d1ad86ea5aa3c2e",
       "headRepository": "core-wg/cf-reg-update",
       "headRefName": "ketan-discuss",
       "headRefOid": "17bf585c30c9f072cd647e8a497d37a91680e0a2",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2025-05-09T16:54:56Z",
+      "mergedAt": "2025-05-09T16:54:55Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "d0b8fa5c4f59082658ab0bf95d926eebfb878ec0"
+      },
+      "comments": [
+        {
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "body": "> @thomas-fossati Thanks again for handling this! It's starting to look like a while new document \u2026\r\n\r\n\ud83d\ude05 ",
+          "createdAt": "2025-05-09T16:26:43Z",
+          "updatedAt": "2025-05-09T16:26:43Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6onjH0",
+          "commit": {
+            "abbreviatedOid": "17bf585"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "@thomas-fossati Thanks again for handling this! It's starting to look like a while new document ... ",
+          "createdAt": "2025-05-09T16:22:56Z",
+          "updatedAt": "2025-05-09T16:22:56Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 85,
+      "id": "PR_kwDONM5XRM6VY5OS",
+      "title": "Move bad examples under IANA section ",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/85",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #84 \r\nFix #87 \r\n\r\nNote that this PR is on top of Ketan\u2019s DISCUSS PR #83 :\r\n\r\n```\r\n* e1e4b8e2b32d1733b3d94e0ffc3a671f4ffe17e6 (HEAD -> paul-discuss, origin/paul-discuss) move bad examples under IANA section\r\n* 17bf585c30c9f072cd647e8a497d37a91680e0a2 (origin/ketan-discuss, ketan-discuss) futher refinements suggested by Marco\r\n* 243e4ad2f545e5a68b8d60e66968897a8ebab486 transplant \u00a712.3 into \u00a75.1\r\n* 033002225bb457566caab0c49e55da8688373d1f attempt at addressing Ketan's DISCUSS\r\n*   32cb517de3e7926dee3220c74d1ad86ea5aa3c2e (tag: draft-ietf-core-cf-reg-update-08, origin/main, origin/HEAD, main) Merge pull request #80 from core-wg/one-range\r\n```",
+      "createdAt": "2025-05-08T07:50:05Z",
+      "updatedAt": "2025-05-09T16:55:16Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "32cb517de3e7926dee3220c74d1ad86ea5aa3c2e",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "paul-discuss",
+      "headRefOid": "5b1dfe13e24db64392276969a269d654d41671f4",
+      "closedAt": "2025-05-09T16:55:13Z",
+      "mergedAt": "2025-05-09T16:55:13Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "4daca032d5a256902353312192ca1aefc97aaaea"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6oZm0d",
+          "commit": {
+            "abbreviatedOid": "5b1dfe1"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-05-08T14:11:12Z",
+          "updatedAt": "2025-05-08T14:11:12Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6onlpo",
+          "commit": {
+            "abbreviatedOid": "5b1dfe1"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-09T16:27:09Z",
+          "updatedAt": "2025-05-09T16:27:10Z",
+          "comments": [
+            {
+              "originalPosition": 269,
+              "body": "I still like the \"inflate\" encoding - one to propose next year on April 1st ? How could we inflate data in the most effective & efficient way... maybe the size should grow over time with Moore's law to fill the available network capacity.",
+              "createdAt": "2025-05-09T16:27:09Z",
+              "updatedAt": "2025-05-09T16:27:10Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDONM5XRM6onme9",
+          "commit": {
+            "abbreviatedOid": "5b1dfe1"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "Looks good, thanks",
+          "createdAt": "2025-05-09T16:28:50Z",
+          "updatedAt": "2025-05-09T16:28:50Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6on-O9",
+          "commit": {
+            "abbreviatedOid": "5b1dfe1"
+          },
+          "author": "thomas-fossati",
+          "authorAssociation": "MEMBER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-05-09T16:45:42Z",
+          "updatedAt": "2025-05-09T16:45:42Z",
+          "comments": [
+            {
+              "originalPosition": 269,
+              "body": "\ud83e\udd23 ",
+              "createdAt": "2025-05-09T16:45:42Z",
+              "updatedAt": "2025-05-09T16:45:42Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 88,
+      "id": "PR_kwDONM5XRM6VndGp",
+      "title": "ACK++",
+      "url": "https://github.com/core-wg/cf-reg-update/pull/88",
+      "state": "MERGED",
+      "author": "thomas-fossati",
+      "authorAssociation": "MEMBER",
+      "assignees": [],
+      "labels": [],
+      "body": "Fix #81",
+      "createdAt": "2025-05-09T17:04:38Z",
+      "updatedAt": "2025-05-09T17:32:02Z",
+      "baseRepository": "core-wg/cf-reg-update",
+      "baseRefName": "main",
+      "baseRefOid": "4daca032d5a256902353312192ca1aefc97aaaea",
+      "headRepository": "core-wg/cf-reg-update",
+      "headRefName": "acks",
+      "headRefOid": "e833d3bf5351003eac202509ade2403626753014",
+      "closedAt": "2025-05-09T17:32:01Z",
+      "mergedAt": "2025-05-09T17:32:01Z",
+      "mergedBy": "thomas-fossati",
+      "mergeCommit": {
+        "oid": "902e0fae55a0b4f37e9ae39aca94174e7da411f0"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDONM5XRM6ooL_j",
+          "commit": {
+            "abbreviatedOid": "e833d3b"
+          },
+          "author": "EskoDijk",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "ack!",
+          "createdAt": "2025-05-09T17:10:44Z",
+          "updatedAt": "2025-05-09T17:10:44Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDONM5XRM6ooPCN",
+          "commit": {
+            "abbreviatedOid": "e833d3b"
+          },
+          "author": "marco-tiloca-sics",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-05-09T17:17:21Z",
+          "updatedAt": "2025-05-09T17:17:21Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
