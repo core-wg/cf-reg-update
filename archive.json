@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-11T00:42:41.834902+00:00",
+  "timestamp": "2025-05-29T00:40:10.556828+00:00",
   "repo": "core-wg/cf-reg-update",
   "labels": [
     {
@@ -1000,7 +1000,7 @@
       "id": "I_kwDONM5XRM6zqAa6",
       "title": "There are many Updates",
       "url": "https://github.com/core-wg/cf-reg-update/issues/60",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -1010,8 +1010,8 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nPlease update the title accordingly:\n\nOLD: Update to the IANA CoAP Content-Formats Registration Procedures\nNEW: Updates to the IANA Constrained Application Protocol (CoAP)\nContent-Formats Registration Procedures\n\nNote that this is consistent with this part from the introduction:\n\nCURRENT:\n   These\n   updates amend the different ranges of the registry, introduce a\n   review procedure to be performed for most ranges of the registry,\n```",
       "createdAt": "2025-04-23T13:59:26Z",
-      "updatedAt": "2025-04-28T16:54:16Z",
-      "closedAt": null,
+      "updatedAt": "2025-05-28T15:59:50Z",
+      "closedAt": "2025-05-28T15:59:50Z",
       "comments": [
         {
           "author": "thomas-fossati",
@@ -1034,7 +1034,7 @@
       "id": "I_kwDONM5XRM6zqBNQ",
       "title": "Abstract should be self-contained",
       "url": "https://github.com/core-wg/cf-reg-update/issues/61",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -1044,8 +1044,8 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   This document updates RFC 7252 regarding the registration procedures\n   for the \"CoAP Content-Formats\" IANA registry, within the \"Constrained\n   RESTful Environments (CoRE) Parameters\" registry group.  This\n   document also introduces a new column, \"Media Type\", to the registry.\n\nNEW:\n   This document updates RFC 7252 (The Constrained Application Protocol (CoAP))\n   regarding the registration procedures^\n                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n   for the \"CoAP Content-Formats\" IANA registry, within the \"Constrained\n   RESTful Environments (CoRE) Parameters\" registry group.  This\n   document also introduces a new column, \"Media Type\", to that registry.\n                                                           ^^^^\n```",
       "createdAt": "2025-04-23T14:00:16Z",
-      "updatedAt": "2025-04-28T16:55:26Z",
-      "closedAt": null,
+      "updatedAt": "2025-05-28T15:59:38Z",
+      "closedAt": "2025-05-28T15:59:38Z",
       "comments": [
         {
           "author": "thomas-fossati",
@@ -1068,7 +1068,7 @@
       "id": "I_kwDONM5XRM6zqSgZ",
       "title": "Format as a plain sentence",
       "url": "https://github.com/core-wg/cf-reg-update/issues/62",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -1078,8 +1078,8 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   (Note that the columns of this registry have\n   been revised according to [Err4954].)\n\nNEW:\n   Note that the columns of this registry have\n   been revised according to [Err4954].\n```",
       "createdAt": "2025-04-23T14:17:44Z",
-      "updatedAt": "2025-04-24T12:46:39Z",
-      "closedAt": null,
+      "updatedAt": "2025-05-28T15:59:27Z",
+      "closedAt": "2025-05-28T15:59:27Z",
       "comments": [
         {
           "author": "thomas-fossati",
@@ -1116,7 +1116,7 @@
       "id": "I_kwDONM5XRM6zqT_c",
       "title": "Maybe better to cite rfc8126#section-4.4 rather than re-defining the policy",
       "url": "https://github.com/core-wg/cf-reg-update/issues/64",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -1126,8 +1126,8 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nI would delete the following:\n\nCURRENT:\n   For the FCFS range,\n   these rules do not involve the Designated Expert (DE) and are managed\n   solely by IANA personnel to finalize the registration.\n```",
       "createdAt": "2025-04-23T14:19:30Z",
-      "updatedAt": "2025-04-24T13:03:57Z",
-      "closedAt": null,
+      "updatedAt": "2025-05-28T15:59:15Z",
+      "closedAt": "2025-05-28T15:59:15Z",
       "comments": [
         {
           "author": "thomas-fossati",
@@ -1172,7 +1172,7 @@
       "id": "I_kwDONM5XRM6zqVhQ",
       "title": "Add a pointer to the section where to look for examples",
       "url": "https://github.com/core-wg/cf-reg-update/issues/66",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -1182,8 +1182,8 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   and should not be solely demanded from the registrar.  This lack of\n   guidance may engender confusion in both the registering party and the\n   registrar, and has already led to erroneous registrations.\n\nNEW:\n   and should not be solely demanded from the registrar.  This lack of\n   guidance may engender confusion in both the registering party and the\n   registrar, and has already led to erroneous registrations (Section 3).\n```",
       "createdAt": "2025-04-23T14:21:32Z",
-      "updatedAt": "2025-04-24T13:16:53Z",
-      "closedAt": null,
+      "updatedAt": "2025-05-28T15:58:58Z",
+      "closedAt": "2025-05-28T15:58:58Z",
       "comments": [
         {
           "author": "thomas-fossati",
@@ -1325,7 +1325,7 @@
       "id": "I_kwDONM5XRM6zqdXA",
       "title": "More than one DE",
       "url": "https://github.com/core-wg/cf-reg-update/issues/71",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -1335,8 +1335,8 @@
       ],
       "body": "From [Med\u2019s review](https://mailarchive.ietf.org/arch/msg/core/a5xaEVG9TyY_vO8WjSxYeWjyC-w/)\n\n```\nOLD:\n   The Designated Expert (DE) is instructed to perform the Expert\n   Review, as described by the following checklist:\n\nNEW:\n   A Designated Expert (DE) is instructed to perform the Expert\n   Review, as described by the following checklist:\n\nMore than one DE is usually appointed, while the OLD seems to assume that there\nis one single DE.\n```\n",
       "createdAt": "2025-04-23T14:32:37Z",
-      "updatedAt": "2025-04-28T16:27:32Z",
-      "closedAt": null,
+      "updatedAt": "2025-05-28T15:58:43Z",
+      "closedAt": "2025-05-28T15:58:43Z",
       "comments": [
         {
           "author": "thomas-fossati",
@@ -1387,7 +1387,7 @@
       "id": "I_kwDONM5XRM6zqgU5",
       "title": "Section 3.3",
       "url": "https://github.com/core-wg/cf-reg-update/issues/73",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "thomas-fossati",
       "authorAssociation": "MEMBER",
       "assignees": [],
@@ -1396,8 +1396,8 @@
       ],
       "body": "From [Renzo\u2019s review](https://mailarchive.ietf.org/arch/msg/core/OX_G33Zs_1b5WaMiTWORNn3sul0/)\n\n```\nHow do we determine if a parameter\u2019s value is valid ? (given an\nexisting media type parameter)? (We have to track the values on the \u201cReference\u201d\ncolumn on the Media Type register? E.g., for \u201ccose;cose-type=\u201d, I could not\nfind it on IANA https://www.iana.org/assignments/media-types/application/cose ,\nbut have to read RFC9052). OK after reading the document, all these cases\n(invalid or unknown stuff) will need an \u201cExpert Review\u201d . SUGGESTION: maybe put\na small disclaimer at the beginning of the section? For example: \"Unknown or\nInvalid values will be detected by a Expert Review\".\n```",
       "createdAt": "2025-04-23T14:36:53Z",
-      "updatedAt": "2025-04-28T18:01:18Z",
-      "closedAt": null,
+      "updatedAt": "2025-05-28T15:58:22Z",
+      "closedAt": "2025-05-28T15:58:22Z",
       "comments": [
         {
           "author": "thomas-fossati",
